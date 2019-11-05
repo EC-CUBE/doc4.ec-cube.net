@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <head>
     {% include head.html %}
+</head>
+<body>
+{% include topnav.html %}
+<!-- Page Content -->
+<div class="container">
+    <div class="col-lg-12">&nbsp;</div>
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+
+          {% include sidebar.html %}
+          <!-- Content Column -->
+          <div class="col-md-9">
+              {{content}}
+          </div>
+          <!-- /.row -->
+        </div>
+    <!-- /.container -->
+    </div>
+</div>
     <script>
         $(document).ready(function() {
             // Initialize navgoco with default options
@@ -52,27 +73,6 @@
     </script>
     {% endif %}
 
-</head>
-<body>
-{% include topnav.html %}
-<!-- Page Content -->
-<div class="container">
-    <div class="col-lg-12">&nbsp;</div>
-    <!-- Content Row -->
-    <div class="row">
-        <!-- Sidebar Column -->
-        <div class="col-md-3">
-
-          {% include sidebar.html %}
-          <!-- Content Column -->
-          <div class="col-md-9">
-              {{content}}
-          </div>
-          <!-- /.row -->
-        </div>
-    <!-- /.container -->
-    </div>
-</div>
 {% include google_analytics.html %}
 </body>
 </html>
