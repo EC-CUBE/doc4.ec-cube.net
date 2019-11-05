@@ -1,6 +1,6 @@
 # EC-CUBE 4開発ドキュメント
 
-github page of the [http://doc4.ec-cube.net/](http://doc4.ec-cube.net/)
+github page of the [https://doc4.ec-cube.net/](https://doc4.ec-cube.net/)
 
 EC-CUBE 4 の仕様や手順、開発Tipsに関するドキュメントを掲載しています。
 修正や追記、新規ドキュメントの作成をいただく場合、本レポジトリへPullRequestをお送りください。
