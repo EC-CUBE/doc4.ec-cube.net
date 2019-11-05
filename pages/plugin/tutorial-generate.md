@@ -99,14 +99,14 @@ EC-CUBE3で用意している共通イベント名を指定します。イベン
 
 
 ```
-[+]Please enter site events(you can find documentation here http://www.ec-cube.net/plugin/)
+[+]Please enter site events(you can find documentation here https://www.ec-cube.net/plugin/)
 Input[6] : 
 ```
 
 `app`のみを入力し、enterを押します。
 
 ```
-[+]Please enter site events(you can find documentation here http://www.ec-cube.net/plugin/)
+[+]Please enter site events(you can find documentation here https://www.ec-cube.net/plugin/)
 Input[6] : app
 [!] No results have been found
 --- there are more then one search result
@@ -116,7 +116,7 @@ Input[6] : app
  - eccube.event.app.exception
  - eccube.event.app.terminate
 
-[+]Please enter site events(you can find documentation here http://www.ec-cube.net/plugin/)
+[+]Please enter site events(you can find documentation here https://www.ec-cube.net/plugin/)
 Input[6] : 
 ```
 
@@ -126,13 +126,13 @@ Input[6] :
 例えば`eccube.event.app.request`を入力するとイベントが追加されます。イベントがこれ以上不要な時や必要ない場合、何も入力せずにenterを押してください。
 
 ```
-[+]Please enter site events(you can find documentation here http://www.ec-cube.net/plugin/)
+[+]Please enter site events(you can find documentation here https://www.ec-cube.net/plugin/)
 Input[6] : eccube.event.app.request
 --- your entry list
  - eccube.event.app.request
 
 --- Press Enter to move to the next step ---
-[+]Please enter site events(you can find documentation here http://www.ec-cube.net/plugin/)
+[+]Please enter site events(you can find documentation here https://www.ec-cube.net/plugin/)
 Input[6] : 
 ```
 
