@@ -79,7 +79,7 @@ folder: collaboration
   ただし、既に予定の変更の内容が実施済みの場合は無視するように設定すること
   (クリーンインストール時のorm:schema-tool:createを実行した場合の動作と重複してしまうため)
 
-<script src="http://gist-it.appspot.com/https://github.com/EC-CUBE/ec-cube.github.io/blob/master/Source/migration/DDLMigration.php"></script>
+<script src="http://gist-it.appspot.com/https://github.com/EC-CUBE/doc4.ec-cube.net/blob/master/Source/migration/DDLMigration.php"></script>
 
 3.doctrineのテーブル定義ファイル(yml)を2の内容に合わせて作成又は編集する
 
@@ -98,7 +98,7 @@ folder: collaboration
 2.マイグレーションファイルのup,downメソッド内に変更手順を記述する
   DML用の場合はDDLと違い実施内容のチェックは必要なし
 
-<script src="https://github.com/EC-CUBE/ec-cube.github.io/blob/master/Source/migration/DMLMigration.php"></script>
+<script src="https://github.com/EC-CUBE/doc4.ec-cube.net/blob/master/Source/migration/DMLMigration.php"></script>
 
 3.コマンドラインからマイグレーションを実行(php app/console migrations:migrate)し、想定した初期データが挿入されることを確認する
 

@@ -79,7 +79,7 @@ summary: プラグインの単体テストの作成方法からTravis CIを用�
 
   - 以下の様に修正・メソッドの追記を行います。
 
-<script src="http://gist-it.appspot.com/https://github.com/EC-CUBE/ec-cube.github.io/blob/master/Source/plugin_test/ExampleServiceTest.php"></script>
+<script src="http://gist-it.appspot.com/https://github.com/EC-CUBE/doc4.ec-cube.net/blob/master/Source/plugin_test/ExampleServiceTest.php"></script>
 
 
 - 上記の説明を行います。
@@ -152,7 +152,7 @@ vendor/bin/phpunit ./app/Plugin/[自身で作成したプラグインのフォ�
 
   - .travis.yml
 
-<script src="http://gist-it.appspot.com/https://github.com/EC-CUBE/ec-cube.github.io/blob/master/Source/plugin_test/Travis.yml"></script>
+<script src="http://gist-it.appspot.com/https://github.com/EC-CUBE/doc4.ec-cube.net/blob/master/Source/plugin_test/Travis.yml"></script>
 
 - 上記の設定項目内容を以下に説明します。
 

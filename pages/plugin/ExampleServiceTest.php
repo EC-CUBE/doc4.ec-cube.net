@@ -19,7 +19,7 @@
     <meta http-equiv="Content-Language" content="en">
     <meta name="viewport" content="width=device-width">
     
-    <title>ec-cube.github.io/ExampleServiceTest.php at master · EC-CUBE/ec-cube.github.io · GitHub</title>
+    <title>doc4.ec-cube.net/ExampleServiceTest.php at master · EC-CUBE/doc4.ec-cube.net · GitHub</title>
     <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
     <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -34,8 +34,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
     <meta property="fb:app_id" content="1401488693436528">
 
-      <meta content="https://avatars1.githubusercontent.com/u/7763650?v=3&amp;s=400" name="twitter:image:src" /><meta content="@github" name="twitter:site" /><meta content="summary" name="twitter:card" /><meta content="EC-CUBE/ec-cube.github.io" name="twitter:title" /><meta content="ec-cube.github.io - EC-CUBE 3 開発ドキュメント" name="twitter:description" />
-      <meta content="https://avatars1.githubusercontent.com/u/7763650?v=3&amp;s=400" property="og:image" /><meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="EC-CUBE/ec-cube.github.io" property="og:title" /><meta content="https://github.com/EC-CUBE/ec-cube.github.io" property="og:url" /><meta content="ec-cube.github.io - EC-CUBE 3 開発ドキュメント" property="og:description" />
+      <meta content="https://avatars1.githubusercontent.com/u/7763650?v=3&amp;s=400" name="twitter:image:src" /><meta content="@github" name="twitter:site" /><meta content="summary" name="twitter:card" /><meta content="EC-CUBE/doc4.ec-cube.net" name="twitter:title" /><meta content="doc4.ec-cube.net - EC-CUBE 3 開発ドキュメント" name="twitter:description" />
+      <meta content="https://avatars1.githubusercontent.com/u/7763650?v=3&amp;s=400" property="og:image" /><meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="EC-CUBE/doc4.ec-cube.net" property="og:title" /><meta content="https://github.com/EC-CUBE/doc4.ec-cube.net" property="og:url" /><meta content="doc4.ec-cube.net - EC-CUBE 3 開発ドキュメント" property="og:description" />
       <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
     <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
     <link rel="assets" href="https://assets-cdn.github.com/">
@@ -78,14 +78,14 @@
     
 
       
-  <meta name="description" content="ec-cube.github.io - EC-CUBE 3 開発ドキュメント">
-  <meta name="go-import" content="github.com/EC-CUBE/ec-cube.github.io git https://github.com/EC-CUBE/ec-cube.github.io.git">
+  <meta name="description" content="doc4.ec-cube.net - EC-CUBE 3 開発ドキュメント">
+  <meta name="go-import" content="github.com/EC-CUBE/doc4.ec-cube.net git https://github.com/EC-CUBE/doc4.ec-cube.net.git">
 
-  <meta content="7763650" name="octolytics-dimension-user_id" /><meta content="EC-CUBE" name="octolytics-dimension-user_login" /><meta content="38492829" name="octolytics-dimension-repository_id" /><meta content="EC-CUBE/ec-cube.github.io" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="38492829" name="octolytics-dimension-repository_network_root_id" /><meta content="EC-CUBE/ec-cube.github.io" name="octolytics-dimension-repository_network_root_nwo" />
-  <link href="https://github.com/EC-CUBE/ec-cube.github.io/commits/master.atom" rel="alternate" title="Recent Commits to ec-cube.github.io:master" type="application/atom+xml">
+  <meta content="7763650" name="octolytics-dimension-user_id" /><meta content="EC-CUBE" name="octolytics-dimension-user_login" /><meta content="38492829" name="octolytics-dimension-repository_id" /><meta content="EC-CUBE/doc4.ec-cube.net" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="38492829" name="octolytics-dimension-repository_network_root_id" /><meta content="EC-CUBE/doc4.ec-cube.net" name="octolytics-dimension-repository_network_root_nwo" />
+  <link href="https://github.com/EC-CUBE/doc4.ec-cube.net/commits/master.atom" rel="alternate" title="Recent Commits to doc4.ec-cube.net:master" type="application/atom+xml">
 
 
-      <link rel="canonical" href="https://github.com/EC-CUBE/ec-cube.github.io/blob/master/Source/plugin_test/ExampleServiceTest.php" data-pjax-transient>
+      <link rel="canonical" href="https://github.com/EC-CUBE/doc4.ec-cube.net/blob/master/Source/plugin_test/ExampleServiceTest.php" data-pjax-transient>
   </head>
 
 
@@ -123,7 +123,7 @@
 
       <div class="site-header-actions">
             <a class="btn btn-primary site-header-actions-btn" href="/join?source=header-repo" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">Sign up</a>
-          <a class="btn site-header-actions-btn mr-2" href="/login?return_to=%2FEC-CUBE%2Fec-cube.github.io%2Fblob%2Fmaster%2FSource%2Fplugin_test%2FExampleServiceTest.php" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
+          <a class="btn site-header-actions-btn mr-2" href="/login?return_to=%2FEC-CUBE%2Fdoc4.ec-cube.net%2Fblob%2Fmaster%2FSource%2Fplugin_test%2FExampleServiceTest.php" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
       </div>
 
         <nav class="site-header-nav site-header-nav-secondary">
@@ -132,7 +132,7 @@
           <a class="nav-item" href="https://help.github.com">Support</a>
           <a class="nav-item header-search-link" href="https://github.com/search">Search GitHub</a>
               <div class="header-search scoped-search site-scoped-search js-site-search" role="search">
-  <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/EC-CUBE/ec-cube.github.io/search" class="js-site-search-form" data-scoped-search-url="/EC-CUBE/ec-cube.github.io/search" data-unscoped-search-url="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+  <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/EC-CUBE/doc4.ec-cube.net/search" class="js-site-search-form" data-scoped-search-url="/EC-CUBE/doc4.ec-cube.net/search" data-unscoped-search-url="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
     <label class="form-control header-search-wrapper js-chromeless-input-container">
       <div class="header-search-scope">This repository</div>
       <input type="text"
@@ -172,13 +172,13 @@
 <ul class="pagehead-actions">
 
   <li>
-      <a href="/login?return_to=%2FEC-CUBE%2Fec-cube.github.io"
+      <a href="/login?return_to=%2FEC-CUBE%2Fdoc4.ec-cube.net"
     class="btn btn-sm btn-with-count tooltipped tooltipped-n"
     aria-label="You must be signed in to watch a repository" rel="nofollow">
     <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>
     Watch
   </a>
-  <a class="social-count" href="/EC-CUBE/ec-cube.github.io/watchers"
+  <a class="social-count" href="/EC-CUBE/doc4.ec-cube.net/watchers"
      aria-label="17 users are watching this repository">
     17
   </a>
@@ -186,14 +186,14 @@
   </li>
 
   <li>
-      <a href="/login?return_to=%2FEC-CUBE%2Fec-cube.github.io"
+      <a href="/login?return_to=%2FEC-CUBE%2Fdoc4.ec-cube.net"
     class="btn btn-sm btn-with-count tooltipped tooltipped-n"
     aria-label="You must be signed in to star a repository" rel="nofollow">
     <svg aria-hidden="true" class="octicon octicon-star" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z"></path></svg>
     Star
   </a>
 
-    <a class="social-count js-social-count" href="/EC-CUBE/ec-cube.github.io/stargazers"
+    <a class="social-count js-social-count" href="/EC-CUBE/doc4.ec-cube.net/stargazers"
       aria-label="4 users starred this repository">
       4
     </a>
@@ -201,14 +201,14 @@
   </li>
 
   <li>
-      <a href="/login?return_to=%2FEC-CUBE%2Fec-cube.github.io"
+      <a href="/login?return_to=%2FEC-CUBE%2Fdoc4.ec-cube.net"
         class="btn btn-sm btn-with-count tooltipped tooltipped-n"
         aria-label="You must be signed in to fork a repository" rel="nofollow">
         <svg aria-hidden="true" class="octicon octicon-repo-forked" height="16" version="1.1" viewBox="0 0 10 16" width="10"><path d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
         Fork
       </a>
 
-    <a href="/EC-CUBE/ec-cube.github.io/network" class="social-count"
+    <a href="/EC-CUBE/doc4.ec-cube.net/network" class="social-count"
        aria-label="16 users are forked this repository">
       16
     </a>
@@ -219,7 +219,7 @@
   <svg aria-hidden="true" class="octicon octicon-repo" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
   <span class="author" itemprop="author"><a href="/EC-CUBE" class="url fn" rel="author">EC-CUBE</a></span><!--
 --><span class="path-divider">/</span><!--
---><strong itemprop="name"><a href="/EC-CUBE/ec-cube.github.io" data-pjax="#js-repo-pjax-container">ec-cube.github.io</a></strong>
+--><strong itemprop="name"><a href="/EC-CUBE/doc4.ec-cube.net" data-pjax="#js-repo-pjax-container">doc4.ec-cube.net</a></strong>
 
 </h1>
 
@@ -233,14 +233,14 @@
      data-pjax="#js-repo-pjax-container">
 
   <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-    <a href="/EC-CUBE/ec-cube.github.io" aria-selected="true" class="js-selected-navigation-item selected reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /EC-CUBE/ec-cube.github.io" itemprop="url">
+    <a href="/EC-CUBE/doc4.ec-cube.net" aria-selected="true" class="js-selected-navigation-item selected reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /EC-CUBE/doc4.ec-cube.net" itemprop="url">
       <svg aria-hidden="true" class="octicon octicon-code" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"></path></svg>
       <span itemprop="name">Code</span>
       <meta itemprop="position" content="1">
 </a>  </span>
 
     <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-      <a href="/EC-CUBE/ec-cube.github.io/issues" class="js-selected-navigation-item reponav-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /EC-CUBE/ec-cube.github.io/issues" itemprop="url">
+      <a href="/EC-CUBE/doc4.ec-cube.net/issues" class="js-selected-navigation-item reponav-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /EC-CUBE/doc4.ec-cube.net/issues" itemprop="url">
         <svg aria-hidden="true" class="octicon octicon-issue-opened" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg>
         <span itemprop="name">Issues</span>
         <span class="counter">16</span>
@@ -248,30 +248,30 @@
 </a>    </span>
 
   <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-    <a href="/EC-CUBE/ec-cube.github.io/pulls" class="js-selected-navigation-item reponav-item" data-hotkey="g p" data-selected-links="repo_pulls /EC-CUBE/ec-cube.github.io/pulls" itemprop="url">
+    <a href="/EC-CUBE/doc4.ec-cube.net/pulls" class="js-selected-navigation-item reponav-item" data-hotkey="g p" data-selected-links="repo_pulls /EC-CUBE/doc4.ec-cube.net/pulls" itemprop="url">
       <svg aria-hidden="true" class="octicon octicon-git-pull-request" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
       <span itemprop="name">Pull requests</span>
       <span class="counter">2</span>
       <meta itemprop="position" content="3">
 </a>  </span>
 
-  <a href="/EC-CUBE/ec-cube.github.io/projects" class="js-selected-navigation-item reponav-item" data-selected-links="repo_projects new_repo_project repo_project /EC-CUBE/ec-cube.github.io/projects">
+  <a href="/EC-CUBE/doc4.ec-cube.net/projects" class="js-selected-navigation-item reponav-item" data-selected-links="repo_projects new_repo_project repo_project /EC-CUBE/doc4.ec-cube.net/projects">
     <svg class="octicon" aria-hidden="true" version="1.1" width="15" height="16" viewBox="0 0 15 16">
       <path d="M1 15h13V1H1v14zM15 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1a1 1 0 0 1 1-1h13a1 1 0 0 1 1 1zm-4.41 11h1.82c.59 0 .59-.41.59-1V3c0-.59 0-1-.59-1h-1.82C10 2 10 2.41 10 3v8c0 .59 0 1 .59 1zm-4-2h1.82C9 10 9 9.59 9 9V3c0-.59 0-1-.59-1H6.59C6 2 6 2.41 6 3v6c0 .59 0 1 .59 1zM2 13V3c0-.59 0-1 .59-1h1.82C5 2 5 2.41 5 3v10c0 .59 0 1-.59 1H2.59C2 14 2 13.59 2 13z"></path>
     </svg>
     Projects
     <span class="counter">0</span>
 </a>
-    <a href="/EC-CUBE/ec-cube.github.io/wiki" class="js-selected-navigation-item reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /EC-CUBE/ec-cube.github.io/wiki">
+    <a href="/EC-CUBE/doc4.ec-cube.net/wiki" class="js-selected-navigation-item reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /EC-CUBE/doc4.ec-cube.net/wiki">
       <svg aria-hidden="true" class="octicon octicon-book" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M3 5h4v1H3V5zm0 3h4V7H3v1zm0 2h4V9H3v1zm11-5h-4v1h4V5zm0 2h-4v1h4V7zm0 2h-4v1h4V9zm2-6v9c0 .55-.45 1-1 1H9.5l-1 1-1-1H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h5.5l1 1 1-1H15c.55 0 1 .45 1 1zm-8 .5L7.5 3H2v9h6V3.5zm7-.5H9.5l-.5.5V12h6V3z"></path></svg>
       Wiki
 </a>
 
-  <a href="/EC-CUBE/ec-cube.github.io/pulse" class="js-selected-navigation-item reponav-item" data-selected-links="pulse /EC-CUBE/ec-cube.github.io/pulse">
+  <a href="/EC-CUBE/doc4.ec-cube.net/pulse" class="js-selected-navigation-item reponav-item" data-selected-links="pulse /EC-CUBE/doc4.ec-cube.net/pulse">
     <svg aria-hidden="true" class="octicon octicon-pulse" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M11.5 8L8.8 5.4 6.6 8.5 5.5 1.6 2.38 8H0v2h3.6l.9-1.8.9 5.4L9 8.5l1.6 1.5H14V8z"></path></svg>
     Pulse
 </a>
-  <a href="/EC-CUBE/ec-cube.github.io/graphs" class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors /EC-CUBE/ec-cube.github.io/graphs">
+  <a href="/EC-CUBE/doc4.ec-cube.net/graphs" class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors /EC-CUBE/doc4.ec-cube.net/graphs">
     <svg aria-hidden="true" class="octicon octicon-graph" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z"></path></svg>
     Graphs
 </a>
@@ -286,7 +286,7 @@
 
     
 
-<a href="/EC-CUBE/ec-cube.github.io/blob/1f2413b106c24638dfa29b2d8a64fa05938b3c9d/Source/plugin_test/ExampleServiceTest.php" class="d-none js-permalink-shortcut" data-hotkey="y">Permalink</a>
+<a href="/EC-CUBE/doc4.ec-cube.net/blob/1f2413b106c24638dfa29b2d8a64fa05938b3c9d/Source/plugin_test/ExampleServiceTest.php" class="d-none js-permalink-shortcut" data-hotkey="y">Permalink</a>
 
 <!-- blob contrib key: blob_contributors:v21:1e90e3ade38377548eb79fd4c3958ff3 -->
 
@@ -330,7 +330,7 @@
 
 
             <a class="select-menu-item js-navigation-item js-navigation-open selected"
-               href="/EC-CUBE/ec-cube.github.io/blob/master/Source/plugin_test/ExampleServiceTest.php"
+               href="/EC-CUBE/doc4.ec-cube.net/blob/master/Source/plugin_test/ExampleServiceTest.php"
                data-name="master"
                data-skip-pjax="true"
                rel="nofollow">
@@ -358,7 +358,7 @@
 </div>
 
   <div class="BtnGroup float-right">
-    <a href="/EC-CUBE/ec-cube.github.io/find/master"
+    <a href="/EC-CUBE/doc4.ec-cube.net/find/master"
           class="js-pjax-capture-input btn btn-sm BtnGroup-item"
           data-pjax
           data-hotkey="t">
@@ -367,11 +367,11 @@
     <button aria-label="Copy file path to clipboard" class="js-zeroclipboard btn btn-sm BtnGroup-item tooltipped tooltipped-s" data-copied-hint="Copied!" type="button">Copy path</button>
   </div>
   <div class="breadcrumb js-zeroclipboard-target">
-    <span class="repo-root js-repo-root"><span class="js-path-segment"><a href="/EC-CUBE/ec-cube.github.io"><span>ec-cube.github.io</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a href="/EC-CUBE/ec-cube.github.io/tree/master/Source"><span>Source</span></a></span><span class="separator">/</span><span class="js-path-segment"><a href="/EC-CUBE/ec-cube.github.io/tree/master/Source/plugin_test"><span>plugin_test</span></a></span><span class="separator">/</span><strong class="final-path">ExampleServiceTest.php</strong>
+    <span class="repo-root js-repo-root"><span class="js-path-segment"><a href="/EC-CUBE/doc4.ec-cube.net"><span>doc4.ec-cube.net</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a href="/EC-CUBE/doc4.ec-cube.net/tree/master/Source"><span>Source</span></a></span><span class="separator">/</span><span class="js-path-segment"><a href="/EC-CUBE/doc4.ec-cube.net/tree/master/Source/plugin_test"><span>plugin_test</span></a></span><span class="separator">/</span><strong class="final-path">ExampleServiceTest.php</strong>
   </div>
 </div>
 
-<include-fragment class="commit-tease" src="/EC-CUBE/ec-cube.github.io/contributors/master/Source/plugin_test/ExampleServiceTest.php">
+<include-fragment class="commit-tease" src="/EC-CUBE/doc4.ec-cube.net/contributors/master/Source/plugin_test/ExampleServiceTest.php">
   <div>
     Fetching contributors&hellip;
   </div>
@@ -386,9 +386,9 @@
   <div class="file-actions">
 
     <div class="BtnGroup">
-      <a href="/EC-CUBE/ec-cube.github.io/raw/master/Source/plugin_test/ExampleServiceTest.php" class="btn btn-sm BtnGroup-item" id="raw-url">Raw</a>
-        <a href="/EC-CUBE/ec-cube.github.io/blame/master/Source/plugin_test/ExampleServiceTest.php" class="btn btn-sm js-update-url-with-hash BtnGroup-item">Blame</a>
-      <a href="/EC-CUBE/ec-cube.github.io/commits/master/Source/plugin_test/ExampleServiceTest.php" class="btn btn-sm BtnGroup-item" rel="nofollow">History</a>
+      <a href="/EC-CUBE/doc4.ec-cube.net/raw/master/Source/plugin_test/ExampleServiceTest.php" class="btn btn-sm BtnGroup-item" id="raw-url">Raw</a>
+        <a href="/EC-CUBE/doc4.ec-cube.net/blame/master/Source/plugin_test/ExampleServiceTest.php" class="btn btn-sm js-update-url-with-hash BtnGroup-item">Blame</a>
+      <a href="/EC-CUBE/doc4.ec-cube.net/commits/master/Source/plugin_test/ExampleServiceTest.php" class="btn btn-sm BtnGroup-item" rel="nofollow">History</a>
     </div>
 
 

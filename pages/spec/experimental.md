@@ -56,7 +56,7 @@ getSubscribedEvents()メソッドでは、優先度も指定することが出�
 
 プラグインの実行優先度は、先発、後発、通常で優先度範囲が定義されています。
 
-参考：http://ec-cube.github.io/plugin_handler.html
+参考：https://doc4.ec-cube.net/plugin_handler.html
 
 すでにインストールされているプラグインと拡張機構とで優先度を調整したい場合は、優先度の範囲内で、priorityの値を調整してください。
 

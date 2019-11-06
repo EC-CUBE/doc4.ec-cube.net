@@ -85,7 +85,7 @@ http://qiita.com/nanasess/items/fe2a93ff64833d87eb19
 ## vendorの更新
 
 EC-CUBEの変更差分は以下に記載がなされています。
-http://ec-cube.github.io/update.html#link8
+https://doc4.ec-cube.net/update.html#link8
 
 `composer.json`および`composer.lock`が更新されている場合は、vendor以下に配置されているライブラリも更新する必要があります。
 
