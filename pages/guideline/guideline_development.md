@@ -45,7 +45,7 @@ EC-CUBE3の公式サイトからダウンロードして開発を始めるには
 
 
 1. 公式サイトからダウンロード  
-[http://www.ec-cube.net/download/](http://www.ec-cube.net/download/){:target="_blank"} から最新のEC-CUBE3をダウンロードします。
+[https://www.ec-cube.net/download/](http://www.ec-cube.net/download/){:target="_blank"} から最新のEC-CUBE3をダウンロードします。
 
 1. 必要なライブラリをインストール  
 公式サイトよりダウンロードしたEC-CUBE3には開発時に便利なライブラリが含まれておらず、

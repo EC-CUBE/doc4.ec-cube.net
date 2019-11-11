@@ -284,7 +284,7 @@ PluginCode\log.php
 
 以下の内容を`log.php`に記述します。
 
-<script src="http://gist-it.appspot.com/https://github.com/EC-CUBE/ec-cube.github.io/blob/master/Source/log/log.php"></script>
+<script src="http://gist-it.appspot.com/https://github.com/EC-CUBE/doc4.ec-cube.net/blob/master/Source/log/log.php"></script>
 
 ファイル作成後、`log.php`ファイルを読み込む必要があるため、
 `log_info`等を利用している環境では、

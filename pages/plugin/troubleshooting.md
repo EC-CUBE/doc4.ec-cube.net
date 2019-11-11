@@ -71,4 +71,4 @@ phpMyAdminやphpPgAdminなどを利用し、
 
 
 
-上記の内容でも原因が判明しない場合、[開発コミュニティ](http://xoops.ec-cube.net){:target="_blank"}もご確認ください。
+上記の内容でも原因が判明しない場合、[開発コミュニティ](https://xoops.ec-cube.net){:target="_blank"}もご確認ください。

@@ -48,7 +48,7 @@ summary: EC-CUBE API β版 プラグインの利用方法について簡単な�
 
 EC-CUBEオーナーズストアから入手してください。  
   
-<a href="http://www.ec-cube.net/products/detail.php?product_id=1116" target="_blank">プラグインダウンロードページ</a>  
+<a href="https://www.ec-cube.net/products/detail.php?product_id=1116" target="_blank">プラグインダウンロードページ</a>  
   
 ※β版は試験的なリリースのため**本番環境にはインストールしない**でください。
 

@@ -4,9 +4,9 @@ topnav:
 - title: Topnav
   items:
     - title: 公式サイト
-      external_url: http://www.ec-cube.net
+      external_url: https://www.ec-cube.net
     - title: 開発コミュニティ
-      external_url: http://xoops.ec-cube.net
+      external_url: https://xoops.ec-cube.net
 #Topnav dropdowns
 topnav_dropdowns:
 - title: Topnav dropdowns
