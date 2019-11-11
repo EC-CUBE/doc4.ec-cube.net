@@ -14,7 +14,8 @@ company_name: EC-CUBE co,.ltd.
 github_editme_path: EC-CUBE/doc4.ec-cube.net/blob/master/
 # if you're using Github, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
 
-disqus_shortname: ec-cube
+disqus: true
+disqus_shortname: doc4-ec-cube-net
 # if you're using disqus for comments, add the shortname here. if not, leave this value blank.
 
 host: 127.0.0.1
