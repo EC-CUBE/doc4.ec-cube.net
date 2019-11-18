@@ -20,8 +20,8 @@ toc_sticky: true
 |Database|SQLite(開発用途向け) |3.x |-|
 
 ※ 4.0.0, 4.0.1 は、PHP7.3で動作いたしません。PHP7.3をご利用の場合、4.0.2以降のバージョンをご使用ください。
-[4.0.0, 4.0.1をお使いの方はPHP7.3をご利用の前に4.0.2以降へアップデートください。](http://doc4.ec-cube.net/quickstart_update)
-{: .notice--danger}
+
+[4.0.0, 4.0.1をお使いの方はPHP7.3をご利用の前に4.0.2以降へアップデートください。](https://doc4.ec-cube.net/quickstart_update)
 
 # PHPライブラリ
 

@@ -96,7 +96,7 @@ bin/console eccube:fixtures:load
 ```
 
 - *`bin/console eccube:install` コマンドでは、これらのコマンドを内部的に実行しています。*
-- Symfony と Windows 環境の相性があまり良くないため、動作が大変遅くなる可能性があります。 [Dockerを使用したインストール](http://doc4.ec-cube.net/quickstart_install#docker%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB) をおすすめします。
+- Symfony と Windows 環境の相性があまり良くないため、動作が大変遅くなる可能性があります。 [Dockerを使用したインストール](https://doc4.ec-cube.net/quickstart_install#docker%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB) をおすすめします。
 
 ### Webインストーラでインストールする
 
@@ -199,34 +199,6 @@ SetEnv ECCUBE_COOKIE_PATH /
 ```
 
 [参考: Apache HTTP サーバ バージョン 2.4 - SetEnv ディレクティブ](https://httpd.apache.org/docs/2.4/ja/mod/mod_env.html#setenv)
-
-### IIS での設定例
-
-ApplicationHost.config の environmentVariables セクションに設定します。このファイルは `C:\Windows\System32\Inetsrv\Config` にあります。
-PHP実行ファイルのパスは適宜変更してください。
-
-```xml
-<fastCgi>
-    <application fullPath="C:\Program Files\PHP\v7.2\php-cgi.exe" activityTimeout="600" requestTimeout="600" instanceMaxRequests="10000">
-        <environmentVariables>
-            <environmentVariable name="PHP_FCGI_MAX_REQUESTS" value="10000" />
-            <environmentVariable name="PHPRC" value="C:\Program Files\PHP\v7.2" />
-            <environmentVariable name="APP_ENV" value="prod" />
-            <environmentVariable name="APP_DEBUG" value="0" />
-            <environmentVariable name="DATABASE_URL" value="pgsql://dbuser:password@127.0.0.1/cube4_dev" />
-            <environmentVariable name="DATABASE_SERVER_VERSION" value="10.5" />
-            <environmentVariable name="ECCUBE_AUTH_MAGIC" value="8PPlCHZVdH5vbMkIUKeuTeDHycQQMuaB" />
-            <environmentVariable name="ECCUBE_ADMIN_ALLOW_HOSTS" value="[]" />
-            <environmentVariable name="ECCUBE_FORCE_SSL" value="false" />
-            <environmentVariable name="ECCUBE_ADMIN_ROUTE" value="admin" />
-            <environmentVariable name="ECCUBE_COOKIE_PATH" value="/" />
-        </environmentVariables>
-    </application>
-<!-- /追加 -->
-</fastCgi>
-```
-
-[参考: IIS コンフィギュレーション リファレンス](https://msdn.microsoft.com/ja-jp/library/ee431592.aspx#EDA)
 
 ### サーバ設定ファイルに環境変数を設定した場合の注意事項
 
