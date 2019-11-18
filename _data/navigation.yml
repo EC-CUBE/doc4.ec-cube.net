@@ -1,17 +1,9 @@
 # main links
 main:
-  - title: "はじめる"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  - title: "学ぶ"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "EC-CUBEについて"
-    url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
+    url: https://www.ec-cube.net/
+  - title: "開発コミュニティ"
+    url: https://xoops.ec-cube.net/
 
 # documentation links
 docs:
@@ -20,8 +12,6 @@ docs:
     children:
       - title: システム要件
         url: /quickstart_requirement
-        output: web, pdf
-        type: homepage
         output: web, pdf
       - title: インストール方法
         url: /quickstart_install
