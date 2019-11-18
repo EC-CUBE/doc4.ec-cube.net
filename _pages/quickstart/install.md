@@ -2,16 +2,8 @@
 title: インストール方法
 keywords: install
 tags: [quickstart, install]
-sidebar: home_sidebar
 permalink: quickstart_install
 forder: quickstart
-sidebar:
-  nav: "docs"
-toc: true
-toc_sticky: true
-layout: single
-author_profile: false
-comments: true
 ---
 
 ## インストール方法

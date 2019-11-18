@@ -4,10 +4,7 @@ keywords: design layout
 tags: [design]
 permalink: design_layout
 summary: レイアウトを利用したデザイン変更について説明します。
-sidebar:
-  nav: "docs"
-toc: true
-toc_sticky: true
+
 ---
 
 ## レイアウト管理について

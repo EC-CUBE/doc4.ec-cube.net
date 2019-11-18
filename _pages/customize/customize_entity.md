@@ -4,10 +4,6 @@ keywords: core カスタマイズ Entity
 tags: [core, entity]
 permalink: customize_entity
 folder: customize
-sidebar:
-  nav: "docs"
-toc: true
-toc_sticky: true
 ---
 
 ## Entity拡張 [#2267](https://github.com/EC-CUBE/ec-cube/pull/2267){:target="_blank"}

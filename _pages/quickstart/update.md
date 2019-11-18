@@ -3,13 +3,8 @@ layout: single
 title: EC-CUBE本体のバージョンアップ
 keywords: howto update 
 tags: [quickstart, getting_started]
-sidebar: home_sidebar
 permalink: quickstart_update
 summary : EC-CUBE本体のバージョンアップ手順について記載します。  
-sidebar:
-  nav: "docs"
-toc: true
-toc_sticky: true
 ---
 
 本番環境でバージョンアップを行う前に、テスト環境で事前検証を必ず行ってください。  

@@ -4,10 +4,7 @@ keywords: core カスタマイズ Symfony
 tags: [core, symfony]
 permalink: customize_symfony
 folder: customize
-sidebar:
-  nav: "docs"
-toc: true
-toc_sticky: true
+
 ---
 
 ## 概要

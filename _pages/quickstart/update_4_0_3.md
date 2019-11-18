@@ -2,7 +2,6 @@
 title: 4.0.3での注意点
 keywords: howto update 
 tags: [quickstart, getting_started]
-sidebar: home_sidebar
 permalink: quickstart_update_4_0_3
 summary : EC-CUBE本体の4.0.3へのバージョンアップに伴う受注情報の表示の変更について記載します。
 ---

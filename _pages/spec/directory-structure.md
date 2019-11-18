@@ -3,10 +3,7 @@ title: ディレクトリ・ファイル構成
 keywords: spec directory structure
 tags: [spec, getting_started]
 permalink: spec_directory-structure
-sidebar:
-  nav: "docs"
-toc: true
-toc_sticky: true
+
 layout: single
 ---
 

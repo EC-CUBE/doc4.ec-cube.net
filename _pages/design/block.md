@@ -4,10 +4,6 @@ keywords: design block customize
 tags: [design]
 permalink: design_block
 summary: ブロックを利用したデザイン変更について説明します。
-sidebar:
-  nav: "docs"
-toc: true
-toc_sticky: true
 ---
 
 ## ブロックの使い方

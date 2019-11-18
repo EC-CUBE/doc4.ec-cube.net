@@ -4,10 +4,7 @@ keywords: core カスタマイズ テンプレート
 tags: [core, template]
 permalink: customize_template
 folder: customize
-sidebar:
-  nav: "docs"
-toc: true
-toc_sticky: true
+
 ---
 
 # Templateのカスタマイズ

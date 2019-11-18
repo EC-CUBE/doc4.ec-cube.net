@@ -4,10 +4,7 @@ keywords: timezone
 tags: [i18n, currency]
 permalink: i18n_timezone
 forder: i18n
-sidebar:
-  nav: "docs"
-toc: true
-toc_sticky: true
+
 ---
 
 # 概要

@@ -3,10 +3,7 @@ title: Sassの利用
 keywords: design 
 tags: [design]
 permalink: design_css
-sidebar:
-  nav: "docs"
-toc: true
-toc_sticky: true
+
 ---
 
 ## Sassの利用

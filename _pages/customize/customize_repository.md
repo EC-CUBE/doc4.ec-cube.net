@@ -4,10 +4,6 @@ keywords: core カスタマイズ リポジトリ
 tags: [core, repository]
 permalink: customize_repository
 folder: customize
-sidebar:
-  nav: "docs"
-toc: true
-toc_sticky: true
 ---
 
 ## QueryBuilderの拡張 [#2285](https://github.com/EC-CUBE/ec-cube/pull/2285){:target="_blank"}, [#2298](https://github.com/EC-CUBE/ec-cube/pull/2298){:target="_blank"}

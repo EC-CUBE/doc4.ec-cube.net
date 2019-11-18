@@ -4,10 +4,7 @@ keywords: tax
 tags: [spec, getting_started]
 permalink: spec_tax
 summary: EC-CUBEでは、税率の設定について、基本税率と商品ごとの商品別税率を設定することができます。
-sidebar:
-  nav: "docs"
-toc: true
-toc_sticky: true
+
 ---
 
 **EC-CUBE4.0.3で商品別税率設定が適用されない不具合が確認されております。

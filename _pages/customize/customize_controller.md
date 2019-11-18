@@ -5,10 +5,6 @@ keywords: core カスタマイズ コントローラ
 tags: [core, controller]
 permalink: customize_controller
 folder: customize
-sidebar:
-  nav: "docs"
-toc: true
-toc_sticky: true
 ---
 
 

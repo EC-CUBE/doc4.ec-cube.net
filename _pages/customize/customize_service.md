@@ -4,10 +4,6 @@ keywords: core カスタマイズ Service
 tags: [core, service]
 permalink: customize_service
 folder: customize
-sidebar:
-  nav: "docs"
-toc: true
-toc_sticky: true
 ---
 
 ## カートのカスタマイズ [#2613](https://github.com/EC-CUBE/ec-cube/issues/2613){:target="_blank"}

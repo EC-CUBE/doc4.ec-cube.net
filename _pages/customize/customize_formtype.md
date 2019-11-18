@@ -4,10 +4,6 @@ keywords: core カスタマイズ FormType
 tags: [core, formtype]
 permalink: customize_formtype
 folder: customize
-sidebar:
-  nav: "docs"
-toc: true
-toc_sticky: true
 ---
 
 ## FormExtensionを使った拡張

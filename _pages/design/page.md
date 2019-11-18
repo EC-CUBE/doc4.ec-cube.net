@@ -4,10 +4,7 @@ keywords: design page
 tags: [design]
 permalink: design_page
 summary: ページ管理を利用したデザイン変更について説明します。
-sidebar:
-  nav: "docs"
-toc: true
-toc_sticky: true
+
 ---
 
 ## ページ管理について

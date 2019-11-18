@@ -4,10 +4,7 @@ keywords: multilingualization
 tags: [i18n, multilingualization]
 permalink: i18n_multilingualization
 forder: i18n
-sidebar:
-  nav: "docs"
-toc: true
-toc_sticky: true
+
 ---
 
 # 概要

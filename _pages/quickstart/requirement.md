@@ -5,10 +5,7 @@ title: システム要件
 keywords:
 tags: [quickstart, getting_started]
 permalink: quickstart_requirement
-sidebar:
-  nav: "docs"
-toc: true
-toc_sticky: true
+
 ---
 
 | 分類 | ソフトウェア|Version|動作確認済み|
