@@ -127,3 +127,14 @@ entries:
     - title: タイムゾーン
       url: /i18n_timezone
       output: web, pdf
+
+  - title: 本体開発に参加する
+    output: web, pdf
+    folderitems:
+
+    - title: 開発作業全体概要
+      url: /contribution-guide-overview
+      output: web, pdf
+    - title: EC-CUBE開発環境構築手順
+      url: /contribution-guide-develop
+      output: web, pdf

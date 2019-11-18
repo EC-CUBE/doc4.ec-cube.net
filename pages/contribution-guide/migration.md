@@ -1,11 +1,11 @@
 ---
 title: マイグレーションガイド
 keywords: migration
-tags: [collaboration, migration]
+tags: [contribution, migration]
 sidebar: home_sidebar
-permalink: collaboration_migration
+permalink: contribution-migration
 summary: EC-CUBE本体でのmigration用のファイルの生成について説明します。
-folder: collaboration
+folder: contribution-guide
 ---
 
 ## 概要

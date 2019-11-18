@@ -1,11 +1,11 @@
 ---
-title: Gitを用いた開発手順
+title: EC-CUBE開発環境構築手順
 keywords: Githubflow
-tags: [collaboration, guideline]
+tags: [contribution-guide, guideline]
 sidebar: home_sidebar
-permalink: collaboration_githubflow
-summary: EC-CUBE本体開発の流れはGitHub Flowに基づいています。
-folder: collaboration
+permalink: contribution-guide-develop
+summary: GitHub Flowに基づく開発環境構築とプルリクエストの手順について。
+folder: contribution-guide
 ---
 
 
@@ -19,103 +19,60 @@ folder: collaboration
     - 以下はGitHub Flowの概念図の参考です。
        - <a href="http://qiita.com/tbpgr/items/4ff76ef35c4ff0ec8314" target="_blank">GitHub Flow 図解</a>
 
-## Gitワークフロー概要
 
-![ワークフロー概念図](/images/collaboration/git-work-flow.png)
+## プルリクエストについて
 
-## Gitワークフロー作業手順
+### ソースコードをローカルにクローンする
 
-- 以下にワークフロー概要図の番号に添って、操作方法を説明します。
+<a href="https://github.com/EC-CUBE/ec-cube" target="_blank">ec-cube</a>のリポジトリを自身の Github アカウントに <a href="https://help.github.com/ja/github/getting-started-with-github/fork-a-repo" target="_blank">Fork</a> し、ローカルに <a href="https://help.github.com/ja/github/creating-cloning-and-archiving-repositories/cloning-a-repository" target="_blank">clone</a>　します。
 
-### レポジトリのコピー ( 本家→個人 )
+### パッケージのインストール
 
-① まず本家のレポジトリをフォークします
-
- - <a href="https://github.com/EC-CUBE/ec-cube" target="_blank">本家のレポジトリ</a>で、右上のForkボタンをクリックします。
-
-
-### ローカルレポジトリの構築
-
-② フォークしたレポジトリをクローンします
-
-- 自分のレポジトリからcloneします。
+依存関係のあるパッケージをインストールします。
 
 ```
-$ git clone https://github.com/[GitHubUser(ご自身のアカウント)]/ec-cube.git
+$ composer install
 ```
 
-- ブランチの状態を確認してみます。
+### リモートの追加
 
+ec-cubeのリポジトリをリモートに追加します。
 
-```
-$ git branch -a
-
-* master
-remotes/origin/HEAD -> origin/master
-remotes/origin/master
-```
-- これでまずはソースコードをローカルに持ってきました。
-
-
-③ 次に本家レポジトリの追従を行います。
-
-③-① 本家が更新されても追従できるように、本家レポジトリをupstreamとして登録
+リモートリポジトリ名を `upstream` としていますが、任意の名前で構いません。
 
 ```
 $ git remote add upstream https://github.com/EC-CUBE/ec-cube.git
-$ git remote -v
-origin https://github.com/[GitHubUser(ご自身のアカウント)]/ec-cube.git (fetch)
-origin https://github.com/[GitHubUser(ご自身のアカウント)]/ec-cube.git (push)
-upstream https://github.com/EC-CUBE/ec-cube.git (fetch)
-upstream https://github.com/EC-CUBE/ec-cube.git (push)
 ```
 
-- originには自分のが、upstreamには本家が登録されてるのがわかります。
+### ローカルのmasterブランチの更新
 
-- この状態ではまだupstreamの情報を取得していないので一度fetchしておきます。
+eccubeは4.0ブランチがmasterブランチとなっています。
 
 ```
-$ git fetch upstream
+$ git pull upstream 4.0
 ```
 
 ### 開発用ブランチの作成
 
-③-② ローカルに開発用ブランチを作成
-
 ```
-$ git checkout -b user_branch( 任意 ) upstream/master
+$ git checkout -b [任意のブランチ名] upstream/master
 ```
 
-GitHubの自分のレポジトリに反映
+### 自身のGithubリポジトリの更新
+
+作成したブランチで変更内容を commit 後、自身のGithubリポジトリに push を行います。
 
 ```
-$ git push origin user_branch( 任意 )
-```
-
-- 開発する
-	...
-
-- 完了したらコミット
-
-```
-$ git add /path/to/file
-$ git add /path/to/file
-$ git commit -m "コメント"
-```
-
-④ 自分のレポジトリにプッシュ
-
-```
-$ git push origin admin_basis_point
+$ git push origin [任意のブランチ名]
 ```
 
 ### プルリクエストを送る
 
-⑤プルリクを送る
+自身のGithubリポジトリのページから、<a href="https://github.com/EC-CUBE/ec-cube" target="_blank">ec-cube</a> へプルリクエストを作成します。
 
 - GitHubの自分のレポトリから、PullRequestする
 
-### プルリクエストのマージ条件
+#### プルリクエストのマージ条件
 
 - 以下がクリアされる事で本体の「Master」にマージされます。
 
@@ -126,7 +83,7 @@ $ git push origin admin_basis_point
 		- AppVeyor		 : ユニットテスト( Win環境 )
 		- Scritinizer	: 静的コード解析
 
-### プルリクエストを送る際に行ってもらいたいこと
+#### プルリクエストを送る際に行ってもらいたいこと
 
 不要なコミットログはまとめてください。
 対象は`git rebase`について把握している方ですので、必須ではありません。
@@ -167,6 +124,3 @@ $ git log --pretty=format:"%h - %an : %s"
 
 - マージ済みのコミットはまとめないでください。
 
-### 参照元
-
-- <a href="http://qiita.com/chihiro-adachi/items/f31c9d90b1bcc3553c20" target="_blank">EC-CUBE 3のメモ - GitHub/Git使い方 -</a>
