@@ -21,9 +21,9 @@ title_separator          : "-"
 subtitle                 : "EC-CUBE 4.0 開発者向けドキュメントサイト"# site tagline that appears below site title in masthead
 name                     : "EC-CUBE"
 description              : "EC-CUBE 4.0 開発者向けドキュメントサイト"
-url                      : "https://ryo-endo.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : "/doc4-new-concept" # the subpath of your site, e.g. "/blog"
-repository               : "ryo-endo/doc4-new-concept" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+url                      : "https://doc4.ec-cube.net" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+baseurl                  : "" # the subpath of your site, e.g. "/blog"
+repository               : "EC-CUBE/doc4.ec-cube.net" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
@@ -32,7 +32,7 @@ words_per_minute         : 200
 comments:
   provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
   disqus:
-    shortname            : "doc4-new-concept" # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname            : "doc4-ec-cube-net" # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
@@ -302,6 +302,10 @@ defaults:
       layout: single
       share: true
       comments: true
+      sidebar:
+        nav: "docs"
+      toc: true
+      toc_sticky: true
 
 collections:
   pages:
