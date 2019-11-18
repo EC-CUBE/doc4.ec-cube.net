@@ -12,4 +12,4 @@ toc_sticky: true
 
 # Templateのカスタマイズ
 + Twigの変更
-+ Twigユーザ定義関数 [#2263](https://github.com/EC-CUBE/ec-cube/pull/2263)
++ Twigユーザ定義関数 [#2263](https://github.com/EC-CUBE/ec-cube/pull/2263){:target="_blank"}

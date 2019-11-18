@@ -30,7 +30,7 @@ EC-CUBE本体のコード(app/config/eccube, app/DoctrineMigrations, bin, src, h
 ## 作業の流れ
 1. サイトのバックアップ
 2. メンテナンスモードを有効にする
-3. 共通ファイル差し替え
+3. EC-CUBEのソースファイルをバージョンアップしたものに置き換え
 4. 個別ファイル差し替え
 5. composer.json/composer.lockの更新
 6. スキーマ更新/マイグレーション
@@ -63,9 +63,14 @@ EC-CUBEの管理画面へアクセスし、「コンテンツ管理」の「メ�
 
 ※ この機能は、EC-CUBEのバージョンが「4.0.1」以上でないと使用できません。
 
-### 3. 共通ファイル差し替え
+### 3. EC-CUBEのソースファイルをバージョンアップしたものに置き換え
 
-`app/config/eccube` `app/DoctrineMigrations` `bin` `src` `html` `vendor`ディレクトリを最新のファイルですべて上書きしてください。  
+EC-CUBEのソースファイルについて、ディレクトリごとにそれぞれバージョンアップしたソースファイルに置き換えていきます。置き換える対象のディレクトリとなるのは、今回のバージョンアップで変更となったものとなります。
+（`app/config/eccube` `app/DoctrineMigrations` `bin` `src` `html` `vendor` など）
+
+置き換える対象となるディレクトリを削除し、バージョンアップするEC-CUBEのバージョンのディレクトリにそれぞれ置き換えてください。
+
+（対象ディレクトリの上書きではなくディレクトリの中のすべてのファイルを置き換える必要があります。古いファイルが残ってしまうと、予期せぬ動作となる恐れがありますので、必ず置き換える対象となるディレクトリごとにすべてのファイルを置き換えるようにしてください。）
 
 ```
 [root]
@@ -95,7 +100,7 @@ bin/console cache:clear --no-warmup
 |----------------------|---------------------------------------------------------------------------------------------------|
 | 4.0.0 → 4.0.1        | composer.json<br>composer.lock<br>.htaccess<br>index.php<br>maintenance.php|
 | 4.0.1 → 4.0.2        | composer.json<br>composer.lock|
-
+| 4.0.2 → 4.0.3        | composer.json<br>composer.lock<br>.htaccess<br>index.php|
 
 - ※ 差し替え対象に、composer.json/composer.lockがある場合は 上書き後、`composer.json/composer.lockの更新の手順`を実施してください。
 - ※ `4.0.0 → 4.0.2` のように複数バージョンをまたぐバージョンアップを行う場合は、`4.0.0 → 4.0.1`→`4.0.1 → 4.0.2` のように段階的なバージョンアップを行ってください。
@@ -130,7 +135,7 @@ composer require psr/http-message
 
 **※ 4.0.0 → 4.0.1, 4.0.1 → 4.0.2 へのアップデートでは、スキーマ更新は必要ありません。**
 
-参考：[プラグインが無効の状態だと Doctrine SchemaTool でエンティティ拡張が認識されない](https://github.com/EC-CUBE/ec-cube/issues/4056)
+参考：[プラグインが無効の状態だと Doctrine SchemaTool でエンティティ拡張が認識されない](https://github.com/EC-CUBE/ec-cube/issues/4056){:target="_blank"}
 
 
 スキーマ更新
@@ -145,7 +150,31 @@ bin/console doctrine:schema:update --force --dump-sql
 bin/console doctrine:migrations:migrate
 ```
 
-### 7. フロントテンプレートファイルの更新
+### 7. プロキシの再生成
+
+4.0.3へのバージョンアップのみ、プロキシの再生成が必要です。そうでなければスキップしてください。
+
+プロキシファイルを削除
+```
+rm -f app/proxy/entity/*.php
+```
+
+auloloadファイルの再生成
+```
+composer dump-autoload
+```
+
+プロキシファイルを再生成
+```
+bin/console eccube:generate:proxies
+```
+
+キャッシュファイルの再生成
+```
+bin/console cache:warmup --env=prod
+```
+
+### 8. フロントテンプレートファイルの更新
 
 対象となるバージョンごとに、フロントテンプレートファイル(twig)の更新が必要です。  
 
@@ -177,8 +206,13 @@ bin/console doctrine:migrations:migrate
 |注文受付メール                          |<a href="https://github.com/EC-CUBE/ec-cube/pull/4060/files" target = "_blank">Mail/order.twig</a>|
 |注文受付メール(HTML)                    |<a href="https://github.com/EC-CUBE/ec-cube/pull/4060/files" target = "_blank">Mail/order.html.twig</a>|
 
+#### 4.0.2 → 4.0.3
 
-### 8.メンテナンスモードを無効にする（バージョン4.0.1以降）
+変更対象の差分は、以下リンクからご確認いただくか[各バージョンでの変更差分](#各バージョンでの変更差分)からご確認いただけます。
+
+<a href="https://github.com/EC-CUBE/ec-cube/pulls?q=is%3Apr+label%3Aaffected%3Atemplate+is%3Aclosed+milestone%3A4.0.3" target = "_blank">フロントテンプレートファイルの差分</a>
+
+### 9.メンテナンスモードを無効にする（バージョン4.0.1以降）
 
 EC-CUBEの管理画面へアクセスし、「コンテンツ管理」の「メンテナンス管理」から、メンテナンスモードを無効にしてください。
 
@@ -186,11 +220,11 @@ EC-CUBEの管理画面へアクセスし、「コンテンツ管理」の「メ�
 
 ※ この機能は、EC-CUBEのバージョンが「4.0.1」以上でないと使用できません。
 
-### 9. その他
+### 10. その他
 
 #### 4.0.0 -> 4.0.1
 
-4.0.1で実装された[メンテナンス機能](https://github.com/EC-CUBE/ec-cube/pull/3998)を利用する場合, .envに以下を記載するか、環境変数として以下の値を定義する必要があります。
+4.0.1で実装された[メンテナンス機能](https://github.com/EC-CUBE/ec-cube/pull/3998){:target="_blank"}を利用する場合, .envに以下を記載するか、環境変数として以下の値を定義する必要があります。
 
 ```
 ECCUBE_LOCALE=ja
@@ -202,9 +236,16 @@ ECCUBE_TEMPLATE_CODE=default
 
 #### 4.0.1 -> 4.0.2
 
-- [faviconパスの変更](https://github.com/EC-CUBE/ec-cube/pull/4075)を利用する場合,  [差分](https://github.com/EC-CUBE/ec-cube/commit/50fcbdea4c66e5eabc03ba1e38ce7952a53ca97d#diff-7cefac9fd3759d999afb711a36b6dad9)を適用後、ファイル管理からfaviconファイルをアップロードすることでfaviconの変更を行うことができます。
-- [CSS管理](https://github.com/EC-CUBE/ec-cube/pull/4083) を利用する場合, [差分](https://github.com/EC-CUBE/ec-cube/commit/7994bd00de19399d7c6a8e22dd280791478b9435#diff-7cefac9fd3759d999afb711a36b6dad9)の適用が必要です。
-- [Javascript管理](https://github.com/EC-CUBE/ec-cube/pull/4084)を利用する場合, [差分](https://github.com/EC-CUBE/ec-cube/commit/008236d28633d803d18e15abecf5a04224d0a4f4#diff-7cefac9fd3759d999afb711a36b6dad9R50)の適用が必要です。
+- [faviconパスの変更](https://github.com/EC-CUBE/ec-cube/pull/4075){:target="_blank"}を利用する場合,  [差分](https://github.com/EC-CUBE/ec-cube/commit/50fcbdea4c66e5eabc03ba1e38ce7952a53ca97d#diff-7cefac9fd3759d999afb711a36b6dad9){:target="_blank"}を適用後、ファイル管理からfaviconファイルをアップロードすることでfaviconの変更を行うことができます。
+- [CSS管理](https://github.com/EC-CUBE/ec-cube/pull/4083){:target="_blank"} を利用する場合, [差分](https://github.com/EC-CUBE/ec-cube/commit/7994bd00de19399d7c6a8e22dd280791478b9435#diff-7cefac9fd3759d999afb711a36b6dad9){:target="_blank"}の適用が必要です。
+- [Javascript管理](https://github.com/EC-CUBE/ec-cube/pull/4084){:target="_blank"}を利用する場合, [差分](https://github.com/EC-CUBE/ec-cube/commit/008236d28633d803d18e15abecf5a04224d0a4f4#diff-7cefac9fd3759d999afb711a36b6dad9R50){:target="_blank"}の適用が必要です。
+
+#### 4.0.2 -> 4.0.3
+
+- [軽減税率制度に関する対応](https://github.com/EC-CUBE/ec-cube/issues/4183){:target="_blank"}を利用する場合, [差分](https://github.com/EC-CUBE/ec-cube/pulls?q=is%3Apr+is%3Aclosed+label%3A%E8%BB%BD%E6%B8%9B%E7%A8%8E%E7%8E%87%E5%AF%BE%E5%BF%9C){:target="_blank"}の適用が必要です。
+  ※合わせて[注意点](quickstart_update_4_0_3)もご確認下さい。
+- [PDFのロゴ画像変更](https://github.com/EC-CUBE/ec-cube/pull/4216){:target="_blank"} を利用する場合, [差分](https://github.com/EC-CUBE/ec-cube/commit/e8f2952925dda75db5b02ab52bf357f59343ecef){:target="_blank"}の適用が必要です。
+- [複数ファイルのアップロード](https://github.com/EC-CUBE/ec-cube/pull/4235){:target="_blank"}を利用する場合, [差分](https://github.com/EC-CUBE/ec-cube/commit/fe5cae800fa4e7f09cbb905e1ef3632b34e41489){:target="_blank"}の適用が必要です。
 
 EC-CUBEのバージョンアップ手順は以上です。
 
@@ -214,6 +255,7 @@ EC-CUBEのバージョンアップ手順は以上です。
 
 | バージョン      | 差分ページ                                                                                                             |
 |-----------------|------------------------------------------------------------------------------------------------------------------------|
-| 4.0.0 → 4.0.1   | [https://github.com/EC-CUBE/ec-cube/compare/4.0.0...4.0.1](https://github.com/EC-CUBE/ec-cube/compare/4.0.0...4.0.1?w=1#files_bucket)   |
-| 4.0.1 → 4.0.2   | [https://github.com/EC-CUBE/ec-cube/compare/4.0.1...4.0.2](https://github.com/EC-CUBE/ec-cube/compare/4.0.1...4.0.2?w=1#files_bucket)   |
+| 4.0.0 → 4.0.1   | [https://github.com/EC-CUBE/ec-cube/compare/4.0.0...4.0.1](https://github.com/EC-CUBE/ec-cube/compare/4.0.0...4.0.1?w=1#files_bucket){:target="_blank"}   |
+| 4.0.1 → 4.0.2   | [https://github.com/EC-CUBE/ec-cube/compare/4.0.1...4.0.2](https://github.com/EC-CUBE/ec-cube/compare/4.0.1...4.0.2?w=1#files_bucket){:target="_blank"}   |
+| 4.0.2 → 4.0.3   | [https://github.com/EC-CUBE/ec-cube/compare/4.0.2...4.0.3](https://github.com/EC-CUBE/ec-cube/compare/4.0.2...4.0.3?w=1#files_bucket){:target="_blank"}   |
 

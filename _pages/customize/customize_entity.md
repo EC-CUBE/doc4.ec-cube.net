@@ -10,7 +10,7 @@ toc: true
 toc_sticky: true
 ---
 
-## Entity拡張 [#2267](https://github.com/EC-CUBE/ec-cube/pull/2267)
+## Entity拡張 [#2267](https://github.com/EC-CUBE/ec-cube/pull/2267){:target="_blank"}
 
 ### 基本の拡張方法
 

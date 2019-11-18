@@ -13,16 +13,35 @@ entries:
       url: /quickstart_requirement
       output: web, pdf
       type: homepage
-      output: web, pdf
     - title: インストール方法
       url: /quickstart_install
       output: web, pdf
-    - title: バージョンアップ方法
-      url: /quickstart_update
-      output: web, pdf
+      subfolders:
+        - title: バージョンアップ
+          output: web, pdf
+          subfolderitems:
+            - title: バージョンアップ方法
+              url: /quickstart_update
+              output: web, pdf
+            - title: 4.0.3での注意点
+              url: /quickstart_update_4_0_3
+              output: web, pdf
     - title: コマンドラインインターフェイス
       url: /quickstart_cli
       output: web, pdf
+
+  - title: 機能仕様
+    output: web, pdf
+    folderitems:
+      - title: 機能一覧
+        external_url: https://www.ec-cube.net/product/functions.php
+        output: web, pdf
+      - title: 受注関連
+        url: /spec_order
+        output: web, pdf
+      - title: 税率設定
+        url: /spec_tax
+        output: web, pdf
 
   - title: 本体カスタマイズ
     output: web, pdf
@@ -50,6 +69,37 @@ entries:
         output: web, pdf
       - title: Symfonyの機能を使った拡張
         url: /customize_symfony
+        output: web, pdf
+
+  - title: デザインカスタマイズ
+    output: web, pdf
+    folderitems:
+      - title: フロント画面デザイン参考資料（スタイルガイド）
+        external_url: http://eccube4-styleguide.herokuapp.com/
+        output: web, pdf
+      - title: 管理画面デザイン参考資料（デザインガイド）
+        external_url: /pdf/ec-cube4_design-guide180930.pdf
+        output: web, pdf
+      - title: デザインテンプレートの基礎
+        url: /design_template
+        output: web, pdf
+      - title: フォームレイアウトの変更
+        url: /design_form
+        output: web, pdf
+      - title: ブロックの利用
+        url: /design_block
+        output: web, pdf
+      - title: レイアウト管理の利用
+        url: /design_layout
+        output: web, pdf
+      - title: Sassの利用
+        url: /design_css
+        output: web, pdf
+      - title: フロント画面テンプレート for Adobe XD
+        external_url: http://downloads.ec-cube.net/manual/documents/eccube4_xd_front_template.zip?argument=2qpV46CP&dmai=a5bf51b05bacc5
+        output: web, pdf
+      - title: 管理画面テンプレート for Adobe XD
+        external_url: http://downloads.ec-cube.net/manual/documents/eccube4_xd_admin_template.zip?argument=2qpV46CP&dmai=a5bf51b05bacc5
         output: web, pdf
 
   - title: プラグインカスタマイズ

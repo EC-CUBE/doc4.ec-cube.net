@@ -10,7 +10,7 @@ toc: true
 toc_sticky: true
 ---
 
-## QueryBuilderの拡張 [#2285](https://github.com/EC-CUBE/ec-cube/pull/2285), [#2298](https://github.com/EC-CUBE/ec-cube/pull/2298)
+## QueryBuilderの拡張 [#2285](https://github.com/EC-CUBE/ec-cube/pull/2285){:target="_blank"}, [#2298](https://github.com/EC-CUBE/ec-cube/pull/2298){:target="_blank"}
 
 リポジトリクラスで QueryBuilder を生成しているメソッドに対して、ソート順や検索条件をカスタマイズできます。
 以下のメソッドで使用できます。
