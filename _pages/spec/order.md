@@ -9,7 +9,7 @@ summary: 受注関連の機能仕様について解説します。
 
 ## 受注対応状況の流れ
 
-![受注ステートマシーン図](/images/spec/order-statemachine.png)
+![受注ステートマシーン図](./images/spec/order-statemachine.png)
 
 [参考: 受注ステートマシンの実装 #3325](https://github.com/EC-CUBE/ec-cube/pull/3325)
 
@@ -55,7 +55,7 @@ summary: 受注関連の機能仕様について解説します。
 
 ### 受注関連テーブルのER図
 
-![受注関連テーブルのER図](/images/spec/order-erdiagram.png)
+![受注関連テーブルのER図](./images/spec/order-erdiagram.png)
 
 ### 3系からの主な変更点
 
