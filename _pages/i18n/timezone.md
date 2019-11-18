@@ -2,9 +2,12 @@
 title: タイムゾーン
 keywords: timezone
 tags: [i18n, currency]
-sidebar: home_sidebar
 permalink: i18n_timezone
 forder: i18n
+sidebar:
+  nav: "docs"
+toc: true
+toc_sticky: true
 ---
 
 # 概要

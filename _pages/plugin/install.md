@@ -2,8 +2,11 @@
 title: プラグインのインストール
 keywords: plugin install プラグイン
 tags: [quickstart, getting_started]
-sidebar: home_sidebar
 permalink: plugin_install
+sidebar:
+  nav: "docs"
+toc: true
+toc_sticky: true
 ---
 
 ### プラグインの操作についての概要

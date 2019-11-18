@@ -2,9 +2,12 @@
 title: 受注関連
 keywords: spec-order
 tags: [spec, getting_started]
-sidebar: home_sidebar
 permalink: spec_order
 summary: 受注関連の機能仕様について解説します。
+sidebar:
+  nav: "docs"
+toc: true
+toc_sticky: true
 ---
 
 ## 受注対応状況の流れ

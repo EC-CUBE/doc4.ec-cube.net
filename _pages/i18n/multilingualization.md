@@ -2,9 +2,12 @@
 title: 多言語化
 keywords: multilingualization
 tags: [i18n, multilingualization]
-sidebar: home_sidebar
 permalink: i18n_multilingualization
 forder: i18n
+sidebar:
+  nav: "docs"
+toc: true
+toc_sticky: true
 ---
 
 # 概要

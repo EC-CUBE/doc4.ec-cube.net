@@ -2,9 +2,12 @@
 title: 新規ページの作成
 keywords: design page
 tags: [design]
-sidebar: home_sidebar
 permalink: design_page
 summary: ページ管理を利用したデザイン変更について説明します。
+sidebar:
+  nav: "docs"
+toc: true
+toc_sticky: true
 ---
 
 ## ページ管理について

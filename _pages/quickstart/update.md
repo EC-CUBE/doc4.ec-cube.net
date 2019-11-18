@@ -1,23 +1,31 @@
 ---
+layout: single
 title: EC-CUBE本体のバージョンアップ
 keywords: howto update 
 tags: [quickstart, getting_started]
 sidebar: home_sidebar
 permalink: quickstart_update
 summary : EC-CUBE本体のバージョンアップ手順について記載します。  
+sidebar:
+  nav: "docs"
+toc: true
+toc_sticky: true
 ---
 
-
-## ご注意
-- 本番環境でバージョンアップを行う前に、テスト環境で事前検証を必ず行ってください。
-- この手順では、ec-cube.netからダウンロードしたEC-CUBEのパッケージを利用していることを想定しています。
-- EC-CUBE本体のコード(app/config/eccube, app/DoctrineMigrations, bin, src, htmlディレクトリ)をカスタマイズしている場合、ファイルが上書きされてしまうため、この手順ではバージョンアップできません。[各バージョンでの変更差分](#各バージョンでの変更差分)を確認して必要な差分を取り込んでください。
+本番環境でバージョンアップを行う前に、テスト環境で事前検証を必ず行ってください。  
+{: .notice--danger}
+この手順では、ec-cube.netからダウンロードしたEC-CUBEのパッケージを利用していることを想定しています。  
+{: .notice--danger}
+EC-CUBE本体のコード(app/config/eccube, app/DoctrineMigrations, bin, src, htmlディレクトリ)をカスタマイズしている場合、ファイルが上書きされてしまうため、この手順ではバージョンアップできません。[各バージョンでの変更差分](#各バージョンでの変更差分)を確認して必要な差分を取り込んでください。  
+{: .notice--danger}
 
 ## アップデートプラグインを利用したバージョンアップ方法
 
 - ４系のEC-CUBEのバージョンアップには、アップデートプラグインをご利用いただけます。
 - アップデートプラグインは、お使いのEC-CUBEの管理画面の「オーナーズストア/プラグインを探す」から「EC-CUBEアップデートプラグイン」で検索を行い、ご利用ください。
-- アップデートプラグインでバージョンアップを行なった場合は、以下の手順は必要ありません。
+
+アップデートプラグインでバージョンアップを行なった場合は、以下の手順は必要ありません。
+{: .notice--info}
 
 ## 作業の流れ
 1. サイトのバックアップ

@@ -2,9 +2,12 @@
 title: レイアウトの利用
 keywords: design layout
 tags: [design]
-sidebar: home_sidebar
 permalink: design_layout
 summary: レイアウトを利用したデザイン変更について説明します。
+sidebar:
+  nav: "docs"
+toc: true
+toc_sticky: true
 ---
 
 ## レイアウト管理について

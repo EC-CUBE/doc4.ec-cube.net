@@ -2,12 +2,12 @@
 title: テンプレートのカスタマイズ
 keywords: core カスタマイズ テンプレート
 tags: [core, template]
-sidebar: home_sidebar
 permalink: customize_template
 folder: customize
----
-
-
+sidebar:
+  nav: "docs"
+toc: true
+toc_sticky: true
 ---
 
 # Templateのカスタマイズ

@@ -2,12 +2,12 @@
 title: Symfonyの機能を使ったカスタマイズ
 keywords: core カスタマイズ Symfony
 tags: [core, symfony]
-sidebar: home_sidebar
 permalink: customize_symfony
 folder: customize
----
-
-
+sidebar:
+  nav: "docs"
+toc: true
+toc_sticky: true
 ---
 
 ## 概要

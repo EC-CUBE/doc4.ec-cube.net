@@ -2,12 +2,12 @@
 title: FormTypeのカスタマイズ
 keywords: core カスタマイズ FormType
 tags: [core, formtype]
-sidebar: home_sidebar
 permalink: customize_formtype
 folder: customize
----
-
-
+sidebar:
+  nav: "docs"
+toc: true
+toc_sticky: true
 ---
 
 ## FormExtensionを使った拡張

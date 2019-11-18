@@ -2,9 +2,12 @@
 title: ブロックの利用
 keywords: design block customize
 tags: [design]
-sidebar: home_sidebar
 permalink: design_block
 summary: ブロックを利用したデザイン変更について説明します。
+sidebar:
+  nav: "docs"
+toc: true
+toc_sticky: true
 ---
 
 ## ブロックの使い方

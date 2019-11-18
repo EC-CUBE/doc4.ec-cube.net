@@ -2,8 +2,11 @@
 title: サンプルプラグイン
 keywords: plugin sample プラグイン サンプル
 tags: [quickstart, getting_started]
-sidebar: home_sidebar
 permalink: plugin_sample
+sidebar:
+  nav: "docs"
+toc: true
+toc_sticky: true
 ---
 
 ### 商品レビュープラグイン(ProductReview)

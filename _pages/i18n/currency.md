@@ -2,9 +2,12 @@
 title: 通貨
 keywords: currency
 tags: [i18n, currency]
-sidebar: home_sidebar
 permalink: i18n_currency
 forder: i18n
+sidebar:
+  nav: "docs"
+toc: true
+toc_sticky: true
 ---
 
 # 概要

@@ -2,15 +2,13 @@
 title: Service のカスタマイズ
 keywords: core カスタマイズ Service
 tags: [core, service]
-sidebar: home_sidebar
 permalink: customize_service
 folder: customize
+sidebar:
+  nav: "docs"
+toc: true
+toc_sticky: true
 ---
-
-
----
-
-# Service のカスタマイズ
 
 ## カートのカスタマイズ [#2613](https://github.com/EC-CUBE/ec-cube/issues/2613)
 

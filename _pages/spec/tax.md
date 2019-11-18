@@ -2,9 +2,12 @@
 title: 税率設定
 keywords: tax 
 tags: [spec, getting_started]
-sidebar: home_sidebar
 permalink: spec_tax
 summary: EC-CUBEでは、税率の設定について、共通税率と商品ごとの個別税率を設定することができます。
+sidebar:
+  nav: "docs"
+toc: true
+toc_sticky: true
 ---
 
 ## 共通税率設定

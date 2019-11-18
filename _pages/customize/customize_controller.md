@@ -1,10 +1,14 @@
 ---
-title: コントローラのカスタマイズ
+layout: single
+title: Controllerのカスタマイズ
 keywords: core カスタマイズ コントローラ
 tags: [core, controller]
-sidebar: home_sidebar
 permalink: customize_controller
 folder: customize
+sidebar:
+  nav: "docs"
+toc: true
+toc_sticky: true
 ---
 
 

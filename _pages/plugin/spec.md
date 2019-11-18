@@ -2,8 +2,11 @@
 title: プラグイン仕様
 keywords: plugin spec プラグイン 仕様
 tags: [quickstart, getting_started]
-sidebar: home_sidebar
 permalink: plugin_spec
+sidebar:
+  nav: "docs"
+toc: true
+toc_sticky: true
 ---
 
 ## 概要
