@@ -1,0 +1,54 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+// Navメニュー
+@media (min-width: 80em) {
+  #main {
+    max-width: none;
+  }
+  .sidebar {
+    padding-left: 0.5rem;
+  }
+  .sidebar .nav__sub-title + ul a{
+    display:inline-block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+  }
+  .sidebar .nav__sub-title + ul li:hover,
+  .sidebar .nav__sub-title:hover {
+    background: #f8f8f8;
+    cursor: pointer;
+  }
+  .nav__sub-title {
+    margin: 0;
+    padding: 0.75rem 30px 0.75rem 0.5rem;
+    position: relative;
+  }
+  .nav__sub-title::after {
+    content: '\25be';
+    font-size: 1rem;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translate(0, -50%);
+  }
+  .nav__list .nav__items .active {
+    background: #f6f6f6 !important;
+    margin-left: 0;
+    padding: 0.75rem 0.5rem;
+    box-sizing: border-box;
+  }
+  .nav__sub-title + ul {
+    display: none;
+  }
+  .nav__sub-title + ul li {
+    margin: 0;
+  }
+}

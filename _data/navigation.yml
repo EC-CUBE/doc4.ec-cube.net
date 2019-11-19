@@ -1,0 +1,127 @@
+# main links
+main:
+  - title: "EC-CUBEについて"
+    url: https://www.ec-cube.net/
+  - title: "開発コミュニティ"
+    url: https://xoops.ec-cube.net/
+
+# documentation links
+docs:
+  - title: Quick Start
+    output: web, pdf
+    children:
+      - title: システム要件
+        url: /quickstart_requirement
+        output: web, pdf
+      - title: インストール方法
+        url: /quickstart_install
+        output: web, pdf
+      - title: バージョンアップ
+        output: web, pdf
+        sub_items:
+          - title: バージョンアップ方法
+            url: /quickstart_update
+            output: web, pdf
+          - title: 4.0.3での注意点
+            url: /quickstart_update_4_0_3
+            output: web, pdf
+      - title: コマンドラインインターフェイス
+        url: /quickstart_cli
+        output: web, pdf
+
+  - title: 機能仕様
+    output: web, pdf
+    children:
+      - title: 機能一覧
+        url: https://www.ec-cube.net/product/functions.php
+        output: web, pdf
+      - title: 受注関連
+        url: /spec_order
+        output: web, pdf
+      - title: 税率設定
+        url: /spec_tax
+        output: web, pdf
+  - title: 本体カスタマイズ
+    output: web, pdf
+    children:
+      - title: ディレクトリ構成
+        url: /spec_directory-structure
+        output: web, pdf
+      - title: Controllerのカスタマイズ
+        url: /customize_controller
+        output: web, pdf
+      - title: Entityのカスタマイズ
+        url: /customize_entity
+        output: web, pdf
+      - title: Repositoryのカスタマイズ
+        url: /customize_repository
+        output: web, pdf
+      - title: FormTypeのカスタマイズ
+        url: /customize_formtype
+        output: web, pdf
+      - title: Serviceのカスタマイズ
+        url: /customize_service
+        output: web, pdf
+      - title: テンプレートのカスタマイズ
+        url: /customize_template
+        output: web, pdf
+      - title: Symfonyの機能を使った拡張
+        url: /customize_symfony
+        output: web, pdf
+
+  - title: デザインカスタマイズ
+    output: web, pdf
+    children:
+      - title: フロント画面デザイン参考資料（スタイルガイド）
+        url: https://eccube4-styleguide.herokuapp.com
+        output: web, pdf
+      - title: 管理画面デザイン参考資料（デザインガイド）
+        url: /pdf/ec-cube4_design-guide180930.pdf
+        output: web, pdf
+      - title: デザインテンプレートの基礎
+        url: /design_template
+        output: web, pdf
+      - title: フォームレイアウトの変更
+        url: /design_form
+        output: web, pdf
+      - title: ブロックの利用
+        url: /design_block
+        output: web, pdf
+      - title: レイアウト管理の利用
+        url: /design_layout
+        output: web, pdf
+      - title: Sassの利用
+        url: /design_css
+        output: web, pdf
+      - title: フロント画面テンプレート for Adobe XD
+        url: http://downloads.ec-cube.net/manual/documents/eccube4_xd_front_template.zip?argument=2qpV46CP&dmai=a5bf51b05bacc5
+        output: web, pdf
+      - title: 管理画面テンプレート for Adobe XD
+        url: http://downloads.ec-cube.net/manual/documents/eccube4_xd_admin_template.zip?argument=2qpV46CP&dmai=a5bf51b05bacc5
+        output: web, pdf
+
+  - title: プラグインカスタマイズ
+    output: web, pdf
+    children:
+      - title: プラグイン仕様
+        url: /plugin_spec
+        output: web, pdf
+      - title: プラグインのインストール
+        url: /plugin_install
+        output: web, pdf
+      - title: プラグインサンプル
+        url: /plugin_sample
+        output: web, pdf
+
+  - title: 多言語化
+    output: web, pdf
+    children:
+      - title: 多言語化
+        url: /i18n_multilingualization
+        output: web, pdf
+      - title: 通貨
+        url: /i18n_currency
+        output: web, pdf
+      - title: タイムゾーン
+        url: /i18n_timezone
+        output: web, pdf
