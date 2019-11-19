@@ -1,14 +1,11 @@
-<script>
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', '{{ site.analytics.google.tracking_id }}']);
-  {% if site.analytics.google.anonymize_ip == true %}
-    _gaq.push(['_gat._anonymizeIp']);
-  {% endif %}
-  _gaq.push(['_trackPageview']);
+<!-- the google_analytics_id gets auto inserted from the config file -->
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{site.analytics.google.tracking_id}}"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '{{site.analytics.google.tracking_id}}');
 </script>
