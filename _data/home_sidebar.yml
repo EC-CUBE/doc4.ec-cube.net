@@ -128,13 +128,6 @@ entries:
       url: /i18n_timezone
       output: web, pdf
 
-  - title: 本体開発に参加する
-    output: web, pdf
-    folderitems:
-    - title: Gitを用いた開発手順
-      url: /collaboration_githubflow
-      output: web, pdf
-
   - title: ドキュメントがみつからないときは
     output: web, pdf
     folderitems:
