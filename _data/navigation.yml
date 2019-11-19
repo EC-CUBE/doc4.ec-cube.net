@@ -29,6 +29,18 @@ docs:
         url: /quickstart_cli
         output: web, pdf
 
+  - title: 機能仕様
+    output: web, pdf
+    children:
+      - title: 機能一覧
+        url: https://www.ec-cube.net/product/functions.php
+        output: web, pdf
+      - title: 受注関連
+        url: /spec_order
+        output: web, pdf
+      - title: 税率設定
+        url: /spec_tax
+        output: web, pdf
   - title: 本体カスタマイズ
     output: web, pdf
     children:
