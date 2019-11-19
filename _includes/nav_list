@@ -1,0 +1,85 @@
+{% assign navigation = site.data.navigation[include.nav] %}
+
+<nav class="nav__list">
+  {% if page.sidebar.title %}<h3 class="nav__title" style="padding-left: 0;">{{ page.sidebar.title }}</h3>{% endif %}
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle Menu" }}</label>
+  <ul class="nav__items">
+    {% for nav in navigation %}
+      <li>
+        {% if nav.url %}
+          {% comment %} internal/external URL check {% endcomment %}
+          {% if nav.url contains "://" %}
+            {% assign nav_url = nav.url %}
+          {% else %}
+            {% assign nav_url = nav.url | relative_url %}
+          {% endif %}
+
+          <a href="{{ nav_url }}"><span class="nav__sub-title">{{ nav.title }}</span></a>
+        {% else %}
+          <span class="nav__sub-title">{{ nav.title }}</span>
+        {% endif %}
+
+        {% if nav.children != null %}
+        <ul>
+          {% for child in nav.children %}
+            {% if child.sub_items == null %}
+              {% comment %} internal/external URL check {% endcomment %}
+              {% if child.url contains "://" %}
+                {% assign child_url = child.url %}
+                {% assign child_is_new_window = true %}
+              {% else %}
+                {% assign child_url = child.url | relative_url %}
+                {% assign child_is_new_window = false %}
+              {% endif %}
+
+              {% comment %} set "active" class on current page {% endcomment %}
+              {% if child.url == page.url %}
+                {% assign active = "active" %}
+              {% else %}
+                {% assign active = "" %}
+              {% endif %}
+
+              {% if child_is_new_window %}
+                <li><a href="{{ child_url }}" target="_blank" class="{{ active }}">{{ child.title }}</a></li>
+              {% else %}
+                <li><a href="{{ child_url }}" class="{{ active }}">{{ child.title }}</a></li>
+              {% endif %}
+          {% else %}
+            {% comment %} sub_itemsがある場合 {% endcomment %}
+            <li>
+            <span class="nav__sub-title">{{ child.title }}</span>
+            <ul>
+              {% for sub_item in child.sub_items %}
+                {% comment %} internal/external URL check {% endcomment %}
+                {% if sub_item.url contains "://" %}
+                  {% assign child_url = sub_item.url %}
+                  {% assign child_is_new_window = true %}
+                {% else %}
+                  {% assign child_url = sub_item.url | relative_url %}
+                  {% assign child_is_new_window = false %}
+                {% endif %}
+
+                {% comment %} set "active" class on current page {% endcomment %}
+                {% if sub_item.url == page.url %}
+                  {% assign active = "active" %}
+                {% else %}
+                  {% assign active = "" %}
+                {% endif %}
+
+                {% if child_is_new_window %}
+                  <li><a href="{{ child_url }}" target="_blank" class="{{ active }}">{{ sub_item.title }}</a></li>
+                {% else %}
+                  <li><a href="{{ child_url }}" class="{{ active }}">{{ sub_item.title }}</a></li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+            </li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

@@ -1,0 +1,15 @@
+<!-- start custom footer snippets -->
+
+<!-- Navメニュー -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $('.nav__sub-title').on('click',function(){
+        $(this).toggleClass('active');
+        $(this).next('ul').slideToggle();
+    });
+    $(function(){
+        $("a.active").parents('ul').css("display", "block");
+    });
+</script>
+
+<!-- end custom footer snippets -->
