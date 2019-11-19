@@ -19,5 +19,5 @@ PullRequestをお送りいただく際は、必ずご一読ください。
 
 ## PullRequestの送信方法
 
-本体へPullRequestをお送りする[手順](/collaboration_githubflow)を参考に、
+本体へPullRequestをお送りする[手順](/contribution-guide-develop)を参考に、
 [こちら](https://github.com/EC-CUBE/doc4.ec-cube.net)へPullRequestをお送りください。
