@@ -47,6 +47,7 @@
               {% endif %}
           {% else %}
             {% comment %} sub_itemsがある場合 {% endcomment %}
+            <li>
             <span class="nav__sub-title">{{ child.title }}</span>
             <ul>
               {% for sub_item in child.sub_items %}
@@ -73,6 +74,7 @@
                 {% endif %}
               {% endfor %}
             </ul>
+            </li>
           {% endif %}
           {% endfor %}
         </ul>
