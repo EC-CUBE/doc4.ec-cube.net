@@ -125,3 +125,13 @@ docs:
       - title: タイムゾーン
         url: /i18n_timezone
         output: web, pdf
+
+  - title: ドキュメントがみつからないときは
+    output: web, pdf
+    children:
+      - title: ドキュメントのリクエスト方法
+        url: /github-register-issue
+        output: web, pdf
+      - title: ドキュメントの追加方法
+        url: /github-register-pullrequest
+        output: web, pdf
