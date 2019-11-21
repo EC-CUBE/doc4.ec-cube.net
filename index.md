@@ -79,8 +79,8 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 + [タイムゾーン](i18n_timezone)
 
 ## ドキュメントがみつからないときは
-+ [ドキュメントのリクエスト方法](github-register-issue)
-+ [ドキュメントの追加方法](github-register-pullrequest)
++ [ドキュメントのリクエスト](/documents/request)
++ [ドキュメントの投稿](/documents/contribute)
 
 ## Supporters
 

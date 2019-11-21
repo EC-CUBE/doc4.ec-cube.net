@@ -1,11 +1,11 @@
 ---
-title: ドキュメントの追加方法
+title: ドキュメントの投稿
 keywords: 
 tags: [guideline]
-sidebar: home_sidebar
-permalink: github-register-pullrequest
-folder: github
-description: ドキュメントの追加方法を記載します。
+permalink: documents/contribute
+folder: document
+description: ドキュメントの投稿方法を記載します。
+description: ドキュメントの投稿方法を記載します。
 ---
 
 開発ドキュメントの内容は、GitHub上で管理されています。
@@ -19,5 +19,5 @@ PullRequestをお送りいただく際は、必ずご一読ください。
 
 ## PullRequestの送信方法
 
-本体へPullRequestをお送りする[手順](/contribution-guide-develop)を参考に、
+本体へPullRequestをお送りする[手順](/contribution-guide/pull-request)を参考に、
 [こちら](https://github.com/EC-CUBE/doc4.ec-cube.net)へPullRequestをお送りください。
