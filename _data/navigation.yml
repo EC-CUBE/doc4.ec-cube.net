@@ -129,9 +129,9 @@ docs:
   - title: ドキュメントがみつからないときは
     output: web, pdf
     children:
-      - title: ドキュメントのリクエスト方法
-        url: /github-register-issue
+      - title: ドキュメントのリクエスト
+        url: /documents/request
         output: web, pdf
-      - title: ドキュメントの追加方法
-        url: /github-register-pullrequest
+      - title: ドキュメントの投稿
+        url: /documents/contribute
         output: web, pdf

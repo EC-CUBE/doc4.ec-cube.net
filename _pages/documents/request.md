@@ -1,9 +1,9 @@
 ---
-title: ドキュメントのリクエスト方法
+title: ドキュメントのリクエスト
 keywords: 
 tags: [guideline]
-permalink: github-register-issue
-folder: github
+permalink: documents/request
+folder: document
 description: ドキュメントのリクエスト方法を記載します。
 ---
 

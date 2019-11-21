@@ -1,10 +1,11 @@
 ---
-title: ドキュメントの追加方法
+title: ドキュメントの投稿
 keywords: 
 tags: [guideline]
-permalink: github-register-pullrequest
-folder: github
-description: ドキュメントの追加方法を記載します。
+permalink: documents/contribute
+folder: document
+description: ドキュメントの投稿方法を記載します。
+description: ドキュメントの投稿方法を記載します。
 ---
 
 開発ドキュメントの内容は、GitHub上で管理されています。
