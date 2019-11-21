@@ -5,7 +5,7 @@ tags: [guideline]
 sidebar: home_sidebar
 permalink: github-register-issue
 folder: github
-summary: ドキュメントのリクエスト方法を記載します。
+description: ドキュメントのリクエスト方法を記載します。
 ---
 
 
