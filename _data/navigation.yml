@@ -132,5 +132,5 @@ docs:
       url: /contribution-guide/overview
       output: web, pdf
     - title: プルリクエストの作り方
-      url: /contribution-guide/development
+      url: /contribution-guide/pull-request
       output: web, pdf

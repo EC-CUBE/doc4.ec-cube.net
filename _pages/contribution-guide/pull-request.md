@@ -3,7 +3,7 @@ title: プルリクエストの作り方
 description: EC-CUBEのプルリクエストを送る場合の手順や考慮してもらいたいことについて説明します。
 keywords: Githubflow
 tags: [contribution-guide, guideline]
-permalink: contribution-guide/development
+permalink: contribution-guide/pull-request
 folder: contribution-guide
 ---
 
