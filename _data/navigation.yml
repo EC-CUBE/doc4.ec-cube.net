@@ -125,3 +125,23 @@ docs:
       - title: タイムゾーン
         url: /i18n_timezone
         output: web, pdf
+
+  - title: 本体開発に参加する
+    output: web, pdf
+    children:
+    - title: 開発の概要
+      url: /contribution-guide/overview
+      output: web, pdf
+    - title: プルリクエストの作り方
+      url: /contribution-guide/pull-request
+      output: web, pdf
+
+  - title: ドキュメントがみつからないときは
+    output: web, pdf
+    children:
+      - title: ドキュメントのリクエスト
+        url: /documents/request
+        output: web, pdf
+      - title: ドキュメントの投稿
+        url: /documents/contribute
+        output: web, pdf

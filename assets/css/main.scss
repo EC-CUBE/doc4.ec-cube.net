@@ -52,3 +52,14 @@
     margin: 0;
   }
 }
+
+// アイコン表示
+a[target="_blank"]:after {
+    content: "\f08e";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    text-decoration: none;
+    padding-left: 3px;
+}
