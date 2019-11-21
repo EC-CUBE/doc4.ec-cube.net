@@ -78,6 +78,7 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 
 ## ドキュメントがみつからないときは
 + [ドキュメントのリクエスト](/documents/request)
++ [ドキュメントの追加・書き方](/documents/writing-and-formatting)
 + [ドキュメントの投稿](/documents/contribute)
 
 ## Supporters

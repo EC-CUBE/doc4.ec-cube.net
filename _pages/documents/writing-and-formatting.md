@@ -1,21 +1,26 @@
 ---
-title: ページの追加方法・書き方
+title: ドキュメントの追加・書き方
 description: EC-CUBE4系開発ドキュメントにページを追加する場合の、markdownの書き方について説明します。
 tags: [howto]
-permalink: create_new_page
+permalink: documents/writing-and-formatting
 ---
 
 ## ページの追加方法
 
-_pagesディレクトリの中にmarkdownファイル(.md)を置くと、自動的にページが追加されます。
+[Jekyll](http://jekyllrb-ja.github.io/){:target="_blank"}を利用してページの自動生成を行っています。  
+[開発ドキュメントのソースコード](https://github.com/EC-CUBE/doc4.ec-cube.net/){:target="_blank"}にある `_pages` ディレクトリの中にmarkdownファイル(.md)を置くと、自動的にページが追加されます。
 
 ### markdownヘッダー部分の書き方
 
+ページ生成時に利用するヘッダー情報です。各ページに必ず記載する必要があります。
+
 ```yaml
+---
 title: テストページ
 description: xxxxを行う場合のツール導入方法と実装についてのポイントをまとめました。
 permalink: test
 tags: [quickstart, install]
+---
 ```
 
 `title` ：h1タグのコンテンツになります。  
@@ -45,7 +50,9 @@ docs:
 
 ## ページの書き方
 
-- markdownで記載して下さい。改行(brタグ)は行末に改行２つ必要です。
+- markdownで記載して下さい。
+- 改行(brタグ)は行末に改行２つ必要です。
+- 外部へのハイパーリンクの場合は `{:target="_blank"}` を記述してください。
 - 「```php」と書くことでシンタックスハイライトを指定することができます。
 - テンプレートで用意されているUtility/Helpersを利用することができます。
     - [Utility](https://mmistakes.github.io/minimal-mistakes/docs/utility-classes/){:target="_blank"}

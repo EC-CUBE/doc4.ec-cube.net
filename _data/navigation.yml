@@ -142,6 +142,9 @@ docs:
       - title: ドキュメントのリクエスト
         url: /documents/request
         output: web, pdf
+      - title: ドキュメントの追加・書き方
+        url: /documents/writing-and-formatting
+        output: web, pdf
       - title: ドキュメントの投稿
         url: /documents/contribute
         output: web, pdf
