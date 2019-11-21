@@ -2,7 +2,6 @@
 title: ドキュメントの追加方法
 keywords: 
 tags: [guideline]
-sidebar: home_sidebar
 permalink: github-register-pullrequest
 folder: github
 description: ドキュメントの追加方法を記載します。

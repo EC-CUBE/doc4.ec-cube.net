@@ -2,7 +2,6 @@
 title: ドキュメントのリクエスト方法
 keywords: 
 tags: [guideline]
-sidebar: home_sidebar
 permalink: github-register-issue
 folder: github
 description: ドキュメントのリクエスト方法を記載します。
@@ -15,12 +14,14 @@ description: ドキュメントのリクエスト方法を記載します。
 ## ISSUEの登録方法
 
 1. EC-CUBE 4.0 開発ドキュメントの[ISSUEのページ](https://github.com/EC-CUBE/doc4.ec-cube.net/issues)を開く
-1. New issueをクリックする
+1. New issueをクリックする   
 ![New issueの作成](/images/github/img-github-issue.png)
-1. 内容を記入後、Submit new issueをクリックする  
-※以下フォーマット例  
+1. 内容を記入後、Submit new issueをクリックする
 
-```
+
+### ISSUE記載内容の例  
+
+```markdown
 ## 概要(Overview)
 
 ## 期待する内容(Expect)  or 要望 (Requirement)
