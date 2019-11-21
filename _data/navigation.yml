@@ -128,9 +128,9 @@ docs:
   - title: 本体開発に参加する
     output: web, pdf
     children:
-    - title: 開発作業全体概要
+    - title: 開発の概要
       url: /contribution-guide/overview
       output: web, pdf
-    - title: EC-CUBE開発環境構築手順
+    - title: プルリクエストの作り方
       url: /contribution-guide/development
       output: web, pdf
