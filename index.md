@@ -76,6 +76,10 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 + [通貨](i18n_currency)
 + [タイムゾーン](i18n_timezone)
 
+## ドキュメントがみつからないときは
++ [ドキュメントのリクエスト](/documents/request)
++ [ドキュメントの投稿](/documents/contribute)
+
 ## Supporters
 
 EC-CUBEは以下のサポートを受けています。
