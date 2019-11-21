@@ -5,7 +5,7 @@ tags: [guideline]
 sidebar: home_sidebar
 permalink: github-register-pullrequest
 folder: github
-summary: ドキュメントの追加方法を記載します。
+description: ドキュメントの追加方法を記載します。
 ---
 
 開発ドキュメントの内容は、GitHub上で管理されています。
