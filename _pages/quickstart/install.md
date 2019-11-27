@@ -225,7 +225,7 @@ docker-compose up -d
 `.env` にて `MAILER_URL=smtp://mailcatcher:1025` としておきます。
 
 ##### PostgreSQL を使用する場合
-`.env` にて `DATABASE_URL=pgsql://postgres:password@postgres/cube4_dev` としておきます。
+`.env` にて `DATABASE_URL=postgres://postgres:password@postgres/cube4_dev` としておきます。
 
 データベーススキーマを初期化していない場合は、以下の実行が必要です。
 ```
