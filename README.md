@@ -1,8 +1,9 @@
 # EC-CUBE 4開発ドキュメント
 
-github page of the [https://doc4.ec-cube.net/](https://doc4.ec-cube.net/)
+[EC-CUBE 4開発ドキュメント](https://doc4.ec-cube.net/)のリポジトリです。
 
 EC-CUBE 4 の仕様や手順、開発Tipsに関するドキュメントを掲載しています。
+
 修正や追記、新規ドキュメントの作成をいただく場合、本レポジトリへPullRequestをお送りください。
 
 
@@ -42,25 +43,25 @@ $ cd doc4.ec-cube.net/
 $ git remote add upstream https://github.com/EC-CUBE/doc4.ec-cube.net.git
 ```
 
-### ローカルのブランチを最新し、修正用のブランチを作成する。
+### ローカルのブランチを最新し、修正用のブランチを作成する
 ```
 $ git pull upstream master
 $ git checkout -b [任意のブランチ名]
 ```
 
-### ドキュメント編集方法
+### ドキュメント編集について
 
 #### 本文の編集
 
 _pages/以下のディレクトリにある.mdファイルを変更することで、ページの編集が可能です。
 
-#### サイドバーを編集する
+#### サイドバーの編集
 
 _data/navigation.ymlに設定項目を追加します。
 
 #### 設定ファイル
 
-_config.ymlはサイト全体に適用されているファイルです。
+_config.ymlはサイト全体に適用されている設定ファイルです。
 
 ### 自身のリポジトリに修正内容を反映する。
 
