@@ -181,8 +181,11 @@ docker run --name ec-cube -p "8080:80" -p "4430:443" --link container_mysql:db e
 ```shell
 cd path/to/ec-cube
 
+# .envファイルのコピー
+cp .env.dist .env
+
 # コンテナの起動 (初回のみビルド処理あり)
-docker-compose up
+docker-compose up -d
 
 # 初回はインストールスクリプトを実行
 docker-compose exec ec-cube bin/console eccube:install
@@ -191,7 +194,7 @@ docker-compose exec ec-cube bin/console eccube:install
 2回目以降の起動時も同様のコマンドを使用します。
 ```shell
 # コンテナの起動
-docker-compose up
+docker-compose up -d
 
 # コンテナの停止
 docker-compose down
@@ -200,17 +203,19 @@ docker-compose down
 #### 各種コンテナの使用
 EC-CUBE 4が動作するWebサーバを含め、以下のコンテナが簡単に起動できます。
 
-| コンテナ名       | 概要               | 
-|-------------|------------------|
-| ec-cube     | EC-CUBE 向けPHP Webサーバ   |  
-| mysql       | MySQLデータベースサーバ      |  
-| postgres    | PostgreSQLデータベースサーバ |  
-| mailcatcher | MailCatcher デバッグ用SMTPサーバ     |  
+| コンテナ名  | 概要                             | ブラウザアクセス例 |
+| ----------- | -------------------------------- | -------------------------- |
+| ec-cube     | EC-CUBE 向けPHP Webサーバ        | [http://localhost:8080](http://localhost:8080){:target="_blank"}      |
+| postgres    | PostgreSQLデータベースサーバ     |                            |
+| mysql       | MySQLデータベースサーバ          |                            |
+| pgweb     | PostgreSQL GUIツール             | [http://localhost:8082](http://localhost:8082){:target="_blank"}      |
+| phpMyAdmin  | MySQL GUIツール                  | [http://localhost:8081](http://localhost:8081){:target="_blank"}      |
+| mailcatcher | MailCatcher デバッグ用SMTPサーバ | [http://localhost:1080](http://localhost:1080){:target="_blank"}      |
 
 起動時にコンテナ名を列挙することで、各種コンテナを起動します。
 ```shell
-# 例：EC-CUBEとMySQLとMailCatcherを起動する
-docker-compose up -d ec-cube mysql mailcatcher
+# 例：EC-CUBEとMySQLとphpMyAdminとMailCatcherを起動する
+docker-compose up -d ec-cube mysql phpmyadmin mailcatcher
 
 # 省略した場合はすべてのサービスが起動します
 docker-compose up -d
@@ -219,24 +224,21 @@ docker-compose up -d
 ##### メール送信を使用する場合
 `.env` にて `MAILER_URL=smtp://mailcatcher:1025` としておきます。
 
-例：`localhost`上(デフォルトポート:1080)で構築した場合、以下URLにてアクセスします。
-
-[http://localhost:1080](http://localhost:1080)
-
-
 ##### PostgreSQL を使用する場合
-`.env` にて `DATABASE_URL=pgsql://dbuser:secret@postgres/eccubedb` としておきます。
+`.env` にて `DATABASE_URL=pgsql://postgres:password@postgres/cube4_dev` としておきます。
 
 データベーススキーマを初期化していない場合は、以下の実行が必要です。
 ```
+# スキーマ作成+初期データ投入
 docker-compose exec ec-cube composer run-script compile
 ```
 
 ##### MySQL を使用する場合
-`.env` にて `DATABASE_URL=mysql://dbuser:secret@postgres/eccubedb` としておきます。
+`.env` にて `DATABASE_URL=mysql://root:password@mysql/cube4_dev` としておきます。
 
 データベーススキーマを初期化していない場合は、以下の実行が必要です。
 ```
+# スキーマ作成+初期データ投入
 docker-compose exec ec-cube composer run-script compile
 ```
 
