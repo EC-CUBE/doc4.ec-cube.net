@@ -4,18 +4,22 @@
 
 EC-CUBE 4 の仕様や手順、開発Tipsに関するドキュメントを掲載しています。
 
-修正や追記、新規ドキュメントの作成をいただく場合、本レポジトリへPullRequestをお送りください。
+修正や追記、新規ドキュメントの作成をいただく場合、
+
+本レポジトリへPullRequestをお送りください。
 
 
 ## 開発協力に関して
 
 コードの提供・追加、修正・変更その他「EC-CUBE」への開発の御協力（Issue投稿、PullRequest投稿など、GitHub上での活動）を行っていただく場合には、
 [EC-CUBEのコピーライトポリシー](https://github.com/EC-CUBE/ec-cube/wiki/EC-CUBE%E3%81%AE%E3%82%B3%E3%83%94%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC)をご理解いただき、ご了承いただく必要がございます。
+
 PullRequestを送信する際は、EC-CUBEのコピーライトポリシーに同意したものとみなします。
 
 ## 本ドキュメントサイトの構成ツールについて
 
 EC-CUBE 4.0 開発者向けドキュメントは[github pages](https://pages.github.com/)でホスティングされています。
+
 また、[Jekyll](http://jekyllrb-ja.github.io/)の[Minimal Mistakes Jekyll theme](https://mmistakes.github.io/minimal-mistakes/)というテーマを利用しています。
 
 ## PullRequestの送信方法
@@ -63,7 +67,7 @@ _data/navigation.ymlに設定項目を追加します。
 
 _config.ymlはサイト全体に適用されている設定ファイルです。
 
-### 自身のリポジトリに修正内容を反映する。
+### 自身のリポジトリに修正内容を反映する
 
 ```
 $ git add [修正したファイル]
@@ -77,8 +81,9 @@ $ git push origin [ブランチ名]
 
 ## 修正したドキュメントをローカル環境で確認するには
 
-EC-CUBE 4開発ドキュメントはローカル開発環境を構築することにより、
-ドキュメントを修正した場合にローカルPCで確認することができます。
+ローカル開発環境を構築することにより、
+
+ドキュメントを修正した場合際に、ローカルPCで変更箇所を確認することができます。
 
 ### Dockerを利用する
 
@@ -117,7 +122,9 @@ ruby 2.4.5p335 (2018-10-18 revision 65137) [x64-mingw32]
 $ bundle install
 ```
 
-※ Windows環境では、gemfile.lockが更新されてしまいますが、git管理から無視するように下さい。（コミット対象から除外する）
+※ Windows環境では、gemfile.lockが更新されてしまいますが、
+
+git管理から除外（コミット対象から除外する）するように下さい。
 
 ```
 eventmachine (1.2.7-x64-mingw32)
