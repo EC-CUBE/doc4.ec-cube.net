@@ -25,6 +25,7 @@ docs:
           - title: 4.0.3での注意点
             url: /quickstart_update_4_0_3
             output: web, pdf
+
       - title: コマンドラインインターフェイス
         url: /quickstart_cli
         output: web, pdf
@@ -125,7 +126,12 @@ docs:
       - title: タイムゾーン
         url: /i18n_timezone
         output: web, pdf
-
+  - title: 開発ツール
+    output: web, pdf
+    children:
+      - title: MailCatcher
+        url: /development-tools/mail-catcher
+        output: web, pdf
   - title: 本体開発に参加する
     output: web, pdf
     children:
