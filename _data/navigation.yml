@@ -16,19 +16,18 @@ docs:
       - title: インストール方法
         url: /quickstart_install
         output: web, pdf
-      - title: バージョンアップ
-        output: web, pdf
-        sub_items:
-          - title: バージョンアップ方法
-            url: /quickstart_update
-            output: web, pdf
-          - title: 4.0.3での注意点
-            url: /quickstart_update_4_0_3
-            output: web, pdf
       - title: コマンドラインインターフェイス
         url: /quickstart_cli
         output: web, pdf
-
+  - title: バージョンアップ
+    output: web, pdf
+    children:
+      - title: バージョンアップ方法
+        url: /quickstart_update
+        output: web, pdf
+      - title: 4.0.3での注意点
+        url: /quickstart_update_4_0_3
+        output: web, pdf
   - title: 機能仕様
     output: web, pdf
     children:
