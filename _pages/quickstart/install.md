@@ -208,14 +208,12 @@ EC-CUBE 4が動作するWebサーバを含め、以下のコンテナが簡単�
 | ec-cube     | EC-CUBE 向けPHP Webサーバ        | [http://localhost:8080](http://localhost:8080){:target="_blank"}      |
 | postgres    | PostgreSQLデータベースサーバ     |                            |
 | mysql       | MySQLデータベースサーバ          |                            |
-| pgweb     | PostgreSQL GUIツール             | [http://localhost:8082](http://localhost:8082){:target="_blank"}      |
-| phpMyAdmin  | MySQL GUIツール                  | [http://localhost:8081](http://localhost:8081){:target="_blank"}      |
 | mailcatcher | MailCatcher デバッグ用SMTPサーバ | [http://localhost:1080](http://localhost:1080){:target="_blank"}      |
 
 起動時にコンテナ名を列挙することで、各種コンテナを起動します。
 ```shell
 # 例：EC-CUBEとMySQLとphpMyAdminとMailCatcherを起動する
-docker-compose up -d ec-cube mysql phpmyadmin mailcatcher
+docker-compose up -d ec-cube mysql mailcatcher
 
 # 省略した場合はすべてのサービスが起動します
 docker-compose up -d
@@ -225,7 +223,7 @@ docker-compose up -d
 `.env` にて `MAILER_URL=smtp://mailcatcher:1025` としておきます。
 
 ##### PostgreSQL を使用する場合
-`.env` にて `DATABASE_URL=postgres://postgres:password@postgres/cube4_dev` としておきます。
+`.env` にて `DATABASE_URL=postgres://dbuser:secret@postgres/eccubedb` としておきます。
 
 データベーススキーマを初期化していない場合は、以下の実行が必要です。
 ```
@@ -234,7 +232,7 @@ docker-compose exec ec-cube composer run-script compile
 ```
 
 ##### MySQL を使用する場合
-`.env` にて `DATABASE_URL=mysql://root:password@mysql/cube4_dev` としておきます。
+`.env` にて `DATABASE_URL=mysql://dbuser:secret@mysql/eccubedb` としておきます。
 
 データベーススキーマを初期化していない場合は、以下の実行が必要です。
 ```
