@@ -13,13 +13,14 @@ summary: 画像管理や呼び出し方などの説明
 ## ディレクトリに直接追加する方法
 
 ### 画像ディレクトリのパス
-`ECCUBEROOT/html/template/default/assets/img/`
+`ECCUBEROOT/html/template/default/assets/img/`<br>
 ※EC-CUBEがインストールされているディレクトリを ECCUBEROOT とします。
 
 デザインテンプレートを反映していた際には、<br>default部分以下ディレクトリがデザインテンプレート固有のディレクトリとなります。
+例）商品番号XX4001というデザインテンプレートを適用した場合<br>
+`ECCUBEROOT/html/template/XX4001/assets/img/`<br>
+※EC-CUBEがインストールされているディレクトリを ECCUBEROOT とします。
 
-例）商品番号XX4001というデザインテンプレートを適用した場合
-`ECCUBEROOT/html/template/XX4001/assets/img/`
 
 ## 画像へのリンク方法
 画像を呼び出したい場合は、twig形式で以下の様に書きます。
@@ -36,7 +37,6 @@ summary: 画像管理や呼び出し方などの説明
 ```html
 <img src="html/template/defult/assets/img/top/hoge.jpg" alt="hoge">
 ```
-
 
 ## 管理画面から画像追加する方法
 ec-cube.coやサーバーにアップロードする方法が難しい場合でも、<br>管理画面から画像ファイルを追加する事が可能です。
@@ -56,8 +56,8 @@ ec-cube.coやサーバーにアップロードする方法が難しい場合で�
 ※ファイル選択時に、複数選択（ShiftキーやCtrlキー）すると、複数を同時にアップロードが可能です。
 
 ### 管理画面からアップした画像ディレクトリのパス
-アップロードした画像は、user_data内に格納されます。
-`ECCUBEROOT/html/user_data/assets/作成したフォルダ/アップした画像`
+アップロードした画像は、user_data内に格納されます。<br>
+`ECCUBEROOT/html/user_data/assets/作成したフォルダ/アップした画像`<br>
 ※EC-CUBEがインストールされているディレクトリを ECCUBEROOT とします。
 
 ### 管理画面からアップした画像へのリンク方法
@@ -79,11 +79,11 @@ ec-cube.coやサーバーにアップロードする方法が難しい場合で�
 
 
 ## 【番外】商品管理>商品登録よりアップした画像について
-管理画面より、商品登録の際にアップした画像については、また別のディレクトリに保存されます。
+管理画面より、商品登録の際にアップした画像については、また別のディレクトリに保存されます。<br>
 こちらについては、直接追加することはお勧めできません。
 
 ### 商品登録からアップした画像ディレクトリのパス
-`ECCUBEROOT/html/upload/saveimage/`
+`ECCUBEROOT/html/upload/saveimage/`<br>
 ※EC-CUBEがインストールされているディレクトリを ECCUBEROOT とします。
 
 ### 商品登録からアップした画像へのリンク方法
