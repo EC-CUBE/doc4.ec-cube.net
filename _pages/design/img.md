@@ -1,6 +1,6 @@
 ---
 title: 画像管理について
-keywords: design block customize
+keywords: design img customize
 tags: [design]
 permalink: design_img
 summary: 画像管理や呼び出し方などの説明
