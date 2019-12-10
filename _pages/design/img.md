@@ -16,10 +16,11 @@ summary: 画像管理や呼び出し方などの説明
 `ECCUBEROOT/html/template/default/assets/img/`<br>
 ※EC-CUBEがインストールされているディレクトリを ECCUBEROOT とします。
 
-デザインテンプレートを反映していた際には、<br>
-default部分以下ディレクトリがデザインテンプレート固有のディレクトリとなります。<br>
-
-例）商品番号XX4001というデザインテンプレートを適用した場合<br>
+デザインテンプレートを反映した際には、<br>
+インストール時に設定したテンプレートコードが利用されます<br>
+例）テンプレートコードXX4001と設定した場合<br>
+`ECCUBEROOT/html/template/default/assets/img/`<br>
+　　　　　　　　　　　　↓<br>
 `ECCUBEROOT/html/template/XX4001/assets/img/`
 
 
