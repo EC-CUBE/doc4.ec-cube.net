@@ -154,7 +154,7 @@ bin/console doctrine:migrations:migrate
 rm -f app/proxy/entity/*.php
 ```
 
-auloloadファイルの再生成
+autoloadファイルの再生成
 ```
 composer dump-autoload
 ```
