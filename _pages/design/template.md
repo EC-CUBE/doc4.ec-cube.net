@@ -6,68 +6,113 @@ permalink: design_template
 summary: デザインテンプレートの基本ルールについて説明します。
 ---
 
-## デフォルトのテンプレートファイルの配置場所
+## デフォルトのテンプレートファイルの配置ディレクトリ
 
-EC-CUBEがインストールされているディレクトリを `ECCUBEROOT` とします。  
 本体の標準のTwigファイルは以下のディレクトリに配置されています。
 
-- フロント画面の標準ディレクトリ  
-`ECCUBEROOT/src/Eccube/Resource/template/default`
+```
+.
+└── src
+    └── Eccube
+        └── Resource
+            └── template             # デフォルトのテンプレートの配置ディレクトリ
+                ├── admin            ## 「管理」画面に関するテンプレート
+                ├── default          ## 「フロント」画面に関するテンプレート
+                └── install          ## 「インストール」画面に関するテンプレート
+```
 
-- 管理画面の標準ディレクトリ  
-`ECCUBEROOT/src/Eccube/Resource/template/admin`
+## カスタマイズしたテンプレートファイルの配置ディレクトリ
 
-- インストール画面の標準ディレクトリ  
-`ECCUBEROOT/src/Eccube/Resource/template/install`
+**デザインをカスタマイズする場合、デフォルトのテンプレートファイルの変更を推奨しません。**  
+( バージョンアップ時に上書きされ、変更が戻ってしまうことがあるため。 )
 
-## デザインカスタマイズ時のファイル配置
+カスタマイズしたテンプレートファイルは以下のディレクトリに配置してください。  
+これらのテンプレートファイルは、デフォルトのテンプレートファイルに優先して利用されます。( **後述** )  
 
-EC-CUBEでは、デフォルトのディレクトリとは別に、オリジナルのデザインテンプレートを配置可能です。  
+- `[template_code]` とは
+    - 「フロント」画面のテンプレートファイル配置ディレクトリです。
+    - インストール直後は `default` という値になっています。
+    - 管理画面より、任意の値を選択可能です。
 
-新規にデザインを作成する場合、デフォルトのテンプレートを触るとバージョンアップで上書きされたりする恐れがあるため、デフォルトのテンプレートを直接触ることは推奨していません。  
 
-- オリジナルのデザインテンプレート配置時の標準ディレクトリ  
-`ECCUBEROOT/app/template/[template_code]`  
-→ [template_code]とは、テンプレートを識別するためのコード。  
-標準ではフロントの場合「default」、管理画面の場合「admin」が定義されている。
-
-このディレクトリはデザインテンプレートを利用するときに適用されるためのディレクトリとなります。
-デザインテンプレートはこのディレクトリ配下に保存されています。  
-
-リソースファイルは `ECCUBEROOT/html/template/[template_code]` に配置されます。
+```
+.
+└── app
+     └── template                # カスタマイズしたテンプレートの配置ディレクトリ
+         ├── admin               ## 「管理」画面に関するテンプレート
+         └── [template_code]     ## 「フロント」画面に関するテンプレート
+```
 
 ## テンプレートの読み出し順序
 
 テンプレートファイルが呼び出される順序は、以下の通りです。
 
-- フロント
+- 「フロント」画面
 
 ```
-1. ECCUBEROOT/app/template/[template_code]
-2. ECCUBEROOT/src/Eccube/Resource/template/[template_code]
-3. ECCUBEROOT/app/Plugin
+.
+├── app
+│   └── template
+│       ├── admin
+│       └── [template_code] (2)
+└── src
+    └── Eccube
+        └── Resource
+            └── template
+                ├── admin
+                └── default  (1)
 ```
 
-- 管理
+- 「管理」画面
 
 ```
-1. ECCUBEROOT/app/template/admin
-2. ECCUBEROOT/src/Eccube/Resource/template/admin
-3. ECCUBEROOT/app/Plugin
+.
+├── app
+│   └── template
+│       ├── admin           (2)
+│       └── [template_code]
+└── src
+    └── Eccube
+        └── Resource
+            └── template
+                ├── admin    (1)
+                └── default
 ```
 
-先にオリジナルのテンプレートが存在するのか確認し、存在しなければデフォルトのテンプレートを呼び出します。
+先にカスタマイズしたテンプレートが存在するのか確認し、存在しなければデフォルトのテンプレートを呼び出します。
 
+### 読み出し順序の例
 
-### 呼び出し例
-
-* フロントの例  
+* フロントの例
 template_codeが「MyDesign」のデザインテンプレートを利用しており、Controllerで `@Template("TemplateDir/template_name.twig")` とアノテーション定義されている場合
 
 ```
  1. app/template/MyDesign/TemplateDir/template_name.twig
  2. src/Eccube/Resource/template/default/TemplateDir/template_name.twig
  3. app/Plugin/[plugin_code]/Resource/template/TemplateDir/template_name.twig
+```
+
+```
+.
+├── app
+│   ├── Plugin
+│   │   └── [plugin_code]
+│   │       └── Resource
+│   │           └── template
+│   │               └── TemplateDir
+│   │                   └── template_name.twig     (3)
+│   └── template
+│       └── MyDesign
+│           └── TemplateDir
+│               └── template_name.twig              (1)
+└── src
+    └── Eccube
+        └── Resource
+            └── template
+                └── default
+                    └── TemplateDir
+                        └── template_name.twig       (2)
+
 ```
 という順番で表示されます。
 
@@ -78,6 +123,30 @@ template_codeが「MyDesign」のデザインテンプレートを利用して�
  1. app/template/admin/Product/index.twig
  2. src/Eccube/Resource/template/admin/Product/index.twig
  3. app/Plugin/[plugin_code]/Resource/template/admin/Product/index.twig
+```
+
+```
+.
+├── app
+│   ├── Plugin
+│   │   └── [plugin_code]
+│   │       └── Resource
+│   │           └── template
+│   │               └── admin
+│   │                   └── Product
+│   │                       └── index.twig     (3)
+│   └── template
+│       └── admin
+│           └── Product
+│               └── index.twig                  (1)
+└── src
+    └── Eccube
+        └── Resource
+            └── template
+                └── admin
+                    └── Product
+                        └── index.twig           (2)
+
 ```
 
 ## 管理画面からデザイン編集した時のテンプレートファイルの挙動(ページ編集、ブロック編集)
