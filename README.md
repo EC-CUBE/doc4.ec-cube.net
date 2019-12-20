@@ -94,10 +94,16 @@ $ git push origin [ブランチ名]
 # ディレクトリ移動
 $ cd doc4.ec-cube.net
 
-# サーバ起動します。
+# サーバ起動します。(初回)
 # * 起動するまでに多少時間がかかります。ご注意ください。
 # * マークダウンファイルを編集すれば数秒後にHTMLの再生成が行われます。
 $ docker-compose up
+
+# サーバを停止します。
+$ docker-compose stop
+
+# サーバを停止します(二回目以降)。
+$ docker-compose start
 ```
 
 Windows、Macの環境で動作確認済みです。
