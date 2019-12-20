@@ -36,6 +36,11 @@ layout: default
       <section class="page__content" itemprop="text">
         {% if page.toc %}
           <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
+            <a href="#disqus_thread" style="font-size:.98rem;margin-bottom:3px;">
+              <img src="//c.disquscdn.com/next/current/publisher-admin/assets/img/emoji/love-512x512.png" style="height: 24px;width: 24px;">
+              このページを評価する
+              <img src="//c.disquscdn.com/next/current/publisher-admin/assets/img/emoji/sad-512x512.png" style="height: 24px;width: 24px;">
+            </a>
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4></header>
               {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" %}
