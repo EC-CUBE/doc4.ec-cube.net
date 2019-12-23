@@ -11,8 +11,8 @@ description: EC-CUBE 4系のインストールについての説明です。
 [システム要件](/quickstart/requirement)を満たしているか確認してください。
 
 このインストール手順では、サーバの設定、FTPソフト等の設定、使いかたについては解説していません。適時お使いのサーバ会社のマニュアル等を参照してください。
-- さくらインターネット: [https://help.sakura.ad.jp/206054522/](https://help.sakura.ad.jp/206054522/)
-- Xserver: [https://www.xserver.ne.jp/manual/man_ftp_setting.php](https://www.xserver.ne.jp/manual/man_ftp_setting.php)
+- さくらインターネット: [https://help.sakura.ad.jp/206054522/](https://help.sakura.ad.jp/206054522/){:target="_blank"}
+- Xserver: [https://www.xserver.ne.jp/manual/man_ftp_setting.php](https://www.xserver.ne.jp/manual/man_ftp_setting.php){:target="_blank"}
 
 **次のステップ**
 - [データベースの準備をする](#データベースの準備をする)
@@ -23,8 +23,8 @@ description: EC-CUBE 4系のインストールについての説明です。
 EC-CUBEはMySQL、PostgreSQLどちらかのデータベースを使用します。
 空のデータベースがひとつ必要ですので、新しく作成してください。
 データベースの作成方法は各ホスティング会社のヘルプを参照してください。
-- さくらインターネット: [https://help.sakura.ad.jp/360000225021/](https://help.sakura.ad.jp/360000225021/)
-- Xserver: [https://www.xserver.ne.jp/manual/man_db_setting.php](https://www.xserver.ne.jp/manual/man_db_setting.php)
+- さくらインターネット: [https://help.sakura.ad.jp/360000225021/](https://help.sakura.ad.jp/360000225021/){:target="_blank"}
+- Xserver: [https://www.xserver.ne.jp/manual/man_db_setting.php](https://www.xserver.ne.jp/manual/man_db_setting.php){:target="_blank"}
 
 データベースを作成したら以下の4点を控えておいてください。
 - データベースユーザ名
@@ -204,7 +204,7 @@ EC-CUBEのソースコードファイルの展開が完了後に、インスト�
 
 **おめでとうございます！**この画面が表示されたらインストール完了です。管理画面にログインして足りない店舗情報や商品登録を行い、ショップの開店準備を進めましょう。
 
-管理画面の使い方は[こちら](https://www.shiro8.net/manual4/v40x/index.html)。
+管理画面の使い方は[こちら](https://www.shiro8.net/manual4/v40x/index.html){:target="_blank"}。
 
 *管理画面を表示*をクリックすると、管理画面のログイン画面に遷移します。[店舗の基本情報](#店舗の基本情報)で入力した管理者の情報で管理画面にログインしてみましょう。
 
@@ -216,9 +216,9 @@ EC-CUBEのソースコードファイルの展開が完了後に、インスト�
 
 以下にインストール時に初心者がつまづきやすい点を記載してありますのでご確認ください。
 
-その他のエラーや不具合でインストールできない時は、[開発コミュニティ](https://xoops.ec-cube.net/)を検索、質問してみてください。
+その他のエラーや不具合でインストールできない時は、[開発コミュニティ](https://xoops.ec-cube.net/){:target="_blank"}を検索、質問してみてください。
 
-また、各地で開催されている[ユーザグループの勉強会](https://www.ec-cube.net/news/#events_information)に足を運んで聞いてみるのも良いでしょう。
+また、各地で開催されている[ユーザグループの勉強会](https://www.ec-cube.net/news/#events_information){:target="_blank"}に足を運んで聞いてみるのも良いでしょう。
 
 #### データベースに接続できません
 
