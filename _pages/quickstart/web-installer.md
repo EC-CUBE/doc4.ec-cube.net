@@ -12,7 +12,7 @@ description: EC-CUBE 4系のインストールについての説明です。
 
 このインストール手順では、サーバの設定、FTPソフト等の設定、使いかたについては解説していません。適時お使いのサーバ会社のマニュアル等を参照してください。
 - さくらインターネット: [https://help.sakura.ad.jp/206054522/](https://help.sakura.ad.jp/206054522/){:target="_blank"}
-- xSerer: [https://www.xserver.ne.jp/manual/man_ftp_setting.php](https://www.xserver.ne.jp/manual/man_ftp_setting.php){:target="_blank"}
+- Xserver: [https://www.xserver.ne.jp/manual/man_ftp_setting.php](https://www.xserver.ne.jp/manual/man_ftp_setting.php){:target="_blank"}
 
 **次のステップ**
 - [データベースの準備をする](#データベースの準備をする)
@@ -24,7 +24,7 @@ EC-CUBEはMySQL、PostgreSQLどちらかのデータベースを使用します�
 空のデータベースがひとつ必要ですので、新しく作成してください。
 データベースの作成方法は各ホスティング会社のヘルプを参照してください。
 - さくらインターネット: [https://help.sakura.ad.jp/360000225021/](https://help.sakura.ad.jp/360000225021/){:target="_blank"}
-- xSerer: [https://www.xserver.ne.jp/manual/man_db_setting.php](https://www.xserver.ne.jp/manual/man_db_setting.php){:target="_blank"}
+- Xserver: [https://www.xserver.ne.jp/manual/man_db_setting.php](https://www.xserver.ne.jp/manual/man_db_setting.php){:target="_blank"}
 
 データベースを作成したら以下の4点を控えておいてください。
 - データベースユーザ名
