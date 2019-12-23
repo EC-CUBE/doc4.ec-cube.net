@@ -77,6 +77,13 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 + [通貨](i18n_currency)
 + [タイムゾーン](i18n_timezone)
 
+## 開発ツール
++ [MailCatcher](/development-tools/mail-catcher)
+
+## 本体開発に参加する
++ [開発の概要](/contribution-guide/overview)
++ [プルリクエストの作り方](/contribution-guide/pull-request)
+
 ## ドキュメントがみつからないときは
 + [ドキュメントのリクエスト](/documents/request)
 + [ドキュメントの追加・書き方](/documents/writing-and-formatting)
