@@ -272,7 +272,7 @@ cd ec-cube
 bin/console server:run
 ```
 
-[http://127.0.0.1:8000/](http://127.0.0.1:8000/) にアクセスすると、 Webインストーラが表示されますので、指示にしたがってインストールしてください。
+[http://127.0.0.1:8000/](http://127.0.0.1:8000/){:target="_blank"} にアクセスすると、 Webインストーラが表示されますので、指示にしたがってインストールしてください。
 
 ### Dockerを使用してインストールする
 
@@ -441,7 +441,7 @@ SetEnv ECCUBE_ADMIN_ROUTE admin
 SetEnv ECCUBE_COOKIE_PATH /
 ```
 
-[参考: Apache HTTP サーバ バージョン 2.4 - SetEnv ディレクティブ](https://httpd.apache.org/docs/2.4/ja/mod/mod_env.html#setenv)
+[参考: Apache HTTP サーバ バージョン 2.4 - SetEnv ディレクティブ](https://httpd.apache.org/docs/2.4/ja/mod/mod_env.html#setenv){:target="_blank"}
 
 ### サーバ設定ファイルに環境変数を設定した場合の注意事項
 
