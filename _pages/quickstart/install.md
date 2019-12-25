@@ -153,6 +153,8 @@ docker run -d -p 1080:1080 -p 1025:1025 --name mailcatcher schickling/mailcatche
 docker run --name ec-cube -p "8080:80" -p "4430:443"  --link mailcatcher:mailcatcher eccube4-php-apache
 ```
 
+[mailcatcherについての詳細ページ](https://doc4.ec-cube.net/development-tools/mail-catcher)
+
 #### PostgreSQL を使用する場合
 
 ```shell
