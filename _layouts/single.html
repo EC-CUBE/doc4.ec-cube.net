@@ -35,6 +35,20 @@ layout: default
 
       <section class="page__content" itemprop="text">
         {% if page.toc %}
+
+          <!-->コメント記述例を挿入<-->
+          <script type="text/javascript">
+            function insertCommentEx(){
+              target = document.getElementById("posts");
+              insertComment = getInsertComment();
+              target.innerHTML = target.innerHTML + insertComment;
+            }
+            function getInsertComment(){
+              return "<div style=\"font-size: 12pt;margin-top:20px;margin-bottom:-30px;\"><div style=\"font-weight:bold;\">■質問、書いてほしい情報など、気軽にコメントしてみましょう！</div><div>コメント例：</div><div>　「手順通りやったけど、◯◯の部分でうまくいかない」</div><div>　「◯◯の部分について、もう少し手順を詳細に記載してよ」</div><div>　「最初から、こういう情報があればわかりやすかった」</div></div>";
+            }
+            insertCommentEx();
+          </script>
+        
           <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
             <a href="#disqus_thread" style="font-size:.98rem;margin-bottom:3px;">
               <img src="//c.disquscdn.com/next/current/publisher-admin/assets/img/emoji/love-512x512.png" style="height: 24px;width: 24px;">
