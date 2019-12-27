@@ -48,8 +48,8 @@ summary: EC-CUBEでは、税率の設定について、基本税率と商品ご�
 2019年10月に、消費税率の10％への引上げ及び軽減税率制度の導入が始まります。
 軽減税率制度が導入された場合、「飲食料品」などの軽減税率対象の品目は通常の品目とは異なった税率を適用する必要があります。
 
-消費税の軽減税率制度について
-[https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/index.htm](https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/index.htm)
+消費税の軽減税率制度について  
+[https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/index.htm](https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/index.htm){:target="_blank"}
 
 ### 標準税率と軽減税率の推奨設定
 

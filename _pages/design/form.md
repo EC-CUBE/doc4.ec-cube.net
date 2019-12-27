@@ -10,8 +10,8 @@ summary: フォームレイアウトを変更する方法を説明します。
 フォームを画面を作成する場合、`<input type="text" name="hoge">`とinputタグを直接記述せず、Twig関数を利用してフォーム画面を作成します。  
 
 フォームをより詳しく理解するにはSymfonyのサイトをご確認ください。  
-[https://symfony.com/doc/current/forms.html](https://symfony.com/doc/current/forms.html)  
-[https://symfony.com/doc/current/best_practices/forms.html](https://symfony.com/doc/current/best_practices/forms.html)
+[https://symfony.com/doc/current/forms.html](https://symfony.com/doc/current/forms.html){:target="_blank"}  
+[https://symfony.com/doc/current/best_practices/forms.html](https://symfony.com/doc/current/best_practices/forms.html){:target="_blank"}
 
 ## フォーム内容の出力方法
 Twigではフォーム画面を作成する場合、専用の出力関数と変数を利用して作成します。
@@ -40,7 +40,7 @@ EC-CUBEではフォーム内容を出力するためのテンプレートが用�
 - フロント用のフォームレイアウト  
 ECCUBEROOT/src/Eccube/Resource/template/default/Form/form_div_layout.twig
 
-- 管理画面用のフォームレイアウト
+- 管理画面用のフォームレイアウト  
 ECCUBEROOT/src/Eccube/Resource/template/admin/Form/bootstrap_4_layout.html.twig
 ECCUBEROOT/src/Eccube/Resource/template/admin/Form/bootstrap_4_horizontal_layout.html.twig
 
@@ -162,4 +162,4 @@ Controllerから `form1` として渡された場合、
 と記述する必要があります。
 
 フォームのカスタマイズをより詳しく知りたい方はSymfonyのサイトをご確認ください。  
-[http://symfony.com/doc/current/form/form_customization.html](http://symfony.com/doc/current/form/form_customization.html)
+[http://symfony.com/doc/current/form/form_customization.html](http://symfony.com/doc/current/form/form_customization.html){:target="_blank"}
