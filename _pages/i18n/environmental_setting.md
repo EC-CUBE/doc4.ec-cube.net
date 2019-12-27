@@ -67,4 +67,6 @@ symfonyのアイコンをクリックすると、
 ![デバッグツールバーを開いた状態](/images/environmental_setting/debug_toolbar2.png)
 
 
+実行されたSQLや、リクエストの内容、
 
+表示速度など多くの情報がブラウザ上で確認できるようになります。
