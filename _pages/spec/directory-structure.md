@@ -19,11 +19,12 @@ layout: single
 
 ```
 app
-├── Customize      カスタマイズ用PHPコードを配置
-├── Plugin    インストールしたプラグインを配置
-├── config    設定ファイルを配置
-├── proxy     Entity拡張機能によって生成されたProxyクラスを配置
-└── template  上書きされたテンプレートファイルを配置
+├── Customize   カスタマイズ用PHPコードを配置
+├── Plugin      インストールしたプラグインを配置
+├── PluginData  プラグインが利用するファイルを配置
+├── config      設定ファイルを配置
+├── proxy       Entity拡張機能によって生成されたProxyクラスを配置
+└── template    上書きされたテンプレートファイルを配置
 ```
 
 ### bin/
