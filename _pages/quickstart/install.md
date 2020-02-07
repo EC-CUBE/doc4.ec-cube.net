@@ -348,14 +348,11 @@ docker run --name ec-cube -p "8080:80" -p "4430:443" --link container_mysql:db e
 ```shell
 cd path/to/ec-cube
 
-# .envファイルのコピー
-cp .env.dist .env
-
 # コンテナの起動 (初回のみビルド処理あり)
 docker-compose up -d
 
-# 初回はインストールスクリプトを実行
-docker-compose exec ec-cube bin/console eccube:install
+# 初回はインストールスクリプトを実行( **`www-data` ユーザで実行する点に注意！** )
+docker-compose exec -u www-data ec-cube bin/console eccube:install
 ```
 
 2回目以降の起動時も同様のコマンドを使用します。
