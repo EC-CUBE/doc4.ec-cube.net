@@ -28,6 +28,9 @@ docs:
           - title: 4.0.3での注意点
             url: /quickstart_update_4_0_3
             output: web, pdf
+          - title: SameSite Cookie 対応
+            url: /hotfix_samesite_cookie
+            output: web, pdf
 
       - title: コマンドラインインターフェイス
         url: /quickstart_cli
