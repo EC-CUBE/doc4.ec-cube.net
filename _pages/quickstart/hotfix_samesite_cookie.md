@@ -12,7 +12,7 @@ summary : EC-CUBE4系でのSameSite Cookieの暫定対応方法について
 - 2020年2月にリリースされた Chrome 80 より、他サイトからEC-CUBEで構築されたサイトに遷移する場合に、条件によってはEC-CUBEのCookieが送信されなくなり、決済が完了しない等の現象が発生します。この問題に対応するために以下の修正パッチを適用して頂く必要があります。
 
 ### 関連情報
-- [Google Developers Japan: 新しい Cookie 設定 SameSite=None; Secure の準備を始めましょう](https://developers-jp.googleblog.com/2019/11/cookie-samesitenone-secure.html])
+- [Google Developers Japan: 新しい Cookie 設定 SameSite=None; Secure の準備を始めましょう](https://developers-jp.googleblog.com/2019/11/cookie-samesitenone-secure.html)
 - [SameSite Updates - The Chromium Projects](https://www.chromium.org/updates/same-site)
 
 ## 修正パッチ
