@@ -31,6 +31,7 @@ app/Plugin/SamplePlugin/
 ├── PluginManager.php
 ├── Repository
 ├── Resource
+│   ├── assets
 │   ├── config
 │   ├── locale
 │   └── template
@@ -94,6 +95,33 @@ https://symfony.com/doc/current/service_container.html
 ### その他の設定ファイル
 その他のプラグイン独自の設定ファイルをプラグイン内に含めることは可能ですが、プラグインインストール後に生成または変更される設定ファイルは `app/PluginData` ディレクトリ以下に設置するようにしてください。プラグインのディレクトリ内にこれらのファイルを配置した場合、**プラグインのアップデートや再インストールの操作によって設定ファイルが失われます。**
 `app/PluginData` ディレクトリ以下を利用する場合は、他のプラグインとの衝突を避けるため、`app/PluginData/[プラグインコード]` ディレクトリを作成して利用することを推奨します。
+
+## 静的コンテンツ
+
+プラグインで利用する静的コンテンツ (html,css,js,画像など) は、`Resource/assets` 以下に配置します。プラグイン以下の `Resource/assets` ディレクトリはインストール/アップデート時に `[EC-CUBEホームディレクトリ]/html/plugin/[プラグインコード]/assets` 以下にコピーされます。 [#3821](https://github.com/EC-CUBE/ec-cube/pull/3821)
+
+
+例えば、以下のように `sample.jpg` ファイルを配置しておくと、 `[EC-CUBEホームディレクトリ]/html/plugin/SamplePlugin/assets/sample.jpg` にコピーされます。
+
+```
+SamplePlugin
+ └── Resource
+      └── assets
+         └── sample.jpg
+```
+
+Twigファイルからこの `sample.jpg` へのパスは以下の記述で取得できます。
+
+```twig
+{% raw %}{{ asset('SamplePlugin/assets/sample.jpg', 'plugin') }}{% endraw %}
+```
+
+展開されたパスは以下のようになります。
+
+```
+/html/plugin/SamplePlugin/assets/sample.jpg
+```
+
 
 ## プラグインのパッケージング
 
