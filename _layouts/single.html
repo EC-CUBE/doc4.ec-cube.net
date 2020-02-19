@@ -41,6 +41,7 @@ layout: default
               ページを評価/質問する
               <img src="//c.disquscdn.com/next/current/publisher-admin/assets/img/emoji/sad-512x512.png" style="height: 24px;width: 24px;">
             </a>
+            {% github_edit_link '<i class="fa fa-pencil-square-o" aria-hidden="true"></i> ページを編集する' %}
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4></header>
               {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" %}
