@@ -77,6 +77,9 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 ## 開発ツール
 + [MailCatcher](/development-tools/mail-catcher)
 
+## Web API仕様（ベータ）
++ [Web API β版 スタートアップガイド](api_quickstart_guide)
+
 ## 本体開発に参加する
 + [開発の概要](/contribution-guide/overview)
 + [プルリクエストの作り方](/contribution-guide/pull-request)
