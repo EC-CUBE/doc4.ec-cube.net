@@ -10,6 +10,18 @@ description: EC-CUBE 4 Web API の利用方法について簡単な説明です�
 **Web API は開発途中の機能につき、仕様は変更になる場合があります。**
 **また本番環境では絶対に利用しないでください。**
 
+## 実装内容
+
+Web API ベータ版では以下の実装がなされています。
+
+- OAuth2.0に準拠した認可
+- GraphQLによる情報の取得
+
+以下は実装されていません。
+
+- GraphQLによる情報の更新
+- Webhooks
+
 ## EC-CUBEのインストール
 
 EC-CUBE 4 Web API は [GitHubのexperimental/apiブランチ](https://github.com/EC-CUBE/ec-cube/tree/experimental/api) で開発が進められています。
@@ -38,6 +50,8 @@ mv private.key var/oauth
 mv public.key var/oauth
 ```
 
+詳しい鍵の設定方法については利用しているライブラリ([oauth2-server](https://oauth2.thephpleague.com/)の[ドキュメント](https://oauth2.thephpleague.com/installation/)が参考になります。
+
 ## OAuth2.0による認可
 
 **この記事は OAuth2.0 についての説明はしていませんので、OAuth2.0 自体の仕様について他のサイト等でご確認ください。**
@@ -49,6 +63,8 @@ OAuth2.0の認可を利用するためにまずはクライアントの登録が
 ```shell
 bin/console trikoder:oauth2:create-client client_identifier client_secret --redirect-uri=http://127.0.0.1:8000/ --grant-type=authorization_code --grant-type=client_credentials --grant-type=implicit --grant-type=password --grant-type=refresh_token --scope=read --scope=write
 ```
+
+詳しいコマンドの使い方については利用しているライブラリ([oauth2-bundle](https://github.com/trikoder/oauth2-bundle)の[ドキュメント](https://github.com/trikoder/oauth2-bundle/blob/master/docs/basic-setup.md)が参考になります。
 
 ### エンドポイント
 
@@ -151,7 +167,7 @@ EC-CUBEからJSON形式で以下のパラメータが返ってきます。
 
 ## GraphQLによる情報の取得
 
-**この記事は GraphQL についての説明はしていませんので、GraphQL 自体の仕様について他のサイト等でご確認ください。**
+**この記事は GraphQL についての説明はしていませんので、GraphQL 自体の仕様について[GraphQL公式サイト](https://graphql.org/)等でご確認ください。**
 
 GraphQL の Query で以下のデータの取得が可能です。
 
@@ -170,7 +186,7 @@ GraphQL の Query で以下のデータの取得が可能です。
 
 ### データの取得例
 
-OAuth2.0 で取得した access_token をヘッダに設定してエンドポイントへ Query を POST すると
+OAuth2.0 で取得した access_token をヘッダに設定してエンドポイントへ Query を POST するとデータを取得できます。
 
 Queryの例
 
