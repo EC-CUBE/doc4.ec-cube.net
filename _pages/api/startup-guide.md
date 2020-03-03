@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Web API β版 プラグインスタートアップガイド
+title: Web API β版 スタートアップガイド
 keywords: api
 tags: [quickstart, getting_started]
 permalink: api_quickstart_guide
