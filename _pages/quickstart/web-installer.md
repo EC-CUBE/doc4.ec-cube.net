@@ -8,7 +8,7 @@ description: EC-CUBE 4系のインストールについての説明です。
 ---
 
 ## インストールの前に
-[システム要件](/quickstart/requirement)を満たしているか確認してください。
+[システム要件](https://doc4.ec-cube.net/quickstart_requirement)を満たしているか確認してください。
 
 このインストール手順では、サーバの設定、FTPソフト等の設定、使いかたについては解説していません。適時お使いのサーバ会社のマニュアル等を参照してください。
 - さくらインターネット: [https://help.sakura.ad.jp/206054522/](https://help.sakura.ad.jp/206054522/){:target="_blank"}
