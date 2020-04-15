@@ -134,6 +134,12 @@ docs:
       - title: タイムゾーン
         url: /i18n_timezone
         output: web, pdf
+      - title: 環境設定
+        url: /environmental_setting
+        output: web, pdf
+      - title: デバッグモード
+        url: /debug_mode
+        output: web, pdf
   - title: 開発ツール
     output: web, pdf
     children:
