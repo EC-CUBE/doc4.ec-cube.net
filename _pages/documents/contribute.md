@@ -13,11 +13,11 @@ EC-CUBE本体と同様に、追記や内容の修正はGitHubへPullRequestを�
 
 ## 開発にあたり
 
-[GitHub](https://github.com/EC-CUBE/doc4.ec-cube.net)のREADME.mdにて、開発に参加するにあたりご了承いただきたい事項や、
+[GitHubのREADME.md](https://github.com/EC-CUBE/doc4.ec-cube.net#ec-cube-4開発ドキュメント){:target="_blank"}にて、開発に参加するにあたりご了承いただきたい事項や、
 環境構築について記載しております。  
 PullRequestをお送りいただく際は、必ずご一読ください。
 
 ## PullRequestの送信方法
 
-本体へPullRequestをお送りする[手順](/contribution-guide/pull-request)を参考に、
-[こちら](https://github.com/EC-CUBE/doc4.ec-cube.net)へPullRequestをお送りください。
+本体へPullRequestをお送りする[手順](https://github.com/EC-CUBE/doc4.ec-cube.net#pullrequestの送信方法){:target="_blank"}を参考に、
+[こちら](https://github.com/EC-CUBE/doc4.ec-cube.net/pulls){:target="_blank"}へPullRequestをお送りください。

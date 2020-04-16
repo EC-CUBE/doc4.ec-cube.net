@@ -1,7 +1,7 @@
 ---
-title: Service のカスタマイズ
-keywords: core カスタマイズ Service
-tags: [core, service]
+title: PurchaseFlow のカスタマイズ
+keywords: core カスタマイズ PurchaseFlow Cart Shopping
+tags: [core, service, purchaseflow]
 permalink: customize_service
 folder: customize
 ---

@@ -105,7 +105,7 @@ trait BaseInfoTrait
 ```
 
 `@FormAppend` アノテーションを追加すると、対象のエンティティを使用しているフォームに、追加したフィールドのフォームが追加されます。
-入力チェックを使用したい場合は、 `@NotBlank` など [Symfony 標準のアノテーション](https://symfony.com/doc/current/reference/constraints.html) を使用できます。
+入力チェックを使用したい場合は、 `@NotBlank` など [Symfony 標準のアノテーション](https://symfony.com/doc/current/reference/constraints.html){:target="_blank"} を使用できます。
 
 フォームを詳細にカスタマイズしたい場合は、 `auto_render=true` を指定し、 `form_theme` や `type`, `option` を個別に指定します。
 

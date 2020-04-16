@@ -10,30 +10,28 @@ permalink: /
 ---
 
 EC-CUBE 4.0 の開発者向けドキュメントサイトです。
-  
-EC-CUBEのインストール方法、開発ガイドラインや要素技術の概念、本体開発やプラグイン開発のチュートリアル、Cookbookなどの情報を提供しています。  
-ドキュメントへの追記、記載内容の修正についてはEC-CUBE本体と同様に[GitHub](https://github.com/EC-CUBE/doc4.ec-cube.net/){:target="_blank"}で受け付けております。
+EC-CUBEのインストール方法、開発ガイドラインや要素技術の概念、本体開発やプラグイン開発のチュートリアル、Cookbookなどの情報を提供しています。
+
+ドキュメント内容や、カスタマイズについて不明な点がございましたら、以下をご検討ください。
++ EC-CUBE本体と同様に[GitHub](https://github.com/EC-CUBE/doc4.ec-cube.net/){:target="_blank"}へIssueをご投稿いただく
+  詳細は[こちら](documents/request)をご覧ください
++ [実施予定のUGや勉強会](https://www.ec-cube.net/event/){:target="_blank"}を探して参加する
+
+ドキュメントへの追記、記載内容の修正についても[GitHub](https://github.com/EC-CUBE/doc4.ec-cube.net/){:target="_blank"}にて受け付けております。
+追加方法は[こちら](/documents/writing-and-formatting)をご覧ください。
 
 運用者向けには以下のサイトをご覧ください。
 
 + [EC-CUBE 4管理・運用 マニュアル（株式会社シロハチ様）](https://www.shiro8.net/manual4/v40x/index.html){:target="_blank"}
 
-## Topics
-
-|掲載日|内容|
-|---|---|
-|2019/09/25|[Dockerを使用したインストール方法](quickstart_install#dockerを使用したインストール)が追加されました。| 
-|2019/09/24|EC-CUBE4.0.3で商品別税率設定が適用されない不具合が確認されております。詳しくは、[こちら](workaround-product-tax-rule)をご確認ください。|
-|2019/09/05|EC-CUBE4.0.3への[バージョンアップ手順](quickstart_update)と[注意点](quickstart_update_4_0_3)が追加されました。| 
-|2019/09/02|[税率設定のページ](spec_tax)が追加されました。| 
-
 ## Quick Start
 
 + [システム要件](quickstart_requirement)
-+ [インストール方法](quickstart_install)
++ [初心者向けインストール方法（Webインストーラ）](/quickstart_install/web-installer)
++ [開発者向けインストール方法](quickstart_install)
 + バージョンアップ
-	- [バージョンアップ方法](quickstart_update)
-	- [4.0.3での注意点](quickstart_update_4_0_3)
+	- [バージョンアップ方法](/update)
+	- [4.0.3での注意点](/update/4_0_3)
 + [コマンドラインインターフェイス](quickstart_cli)
 
 ## 機能仕様
@@ -76,16 +74,27 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 + [通貨](i18n_currency)
 + [タイムゾーン](i18n_timezone)
 
+## 開発ツール
++ [MailCatcher](/development-tools/mail-catcher)
+
+## Web API仕様（ベータ）
++ [Web API β版 スタートアップガイド](api_quickstart_guide)
+
+## 本体開発に参加する
++ [開発の概要](/contribution-guide/overview)
++ [プルリクエストの作り方](/contribution-guide/pull-request)
+
 ## ドキュメントがみつからないときは
 + [ドキュメントのリクエスト](/documents/request)
++ [ドキュメントの追加・書き方](/documents/writing-and-formatting)
 + [ドキュメントの投稿](/documents/contribute)
 
 ## Supporters
 
 EC-CUBEは以下のサポートを受けています。
 
-+ [SAKURA internet](https://www.sakura.ad.jp/){:target="_blank"}  
-[![SAKURA internet](./images/3-1-2line-rgb-whiteback.png)](https://www.sakura.ad.jp/){:target="_blank"}  
++ [SAKURA internet](https://www.sakura.ad.jp/){:target="_blank"}
+[![SAKURA internet](./images/3-1-2line-rgb-whiteback.png)](https://www.sakura.ad.jp/){:target="_blank"}
 
-+ [VAddy](https://vaddy.net/ja/){:target="_blank"}  
++ [VAddy](https://vaddy.net/ja/){:target="_blank"}
 [![VAddy](./images/VAddy_logo.png)](https://vaddy.net/ja/){:target="_blank"}
