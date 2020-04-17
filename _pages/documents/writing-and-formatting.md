@@ -7,7 +7,7 @@ permalink: documents/writing-and-formatting
 
 ## ページの追加方法
 
-[Jekyll](http://jekyllrb-ja.github.io/){:target="_blank"}を利用してページの自動生成を行っています。  
+[Jekyll](http://jekyllrb-ja.github.io/){:target="_blank"}を利用してページの自動生成を行っています。
 [開発ドキュメントのソースコード](https://github.com/EC-CUBE/doc4.ec-cube.net/){:target="_blank"}にある `_pages` ディレクトリの中にmarkdownファイル(.md)を置くと、自動的にページが追加されます。
 
 ### markdownヘッダー部分の書き方
@@ -23,9 +23,9 @@ tags: [quickstart, install]
 ---
 ```
 
-`title` ：h1タグのコンテンツになります。  
-`description` ：シェアした場合に `og:description` になります。  
-`permalink` ：ページのURLになります。hoge/testのような書き方も可能。  
+`title` ：h1タグのコンテンツになります。
+`description` ：シェアした場合に `og:description` になります。
+`permalink` ：ページのURLになります。hoge/testのような書き方も可能。
 `tags` ：タグ付けができます。
 
 ### 左のメニューに追加する場合
@@ -44,7 +44,7 @@ docs:
         output: web, pdf
         sub_items:
         - title: コンテンツ
-          url: /quickstart_update
+          url: /update
           output: web, pdf
 ```
 

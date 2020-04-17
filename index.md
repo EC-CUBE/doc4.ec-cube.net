@@ -9,15 +9,15 @@ sidebar:
 permalink: /
 ---
 
-EC-CUBE 4.0 の開発者向けドキュメントサイトです。  
+EC-CUBE 4.0 の開発者向けドキュメントサイトです。
 EC-CUBEのインストール方法、開発ガイドラインや要素技術の概念、本体開発やプラグイン開発のチュートリアル、Cookbookなどの情報を提供しています。
 
 ドキュメント内容や、カスタマイズについて不明な点がございましたら、以下をご検討ください。
-+ EC-CUBE本体と同様に[GitHub](https://github.com/EC-CUBE/doc4.ec-cube.net/){:target="_blank"}へIssueをご投稿いただく  
++ EC-CUBE本体と同様に[GitHub](https://github.com/EC-CUBE/doc4.ec-cube.net/){:target="_blank"}へIssueをご投稿いただく
   詳細は[こちら](documents/request)をご覧ください
 + [実施予定のUGや勉強会](https://www.ec-cube.net/event/){:target="_blank"}を探して参加する
 
-ドキュメントへの追記、記載内容の修正についても[GitHub](https://github.com/EC-CUBE/doc4.ec-cube.net/){:target="_blank"}にて受け付けております。  
+ドキュメントへの追記、記載内容の修正についても[GitHub](https://github.com/EC-CUBE/doc4.ec-cube.net/){:target="_blank"}にて受け付けております。
 追加方法は[こちら](/documents/writing-and-formatting)をご覧ください。
 
 運用者向けには以下のサイトをご覧ください。
@@ -30,8 +30,8 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 + [初心者向けインストール方法（Webインストーラ）](/quickstart_install/web-installer)
 + [開発者向けインストール方法](quickstart_install)
 + バージョンアップ
-	- [バージョンアップ方法](quickstart_update)
-	- [4.0.3での注意点](quickstart_update_4_0_3)
+	- [バージョンアップ方法](/update)
+	- [4.0.3での注意点](/update/4_0_3)
 + [コマンドラインインターフェイス](quickstart_cli)
 
 ## 機能仕様
@@ -93,8 +93,8 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 
 EC-CUBEは以下のサポートを受けています。
 
-+ [SAKURA internet](https://www.sakura.ad.jp/){:target="_blank"}  
-[![SAKURA internet](./images/3-1-2line-rgb-whiteback.png)](https://www.sakura.ad.jp/){:target="_blank"}  
++ [SAKURA internet](https://www.sakura.ad.jp/){:target="_blank"}
+[![SAKURA internet](./images/3-1-2line-rgb-whiteback.png)](https://www.sakura.ad.jp/){:target="_blank"}
 
-+ [VAddy](https://vaddy.net/ja/){:target="_blank"}  
++ [VAddy](https://vaddy.net/ja/){:target="_blank"}
 [![VAddy](./images/VAddy_logo.png)](https://vaddy.net/ja/){:target="_blank"}
