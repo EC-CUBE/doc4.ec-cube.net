@@ -46,7 +46,7 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 + [Entityのカスタマイズ](customize_entity)
 + [Repositoryのカスタマイズ](customize_repository)
 + [FormTypeのカスタマイズ](customize_formtype)
-+ [Serviceのカスタマイズ](customize_service)
++ [購入フローのカスタマイズ](customize_service)
 + [テンプレートのカスタマイズ](customize_template)
 + [Symfonyの機能を使った拡張](customize_symfony)
 

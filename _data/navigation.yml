@@ -64,7 +64,7 @@ docs:
       - title: FormTypeのカスタマイズ
         url: /customize_formtype
         output: web, pdf
-      - title: Serviceのカスタマイズ
+      - title: 購入フローのカスタマイズ
         url: /customize_service
         output: web, pdf
       - title: テンプレートのカスタマイズ
