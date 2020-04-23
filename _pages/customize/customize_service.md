@@ -1,5 +1,5 @@
 ---
-title: PurchaseFlow のカスタマイズ
+title: 購入フローのカスタマイズ
 keywords: core カスタマイズ PurchaseFlow Cart Shopping
 tags: [core, service, purchaseflow]
 permalink: customize_service
