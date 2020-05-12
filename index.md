@@ -16,6 +16,7 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 + EC-CUBE本体と同様に[GitHub](https://github.com/EC-CUBE/doc4.ec-cube.net/){:target="_blank"}へIssueをご投稿いただく
   詳細は[こちら](documents/request)をご覧ください
 + [実施予定のUGや勉強会](https://www.ec-cube.net/event/){:target="_blank"}を探して参加する
++ [ドキュメントへの要望を送る（公式サイト）](https://www.ec-cube.net/committer/#Doc4Form){:target="_blank"}
 
 ドキュメントへの追記、記載内容の修正についても[GitHub](https://github.com/EC-CUBE/doc4.ec-cube.net/){:target="_blank"}にて受け付けております。
 追加方法は[こちら](/documents/writing-and-formatting)をご覧ください。
@@ -23,6 +24,8 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 運用者向けには以下のサイトをご覧ください。
 
 + [EC-CUBE 4管理・運用 マニュアル（株式会社シロハチ様）](https://www.shiro8.net/manual4/v40x/index.html){:target="_blank"}
+
+[こちら](https://www.ec-cube.net/committer/#Doc4Form){:target="_blank"}でドキュメントへのフィードバックを募集しています。
 
 ## Quick Start
 
@@ -80,7 +83,8 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 ## Web API仕様（ベータ）
 + [Web API β版 スタートアップガイド](api_quickstart_guide)
 
-## 本体開発に参加する
+## 開発に参加する
++ [EC-CUBEの開発に参加するには？（公式サイト）](https://www.ec-cube.net/committer/){:target="_blank"}
 + [開発の概要](/contribution-guide/overview)
 + [プルリクエストの作り方](/contribution-guide/pull-request)
 
@@ -88,6 +92,7 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 + [ドキュメントのリクエスト](/documents/request)
 + [ドキュメントの追加・書き方](/documents/writing-and-formatting)
 + [ドキュメントの投稿](/documents/contribute)
++ [ドキュメントへのフィードバックを送る](https://www.ec-cube.net/committer/#Doc4Form){:target="_blank"}
 
 ## Supporters
 
