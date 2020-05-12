@@ -80,7 +80,8 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 ## Web API仕様（ベータ）
 + [Web API β版 スタートアップガイド](api_quickstart_guide)
 
-## 本体開発に参加する
+## 開発に参加する
++ [EC-CUBEの開発に参加するには？（公式サイト）](https://www.ec-cube.net/committer/){:target="_blank"}
 + [開発の概要](/contribution-guide/overview)
 + [プルリクエストの作り方](/contribution-guide/pull-request)
 

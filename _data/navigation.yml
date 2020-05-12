@@ -144,9 +144,12 @@ docs:
       - title: MailCatcher
         url: /development-tools/mail-catcher
         output: web, pdf
-  - title: 本体開発に参加する
+  - title: 開発に参加する
     output: web, pdf
     children:
+    - title: EC-CUBEの開発に参加するには？（公式サイト）
+      url: https://www.ec-cube.net/committer/
+      output: web, pdf
     - title: 開発の概要
       url: /contribution-guide/overview
       output: web, pdf
