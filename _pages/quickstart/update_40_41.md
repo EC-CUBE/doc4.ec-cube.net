@@ -18,11 +18,11 @@ Symfony4.4での変更をすべて網羅できているわけではないため�
 
 - [UPGRADE-4.0.md](https://github.com/symfony/symfony/blob/4.4/UPGRADE-4.0.md)
 
-また、4.0と4.xでの互換性を重視し、発生しているdeprecation noticeを意図的に修正していない箇所もあります。
+また、EC-CUBE4.0とEC-CUBE4.xでの互換性を重視し、発生しているdeprecation noticeを意図的に修正していない箇所もあります。
 
 ※ログ等で`User Deprecated: xxx`といった出力が出る場合がありますが、動作上は問題ありません。
 
-本修正を行っても、Symfony3.4/4.4ともに動作します。
+本修正を行っても、[テストコード/コンテナの取得](#コンテナの取得)の項目を除き、Symfony3.4/4.4ともに動作します。
 
 ## Form関連
 
@@ -153,7 +153,7 @@ PluginManagerでは、インジェクションは利用できません。Reposit
 
 ```diff
 - $pageRepository = $container->get(PageRepository::class);
-+ $entityManager = $container->get('doctrine');
++ $entityManager = $container->get('doctrine')->getManager();
 + $pageRepository = $entityManager->getRepository(Page::class);
 ```
 
