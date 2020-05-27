@@ -32,7 +32,7 @@ docs:
         url: /update/4_0_3
         output: web, pdf
       - title: SameSite Cookie 対応
-        url: /update/hotfix_samesite_cookie
+        url: /hotfix_samesite_cookie
         output: web, pdf
   - title: 機能仕様
     output: web, pdf
