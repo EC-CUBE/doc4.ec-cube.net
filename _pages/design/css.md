@@ -80,7 +80,7 @@ EC-CUBE内に組み込まれている Gulp3(https://gulpjs.com/){:target="_blank
 
  - Node.js<br>
    GulpはNode.jsをベースに作られているので、Gulp動かす為に必要となります。<br>
-   ※最新のNode.jsでは、Gulpのタスク実行時にエラーが出る場合があります。
+   ※最新のNode.jsでは、[Gulpのタスク実行時にエラーが出る場合](https://qiita.com/KKKarin/items/bbb424fd93ef523a741a)があります。
    
  - Gulp3<br>
  　SassファイルをCSSに変換に利用されます。
