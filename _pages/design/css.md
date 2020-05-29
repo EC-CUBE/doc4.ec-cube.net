@@ -10,9 +10,9 @@ summary: CSSとSassの編集方法
 
 EC-CUBEでは、CSSを編集する方法として３種類あります。
 
- - 管理画面のCSS管理から編集する
- - style.cssを直に編集する
- - Sassを利用して編集する
+1. [管理画面のCSS管理から編集する](#管理画面のCSS管理から編集する)
+2. [style.cssを直に編集する](#style.cssを直に編集する)
+3. [Sassの利用して編集する](#Sassの利用して編集する)
 
 トップページのメインビジュアルのスライドなど一部CSSはtwigファイル内に記述されています。<br>
 EC-CUBE管理画面の[コンテンツ管理] -> [ページ管理]のTOPページで編集可能です。
@@ -36,7 +36,7 @@ CSSメンテナンスの観点から、この後ご紹介するSassの利用も�
  　 `html/template/default/assets/css/style.css`
 
 
-## Sassの利用
+## Sassの利用して編集する
 
 EC-CUBEのCSSは、[Sass](http://sass-lang.com){:target="_blank"} を使用して記述されています。
 
@@ -73,7 +73,7 @@ EC-CUBEのCSSは、[Sass](http://sass-lang.com){:target="_blank"} を使用し�
     こちらのstyle.scssが、style.cssやstyle.min.cssに変換されます。
 
 
-## Sassのビルド
+### Sassのビルド
 
 EC-CUBE内に組み込まれている Gulp3(https://gulpjs.com/){:target="_blank"} を使用したビルド方法をご紹介いたします。<br>
 前提として [https://nodejs.org/ja/] より、 Node.js をインストールしておいてください。
