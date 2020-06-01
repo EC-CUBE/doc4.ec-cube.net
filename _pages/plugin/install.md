@@ -1,5 +1,4 @@
 ---
----
 title: プラグインのインストール
 keywords: plugin install プラグイン
 tags: [quickstart, getting_started]

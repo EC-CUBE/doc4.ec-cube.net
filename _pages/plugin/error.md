@@ -1,9 +1,8 @@
 ---
----
 title: プラグインのインストール失敗時の対処法
 keywords: plugin error プラグインエラー
 tags: [quickstart, getting_started]
-permalink: plugin_install
+permalink: plugin_error
 
 ---
 
