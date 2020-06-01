@@ -62,7 +62,7 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 + [フォームレイアウトの変更](design_form)
 + [ブロックの利用](design_block)
 + [レイアウト管理の利用](design_layout)
-+ [Sassの利用](design_css)
++ [CSSとSassの利用](design_css)
 + [フロント画面テンプレート for Adobe XD](http://downloads.ec-cube.net/manual/documents/eccube4_xd_front_template.zip?argument=2qpV46CP&dmai=a5bf51b05bacc5){:target="_blank"}
 + [管理画面テンプレート for Adobe XD](http://downloads.ec-cube.net/manual/documents/eccube4_xd_admin_template.zip?argument=2qpV46CP&dmai=a5bf51b05bacc5){:target="_blank"}
 
