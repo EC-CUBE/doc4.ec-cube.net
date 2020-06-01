@@ -120,7 +120,7 @@ docs:
         url: /plugin_sample
         output: web, pdf
 
-  - title: 多言語化
+  - title: 設定変更
     output: web, pdf
     children:
       - title: 多言語化
