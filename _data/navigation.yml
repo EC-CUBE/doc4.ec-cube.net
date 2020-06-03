@@ -7,7 +7,7 @@ main:
 
 # documentation links
 docs:
-  - title: Quick Start
+  - title: EC-CUBEのインストール
     output: web, pdf
     children:
       - title: システム要件
@@ -15,6 +15,9 @@ docs:
         output: web, pdf
       - title: 初心者向けインストール方法（Webインストーラ）
         url: /quickstart_install/web-installer
+        output: web, pdf
+      - title: Windows環境でXAMPPを使用したインストール
+        url: /quickstart_install/gui-win-install
         output: web, pdf
       - title: 開発者向けインストール方法
         url: /quickstart_install
