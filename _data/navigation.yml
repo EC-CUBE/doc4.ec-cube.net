@@ -7,7 +7,7 @@ main:
 
 # documentation links
 docs:
-  - title: Quick Start
+  - title: インストール方法
     output: web, pdf
     children:
       - title: システム要件
@@ -15,6 +15,9 @@ docs:
         output: web, pdf
       - title: 初心者向けインストール方法（Webインストーラ）
         url: /quickstart_install/web-installer
+        output: web, pdf
+      - title: Windows環境でXAMPPを使用したインストール方法
+        url: /quickstart_install/gui_win_install
         output: web, pdf
       - title: 開発者向けインストール方法
         url: /quickstart_install
