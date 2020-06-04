@@ -70,6 +70,7 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 
 + [プラグイン仕様](plugin_spec)
 + [プラグインのインストール](plugin_install)
++ [インストール失敗時の対処法](plugin_error)
 + [プラグインサンプル](plugin_sample)
 
 ## 多言語化
