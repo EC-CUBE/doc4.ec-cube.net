@@ -59,7 +59,7 @@ http://127.0.0.1/test-shop/eccube-4.0.3/
 ※ まだEC-CUBEをインストールしていないので、ショップURLにアクセスしてもサイトは表示されません。  
 ※ eccube-4.0.3の名前は自由に変えられます。 
 
-test-shopを作成せずにeccube-4.0.3のみhtdocsに入れるとショップURLは以下のようになります。  
+test-shopを作成せずにeccube-4.0.3のみhtdocsに配置するとショップURLは以下のようになります。  
 `http://127.0.0.1/eccube-4.0.3/`  
 
 
