@@ -93,7 +93,7 @@ ApacheとMySQLのActions項目の「Start」をクリックします。
 ![XAMPP](/images/install/gui-win/xampp2.png)
 
 ブラウザから以下のURLにアクセスします。  
-`http://127.0.0.1/{EC-CUBEをアップロードしたディレクトリ名/}/index.php/install/`  
+`http://127.0.0.1/{EC-CUBEをアップロードしたディレクトリ名/}/`  
 
 インストール画面が表示されます。  
 
@@ -134,7 +134,7 @@ XAMPPのApacheとMySQLのActions項目の「Stop」をクリックします。
 10秒ほど時間を置き、再度「Start」をクリックします。  
 
 ブラウザから以下のURLにアクセスします。  
-`http://127.0.0.1/{EC-CUBEをアップロードしたディレクトリ名/}/index.php/install/`  
+`http://127.0.0.1/{EC-CUBEをアップロードしたディレクトリ名/}`  
 
 ![install step1](/images/install/step1.png)
 
@@ -171,7 +171,7 @@ XAMPPのApacheとMySQLのActions項目の「Stop」をクリックします。
   「test1234」や「password」などは**絶対避けてください**  
 - **管理画面のディレクトリ名**  
   - 管理画面にアクセスする場合のURLになります。  
-  https://www.example.com/{EC-CUBEをインストールしたディレクトリ}/{管理画面のディレクトリ名}/ でアクセスする事になります。  
+  http://127.0.0.1/{EC-CUBEをインストールしたディレクトリ}/{管理画面のディレクトリ名}/ でアクセスする事になります。  
   こちらのディレクトリ名も「admin」や「dashboard」など推測されやすい文字列を指定すると危険です。  
   適当な意味を持たない文字列を指定してください。
 - **サイトのアクセスをSSL経由に強制します**  
