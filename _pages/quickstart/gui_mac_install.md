@@ -42,7 +42,7 @@ MAMP 5.7
 解凍したEC-CUBEをMAMPのhtdocsディレクトリ（フォルダ）に配置します。  
 
 **配置したディレクトリの構造でショップのトップページURLが決まります。**  
-`http://localhost:8888/{htdocsの中に作成したディレクトリ名/}/`  
+`http://localhost:8888/{htdocsの中に作成したディレクトリ名}/`  
 
 
 ```
@@ -106,7 +106,7 @@ MAMPにはデータベースアカウントが標準で入っており、そち�
 ## EC-CUBEのインストール
 
 ブラウザから以下のURLにアクセスします。  
-`http://localhost:8888/{EC-CUBEをアップロードしたディレクトリ名/}/index.php/install/`  
+`http://localhost:8888/{EC-CUBEをアップロードしたディレクトリ名}/`  
 ```
 例
 http://localhost:8888/shop/index.php/install/

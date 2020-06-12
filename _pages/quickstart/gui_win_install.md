@@ -45,7 +45,7 @@ EC-CUBE4.0.3は、**php7.1 〜7.3**で動作確認しています。
 解凍したEC-CUBEをXAMPPのhtdocsディレクトリ（フォルダ）に配置します。  
 
 **配置したディレクトリの構造でショップのトップページURLが決まります。**  
-`http://127.0.0.1/{htdocsの中に作成したディレクトリ名/}/`  
+`http://127.0.0.1/{htdocsの中に作成したディレクトリ名}/`  
 
 
 ```
@@ -59,7 +59,7 @@ http://127.0.0.1/test-shop/eccube-4.0.3/
 ※ まだEC-CUBEをインストールしていないので、ショップURLにアクセスしてもサイトは表示されません。  
 ※ eccube-4.0.3の名前は自由に変えられます。 
 
-test-shopを作成せずにeccube-4.0.3のみhtdocsに入れるとショップURLは以下のようになります。  
+test-shopを作成せずにeccube-4.0.3のみhtdocsに配置するとショップURLは以下のようになります。  
 `http://127.0.0.1/eccube-4.0.3/`  
 
 
@@ -93,7 +93,7 @@ ApacheとMySQLのActions項目の「Start」をクリックします。
 ![XAMPP](/images/install/gui-win/xampp2.png)
 
 ブラウザから以下のURLにアクセスします。  
-`http://127.0.0.1/{EC-CUBEをアップロードしたディレクトリ名/}/index.php/install/`  
+`http://127.0.0.1/{EC-CUBEをアップロードしたディレクトリ名}/`  
 
 インストール画面が表示されます。  
 
@@ -134,7 +134,7 @@ XAMPPのApacheとMySQLのActions項目の「Stop」をクリックします。
 10秒ほど時間を置き、再度「Start」をクリックします。  
 
 ブラウザから以下のURLにアクセスします。  
-`http://127.0.0.1/{EC-CUBEをアップロードしたディレクトリ名/}/index.php/install/`  
+`http://127.0.0.1/{EC-CUBEをアップロードしたディレクトリ名}/`  
 
 ![install step1](/images/install/step1.png)
 
@@ -171,7 +171,7 @@ XAMPPのApacheとMySQLのActions項目の「Stop」をクリックします。
   「test1234」や「password」などは**絶対避けてください**  
 - **管理画面のディレクトリ名**  
   - 管理画面にアクセスする場合のURLになります。  
-  https://www.example.com/{EC-CUBEをインストールしたディレクトリ}/{管理画面のディレクトリ名}/ でアクセスする事になります。  
+  http://127.0.0.1/{EC-CUBEをインストールしたディレクトリ}/{管理画面のディレクトリ名}/ でアクセスする事になります。  
   こちらのディレクトリ名も「admin」や「dashboard」など推測されやすい文字列を指定すると危険です。  
   適当な意味を持たない文字列を指定してください。
 - **サイトのアクセスをSSL経由に強制します**  
@@ -192,7 +192,7 @@ XAMPPのApacheとMySQLのActions項目の「Stop」をクリックします。
 ### データベースの設定入力 
 ![install step 4](/images/install/gui-win/step5.png)
 データベースの情報を入力します。  
-**今回はXAMPPで標準に用意されているアカウントを使用します。**
+**今回はXAMPPに標準で用意されているアカウントを使用します。**
 
 - **データベースの種類**
   - 本番環境ではMySQLかPostgreSQLを利用してください。
