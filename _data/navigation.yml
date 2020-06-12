@@ -18,6 +18,8 @@ docs:
         output: web, pdf
       - title: Windows環境でXAMPPを使用したインストール方法
         url: /quickstart_install/gui_win_install
+      - title: Mac環境でMAMPを使用したインストール方法
+        url: /quickstart_install/gui_mac_install
         output: web, pdf
       - title: 開発者向けインストール方法
         url: /quickstart_install
