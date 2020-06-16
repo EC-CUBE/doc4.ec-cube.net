@@ -85,21 +85,21 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
 
 下記から差し替え対象ファイルを確認して最新のファイルで上書きしてください。
 
-上書き後、以下のコマンドでキャッシュの削除を行ってください。
-
-```
-bin/console cache:clear --no-warmup
-```
-
 | バージョンアップ対象 | 差し替え対象ファイル                                                                              |
 |----------------------|---------------------------------------------------------------------------------------------------|
 | 4.0.0 → 4.0.1        | composer.json<br>composer.lock<br>.htaccess<br>index.php<br>maintenance.php|
 | 4.0.1 → 4.0.2        | composer.json<br>composer.lock|
 | 4.0.2 → 4.0.3        | composer.json<br>composer.lock<br>.htaccess<br>index.php|
+| 4.0.3 → 4.0.4        | composer.json<br>composer.lock<br>.htaccess<br>app/Customize/Resource<br>var/.htaccess|
 
 - ※ 差し替え対象に、composer.json/composer.lockがある場合は 上書き後、`composer.json/composer.lockの更新の手順`を実施してください。
 - ※ `4.0.0 → 4.0.2` のように複数バージョンをまたぐバージョンアップを行う場合は、`4.0.0 → 4.0.1`→`4.0.1 → 4.0.2` のように段階的なバージョンアップを行ってください。
 
+上書き後、以下のコマンドでキャッシュの削除を行ってください。
+
+```
+bin/console cache:clear --no-warmup
+```
 
 ### 5. composer.json/composer.lockの更新
 
@@ -207,6 +207,13 @@ bin/console cache:warmup --env=prod
 
 <a href="https://github.com/EC-CUBE/ec-cube/pulls?q=is%3Apr+label%3Aaffected%3Atemplate+is%3Aclosed+milestone%3A4.0.3" target = "_blank">フロントテンプレートファイルの差分</a>
 
+#### 4.0.3 → 4.0.4
+
+変更対象の差分は、以下リンクからご確認いただくか[各バージョンでの変更差分](#各バージョンでの変更差分)からご確認いただけます。
+
+<a href="https://github.com/EC-CUBE/ec-cube/pulls?q=is%3Apr+label%3Aaffected%3Atemplate+is%3Aclosed+milestone%3A4.0.4" target = "_blank">フロントテンプレートファイルの差分</a>
+
+
 ### 9.メンテナンスモードを無効にする（バージョン4.0.1以降）
 
 EC-CUBEの管理画面へアクセスし、「コンテンツ管理」の「メンテナンス管理」から、メンテナンスモードを無効にしてください。
@@ -253,3 +260,4 @@ EC-CUBEのバージョンアップ手順は以上です。
 | 4.0.0 → 4.0.1   | [https://github.com/EC-CUBE/ec-cube/compare/4.0.0...4.0.1](https://github.com/EC-CUBE/ec-cube/compare/4.0.0...4.0.1?w=1#files_bucket){:target="_blank"}   |
 | 4.0.1 → 4.0.2   | [https://github.com/EC-CUBE/ec-cube/compare/4.0.1...4.0.2](https://github.com/EC-CUBE/ec-cube/compare/4.0.1...4.0.2?w=1#files_bucket){:target="_blank"}   |
 | 4.0.2 → 4.0.3   | [https://github.com/EC-CUBE/ec-cube/compare/4.0.2...4.0.3](https://github.com/EC-CUBE/ec-cube/compare/4.0.2...4.0.3?w=1#files_bucket){:target="_blank"}   |
+| 4.0.3 → 4.0.4   | [https://github.com/EC-CUBE/ec-cube/compare/4.0.3...4.0.4](https://github.com/EC-CUBE/ec-cube/compare/4.0.3...4.0.4?w=1#files_bucket){:target="_blank"}   |
