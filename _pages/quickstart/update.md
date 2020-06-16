@@ -85,22 +85,21 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
 
 下記から差し替え対象ファイルを確認して最新のファイルで上書きしてください。
 
-上書き後、以下のコマンドでキャッシュの削除を行ってください。
-
-```
-bin/console cache:clear --no-warmup
-```
-
 | バージョンアップ対象 | 差し替え対象ファイル                                                                              |
 |----------------------|---------------------------------------------------------------------------------------------------|
 | 4.0.0 → 4.0.1        | composer.json<br>composer.lock<br>.htaccess<br>index.php<br>maintenance.php|
 | 4.0.1 → 4.0.2        | composer.json<br>composer.lock|
 | 4.0.2 → 4.0.3        | composer.json<br>composer.lock<br>.htaccess<br>index.php|
-| 4.0.3 → 4.0.4        | composer.json<br>composer.lock<br>.htaccess|
+| 4.0.3 → 4.0.4        | composer.json<br>composer.lock<br>.htaccess<br>app/Customize/Resource<br>var/.htaccess|
 
 - ※ 差し替え対象に、composer.json/composer.lockがある場合は 上書き後、`composer.json/composer.lockの更新の手順`を実施してください。
 - ※ `4.0.0 → 4.0.2` のように複数バージョンをまたぐバージョンアップを行う場合は、`4.0.0 → 4.0.1`→`4.0.1 → 4.0.2` のように段階的なバージョンアップを行ってください。
 
+上書き後、以下のコマンドでキャッシュの削除を行ってください。
+
+```
+bin/console cache:clear --no-warmup
+```
 
 ### 5. composer.json/composer.lockの更新
 
