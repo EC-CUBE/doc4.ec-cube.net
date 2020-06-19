@@ -93,7 +93,7 @@ ApacheとMySQLのActions項目の「Start」をクリックします。
 ![XAMPP](/images/install/gui-win/xampp2.png)
 
 ブラウザから以下のURLにアクセスします。  
-`http://127.0.0.1/{EC-CUBEをアップロードしたディレクトリ名/}/`  
+`http://127.0.0.1/{EC-CUBEをアップロードしたディレクトリ名}/`  
 
 インストール画面が表示されます。  
 
