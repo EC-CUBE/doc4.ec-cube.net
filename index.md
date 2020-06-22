@@ -33,10 +33,13 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 + [初心者向けインストール方法（Webインストーラ）](/quickstart_install/web-installer)
 + [Windows環境でXAMPPを使用したインストール](/quickstart_install/gui_win_install)
 + [開発者向けインストール方法](quickstart_install)
-+ バージョンアップ
-	- [バージョンアップ方法](/update)
-	- [4.0.3での注意点](/update/4_0_3)
++ [パーミッションの設定について](permission)
 + [コマンドラインインターフェイス](quickstart_cli)
+
+## バージョンアップ
+
++ [バージョンアップ方法](/update)
++ [4.0.3での注意点](/update/4_0_3)
 
 ## 機能仕様
 
@@ -45,6 +48,7 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 + [税率設定](spec_tax)
 
 ## 本体カスタマイズ
+
 + [ディレクトリ構成](spec_directory-structure)
 + [Controllerのカスタマイズ](customize_controller)
 + [Entityのカスタマイズ](customize_entity)
@@ -75,22 +79,27 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 + [プラグインサンプル](plugin_sample)
 
 ## 多言語化
+
 + [多言語化](i18n_multilingualization)
 + [通貨](i18n_currency)
 + [タイムゾーン](i18n_timezone)
 
 ## 開発ツール
+
 + [MailCatcher](/development-tools/mail-catcher)
 
 ## Web API仕様（ベータ）
+
 + [Web API β版 スタートアップガイド](api_quickstart_guide)
 
 ## 開発に参加する
+
 + [EC-CUBEの開発に参加するには？（公式サイト）](https://www.ec-cube.net/committer/){:target="_blank"}
 + [開発の概要](/contribution-guide/overview)
 + [プルリクエストの作り方](/contribution-guide/pull-request)
 
 ## ドキュメントがみつからないときは
+
 + [ドキュメントのリクエスト](/documents/request)
 + [ドキュメントの追加・書き方](/documents/writing-and-formatting)
 + [ドキュメントの投稿](/documents/contribute)

@@ -22,6 +22,9 @@ docs:
       - title: 開発者向けインストール方法
         url: /quickstart_install
         output: web, pdf
+      - title: パーミッションの設定について（共通事項）
+        url: /permission
+        output: web, pdf
       - title: コマンドラインインターフェイス
         url: /quickstart_cli
         output: web, pdf
