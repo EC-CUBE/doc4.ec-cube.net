@@ -192,7 +192,11 @@ PurchaseFlow は、集計を行う [calculate()](https://github.com/EC-CUBE/ec-c
 ItemHolder(OrderやCart) に対して処理を実行する Processor です。
 支払方法の整合性や、購入金額上限など、カートや注文全体の妥当性を検証します。
 
-##### ItemProcessor
+##### ItemPreprocessor
+
+明細単位の前処理行うインターフェス。
+
+##### ItemValidator
 
 Item に 対して処理を実行する Processor です。
 在庫や販売制限数など、明細の妥当性を検証します。
@@ -222,11 +226,11 @@ ItemProcessor で発生したエラーは Warning, ItemHolderProcessor で発生
 namespace Plugin\PurchaseProcessors\Processor;
 
 use Eccube\Entity\ItemInterface;
-use Eccube\Service\PurchaseFlow\ItemProcessor;
+use Eccube\Service\PurchaseFlow\ItemPreProcessor;
 use Eccube\Service\PurchaseFlow\PurchaseContext;
 use Eccube\Service\PurchaseFlow\ProcessResult;
 
-class EmptyProcessor implements ItemProcessor
+class EmptyProcessor implements ItemPreProcessor
 {
     /**
      * @param ItemInterface $item
