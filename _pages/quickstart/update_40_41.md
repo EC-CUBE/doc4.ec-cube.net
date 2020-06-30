@@ -1,13 +1,13 @@
 ---
 layout: single
-title: EC-CUBE4.0から4.xへのマイグレーション
+title: EC-CUBE4.0から4.1へのマイグレーション
 keywords: howto update
 tags: [quickstart, getting_started]
-permalink: update-40-4x
-summary : EC-CUBE4.0から4.xへのマイグレーションについて記載します。
+permalink: update-40-41
+summary : EC-CUBE4.0から4.1へのマイグレーションについて記載します。
 ---
 
-EC-CUBE4.0から4.xへのマイグレーションを解説します。
+EC-CUBE4.0から4.1へのマイグレーションを解説します。
 
 EC-CUBE本体および一部公式プラグインをSymfony4.4に移行し、コードの移植が必要な箇所をまとめたものです。
 
@@ -18,7 +18,7 @@ Symfony4.4での変更をすべて網羅できているわけではないため�
 
 - [UPGRADE-4.0.md](https://github.com/symfony/symfony/blob/4.4/UPGRADE-4.0.md)
 
-また、EC-CUBE4.0とEC-CUBE4.xでの互換性を重視し、発生しているdeprecation noticeを意図的に修正していない箇所もあります。
+また、EC-CUBE4.0とEC-CUBE4.1での互換性を重視し、発生しているdeprecation noticeを意図的に修正していない箇所もあります。
 
 ※ログ等で`User Deprecated: xxx`といった出力が出る場合がありますが、動作上は問題ありません。
 
