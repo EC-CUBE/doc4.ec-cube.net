@@ -1,35 +1,32 @@
 ---
-title: Windows環境でXAMPPを使用したインストール方法
-keywords: install XAMPP
+title: Mac環境でMAMPを使用したインストール方法
+keywords: install MAMP
 tags: [quickstart, install, gui]
-permalink: quickstart_install/gui_win_install
+permalink: quickstart_install/gui_mac_install
 forder: quickstart
-description: EC-CUBE4系をXAMPPを使用してWindowsのローカル環境へインストールする方法を解説します。
+description: EC-CUBE4系をMAMPを使用してMacのローカル環境へインストールする方法を解説します。
 ---
 
 ## インストールの前に
-XAMPPを使用してWindowsのローカル環境へインストールする方法を解説します。  
+MAMPを使用してMacのローカル環境へインストールする方法を解説します。  
 この記事の構築環境は以下の通りです。  
 ```
 // サンプルの構築環境
-Windows 10
+MacOS 10.15.5(Catalina)
 EC-CUBE 4.0.3
-XAMPP 7.2.29
+MAMP 5.7
 ```
 
 
-## XAMPPをダウンロード、インストール
-まずはXAMPPを準備します。  
-EC-CUBE4.0.3は、**php7.1 〜7.3**で動作確認しています。  
-そのphpバージョンに該当するXAMPPをダウンロードする必要があります。  
+## MAMPをダウンロード、インストール
+まずはMAMPを準備します。  
 
-[XAMPP公式サイト](https://www.apachefriends.org/jp/index.html){:target='_blank'}へアクセスし、
-メニューからダウンロードページへ移動します。  
-該当のphpバージョンのXAMPPをダウンロードします。  
-「その他のダウンロード」の項目から古いバージョンのXAMPPもダウンロードできます。
+[MAMP公式サイト](https://www.mamp.info/en/mac/){:target='_blank'}へアクセスし、  
+「Free Download」からダウンロードページへ移動します。  
+「MAMP&MAMP PRO」の最新バージョンをダウンロードします。（この記事では5.7）  
 
-ダウンロードできたらXAMPPをインストールします。  
-
+インストールすると、アプリケーションの中にMAMPとMAMP PRO、2つのソフトがインストールされます。  
+こちらの解説ではMAMPを使用します。  
 
 
 ## EC-CUBEをダウンロード
@@ -41,37 +38,57 @@ EC-CUBE4.0.3は、**php7.1 〜7.3**で動作確認しています。
 
 
 
-## XAMPPにEC-CUBEを配置
-解凍したEC-CUBEをXAMPPのhtdocsディレクトリ（フォルダ）に配置します。  
+## MAMPにEC-CUBEを配置
+解凍したEC-CUBEをMAMPのhtdocsディレクトリ（フォルダ）に配置します。  
 
 **配置したディレクトリの構造でショップのトップページURLが決まります。**  
-`http://127.0.0.1/{htdocsの中に作成したディレクトリ名}/`  
+`http://localhost:8888/{htdocsの中に作成したディレクトリ名}/`  
 
 
 ```
-例:htdocsの中にtest-shopというディレクトリを作成し、そこにeccube-4.0.3を配置した場合
+例:eccube-4.0.3というディレクトリ名をshopに変更しhtdocsの中に配置した場合
 ■ ディレクトリ構造
-Windows(C:)\xampp\htdocs\test-shop\eccube-4.0.3\
+/Applications/MAMP/htdocs/shop/
 
 ■ ショップのトップページURL
-http://127.0.0.1/test-shop/eccube-4.0.3/
+http://localhost:8888/shop/
 ```
 ※ まだEC-CUBEをインストールしていないので、ショップURLにアクセスしてもサイトは表示されません。  
-※ eccube-4.0.3の名前は自由に変えられます。 
 
-test-shopを作成せずにeccube-4.0.3のみhtdocsに配置するとショップURLは以下のようになります。  
-`http://127.0.0.1/eccube-4.0.3/`  
+
+## phpバージョンの設定
+EC-CUBE4.0.3は、**php7.1 〜7.3**で動作確認しています。  
+MAMPの環境設定から該当のphpバージョンに変更します。
+
+MAMPを起動します。  
+
+Macの左上のメニューから「MAMP」→「Preferences」をクリックします。  
+![MAMP](/images/install/gui-mac/02.png)  
+
+
+![MAMP](/images/install/gui-mac/03.png)  
+  
+設定画面が開くので「PHP」の項目から「7.3.9」にチェックをして「OK」をクリックします。  
 
 
 ## データベース作成
-XAMPPを起動します。  
-MySQLの項目の「Start」と「Admin」をクリックしてphpMyAdminを立ち上げます。  
-![XAMPP](/images/install/gui-win/xampp1.png)
+MAMPからサーバーを立ち上げます。  
 
-phpMyAdminが開きます。
-![phpMyAdmin](/images/install/gui-win/mysql.png)
+![MAMP](/images/install/gui-mac/07.png)  
+  
+「Start Server」をクリックします。  
 
-「新規作成」をクリックしてデータベース名を入力し、データベースを作成します。  
+MAMPのトップページが表示されます。  
+![MAMP](/images/install/gui-mac/04.png)  
+  
+ヘッダーメニューの「TOOLS」から「PHPMYADMIN」をクリックします。  
+
+phpMyAdminが開きます。  
+  
+![phpMyAdmin](/images/install/gui-mac/05.png)  
+  
+「New」をクリックしてデータベース名を入力し、データベースを作成します。  
+※データベース名は外部から予測されにくい名前にしてください。  
 ```
 例
 データベース名
@@ -80,73 +97,23 @@ phpMyAdminが開きます。
 照合順序はutf8mb4_general_ciのままで問題ありません。
 ``` 
 
-XAMPPにはデータベースアカウントが標準で入っており、そちらを使用してEC-CUBEをインストールします。  
-もしアカウントを作成する場合は、メニューの「ユーザーアカウント」から作成してください。
+MAMPにはデータベースアカウントが標準で入っており、そちらを使用してEC-CUBEをインストールします。  
+もし、アカウントを作成する場合は、メニューの「User accounts」から作成してください。
 
 ※ 本番環境としてデータベースを作成する場合、ユーザーアカウントを作成してください。  データベースの接続情報（データベース名、アカウント情報等）が外部に漏れると、個人情報の漏洩などの原因になります。  管理にはご注意ください。
 
 
-## iniファイルの編集
-
-XAMPPを起動します。  
-ApacheとMySQLのActions項目の「Start」をクリックします。  
-![XAMPP](/images/install/gui-win/xampp2.png)
-
-ブラウザから以下のURLにアクセスします。  
-`http://127.0.0.1/{EC-CUBEをアップロードしたディレクトリ名}/`  
-
-インストール画面が表示されます。  
-
-「intl拡張モジュールが有効になっていません」というエラーが表示されます。  
-
-以下のディレクトリにあるphp.iniファイルを編集し設定を変更します。  
-`Windows(C:）\xampp\php\php.ini`  
-
-php.iniを開いたら、ファイル内を「intl」で検索します。  
-
-```
-;extension=intl
-```
-上記の記述が見つかるので、;を削除します。  
-以下の状態でphp.iniを保存します。
-```
-extension=intl
-```
-
-次に、php.iniにあるタイムアウトの設定を変更します。  
-XAMPP環境は動作が遅く、インストール時にタイムアウトが発生する場合があります。  
-ファイル内を「max_execution_time」で検索すると以下の記述が見つかります。
-```
-max_execution_time=30
-```
-以下のように変更します。  
-```
-max_execution_time=120
-```
-※ ご使用のPCのスペックが低い場合は、もう少し大きな数字に変更することを推奨します。  
-
-```
-// 例
-max_execution_time=300
-```
-**XAMPPを再起動します。**  
-XAMPPのApacheとMySQLのActions項目の「Stop」をクリックします。  
-10秒ほど時間を置き、再度「Start」をクリックします。  
-
-ブラウザから以下のURLにアクセスします。  
-`http://127.0.0.1/{EC-CUBEをアップロードしたディレクトリ名}/`  
-
-![install step1](/images/install/step1.png)
-
-「intl拡張モジュールが有効になっていません」のエラーが消えていれば、php.iniの設定変更は完了です。  
-
-続いて、EC-CUBEのインストールを行います。
-
-インストール画面で「次へ進む」をクリックします。
-
-
 ## EC-CUBEのインストール
 
+ブラウザから以下のURLにアクセスします。  
+`http://localhost:8888/{EC-CUBEをアップロードしたディレクトリ名}/`  
+```
+例
+http://localhost:8888/shop/index.php/install/
+``` 
+![install step2](/images/install/step1.png)  
+インストール画面が表示されます。  
+「次へ進む」をクリックします。  
 
 ![install step2](/images/install/step2.png)
 「次へ進む」をクリックします。
@@ -171,7 +138,7 @@ XAMPPのApacheとMySQLのActions項目の「Stop」をクリックします。
   「test1234」や「password」などは**絶対避けてください**  
 - **管理画面のディレクトリ名**  
   - 管理画面にアクセスする場合のURLになります。  
-  http://127.0.0.1/{EC-CUBEをインストールしたディレクトリ}/{管理画面のディレクトリ名}/ でアクセスする事になります。  
+  http://localhost:8888/{EC-CUBEをインストールしたディレクトリ}/{管理画面のディレクトリ名}/ でアクセスする事になります。  
   こちらのディレクトリ名も「admin」や「dashboard」など推測されやすい文字列を指定すると危険です。  
   適当な意味を持たない文字列を指定してください。
 - **サイトのアクセスをSSL経由に強制します**  
@@ -190,22 +157,34 @@ XAMPPのApacheとMySQLのActions項目の「Stop」をクリックします。
 
 
 ### データベースの設定入力 
-![install step 4](/images/install/gui-win/step5.png)
+![install step 4](/images/install/gui-win/step5.png)  
+  
 データベースの情報を入力します。  
-**今回はXAMPPに標準で用意されているアカウントを使用します。**
+**今回はMAMPに標準で用意されているデータベースアカウントを使用します。**  
+  
+**MAMPのデータベースアカウントの確認方法**
+
+MAMPを開き、「Open WebStart page」をクリックしてMAMPトップページを立ち上げます。
+![Open WebStart page](/images/install/gui-mac/01.png)  
+  
+スクロールするとデータベースアカウント情報が記載された項目があります。  
+![MySQL account](/images/install/gui-mac/06.png)  
+
+  
+こちらのアカウント情報を見ながら入力していきます。
 
 - **データベースの種類**
-  - 本番環境ではMySQLかPostgreSQLを利用してください。
+  - 今回はMySQLを使用します。
 - **データベースのホスト名**
   - localhostになります。
 - **データベースのポート番号**
-  - 指定しなくても大丈夫です。
+  - 8889
 - **データベース名**
   - 準備したデータベース名を指定してください。  サンプルでは「eccube123_」です。
 - **ユーザー名**
   - rootになります。
 - **パスワード**
-  - 空欄になります。
+  - rootになります。
 
 ※ユーザー名やパスワードは本番環境では独自に作成してください。
 
@@ -230,6 +209,7 @@ XAMPPのApacheとMySQLのActions項目の「Stop」をクリックします。
 
 管理画面の使い方は[こちら](https://www.shiro8.net/manual4/v40x/index.html){:target="_blank"}。
 
-*管理画面を表示*をクリックすると、管理画面のログイン画面に遷移します。[店舗の基本情報](#店舗の基本情報)で入力した管理者の情報で管理画面にログインしてください。  
+*管理画面を表示*をクリックすると、管理画面のログイン画面に遷移します。  
+[店舗の基本情報](#店舗の基本情報)で入力した管理者の情報で管理画面にログインしてください。  
 
 もし、ここでログインできない場合は、管理者のパスワードやログインIDを間違えて控えた可能性が高いので、インストールしたディレクトリの .envを削除し、データベースを空にして再度インストール手順を行ってください。
