@@ -76,7 +76,8 @@ scssディレクトリ内はメンテナンスしやすいように構成され�
 ### Sassのビルド
 
 EC-CUBE内に組み込まれている [Gulp3](https://gulpjs.com/){:target="_blank"} を使用したビルド方法をご紹介いたします。<br>
-前提として [公式サイト](https://nodejs.org/ja/){:target="_blank"} より、 Node.js をインストールしておいてください。
+前提として [公式サイト](https://nodejs.org/ja/){:target="_blank"} より、 Node.js をインストールしておいてください。  
+※EC-CUBE4.0.4からはGulp4になりました。使い方は[コチラ](https://github.com/EC-CUBE/ec-cube/pull/4353){:target="_blank"}をご覧ください。
 
 - Node.js<br>
   GulpはNode.jsをベースに作られているので、Gulp動かす為に必要となります。<br>
