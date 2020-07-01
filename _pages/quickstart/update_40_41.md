@@ -11,7 +11,8 @@ EC-CUBE4.0から4.1へのマイグレーションを解説します。
 
 EC-CUBE本体および一部公式プラグインをSymfony4.4に移行し、コードの移植が必要な箇所をまとめたものです。
 
-- [[WIP] Symfony4.4 対応](https://github.com/EC-CUBE/ec-cube/pull/4409)
+- [EC-CUBE 4.1 Roadmap](https://github.com/EC-CUBE/ec-cube/issues/4603)
+- [experimental/symfony4.4](https://github.com/EC-CUBE/ec-cube/tree/experimental/symfony4.4)
 - [[WIP] 商品レビュープラグイン：Symfony 4.4対応](https://github.com/EC-CUBE/ProductReview-plugin/pull/55)
 
 Symfony4.4での変更をすべて網羅できているわけではないため、記載されていない問題があった場合は、SymfonyのUPGRADEドキュメントも合わせて参照してください。
