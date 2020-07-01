@@ -10,7 +10,11 @@ description: EC-CUBE 4系のインストールについての説明です。
 
 ## 初心者向けインストール方法
 
-初心者の方はこのまま[Webインストーラでインストール](/quickstart_install/web-installer)に進んでください。
+初心者の方はこのまま[Webインストーラでインストール](/quickstart_install/web-installer)に進んでください。  
+  
+開発者以外の方で、ローカル環境構築したい方は、以下をご覧ください。  
+[Windows環境でのインストール方法](/quickstart_install/gui_win_install)  
+[Mac環境でのインストール方法](/quickstart_install/gui_mac_install)
 
 ## 開発者向けインストール方法
 
