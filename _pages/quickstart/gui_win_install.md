@@ -66,7 +66,7 @@ test-shopを作成せずにeccube-4.0.4のみhtdocsに配置するとショッ�
 
 ## データベース作成
 XAMPPを起動します。  
-Acacheの「Start」とMySQLの「Start」と「Admin」をクリックしてphpMyAdminを立ち上げます。  
+Apacheの「Start」とMySQLの「Start」と「Admin」をクリックしてphpMyAdminを立ち上げます。  
 ![XAMPP](/images/install/gui-win/xampp1.png)
 
 phpMyAdminが開きます。
