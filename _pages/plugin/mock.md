@@ -1,5 +1,5 @@
 ---
-title: オーナーズストアとの通信をmockする
+title: オーナーズストア経由のインストールをテストする
 keywords: plugin mock プラグイン オーナーズストア
 tags: [plugin, mock, package-api]
 permalink: plugin_mock_package_api
