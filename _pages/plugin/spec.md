@@ -33,6 +33,7 @@ app/Plugin/SamplePlugin/
 ├── Resource
 │   ├── assets
 │   ├── config
+│   │   └── services.yaml
 │   ├── locale
 │   └── template
 └── composer.json
@@ -86,7 +87,7 @@ app/Plugin/SamplePlugin/
 ### services.yaml
 
 コンテナの定義を行います。
-`[プラグインディレクトリ]/Resouce/services.yaml`に設置します。
+`[プラグインディレクトリ]/Resouce/config/services.yaml`に設置します。
 yamlフォーマットの他に、phpやxmlでも記述可能です。
 
 コンテナの定義については、Symfonyの公式ドキュメントを参照してください。
