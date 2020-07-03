@@ -4,7 +4,7 @@ title: パーミッションの設定について
 keywords: permission
 tags: [quickstart, permission]
 permalink: permission
-forder: quickstart/permission
+folder: quickstart/permission
 description: パーミッション設定に関して
 ---
 

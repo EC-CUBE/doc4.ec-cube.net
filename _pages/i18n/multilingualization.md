@@ -3,7 +3,7 @@ title: 多言語化
 keywords: multilingualization
 tags: [i18n, multilingualization]
 permalink: i18n_multilingualization
-forder: i18n
+folder: i18n
 
 ---
 

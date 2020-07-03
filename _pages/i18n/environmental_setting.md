@@ -3,7 +3,7 @@ title: 環境設定
 keywords: debug
 tags: [debug, env]
 permalink: environmental_setting
-forder: i18n
+folder: i18n
 
 ---
 

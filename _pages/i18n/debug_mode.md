@@ -3,7 +3,7 @@ title: デバッグモード
 keywords: debug
 tags: [debug, env]
 permalink: debug_mode
-forder: i18n
+folder: i18n
 
 ---
 

@@ -3,7 +3,7 @@ title: コマンドラインインターフェイス
 keywords: CLI
 tags: [quickstart, cli]
 permalink: quickstart_cli
-forder: quickstart
+folder: quickstart
 ---
 
 EC-CUBEでは、コマンドラインで実行できる各種ユーティリティコマンドを提供しています。

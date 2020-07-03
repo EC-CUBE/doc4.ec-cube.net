@@ -3,7 +3,7 @@ title: タイムゾーン
 keywords: timezone
 tags: [i18n, currency]
 permalink: i18n_timezone
-forder: i18n
+folder: i18n
 
 ---
 
