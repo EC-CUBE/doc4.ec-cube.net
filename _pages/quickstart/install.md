@@ -4,7 +4,7 @@ title: インストール方法
 keywords: install
 tags: [quickstart, install]
 permalink: quickstart_install
-forder: quickstart/quickstart_install
+folder: quickstart/quickstart_install
 description: EC-CUBE 4系のインストールについての説明です。
 ---
 

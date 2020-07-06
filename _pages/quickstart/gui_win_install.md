@@ -3,7 +3,7 @@ title: Windows環境でXAMPPを使用したインストール方法
 keywords: install XAMPP
 tags: [quickstart, install, gui]
 permalink: quickstart_install/gui_win_install
-forder: quickstart
+folder: quickstart
 description: EC-CUBE4系をXAMPPを使用してWindowsのローカル環境へインストールする方法を解説します。
 ---
 

@@ -3,7 +3,7 @@ title: 通貨
 keywords: currency
 tags: [i18n, currency]
 permalink: i18n_currency
-forder: i18n
+folder: i18n
 
 ---
 

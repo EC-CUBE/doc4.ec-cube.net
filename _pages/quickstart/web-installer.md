@@ -3,7 +3,7 @@ title: Webインストーラでインストールする
 keywords: install
 tags: [quickstart, install]
 permalink: quickstart_install/web-installer
-forder: quickstart
+folder: quickstart
 description: EC-CUBE 4系のインストールについての説明です。
 ---
 
