@@ -97,8 +97,10 @@ docs:
       - title: 画像管理について
         url: /design_img
         output: web, pdf
-      - title: CSSとSassの利用
+      - title: CSSの利用
         url: /design_css
+      - title: Sass(scss)の利用
+        url: /design_sass
       - title: フォームレイアウトの変更
         url: /design_form
         output: web, pdf
