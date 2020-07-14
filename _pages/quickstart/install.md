@@ -44,11 +44,11 @@ cd ディレクトリのアドレス指定（もしくはディレクトリを�
 
 ※ 上記ディレクトリ内に ec-cube ディレクトリが生成されます。
 
-2.ディレクトリ移動後にcomposer.pherファイルを生成  
-リンク先の [Composer のインストール](https://getcomposer.org/download/){:target="_blank"} の最初に登場するpreタグで囲まれているコマンドを実行しcomposer.pherファイルを生成します。  
+2.ディレクトリ移動後にcomposer.pharファイルを生成  
+リンク先の [Composer のインストール](https://getcomposer.org/download/){:target="_blank"} の最初に登場するpreタグで囲まれているコマンドを実行しcomposer.pharファイルを生成します。  
 
 
-3.composer.pherが入っているディレクトリにコマンドラインで移動していることを確認し、以下のコマンドを実行します。
+3.composer.pharが入っているディレクトリにコマンドラインで移動していることを確認し、以下のコマンドを実行します。
 
 ```shell
 php composer.phar create-project ec-cube/ec-cube ec-cube "4.0.x-dev" --keep-vcs
