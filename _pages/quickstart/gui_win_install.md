@@ -17,7 +17,7 @@ Windows 10
 EC-CUBE 4.0.4
 XAMPP 7.4.7
 ```
-EC-CUBE4.0.3のインストール手順は[こちら](/quickstart_install/gui_win_install_403)をご覧ください。  
+
 
 ## XAMPPをダウンロード、インストール
 まずはXAMPPを準備します。  
