@@ -21,11 +21,12 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 ドキュメントへの追記、記載内容の修正についても[GitHub](https://github.com/EC-CUBE/doc4.ec-cube.net/){:target="_blank"}にて受け付けております。
 追加方法は[こちら](/documents/writing-and-formatting)をご覧ください。
 
-運用者向けには以下のサイトをご覧ください。
-
-+ [EC-CUBE 4管理・運用 マニュアル（株式会社シロハチ様）](https://www.shiro8.net/manual4/v40x/index.html){:target="_blank"}
-
 [こちら](https://www.ec-cube.net/committer/#Doc4Form){:target="_blank"}でドキュメントへのフィードバックを募集しています。
+
+## 運用者向け情報
+
+運用者向けには以下のサイトをご覧ください。
++ [EC-CUBE 4管理・運用 マニュアル（株式会社シロハチ様）](https://www.shiro8.net/manual4/v40x/index.html){:target="_blank"}
 
 ## インストール方法
 
