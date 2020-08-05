@@ -173,13 +173,6 @@ docs:
       url: /contribution-guide/pull-request
       output: web, pdf
 
-  - title: Web API仕様（ベータ）
-    output: web, pdf
-    children:
-      - title: Web API β版 スタートアップガイド
-        url: /api_quickstart_guide
-        output: web, pdf
-
   - title: ドキュメントがみつからないときは
     output: web, pdf
     children:
