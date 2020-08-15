@@ -104,6 +104,9 @@ docs:
       - title: フォームレイアウトの変更
         url: /design_form
         output: web, pdf
+      - title: メッセージのカスタマイズ
+        url: /design_messages
+        output: web, pdf
       - title: フロント画面デザイン参考資料（スタイルガイド）
         url: https://eccube4-styleguide.herokuapp.com
         output: web, pdf
