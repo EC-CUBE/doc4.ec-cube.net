@@ -46,6 +46,9 @@ bin/console eccube:generate:proxies
 Proxy を生成できたら、 `bin/console doctrine:schema:update` コマンドで、定義をデータベースに反映します。
 
 ```
+## 作成した Proxy クラスを確実に認識できるようキャッシュを削除
+bin/console cache:clear --no-warmup
+
 ## 実行する SQL を確認
 bin/console doctrine:schema:update --dump-sql
 
