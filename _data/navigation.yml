@@ -160,6 +160,23 @@ docs:
       - title: MailCatcher
         url: /development-tools/mail-catcher
         output: web, pdf
+  - title: "セキュリティテストの実施"
+    url: /penetration-testing
+    children:
+      - title: "Quick Start"
+        url: /penetration-testing/quick_start
+      - title: "イントロダクション"
+        url: /penetration-testing/introduction
+      - title: "OWASP ZAP について"
+        url: /penetration-testing/about_owaspzap
+      - title: "テスト計画"
+        url: /penetration-testing/planning
+      - title: "テストの実施"
+        url: /penetration-testing/testing
+      - title: "テスト評価"
+        url: /penetration-testing/review
+      - title: "セキュリティの改善"
+        url: /penetration-testing/improvement
   - title: 開発に参加する
     output: web, pdf
     children:
