@@ -28,7 +28,7 @@ permalink: /penetration-testing
 
 ### セキュリティテストについて
 
-<!-- TODO- セキュリティテストの種類 -->
+- [セキュリティテストの種類](/penetration-testing/introduction/type)
 <!-- TODO- ウェブアプリケーション侵入テストについて -->
 - [ウェブアプリケーション侵入テストの構成](/penetration-testing/introduction/layout)
 
