@@ -42,5 +42,5 @@ EC-CUBE本体のセキュリティテストは、 EC-CUBE本体開発者がテ�
 ## セキュリティテストについて
 
 - [セキュリティテストの種類](/penetration-testing/introduction/type)
-- ウェブアプリケーション侵入テストについて
+- [ウェブアプリケーション侵入テストについて](/penetration-testing/introduction/penetration-test)
 - [ウェブアプリケーション侵入テストの構成](/penetration-testing/introduction/layout)

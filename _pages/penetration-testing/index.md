@@ -29,7 +29,7 @@ permalink: /penetration-testing
 ### セキュリティテストについて
 
 - [セキュリティテストの種類](/penetration-testing/introduction/type)
-<!-- TODO- ウェブアプリケーション侵入テストについて -->
+- [ウェブアプリケーション侵入テストについて](/penetration-testing/introduction/penetration-test)
 - [ウェブアプリケーション侵入テストの構成](/penetration-testing/introduction/layout)
 
 ### OWASP ZAP について
