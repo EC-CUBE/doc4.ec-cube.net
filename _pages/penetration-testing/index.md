@@ -41,8 +41,8 @@ permalink: /penetration-testing
 - [テストの背景、目的](/penetration-testing/planning/purpose)
 - [テスト対象](/penetration-testing/planning/target)
 - [テスト戦略](/penetration-testing/planning/strategy)
-<!-- TODO - スケジューリングの目安 -->
-<!-- TODO - テスト結果の評価方法 -->
+- [スケジューリングの目安](/penetration-testing/planning/scheduling)
+- [テスト結果の評価方法](/penetration-testing/review)
 
 ## テストの実施
 
