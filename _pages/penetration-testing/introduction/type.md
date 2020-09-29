@@ -8,7 +8,7 @@ permalink: /penetration-testing/introduction/type
 **Note:** [OWASP Testing guide - Testing Techniques Explained](https://owasp.org/www-project-web-security-testing-guide/v41/2-Introduction/README.html#testing-techniques-explained) も合わせてご覧ください
 {: .notice--info}
 
-## 手動検査􏰌とレビュー
+## 手動検査とレビュー
 
 手動検査は、セキュリティの検査員が人力でレビューを行ないます。
 内部規定や、プロセス、アーキテクチャ設計などのシステム設計などの検査を含めるケースもあります。
@@ -40,4 +40,3 @@ permalink: /penetration-testing/introduction/type
 侵入テスト(ペネトレーションテスト)は、 OWASP ZAP などのテストツールを使用して、実際に攻撃を試み、脆弱性が無いか確認します。
 
 このドキュメントで取り上げているテスト手段です。
-
