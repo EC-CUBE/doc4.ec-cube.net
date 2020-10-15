@@ -138,6 +138,9 @@ docs:
       - title: オーナーズストア経由のインストールをテストする
         url: /plugin_mock_package_api
         output: web, pdf
+      - title: プラグインで推奨の命名規則
+        url: /plugin_naming_conventions
+        output: web, pdf
 
   - title: 設定変更
     output: web, pdf

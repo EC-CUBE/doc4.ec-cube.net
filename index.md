@@ -82,6 +82,7 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 + [インストール失敗時の対処法](plugin_error)
 + [プラグインサンプル](plugin_sample)
 + [オーナーズストア経由のインストールをテストする](plugin_mock_package_api)
++ [プラグインで推奨の命名規則](plugin_naming_conventions)
 
 ## 多言語化
 
