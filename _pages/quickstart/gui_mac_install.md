@@ -109,7 +109,7 @@ MAMPにはデータベースアカウントが標準で入っており、そち�
 `http://localhost:8888/{EC-CUBEをアップロードしたディレクトリ名}/`  
 ```
 例
-http://localhost:8888/shop/index.php/install/
+http://localhost:8888/shop/
 ``` 
 ![install step2](/images/install/step1.png)  
 インストール画面が表示されます。  
