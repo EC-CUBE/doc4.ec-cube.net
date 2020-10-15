@@ -75,6 +75,9 @@ docs:
       - title: 購入フローのカスタマイズ
         url: /customize_service
         output: web, pdf
+      - title: 受注ステータスのカスタマイズ
+        url: /customize_order_state_machine
+        output: web, pdf
       - title: テンプレートのカスタマイズ
         url: /customize_template
         output: web, pdf
