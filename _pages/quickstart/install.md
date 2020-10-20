@@ -23,6 +23,12 @@ description: EC-CUBE 4系のインストールについての説明です。
 1. [Dockerを使用してインストールする](#3dockerを使用してインストールする)
 1. [Docker Composeを使用してインストールする](#4docker-composeを使用してインストールする)
 
+#### 実行環境の設定について（共通事項）
+
+インストールの際は[環境設定](/environmental_setting)と[デバッグモード](debug_mode)も合わせてお読みください。
+環境変数の設定で開発モード/デバッグモードを有効にすると開発に便利な機能を利用できますが、ブラウザでアクセスをすると内部の情報が確認できる状態となります。
+開発モード/デバッグモードの利用はローカルでの開発のみに限定し、サイトをインターネット上で公開される際は必ずプロダクションモードを利用してください。
+
 #### パーミッションの設定について（共通事項）
 
 インストールした際の[パーミッションの設定について](/permission)も合わせてお読みください。  
@@ -59,11 +65,11 @@ php composer.phar create-project ec-cube/ec-cube ec-cube "4.0.x-dev" --keep-vcs
 
 
 4.ec-cube ディレクトリが生成されますので、`cd ec-cube`で移動し、  
-`bin/console server:run` コマンドを実行すると、ビルトインウェブサーバが起動します。
+`bin/console server:run --env=dev` コマンドを実行すると、ビルトインウェブサーバが起動します。
 
 ```shell
 cd ec-cube
-bin/console server:run
+bin/console server:run --env=dev
 ```
 
 5.[http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin) にアクセスし、 EC-CUBE の管理ログイン画面が表示されればインストール成功です。  

@@ -57,6 +57,7 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 + [Repositoryのカスタマイズ](customize_repository)
 + [FormTypeのカスタマイズ](customize_formtype)
 + [購入フローのカスタマイズ](customize_service)
++ [受注ステータスのカスタマイズ](customize_order_state_machine)
 + [テンプレートのカスタマイズ](customize_template)
 + [Symfonyの機能を使った拡張](customize_symfony)
 
@@ -81,6 +82,7 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 + [インストール失敗時の対処法](plugin_error)
 + [プラグインサンプル](plugin_sample)
 + [オーナーズストア経由のインストールをテストする](plugin_mock_package_api)
++ [プラグインで推奨の命名規則](plugin_naming_conventions)
 
 ## 多言語化
 

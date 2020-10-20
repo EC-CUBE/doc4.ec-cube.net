@@ -75,6 +75,9 @@ docs:
       - title: 購入フローのカスタマイズ
         url: /customize_service
         output: web, pdf
+      - title: 受注ステータスのカスタマイズ
+        url: /customize_order_state_machine
+        output: web, pdf
       - title: テンプレートのカスタマイズ
         url: /customize_template
         output: web, pdf
@@ -103,6 +106,9 @@ docs:
         url: /design_sass
       - title: フォームレイアウトの変更
         url: /design_form
+        output: web, pdf
+      - title: メッセージのカスタマイズ
+        url: /design_messages
         output: web, pdf
       - title: フロント画面デザイン参考資料（スタイルガイド）
         url: https://eccube4-styleguide.herokuapp.com
@@ -134,6 +140,9 @@ docs:
         output: web, pdf
       - title: オーナーズストア経由のインストールをテストする
         url: /plugin_mock_package_api
+        output: web, pdf
+      - title: プラグインで推奨の命名規則
+        url: /plugin_naming_conventions
         output: web, pdf
 
   - title: 設定変更
@@ -197,13 +206,6 @@ docs:
     - title: プルリクエストの作り方
       url: /contribution-guide/pull-request
       output: web, pdf
-
-  - title: Web API仕様（ベータ）
-    output: web, pdf
-    children:
-      - title: Web API β版 スタートアップガイド
-        url: /api_quickstart_guide
-        output: web, pdf
 
   - title: ドキュメントがみつからないときは
     output: web, pdf
