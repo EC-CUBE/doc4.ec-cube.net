@@ -94,6 +94,14 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 
 + [MailCatcher](/development-tools/mail-catcher)
 
+## セキュリティテストの実施
+
+- [EC-CUBE Penetration Testing with OWASP ZAP](/penetration-testing)
+
+## Web API仕様（ベータ）
+
++ [Web API β版 スタートアップガイド](api_quickstart_guide)
+
 ## 開発に参加する
 
 + [EC-CUBEの開発に参加するには？（公式サイト）](https://www.ec-cube.net/committer/){:target="_blank"}
