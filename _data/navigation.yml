@@ -170,9 +170,11 @@ docs:
         url: /development-tools/mail-catcher
         output: web, pdf
   - title: "セキュリティテストの実施"
-    url: /penetration-testing
     output: web, pdf
     children:
+      - title: "はじめに"
+        url: /penetration-testing
+        output: web, pdf
       - title: "Quick Start"
         url: /penetration-testing/quick_start
         output: web, pdf
