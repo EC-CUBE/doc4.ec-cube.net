@@ -53,6 +53,12 @@ cd ディレクトリのアドレス指定（もしくはディレクトリを�
 2.ディレクトリ移動後にcomposer.pharファイルを生成  
 リンク先の [Composer のインストール](https://getcomposer.org/download/){:target="_blank"} の最初に登場するpreタグで囲まれているコマンドを実行しcomposer.pharファイルを生成します。  
 
+composer.phar のバージョンをEC-CUBE 4.0の対応しているバージョン（1.x）に変更します。
+
+```shell
+php composer.phar selfupdate --1
+```
+
 
 3.composer.pharが入っているディレクトリにコマンドラインで移動していることを確認し、以下のコマンドを実行します。
 
