@@ -171,7 +171,7 @@ services:
 
 主要なクラスの役割は以下の通りです。
 
-##### ItemIHoldernterface
+##### ItemIHolderInterface
 
 明細一覧(明細のサマリ)を表すインターフェース。
 Cart や Order が実装クラスとなります。
@@ -187,19 +187,34 @@ CartItem や OrderItem が実装クラスとなります。
 PurchaseFlow は、集計を行う [calculate()](https://github.com/EC-CUBE/ec-cube/pull/2424/files#diff-1d9b0d44b6269dc98b5c09f331ff0c41R48){:target="_blank"} と完了処理を行う [purchase()](https://github.com/EC-CUBE/ec-cube/pull/2424/files#diff-1d9b0d44b6269dc98b5c09f331ff0c41R80){:target="_blank"} メソッドを持っています。
 メソッドが実行されると、Item や ItemHolder を Processor に渡し、Processor を順次実行していきます。また、Processor の実行結果を呼び出し元に返却します。
 
-##### ItemHolderProcessor
+##### ItemValidator
 
-ItemHolder(OrderやCart) に対して処理を実行する Processor です。
-支払方法の整合性や、購入金額上限など、カートや注文全体の妥当性を検証します。
+Item に 対して検証を実行する Processor です。
+商品のステータスや情報に変更がないかなど、明細の妥当性を検証します。
+
+##### ItemHolderValidator
+
+ItemHolder(OrderやCart) に対して検証を実行する Processor です。
+在庫や販売制限数など、カートや注文全体の妥当性を検証します。
 
 ##### ItemPreprocessor
 
-明細単位の前処理行うインターフェス。
+Item に 対して前処理を実行する Processor です。
 
-##### ItemValidator
+##### ItemHolderPreprocessor
 
-Item に 対して処理を実行する Processor です。
-在庫や販売制限数など、明細の妥当性を検証します。
+ItemHolder(OrderやCart) に対して前処理を実行する Processor です。
+税額計算や送料の更新など、カートや注文全体の前処理を実行します。
+
+##### DiscountProcessor
+
+値引き処理を実行する Processor です。
+ポイント値引きやクーポン値引きなどを実行します。
+
+##### ItemHolderPostValidator
+
+ItemHolder(OrderやCart) に対して最終の検証を実行する Processor です。
+値引き後に注文全体がマイナスになっていないかなどの妥当性を検証します。
 
 ##### PurchaseProcessor
 
