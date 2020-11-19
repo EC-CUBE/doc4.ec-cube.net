@@ -174,6 +174,26 @@ PluginManagerでは、インジェクションは利用できません。Reposit
     }
 ```
 
+### バリデーションメッセージ
+
+一部のバリデーションメッセージが変更になっています。
+バリデーションメッセージを検証している自動テストは修正が必要な可能性があります。
+プロダクトコードの修正は必要ありません。
+
+## その他の仕様変更
+
+#### 非会員購入時のお客様情報取得方法の変更
+
+非会員購入時にはお客様情報を session に保存していますが、その保持形式がエンティティから配列へ変更になりました。
+それに伴い非会員購入時のお客様情報を取得・変更されるようなカスタマイズをされている場合に修正が必要です。
+
+```diff
+- $NonMember = $this->session->get('eccube.front.shopping.nonmember')
++ $NonMember = $this->orderHelper->getNonMember('eccube.front.shopping.nonmember')
+```
+
+[Customer の Serializable 実装に伴う本体の修正](https://github.com/EC-CUBE/ec-cube/commit/9a84daf16d92a5129eb169ac14f9b219e81c5d90)
+
 ## その他削除された関数・機能
 
 ### Application.php
