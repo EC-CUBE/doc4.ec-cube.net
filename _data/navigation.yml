@@ -42,6 +42,9 @@ docs:
       - title: SameSite Cookie 対応
         url: /hotfix_samesite_cookie
         output: web, pdf
+      - title: EC-CUBE4.0から4.1へのマイグレーション
+        url: /update-40-41
+        output: web, pdf
   - title: 機能仕様
     output: web, pdf
     children:

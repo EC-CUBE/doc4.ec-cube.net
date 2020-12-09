@@ -11,10 +11,10 @@ EC-CUBE4.0から4.1へのマイグレーションを解説します。
 
 EC-CUBE本体および一部公式プラグインをEC-CUBE4.1対応し、コードの移植が必要な箇所をまとめたものです。
 
-- [EC-CUBE 4.1 Roadmap](https://github.com/EC-CUBE/ec-cube/issues/4603)
-- [GitHub 4.1ブランチ](https://github.com/EC-CUBE/ec-cube/tree/4.1)
-- [Web API プラグイン：Symfony 4.4対応](https://github.com/EC-CUBE/eccube-api4/pull/106)
-- [商品レビュープラグイン：Symfony 4.4対応](https://github.com/EC-CUBE/ProductReview-plugin/pull/55)
+- [EC-CUBE 4.1 Roadmap](https://github.com/EC-CUBE/ec-cube/issues/4603){:target="_blank"}
+- [GitHub 4.1ブランチ](https://github.com/EC-CUBE/ec-cube/tree/4.1){:target="_blank"}
+- [Web API プラグイン：Symfony 4.4対応](https://github.com/EC-CUBE/eccube-api4/pull/106){:target="_blank"}
+- [商品レビュープラグイン：Symfony 4.4対応](https://github.com/EC-CUBE/ProductReview-plugin/pull/55){:target="_blank"}
 
 ## Composer2.0対応
 
@@ -63,7 +63,7 @@ namespace Plugin\ExamplePlugin;
 }
 ```
 
-修正内容について詳しくは[GitHubのIssue](https://github.com/EC-CUBE/ec-cube/issues/4737)をご覧ください。
+修正内容について詳しくは[GitHubのIssue](https://github.com/EC-CUBE/ec-cube/issues/4737){:target="_blank"}をご覧ください。
 
 2020/12/09時点でEC-CUBEが通信するオーナースズトア(package-api)側の4.1対応はされていません。
 
@@ -73,7 +73,7 @@ namespace Plugin\ExamplePlugin;
 
 Symfony4.4での変更をすべて網羅できているわけではないため、記載されていない問題があった場合は、SymfonyのUPGRADEドキュメントも合わせて参照してください。
 
-- [UPGRADE-4.0.md](https://github.com/symfony/symfony/blob/4.4/UPGRADE-4.0.md)
+- [UPGRADE-4.0.md](https://github.com/symfony/symfony/blob/4.4/UPGRADE-4.0.md){:target="_blank"}
 
 また、EC-CUBE4.0とEC-CUBE4.1での互換性を重視し、発生しているdeprecation noticeを意図的に修正していない箇所もあります。
 
@@ -248,7 +248,7 @@ PluginManagerでは、インジェクションは利用できません。Reposit
 + $NonMember = $this->orderHelper->getNonMember('eccube.front.shopping.nonmember')
 ```
 
-[Customer の Serializable 実装に伴う本体の修正](https://github.com/EC-CUBE/ec-cube/commit/9a84daf16d92a5129eb169ac14f9b219e81c5d90)
+[Customer の Serializable 実装に伴う本体の修正](https://github.com/EC-CUBE/ec-cube/commit/9a84daf16d92a5129eb169ac14f9b219e81c5d90){:target="_blank"}
 
 ## WebAPI対応
 
@@ -273,7 +273,7 @@ services:
                 Plugin\Maker4\Entity\Maker: ['id', 'name', 'sort_no', 'create_date', 'update_date']
 ```
 
-詳しくは[Web API プラグインのドキュメント](https://doc.ec-cube.net/eccube-api4/customize/allow_list)をご確認ください。
+詳しくは[Web API プラグインのドキュメント](https://doc.ec-cube.net/eccube-api4/customize/allow_list){:target="_blank"}をご確認ください。
 
 ### その他削除された関数・機能
 
