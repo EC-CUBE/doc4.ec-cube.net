@@ -250,6 +250,31 @@ PluginManagerでは、インジェクションは利用できません。Reposit
 
 [Customer の Serializable 実装に伴う本体の修正](https://github.com/EC-CUBE/ec-cube/commit/9a84daf16d92a5129eb169ac14f9b219e81c5d90)
 
+## WebAPI対応
+
+EC-CUBE のパッケージに Web API プラグインが同封され、 EC-CUBE インストールで Web API が利用可能になりました。
+
+Web API で取得可能なデータは許可リスト方式のため、プラグインで追加された Entity はデフォルトで取得できません。
+
+追加された Entity の取得を許可する場合は `eccube.api.allow_list` タグを付けたコンポーネントを定義します。
+
+サービスIDは `[プラグインコード].api.allow_list` の形を推奨します。
+
+例えばメーカー管理プラグインでは以下のような ArrayObject の定義をプラグイン内の services.yaml に追加します。
+
+```yaml
+services:
+    maker4.api.allow_list:
+        class: ArrayObject
+        tags: ['eccube.api.allow_list']
+        arguments:
+            - #
+                Eccube\Entity\Product: ['maker_url', 'Maker']
+                Plugin\Maker4\Entity\Maker: ['id', 'name', 'sort_no', 'create_date', 'update_date']
+```
+
+詳しくは[Web API プラグインのドキュメント](https://doc.ec-cube.net/eccube-api4/customize/allow_list)をご確認ください。
+
 ### その他削除された関数・機能
 
 #### Application.php
