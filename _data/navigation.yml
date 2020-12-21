@@ -166,6 +166,9 @@ docs:
       - title: デバッグモード
         url: /debug_mode
         output: web, pdf
+      - title: セッション保存方法
+        url: /session_handler_settings
+        output: web, pdf
   - title: 開発ツール
     output: web, pdf
     children:
