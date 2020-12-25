@@ -35,7 +35,7 @@ folder: customize
     - `workflow.order.transition.return` イベントを受け取る `EventSubscriberInterface` を実装します。
 
 ```php
-use Composer\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Eccube\Entity\Order;
 use Symfony\Component\Workflow\Event\Event;
 
