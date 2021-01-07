@@ -63,6 +63,9 @@ docs:
       - title: ディレクトリ構成
         url: /spec_directory-structure
         output: web, pdf
+      - title: Commandの開発
+        url: /customize_symfony#command
+        output: web, pdf
       - title: Controllerのカスタマイズ
         url: /customize_controller
         output: web, pdf
@@ -126,7 +129,7 @@ docs:
         url: http://downloads.ec-cube.net/manual/documents/eccube4_xd_admin_template.zip?argument=2qpV46CP&dmai=a5bf51b05bacc5
         output: web, pdf
 
-  - title: プラグインカスタマイズ
+  - title: プラグイン開発
     output: web, pdf
     children:
       - title: プラグイン仕様
@@ -202,6 +205,13 @@ docs:
       - title: "セキュリティの改善"
         url: /penetration-testing/improvement
         output: web, pdf
+
+  - title: カスタマイズサンプル（逆引き）
+    output: web,pdf
+    children:
+    - title: 商品詳細画面にYoutube動画を登録する
+      url: /sample-code/add-youtube-to-product-detail
+      output: web, pdf
   - title: 開発に参加する
     output: web, pdf
     children:
