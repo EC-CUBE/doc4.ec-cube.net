@@ -61,7 +61,7 @@ scssディレクトリ内はメンテナンスしやすいように構成され�
   ご利用の際はstyle.scssに以下のコードを追記ください。
 
 ```css
-@import "sections/component";
+@import "sections/components";
 @import "sections/projects";
 ```
 
