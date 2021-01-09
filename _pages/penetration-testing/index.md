@@ -24,7 +24,7 @@ permalink: /penetration-testing
 
 ## イントロダクション
 
-- [対象の読者](/penetration-testing/introduction/#%E5%AF%BE%E8%B1%A1%E3%81%AE%E8%AA%AD%E8%80%85)
+- [対象の読者](/penetration-testing/introduction#%E5%AF%BE%E8%B1%A1%E3%81%AE%E8%AA%AD%E8%80%85)
 
 ### セキュリティテストについて
 
@@ -34,7 +34,7 @@ permalink: /penetration-testing
 
 ### OWASP ZAP について
 
-- [OWASP ZAP でのテストの流れ](/penetration-testing/about_owaspzap/#owasp-zap-%E3%81%A7%E3%81%AE%E3%83%86%E3%82%B9%E3%83%88%E3%81%AE%E6%B5%81%E3%82%8C)
+- [OWASP ZAP でのテストの流れ](/penetration-testing/about_owaspzap#owasp-zap-%E3%81%A7%E3%81%AE%E3%83%86%E3%82%B9%E3%83%88%E3%81%AE%E6%B5%81%E3%82%8C)
 
 ## テスト計画
 
