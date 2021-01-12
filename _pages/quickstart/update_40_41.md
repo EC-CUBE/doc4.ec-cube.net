@@ -279,4 +279,40 @@ services:
 
 #### Application.php
 
-Eccube\Applicationは削除されました。SymfonyのContainerを使用するようにしてください。
+Eccube\Applicationは削除されました。これに伴い、ServiceProvider も廃止されています。SymfonyのContainerを使用するようにしてください。
+
+##### app['session'] を使用して、セッションを取得していた場合の変更例
+
+**4.0まで**
+
+``` php
+    public function index(Application $app, Request $request)
+    {
+        // SessionServiceProvider からセッションを取得
+        $session = $app['session'];
+    }
+
+ ```
+
+**4.1以降**
+
+ ```php
+    use Symfony\Component\HttpFoundation\Session\SessionInterface;
+
+    /** @var SessionInterface */
+    protected $session
+
+    /**
+     * @param SessionInterface $session
+     */
+    public function __construct(SessionInterface $session)
+    {
+        $this->session = $session;
+    }
+
+    public function index(Request $request)
+    {
+        // コンストラクタインジェクションでセッションを取得
+        $session = $this->session;
+    }
+ ```
