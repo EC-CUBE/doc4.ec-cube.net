@@ -124,6 +124,5 @@ bin/console doctrine:schema:update --dump-sql --force
 
 <script src="https://gist.github.com/tao-s/3b67f9f6dc19f78593eda49877df3b6b.js"></script>
 
-URLをtwigテンプレート上でエスケープせずに出力するには、`url`フィルターを使います。
 
 `youtube_url`がちゃんと定義されているかどうかをチェックして、定義されている時だけYoutubeのタグを出すようにします。
