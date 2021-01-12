@@ -118,6 +118,10 @@ bin/console doctrine:schema:update --dump-sql
 bin/console doctrine:schema:update --dump-sql --force
 ```
 
+これで管理画面では自動的にYoutubeのURLのフォームが追加されます。
+
+<img width="914" alt="ss2021-01-12 16 11 00" src="https://user-images.githubusercontent.com/485749/104288126-bf1f7880-54fa-11eb-816d-75b0d947abef.png">
+
 ### detail.twigへのyoutubeタグ追加
 
 テンプレートの``Prdoduct/detail.twig``のYoutube動画を表示させたい箇所へYoutubeのタグを追加します。
@@ -126,3 +130,7 @@ bin/console doctrine:schema:update --dump-sql --force
 
 
 `youtube_url`がちゃんと定義されているかどうかをチェックして、定義されている時だけYoutubeのタグを出すようにします。
+
+フロントではこの様に表示されます。
+
+<img width="1204" alt="スクリーンショット 2021-01-12 17 16 05" src="https://user-images.githubusercontent.com/485749/104288010-94cdbb00-54fa-11eb-80b0-2c524478ed5e.png">
