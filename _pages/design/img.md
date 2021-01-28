@@ -79,7 +79,7 @@ ec-cube.coやサーバーにアップロードする方法が難しい場合で�
 
 以下の書き方も可能です。
 ```twig
-{% raw %}<img src="{{ asset('assets/img/hoge.png'),'user_data' }}" alt="hoge">{% endraw %}
+{% raw %}<img src="{{ asset('assets/img/hoge.png','user_data') }}" alt="hoge">{% endraw %}
 ```
 
 

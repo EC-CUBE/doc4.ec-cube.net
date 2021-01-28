@@ -3,7 +3,7 @@ title: MailCatcher
 keywords: mailcatcher
 tags: [development-tools, mail-catcher]
 permalink: /development-tools/mail-catcher
-forder: development-tools
+folder: development-tools
 ---
 
 ## 概要

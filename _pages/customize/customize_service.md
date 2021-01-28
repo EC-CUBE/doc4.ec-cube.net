@@ -222,11 +222,11 @@ ItemProcessor で発生したエラーは Warning, ItemHolderProcessor で発生
 namespace Plugin\PurchaseProcessors\Processor;
 
 use Eccube\Entity\ItemInterface;
-use Eccube\Service\PurchaseFlow\ItemProcessor;
+use Eccube\Service\PurchaseFlow\ItemPreProcessor;
 use Eccube\Service\PurchaseFlow\PurchaseContext;
 use Eccube\Service\PurchaseFlow\ProcessResult;
 
-class EmptyProcessor implements ItemProcessor
+class EmptyProcessor implements ItemPreProcessor
 {
     /**
      * @param ItemInterface $item

@@ -18,9 +18,14 @@ docs:
         output: web, pdf
       - title: Windows環境でXAMPPを使用したインストール方法
         url: /quickstart_install/gui_win_install
+      - title: Mac環境でMAMPを使用したインストール方法
+        url: /quickstart_install/gui_mac_install
         output: web, pdf
       - title: 開発者向けインストール方法
         url: /quickstart_install
+        output: web, pdf
+      - title: パーミッションの設定について（共通事項）
+        url: /permission
         output: web, pdf
       - title: コマンドラインインターフェイス
         url: /quickstart_cli
@@ -36,6 +41,9 @@ docs:
         output: web, pdf
       - title: SameSite Cookie 対応
         url: /hotfix_samesite_cookie
+        output: web, pdf
+      - title: EC-CUBE4.0から4.1へのマイグレーション
+        url: /update-40-41
         output: web, pdf
   - title: 機能仕様
     output: web, pdf
@@ -70,6 +78,9 @@ docs:
       - title: 購入フローのカスタマイズ
         url: /customize_service
         output: web, pdf
+      - title: 受注ステータスのカスタマイズ
+        url: /customize_order_state_machine
+        output: web, pdf
       - title: テンプレートのカスタマイズ
         url: /customize_template
         output: web, pdf
@@ -92,10 +103,15 @@ docs:
       - title: 画像管理について
         url: /design_img
         output: web, pdf
-      - title: CSSとSassの利用
+      - title: CSSの利用
         url: /design_css
+      - title: Sass(scss)の利用
+        url: /design_sass
       - title: フォームレイアウトの変更
         url: /design_form
+        output: web, pdf
+      - title: メッセージのカスタマイズ
+        url: /design_messages
         output: web, pdf
       - title: フロント画面デザイン参考資料（スタイルガイド）
         url: https://eccube4-styleguide.herokuapp.com
@@ -125,6 +141,12 @@ docs:
       - title: プラグインサンプル
         url: /plugin_sample
         output: web, pdf
+      - title: オーナーズストア経由のインストールをテストする
+        url: /plugin_mock_package_api
+        output: web, pdf
+      - title: プラグインで推奨の命名規則
+        url: /plugin_naming_conventions
+        output: web, pdf
 
   - title: 設定変更
     output: web, pdf
@@ -144,11 +166,41 @@ docs:
       - title: デバッグモード
         url: /debug_mode
         output: web, pdf
+      - title: セッション保存方法
+        url: /session_handler_settings
+        output: web, pdf
   - title: 開発ツール
     output: web, pdf
     children:
       - title: MailCatcher
         url: /development-tools/mail-catcher
+        output: web, pdf
+  - title: "セキュリティテストの実施"
+    output: web, pdf
+    children:
+      - title: "はじめに"
+        url: /penetration-testing
+        output: web, pdf
+      - title: "Quick Start"
+        url: /penetration-testing/quick_start
+        output: web, pdf
+      - title: "イントロダクション"
+        url: /penetration-testing/introduction
+        output: web, pdf
+      - title: "OWASP ZAP について"
+        url: /penetration-testing/about_owaspzap
+        output: web, pdf
+      - title: "テスト計画"
+        url: /penetration-testing/planning
+        output: web, pdf
+      - title: "テストの実施"
+        url: /penetration-testing/testing
+        output: web, pdf
+      - title: "テスト評価"
+        url: /penetration-testing/review
+        output: web, pdf
+      - title: "セキュリティの改善"
+        url: /penetration-testing/improvement
         output: web, pdf
   - title: 開発に参加する
     output: web, pdf
@@ -162,13 +214,6 @@ docs:
     - title: プルリクエストの作り方
       url: /contribution-guide/pull-request
       output: web, pdf
-
-  - title: Web API仕様（ベータ）
-    output: web, pdf
-    children:
-      - title: Web API β版 スタートアップガイド
-        url: /api_quickstart_guide
-        output: web, pdf
 
   - title: ドキュメントがみつからないときは
     output: web, pdf

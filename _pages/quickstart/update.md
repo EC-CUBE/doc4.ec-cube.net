@@ -91,9 +91,11 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
 | 4.0.1 → 4.0.2        | composer.json<br>composer.lock|
 | 4.0.2 → 4.0.3        | composer.json<br>composer.lock<br>.htaccess<br>index.php|
 | 4.0.3 → 4.0.4        | composer.json<br>composer.lock<br>.htaccess<br>app/Customize/Resource<br>var/.htaccess|
+| 4.0.4 → 4.0.5        | composer.json<br>composer.lock<br>.htaccess<br>robots.txt<br>app/template/plugin|
 
 - ※ 差し替え対象に、composer.json/composer.lockがある場合は 上書き後、`composer.json/composer.lockの更新の手順`を実施してください。
 - ※ `4.0.0 → 4.0.2` のように複数バージョンをまたぐバージョンアップを行う場合は、`4.0.0 → 4.0.1`→`4.0.1 → 4.0.2` のように段階的なバージョンアップを行ってください。
+- ※ FTP等でファイルをアップロードするとパーミッションが変更される可能性があります。[パーミッションの設定について](/permission)を参考にパーミッションの確認をお願いします。
 
 上書き後、以下のコマンドでキャッシュの削除を行ってください。
 
@@ -128,7 +130,7 @@ composer require psr/http-message
 
 以下のコマンドを実行してください。
 
-**※ 4.0.0 → 4.0.1, 4.0.1 → 4.0.2 へのアップデートでは、スキーマ更新は必要ありません。**
+**※ 4.0.0 → 4.0.1, 4.0.1 → 4.0.2, 4.0.4 → 4.0.5 へのアップデートでは、スキーマ更新は必要ありません。**
 
 参考：[プラグインが無効の状態だと Doctrine SchemaTool でエンティティ拡張が認識されない](https://github.com/EC-CUBE/ec-cube/issues/4056){:target="_blank"}
 
@@ -175,10 +177,9 @@ bin/console cache:warmup --env=prod
 
 管理画面のコンテンツ管理もしくは店舗設定＞メール設定から、該当するページ/ブロック/メールテンプレートを編集してください。
 
+変更対象の差分は、以下リンクからご確認いただくが[各バージョンでの変更差分](#各バージョンでの変更差分)からご確認いただけます。
 
 #### 4.0.0 → 4.0.1
-
-変更対象の差分は、以下リンクからご確認いただくが[各バージョンでの変更差分](#各バージョンでの変更差分)からご確認いただけます。
 
 |ページ名                               |ファイル名|
 |--------------------------------------|---------------|
@@ -193,8 +194,6 @@ bin/console cache:warmup --env=prod
 
 #### 4.0.1 → 4.0.2
 
-変更対象の差分は、以下リンクからご確認いただくが[各バージョンでの変更差分](#各バージョンでの変更差分)からご確認いただけます。
-
 |ページ名                               |ファイル名|
 |--------------------------------------|---------------|
 |MYページ/購入履歴詳細                    |<a href="https://github.com/EC-CUBE/ec-cube/pull/4008/files" target = "_blank">Mypage/history.twig</a>|
@@ -203,15 +202,15 @@ bin/console cache:warmup --env=prod
 
 #### 4.0.2 → 4.0.3
 
-変更対象の差分は、以下リンクからご確認いただくか[各バージョンでの変更差分](#各バージョンでの変更差分)からご確認いただけます。
-
 <a href="https://github.com/EC-CUBE/ec-cube/pulls?q=is%3Apr+label%3Aaffected%3Atemplate+is%3Aclosed+milestone%3A4.0.3" target = "_blank">フロントテンプレートファイルの差分</a>
 
 #### 4.0.3 → 4.0.4
 
-変更対象の差分は、以下リンクからご確認いただくか[各バージョンでの変更差分](#各バージョンでの変更差分)からご確認いただけます。
-
 <a href="https://github.com/EC-CUBE/ec-cube/pulls?q=is%3Apr+label%3Aaffected%3Atemplate+is%3Aclosed+milestone%3A4.0.4" target = "_blank">フロントテンプレートファイルの差分</a>
+
+#### 4.0.4 → 4.0.5
+
+<a href="https://github.com/EC-CUBE/ec-cube/pulls?q=is%3Apr+label%3Aaffected%3Atemplate+is%3Aclosed+milestone%3A4.0.5" target = "_blank">フロントテンプレートファイルの差分</a>
 
 
 ### 9.メンテナンスモードを無効にする（バージョン4.0.1以降）
@@ -261,3 +260,4 @@ EC-CUBEのバージョンアップ手順は以上です。
 | 4.0.1 → 4.0.2   | [https://github.com/EC-CUBE/ec-cube/compare/4.0.1...4.0.2](https://github.com/EC-CUBE/ec-cube/compare/4.0.1...4.0.2?w=1#files_bucket){:target="_blank"}   |
 | 4.0.2 → 4.0.3   | [https://github.com/EC-CUBE/ec-cube/compare/4.0.2...4.0.3](https://github.com/EC-CUBE/ec-cube/compare/4.0.2...4.0.3?w=1#files_bucket){:target="_blank"}   |
 | 4.0.3 → 4.0.4   | [https://github.com/EC-CUBE/ec-cube/compare/4.0.3...4.0.4](https://github.com/EC-CUBE/ec-cube/compare/4.0.3...4.0.4?w=1#files_bucket){:target="_blank"}   |
+| 4.0.4 → 4.0.5   | [https://github.com/EC-CUBE/ec-cube/compare/4.0.4...4.0.5](https://github.com/EC-CUBE/ec-cube/compare/4.0.4...4.0.5?w=1#files_bucket){:target="_blank"}   |

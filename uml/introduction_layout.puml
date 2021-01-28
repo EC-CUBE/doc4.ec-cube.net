@@ -1,0 +1,27 @@
+@startuml
+
+frame docker-compose.yml {
+  [ec-cube]
+  database database
+  [ec-cube] --> database
+}
+
+frame docker-compose-owaspzap.yml {
+  component zap [
+  OWASP ZAP
+  ----
+  Webswing で OWASP ZAP GUI にブラウザ経由でアクセス可能
+  ----
+  http://localhost:8081/zap
+  ]
+}
+[ec-cube] <-- [zap]
+component ブラウザ [
+ブラウザ(Firefox)
+----
+Local Proxes(localhost:8080) 経由で ec-cube にアクセス可能
+----
+https://ec-cube
+]
+[zap] <-- ブラウザ : Local Proxies
+@enduml

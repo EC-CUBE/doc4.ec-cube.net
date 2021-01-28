@@ -3,25 +3,26 @@ title: Windows環境でXAMPPを使用したインストール方法
 keywords: install XAMPP
 tags: [quickstart, install, gui]
 permalink: quickstart_install/gui_win_install
-forder: quickstart
+folder: quickstart
 description: EC-CUBE4系をXAMPPを使用してWindowsのローカル環境へインストールする方法を解説します。
 ---
 
 ## インストールの前に
 XAMPPを使用してWindowsのローカル環境へインストールする方法を解説します。  
+[システム要件](/quickstart_requirement)からご使用されるEC-CUBEに対応しているphpバージョン等をご確認ください。  
 この記事の構築環境は以下の通りです。  
 ```
 // サンプルの構築環境
 Windows 10
-EC-CUBE 4.0.3
-XAMPP 7.2.29
+EC-CUBE 4.0.4
+XAMPP 7.4.7
 ```
 
 
 ## XAMPPをダウンロード、インストール
 まずはXAMPPを準備します。  
-EC-CUBE4.0.3は、**php7.1 〜7.3**で動作確認しています。  
-そのphpバージョンに該当するXAMPPをダウンロードする必要があります。  
+EC-CUBE4.0.4は、php7.4に対応しています。  
+ご使用されるEC-CUBEに対応したphpバージョンのXAMPPをダウンロードする必要があります。  
 
 [XAMPP公式サイト](https://www.apachefriends.org/jp/index.html){:target='_blank'}へアクセスし、
 メニューからダウンロードページへ移動します。  
@@ -34,7 +35,7 @@ EC-CUBE4.0.3は、**php7.1 〜7.3**で動作確認しています。
 
 ## EC-CUBEをダウンロード
 続いて、EC-CUBEをダウンロードします。  
-[EC-CUBE公式サイトのダウンロードページ](https://www.ec-cube.net/download/){:target='_blank'}から最新版のEC-CUBEをダウンロードします。(この記事では4.0.3)  
+[EC-CUBE公式サイトのダウンロードページ](https://www.ec-cube.net/download/){:target='_blank'}から最新版のEC-CUBEをダウンロードします。  
 ※ ダウンロードには会員登録が必要です。  
 
 ダウンロードしたら解凍します。  
@@ -45,27 +46,27 @@ EC-CUBE4.0.3は、**php7.1 〜7.3**で動作確認しています。
 解凍したEC-CUBEをXAMPPのhtdocsディレクトリ（フォルダ）に配置します。  
 
 **配置したディレクトリの構造でショップのトップページURLが決まります。**  
-`http://127.0.0.1/{htdocsの中に作成したディレクトリ名/}/`  
+`http://127.0.0.1/{htdocsの中に作成したディレクトリ名}/`  
 
 
 ```
-例:htdocsの中にtest-shopというディレクトリを作成し、そこにeccube-4.0.3を配置した場合
+例:htdocsの中にtest-shopというディレクトリを作成し、そこにeccube-4.0.4を配置した場合
 ■ ディレクトリ構造
-Windows(C:)\xampp\htdocs\test-shop\eccube-4.0.3\
+Windows(C:)\xampp\htdocs\test-shop\eccube-4.0.4\
 
 ■ ショップのトップページURL
-http://127.0.0.1/test-shop/eccube-4.0.3/
+http://127.0.0.1/test-shop/eccube-4.0.4/
 ```
 ※ まだEC-CUBEをインストールしていないので、ショップURLにアクセスしてもサイトは表示されません。  
-※ eccube-4.0.3の名前は自由に変えられます。 
+※ eccube-4.0.4の名前は自由に変えられます。 
 
-test-shopを作成せずにeccube-4.0.3のみhtdocsに配置するとショップURLは以下のようになります。  
-`http://127.0.0.1/eccube-4.0.3/`  
+test-shopを作成せずにeccube-4.0.4のみhtdocsに配置するとショップURLは以下のようになります。  
+`http://127.0.0.1/eccube-4.0.4/`  
 
 
 ## データベース作成
 XAMPPを起動します。  
-MySQLの項目の「Start」と「Admin」をクリックしてphpMyAdminを立ち上げます。  
+Apacheの「Start」とMySQLの「Start」と「Admin」をクリックしてphpMyAdminを立ち上げます。  
 ![XAMPP](/images/install/gui-win/xampp1.png)
 
 phpMyAdminが開きます。
@@ -93,9 +94,11 @@ ApacheとMySQLのActions項目の「Start」をクリックします。
 ![XAMPP](/images/install/gui-win/xampp2.png)
 
 ブラウザから以下のURLにアクセスします。  
-`http://127.0.0.1/{EC-CUBEをアップロードしたディレクトリ名/}/index.php/install/`  
+`http://127.0.0.1/{EC-CUBEをアップロードしたディレクトリ名}/`  
 
 インストール画面が表示されます。  
+
+![install step0](/images/install/gui-win/step0.png)
 
 「intl拡張モジュールが有効になっていません」というエラーが表示されます。  
 
@@ -134,7 +137,7 @@ XAMPPのApacheとMySQLのActions項目の「Stop」をクリックします。
 10秒ほど時間を置き、再度「Start」をクリックします。  
 
 ブラウザから以下のURLにアクセスします。  
-`http://127.0.0.1/{EC-CUBEをアップロードしたディレクトリ名/}/index.php/install/`  
+`http://127.0.0.1/{EC-CUBEをアップロードしたディレクトリ名}/`  
 
 ![install step1](/images/install/step1.png)
 
@@ -171,7 +174,7 @@ XAMPPのApacheとMySQLのActions項目の「Stop」をクリックします。
   「test1234」や「password」などは**絶対避けてください**  
 - **管理画面のディレクトリ名**  
   - 管理画面にアクセスする場合のURLになります。  
-  https://www.example.com/{EC-CUBEをインストールしたディレクトリ}/{管理画面のディレクトリ名}/ でアクセスする事になります。  
+  http://127.0.0.1/{EC-CUBEをインストールしたディレクトリ}/{管理画面のディレクトリ名}/ でアクセスする事になります。  
   こちらのディレクトリ名も「admin」や「dashboard」など推測されやすい文字列を指定すると危険です。  
   適当な意味を持たない文字列を指定してください。
 - **サイトのアクセスをSSL経由に強制します**  
@@ -192,7 +195,7 @@ XAMPPのApacheとMySQLのActions項目の「Stop」をクリックします。
 ### データベースの設定入力 
 ![install step 4](/images/install/gui-win/step5.png)
 データベースの情報を入力します。  
-**今回はXAMPPで標準に用意されているアカウントを使用します。**
+**今回はXAMPPに標準で用意されているアカウントを使用します。**
 
 - **データベースの種類**
   - 本番環境ではMySQLかPostgreSQLを利用してください。

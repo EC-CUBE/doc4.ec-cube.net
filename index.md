@@ -21,22 +21,28 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 ドキュメントへの追記、記載内容の修正についても[GitHub](https://github.com/EC-CUBE/doc4.ec-cube.net/){:target="_blank"}にて受け付けております。
 追加方法は[こちら](/documents/writing-and-formatting)をご覧ください。
 
-運用者向けには以下のサイトをご覧ください。
-
-+ [EC-CUBE 4管理・運用 マニュアル（株式会社シロハチ様）](https://www.shiro8.net/manual4/v40x/index.html){:target="_blank"}
-
 [こちら](https://www.ec-cube.net/committer/#Doc4Form){:target="_blank"}でドキュメントへのフィードバックを募集しています。
+
+## 運用者向け情報
+
+運用者向けには以下のサイトをご覧ください。
++ [EC-CUBE 4管理・運用 マニュアル（株式会社シロハチ様）](https://www.shiro8.net/manual4/v40x/index.html){:target="_blank"}
 
 ## インストール方法
 
 + [システム要件](quickstart_requirement)
 + [初心者向けインストール方法（Webインストーラ）](/quickstart_install/web-installer)
 + [Windows環境でXAMPPを使用したインストール](/quickstart_install/gui_win_install)
++ [Mac環境でMAMPを使用したインストール](/quickstart_install/gui_mac_install)
 + [開発者向けインストール方法](quickstart_install)
-+ バージョンアップ
-	- [バージョンアップ方法](/update)
-	- [4.0.3での注意点](/update/4_0_3)
++ [パーミッションの設定について](permission)
 + [コマンドラインインターフェイス](quickstart_cli)
+
+## バージョンアップ
+
++ [バージョンアップ方法](/update)
++ [4.0.3での注意点](/update/4_0_3)
++ [EC-CUBE4.0から4.1へのマイグレーション](/update-40-41)
 
 ## 機能仕様
 
@@ -45,12 +51,14 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 + [税率設定](spec_tax)
 
 ## 本体カスタマイズ
+
 + [ディレクトリ構成](spec_directory-structure)
 + [Controllerのカスタマイズ](customize_controller)
 + [Entityのカスタマイズ](customize_entity)
 + [Repositoryのカスタマイズ](customize_repository)
 + [FormTypeのカスタマイズ](customize_formtype)
 + [購入フローのカスタマイズ](customize_service)
++ [受注ステータスのカスタマイズ](customize_order_state_machine)
 + [テンプレートのカスタマイズ](customize_template)
 + [Symfonyの機能を使った拡張](customize_symfony)
 
@@ -63,7 +71,8 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 + [フォームレイアウトの変更](design_form)
 + [ブロックの利用](design_block)
 + [レイアウト管理の利用](design_layout)
-+ [CSSとSassの利用](design_css)
++ [CSSの利用](design_css)
++ [Sass(scss)の利用](design_sass)
 + [フロント画面テンプレート for Adobe XD](http://downloads.ec-cube.net/manual/documents/eccube4_xd_front_template.zip?argument=2qpV46CP&dmai=a5bf51b05bacc5){:target="_blank"}
 + [管理画面テンプレート for Adobe XD](http://downloads.ec-cube.net/manual/documents/eccube4_xd_admin_template.zip?argument=2qpV46CP&dmai=a5bf51b05bacc5){:target="_blank"}
 
@@ -73,24 +82,31 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 + [プラグインのインストール](plugin_install)
 + [インストール失敗時の対処法](plugin_error)
 + [プラグインサンプル](plugin_sample)
++ [オーナーズストア経由のインストールをテストする](plugin_mock_package_api)
++ [プラグインで推奨の命名規則](plugin_naming_conventions)
 
 ## 多言語化
+
 + [多言語化](i18n_multilingualization)
 + [通貨](i18n_currency)
 + [タイムゾーン](i18n_timezone)
 
 ## 開発ツール
+
 + [MailCatcher](/development-tools/mail-catcher)
 
-## Web API仕様（ベータ）
-+ [Web API β版 スタートアップガイド](api_quickstart_guide)
+## セキュリティテストの実施
+
+- [EC-CUBE Penetration Testing with OWASP ZAP](/penetration-testing)
 
 ## 開発に参加する
+
 + [EC-CUBEの開発に参加するには？（公式サイト）](https://www.ec-cube.net/committer/){:target="_blank"}
 + [開発の概要](/contribution-guide/overview)
 + [プルリクエストの作り方](/contribution-guide/pull-request)
 
 ## ドキュメントがみつからないときは
+
 + [ドキュメントのリクエスト](/documents/request)
 + [ドキュメントの追加・書き方](/documents/writing-and-formatting)
 + [ドキュメントの投稿](/documents/contribute)
