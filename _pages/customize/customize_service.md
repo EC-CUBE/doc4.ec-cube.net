@@ -187,21 +187,6 @@ CartItem や OrderItem が実装クラスとなります。
 PurchaseFlow は、集計を行う [calculate()](https://github.com/EC-CUBE/ec-cube/pull/2424/files#diff-1d9b0d44b6269dc98b5c09f331ff0c41R48){:target="_blank"} と完了処理を行う [purchase()](https://github.com/EC-CUBE/ec-cube/pull/2424/files#diff-1d9b0d44b6269dc98b5c09f331ff0c41R80){:target="_blank"} メソッドを持っています。
 メソッドが実行されると、Item や ItemHolder を Processor に渡し、Processor を順次実行していきます。また、Processor の実行結果を呼び出し元に返却します。
 
-##### ItemHolderProcessor
-
-ItemHolder(OrderやCart) に対して処理を実行する Processor です。
-支払方法の整合性や、購入金額上限など、カートや注文全体の妥当性を検証します。
-
-##### ItemProcessor
-
-Item に 対して処理を実行する Processor です。
-在庫や販売制限数など、明細の妥当性を検証します。
-
-##### PurchaseProcessor
-
-完了処理を行うタイミングで呼び出される Processor です。
-ItemHolder に対して処理を行います。また、PurchaseContext を通じて、変更前の ItemHolderを取得することもできます。
-
 ##### PurchaseContext
 
 実行時の状態を保持するクラスです。
@@ -211,6 +196,21 @@ ItemHolder に対して処理を行います。また、PurchaseContext を通�
 
 PurchaseFlow の実行結果を保持するクラスです。
 ItemProcessor で発生したエラーは Warning, ItemHolderProcessor で発生したエラーは Error として扱います。
+
+##### Processor
+
+目的に応じてクラスまたはインタフェースを継承または実装します。
+
+
+| クラス、インタフェース      | 概要と具体例                                              |
+|-------------------------|--------------------------------------------------|
+| ItemValidator           | 明細単位(Item)の妥当性検証のクラス。<br>商品価格の変更チェック、商品の公開ステータスのチェックなど |
+| ItemHolderValidator     | カート/受注(ItemHolder)の妥当性検証を行うクラス。<br>在庫チェック、販売制限数チェックなど |
+| ItemPreprocessor        | 明細単位(Item)の前処理行うインターフェス。 |
+| ItemHolderPreprocessor  | カート/受注(ItemHolder)の前処理行うインターフェス。<br>送料明細の追加、支払い手数料明細の追加など |
+| DiscountProcessor       | 値引き処理を行うインタフェース。<br>ポイント値引き迷彩の追加など |
+| ItemHolderPostValidator | 各処理後にカート/受注の妥当性検証を行うクラス。<br>合計金額のマイナスチェックなど |
+| PurchaseProcessor       | 受注の仮確定/確定/確定取り消し処理を行うインターフェイス。<br>在庫の更新処理、ポイントの更新処理など |
 
 ####  Processor の実装例
 
@@ -272,7 +272,11 @@ class ValidatableEmptyProcessor extends ValidatableItemProcessor
 
 ```
 
-独自に作成した Processor を有効にするには、 `app/config/eccube/packages/purchaseflow.yaml` の定義を修正します。
+####  Processorの有効化
+
+独自に作成した Processor を有効にするには、 `app/config/eccube/packages/purchaseflow.yaml` に定義を追加するか、アノテーションで追加対象のフローを指定します。
+
+##### `purchaseflow.yaml` に定義を追加
 
 ```yaml
     eccube.purchase.flow.cart.item_processors:
@@ -286,5 +290,47 @@ class ValidatableEmptyProcessor extends ValidatableItemProcessor
                 - '@Eccube\Service\PurchaseFlow\Processor\StockValidator'
                 - '@Eccube\Service\PurchaseFlow\Processor\ProductStatusValidator'
                 - '@Plugin\PurchaseProcessors\Processor\ValidatableEmptyProcessor' # 追加
+```
 
+##### アノテーションで追加対象のフローを指定
+
+`@CartFlow`, `@ShoppingFlow`, `@OrderFlow` のアノテーションで追加対象のフローを指定できます。
+
+| アノテーション    | 概要                                              |
+|----------------|--------------------------------------------------|
+| @CartFlow      | カートのPurchaseFlowにProcessorを追加する場合に指定    |
+| @ShoppingFlow  | 購入フローのPurchaseFlowにProcessorを追加する場合に指定 |
+| @OrderFlow     | 管理画面でのPurchaseFlowにProcessorを追加する場合に指定 |
+
+```php
+<?php
+
+namespace Customize\Service\PurchaseFlow\Processor;
+
+use Eccube\Annotation\CartFlow;
+use Eccube\Annotation\OrderFlow;
+use Eccube\Annotation\ShoppingFlow;
+use Eccube\Entity\ItemInterface;
+use Eccube\Service\PurchaseFlow\PurchaseContext;
+use Eccube\Service\PurchaseFlow\ItemValidator;
+
+/**
+ * 全てのフローでプロセッサを有効にする
+ *
+ * @CartFlow
+ * @ShoppingFlow
+ * @OrderFlow
+ */
+class SampleValidator extends ItemValidator
+{
+    protected function validate(ItemInterface $item, PurchaseContext $context)
+    {
+        // 省略
+    }
+
+    protected function handle(ItemInterface $item, PurchaseContext $context)
+    {
+        // 省略
+    }
+}
 ```
