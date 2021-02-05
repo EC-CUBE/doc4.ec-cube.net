@@ -7,6 +7,12 @@ main:
 
 # documentation links
 docs:
+  - title: ec-cube.co
+    output: web, pdf
+    children:
+      - title: ec-cube.co
+        url: /co
+        output: web, pdf
   - title: インストール方法
     output: web, pdf
     children:
