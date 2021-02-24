@@ -76,7 +76,7 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 + [フロント画面テンプレート for Adobe XD](http://downloads.ec-cube.net/manual/documents/eccube4_xd_front_template.zip?argument=2qpV46CP&dmai=a5bf51b05bacc5){:target="_blank"}
 + [管理画面テンプレート for Adobe XD](http://downloads.ec-cube.net/manual/documents/eccube4_xd_admin_template.zip?argument=2qpV46CP&dmai=a5bf51b05bacc5){:target="_blank"}
 
-## プラグインカスタマイズ
+## プラグイン開発
 
 + [プラグイン仕様](plugin_spec)
 + [プラグインのインストール](plugin_install)
