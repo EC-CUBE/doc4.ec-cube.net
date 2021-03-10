@@ -133,7 +133,7 @@ Twigファイルからこの `sample.jpg` へのパスは以下の記述で取�
 - `.git` ディレクトリや `.DS_Store` ファイル等をアーカイブに含めないようにする
 
 ```bash
-$ cd app/[PluginDir]
+$ cd app/Plugin/[PluginDir]
 $ tar --exclude  ".git" --exclude ".DS_Store" -cvzf ../[PluginDir].tar.gz *
 ```
 
