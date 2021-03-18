@@ -88,6 +88,7 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 + [プラグインサンプル](plugin_sample)
 + [オーナーズストア経由のインストールをテストする](plugin_mock_package_api)
 + [プラグインで推奨の命名規則](plugin_naming_conventions)
++ [管理画面ナビの拡張](plugin_admin_nav)
 
 ## 多言語化
 

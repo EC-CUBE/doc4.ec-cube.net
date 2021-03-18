@@ -156,6 +156,9 @@ docs:
       - title: プラグインで推奨の命名規則
         url: /plugin_naming_conventions
         output: web, pdf
+      - title: 管理画面ナビの拡張
+        url: /plugin_admin_nav
+        output: web, pdf
 
   - title: 設定変更
     output: web, pdf
