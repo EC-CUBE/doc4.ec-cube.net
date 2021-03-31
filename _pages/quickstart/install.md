@@ -34,6 +34,12 @@ description: EC-CUBE 4系のインストールについての説明です。
 インストールした際の[パーミッションの設定について](/permission)も合わせてお読みください。  
 セキュリティの観点から、パーミッションは可能な限り制限して特定のディレクトリ・ファイルのみに書き込み権限を与えることをおすすめいたします。
 
+#### 本番環境での .env ファイルの利用について
+
+[本番環境にインストールする場合の .env ファイルの利用について](/quickstart_install/dotenv)も合わせてお読みください。
+セキュリティの観点から、本番環境での .env ファイルの利用は推奨されません。
+本番環境では、環境変数をサーバ設定ファイルに設定することを推奨します。
+
 ---
 
 ### 1.コマンドラインからインストールする
@@ -289,39 +295,3 @@ docker-composeを用いてインストールした場合、ホストのローカ
  - /vendor  
 
 上記除外対象のフォルダについてはDocker Volumeを用いて別途永続化を行っています。
-
-
-
-## 本番環境での .env ファイルの利用について
-
-インストール完了後、インストールディレクトリにデータベースの接続情報等が設定された **.env** ファイルが生成されます。
-**.env** ファイルは、開発用途での環境変数を設定するためのものであり、本番環境での使用は推奨されません。
-本番環境では、環境変数をサーバ設定ファイルに設定することを推奨します。
-サーバ設定ファイルに環境変数を設定することにより、環境変数が外部に暴露される危険性が減り、安全に運用できます。
-
-### Apache での設定例
-
-httpd.conf や、 .htaccess ファイルに設定します。
-
-```
-SetEnv APP_ENV prod
-SetEnv APP_DEBUG 0
-SetEnv DATABASE_URL pgsql://dbuser:password@127.0.0.1/cube4_dev
-SetEnv DATABASE_SERVER_VERSION 10.5
-SetEnv ECCUBE_AUTH_MAGIC 8PPlCHZVdH5vbMkIUKeuTeDHycQQMuaB
-SetEnv ECCUBE_ADMIN_ALLOW_HOSTS []
-SetEnv ECCUBE_FORCE_SSL false
-SetEnv ECCUBE_ADMIN_ROUTE admin
-SetEnv ECCUBE_COOKIE_PATH /
-```
-
-[参考: Apache HTTP サーバ バージョン 2.4 - SetEnv ディレクティブ](https://httpd.apache.org/docs/2.4/ja/mod/mod_env.html#setenv){:target="_blank"}
-
-### サーバ設定ファイルに環境変数を設定した場合の注意事項
-
-サーバ設定ファイルに環境変数を設定した場合、 以下の機能を管理画面から設定することができません。
-
-**サーバ設定ファイルの環境変数を変更し、キャッシュクリアする必要がありますのでご注意ください。**
-
-- 管理画面→オーナーズストア→テンプレート
-- 管理画面→設定→システム設定→セキュリティ管理

@@ -32,6 +32,8 @@ docs:
         output: web, pdf
       - title: パーミッションの設定について（共通事項）
         url: /permission
+      - title: 本番環境での .env ファイルの利用について（共通事項）
+        url: /quickstart_install/dotenv
         output: web, pdf
       - title: コマンドラインインターフェイス
         url: /quickstart_cli

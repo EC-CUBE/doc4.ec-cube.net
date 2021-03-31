@@ -40,6 +40,7 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 + [Mac環境でMAMPを使用したインストール](/quickstart_install/gui_mac_install)
 + [開発者向けインストール方法](quickstart_install)
 + [パーミッションの設定について](permission)
++ [本番環境での .env ファイルの利用について](/quickstart_install/dotenv)
 + [コマンドラインインターフェイス](quickstart_cli)
 
 ## バージョンアップ
