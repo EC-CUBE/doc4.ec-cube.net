@@ -218,13 +218,14 @@ docker run --name ec-cube -p "8080:80" -p "4430:443" --link container_mysql:db e
 ---
 
 ### 4.Docker Composeを使用してインストールする
+
+[EC-CUBE4.0.5以下のバージョンをお使いの場合はこちらをご覧ください。](/quickstart/install_docker-compose_405orlower)
+
 **開発環境として関連サービス(DB、メールデバッグ環境等)も含め手軽に一括構築したい場合におすすめの方法です**
 
 前提として、 [Docker Desktop のインストール](https://hub.docker.com){:target="_blank"} が必要です。
 
 + 初期状態では SQLite3 を使用します
-+ ローカルディレクトリをマウントします
-
 
 ```shell
 cd path/to/ec-cube
@@ -237,6 +238,7 @@ docker-compose exec -u www-data ec-cube bin/console eccube:install
 ```
 
 2回目以降の起動時も同様のコマンドを使用します。
+
 ```shell
 # コンテナの起動
 docker-compose up -d
@@ -245,46 +247,63 @@ docker-compose up -d
 docker-compose down
 ```
 
-#### 各種コンテナの使用
-EC-CUBE 4が動作するWebサーバを含め、以下のコンテナが簡単に起動できます。
+docker-compose を使用したインストールでは、基本的な設定は `.env` ではなく、 `docker-compose.yml` の `environment` の項目で設定します。(詳細は[.env の使用について](#env-の使用について)の項目をご覧ください。)
 
-| コンテナ名  | 概要                             | ブラウザアクセス例 |
-| ----------- | -------------------------------- | -------------------------- |
-| ec-cube     | EC-CUBE 向けPHP Webサーバ        | [http://localhost:8080](http://localhost:8080){:target="_blank"}      |
-| postgres    | PostgreSQLデータベースサーバ     |                            |
-| mysql       | MySQLデータベースサーバ          |                            |
-| mailcatcher | MailCatcher デバッグ用SMTPサーバ | [http://localhost:1080](http://localhost:1080){:target="_blank"}      |
+各種 `docker-compose.*.yml` を指定することで、ローカルディレクトリをマウントしたり、データベースを変更することができます。
 
-起動時にコンテナ名を列挙することで、各種コンテナを起動します。
-```shell
-# 例：EC-CUBEとMySQLとphpMyAdminとMailCatcherを起動する
-docker-compose up -d ec-cube mysql mailcatcher
+#### PostgreSQL を使用する場合
 
-# 省略した場合はすべてのサービスが起動します
-docker-compose up -d
+`docker-compose.pgsql.yml` を指定します。
+
+``` shell
+docker-compose -f docker-compose.yml -f docker-compose.pgsql.yml up -d
 ```
-各種コンテナと連携させる場合は、以下の通り設定が必要です。
-##### メール送信を使用する場合
-`.env` にて `MAILER_URL=smtp://mailcatcher:1025` としておきます。
-
-##### PostgreSQL を使用する場合
-`.env` にて `DATABASE_URL=postgres://dbuser:secret@postgres/eccubedb` としておきます。
 
 データベーススキーマを初期化していない場合は、以下の実行が必要です。
+
 ```
 # スキーマ作成+初期データ投入
-docker-compose exec ec-cube composer run-script compile
+docker-compose -f docker-compose.yml -f docker-compose.pgsql.yml exec ec-cube composer run-script compile
 ```
 
-##### MySQL を使用する場合
-`.env` にて `DATABASE_URL=mysql://dbuser:secret@mysql/eccubedb` としておきます。
+#### MySQL を使用する場合
+
+`docker-compose.mysql.yml` を指定します。
+
+``` shell
+docker-compose -f docker-compose.yml -f docker-compose.mysql.yml up -d
+```
 
 データベーススキーマを初期化していない場合は、以下の実行が必要です。
+
 ```
 # スキーマ作成+初期データ投入
-docker-compose exec ec-cube composer run-script compile
+docker-compose -f docker-compose.yml -f docker-compose.mysql.yml exec ec-cube composer run-script compile
 ```
 
+#### ローカルディレクトリをマウントする場合
+
+`docker-compose.dev.yml` を指定します。
+
+```
+## MySQL を使用する例
+docker-compose -f docker-compose.yml -f docker-compose.mysql.yml -f docker-compose.dev.yml up -d
+```
+
+#### .env の使用について
+
+docker-compose を使用したインストールでは、 `DATABASE_URL` などの各種環境変数は `docker-compose.*.yml` の `environment` の項目で設定します。
+
+`.env` を使用したい場合は、以下のように設定し ec-cube コンテナを up することで利用できます。
+
+1. `docker-compose*.yml` で `APP_ENV: ~` とする
+1. ローカルディレクトリの `.env` の `APP_ENV` をコメントアウトする
+
+各種環境変数の設定される優先順位は以下の通りです。
+
+1. `docker-compose*.yml` の `environment`
+1. ローカルディレクトリの `.env` (phpdotenv ではなく docker-compose 経由で設定される)
+1. ec-cube コンテナの `.env` (phpdotenv で設定される)
 
 #### ファイルの同期
 
@@ -292,6 +311,7 @@ docker-composeを用いてインストールした場合、ホストのローカ
 
 なお、一部環境において著しいパフォーマンスの劣化が発生する場合があるため、以下のフォルダは同期の対象から除外しています。
  - /var
- - /vendor  
+ - /vendor
+ - /node_modules
 
 上記除外対象のフォルダについてはDocker Volumeを用いて別途永続化を行っています。
