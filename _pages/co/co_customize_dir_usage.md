@@ -40,13 +40,13 @@ $ git checkout -b develop origin/develop
 $ git merge --allow-unrelated-histories ec-cube/co/master
 ```
 
-## ステージング環境・本番環境への反映方法
+## テスト環境・本番環境への反映方法
 
 ブランチを.coのリポジトリにpushすることでサイトへ反映が行われます。  
 反映されるまで1分程度かかります。  
 ※ 「変更可能範囲外」のファイルをpushすることは可能ですが、サイトへは反映されません。
 
-### ステージング環境に反映
+### テスト環境に反映
 
 ```
 $ git push origin develop -u
