@@ -153,7 +153,7 @@ bin/console doctrine:migrations:migrate
 
 プロキシファイルを削除
 ```
-rm -f app/proxy/entity/*.php
+rm -rf app/proxy/entity/*
 ```
 
 autoloadファイルの再生成
