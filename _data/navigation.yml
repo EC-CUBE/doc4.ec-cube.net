@@ -10,8 +10,29 @@ docs:
   - title: ec-cube.co
     output: web, pdf
     children:
-      - title: ec-cube.co
+      - title: ec-cube.coとは
         url: /co
+        output: web, pdf
+      - title: アップデート指針
+        url: /co/co_update_guidelines
+        output: web, pdf
+      - title: Console
+        url: /co/co_console
+        output: web, pdf
+      - title: ネーミングルール
+        url: /co/co_naming_rules
+        output: web, pdf
+      - title: Git管理機能の仕様
+        url: /co/co_git
+        output: web, pdf
+      - title: カスタマイズディレクトリ利用方法
+        url: /co/co_customize_dir_usage
+        output: web, pdf
+      - title: テスト環境の構築
+        url: /co/co_staging
+        output: web, pdf
+      - title: ログの取得
+        url: /co/co_log
         output: web, pdf
   - title: インストール方法
     output: web, pdf
