@@ -9,13 +9,13 @@ folder: co
 
 ---
 
-※ [shopname]：申込みの際に指定したショップ名です。
+※ [shopid]：申込みの際に指定したショップIDです(xxx.ec-cube.coのxxx部)。
 
 | | | |
 |-|-|-|
-|リポジトリ名|eccube.co-[shopname]-customize||
+|リポジトリ名|eccube.co-[shopid]-customize||
 |ブランチ|master->本番環境, develop->テスト環境|※ スタンダードプランのみ|
-|namespace(本番環境)|[shopname]||
-|namespace(テスト環境)|stg-[shopname]|※ スタンダードプランのみ|
-|ショップURL(本番環境)|[shopname].ec-cuube.shop||
-|ショップURL(テスト環境)|stg-[shopname].ec-cuube.shop|※ スタンダードプランのみ|
+|namespace(本番環境)|[shopid]||
+|namespace(テスト環境)|stg-[shopid]|※ スタンダードプランのみ|
+|ショップURL(本番環境)|[shopid].ec-cuube.shop||
+|ショップURL(テスト環境)|stg-[shopid].ec-cuube.shop|※ スタンダードプランのみ|
