@@ -23,18 +23,18 @@ folder: co
 | \|&emsp;&emsp;\|\-\- PluginData               | x           | o                          |                |
 | \|&emsp;&emsp;\|\-\- config                   | x           |                            |                |
 | \|&emsp;&emsp;\|\-\- proxy                    | x           |                            |                |
-| \|&emsp;&emsp;`\-\- template                  | o           | o                          | o              |
-| \|&emsp;&emsp;&emsp;&emsp;\|\-\- admin        | o           | o                          | o              |
+| \|&emsp;&emsp;`\-\- template                  | o           | o                          | o               |
+| \|&emsp;&emsp;&emsp;&emsp;\|\-\- admin        | o           | o                          |               |
 | \|&emsp;&emsp;&emsp;&emsp;\|\-\- default      |  o          | o                          | o              |
 | \|&emsp;&emsp;&emsp;&emsp;`\-\- user_data     |  o          | o                          | o              |
 | `\-\- html                                    |             |                            |                |
-|&emsp;&emsp;\|\-\- plugin            　　　　   |  o          | o                          | o              |
+|&emsp;&emsp;\|\-\- plugin            　　　　   |  o          | o                          |               |
 |&emsp;&emsp;\|\-\- template           　　　　  |  o          | o                          | o              |
-|&emsp;&emsp;\|&emsp;&emsp;\|\-\- admin         |  o          | o                          | o              |
-|&emsp;&emsp;\|&emsp;&emsp;`\-\- default        |  o          | o                          | o              |
+|&emsp;&emsp;\|&emsp;&emsp;\|\-\- admin         |  o          | o                          |               |
+|&emsp;&emsp;\|&emsp;&emsp;`\-\- default        |  o          | o                          |               |
 |&emsp;&emsp;\|\-\- upload             　　　 　  |  x       　 |                            |                |
-|&emsp;&emsp;\|&emsp;&emsp;\|\-\- save_image    |  x          |                            |                |
-|&emsp;&emsp;\|&emsp;&emsp;`\-\- temp_image     |  x          |                            |                |
+|&emsp;&emsp;\|&emsp;&emsp;\|\-\- save_image    |  x          |                            |  o              |
+|&emsp;&emsp;\|&emsp;&emsp;`\-\- temp_image     |  x          |                            |  o              |
 |&emsp;&emsp;`\-\- user_data        　　　　　    |  x          |                            | o              |
 |&emsp;&emsp;&emsp;&emsp;`-- assets     　      |  x          |                            | o              |
 
@@ -52,4 +52,5 @@ folder: co
 
 「Plugin利用による影響」「管理画面からの操作」について  
 
-- gitからの反映以外の操作は、次回git反映時に上書きされてしまうため、使用する場合はショップ運営側とのルール決めを行ってください。
+- gitからの反映以外の操作により生成・変更されたファイルもit管理されます。
+- その際、管理画面側の変更が正としてcommitされます。
