@@ -158,10 +158,12 @@ const srcPattern = [
 ご購入されたデザインテンプレートのマニュアルなどをご参照ください。
 
 
-## EC-CUBE4.0.4でのビルド方法 {#build_eccube404}
+## EC-CUBE4.0.4以降でのビルド方法 {#build_eccube404}
 
 4.0.4から新たに、自動ビルドであるwatch機能が追加されました。<br>
 [【注意】Windowsの方は一部コードの修正が必要になります](#win_sass)
+
+設定ファイルは `gulp/config.js` にありますので先に設定をしておいてください。
 
 ```shell
 npm run build # scssをstyle.cssとstyle.min.cssに書き出します 
