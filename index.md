@@ -55,7 +55,7 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 
 ## 本体の仕様
 
-+ [ER図]
++ [ER図](https://github.com/EC-CUBE/eccube-specification/tree/4.0/ER-D){:target="_blank"}
 + [結合試験項目書](https://github.com/EC-CUBE/eccube-specification/tree/4.0/IntegrationTest){:target="_blank"}
 + [WebAPI仕様](https://github.com/EC-CUBE/eccube-api4){:target="_blank"}
 
