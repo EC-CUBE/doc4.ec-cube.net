@@ -16,12 +16,10 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 + EC-CUBE本体と同様に[GitHub](https://github.com/EC-CUBE/doc4.ec-cube.net/){:target="_blank"}へIssueをご投稿いただく
   詳細は[こちら](documents/request)をご覧ください
 + [実施予定のUGや勉強会](https://www.ec-cube.net/event/){:target="_blank"}を探して参加する
-+ [ドキュメントへの要望を送る（公式サイト）](https://www.ec-cube.net/committer/#Doc4Form){:target="_blank"}
 
 ドキュメントへの追記、記載内容の修正についても[GitHub](https://github.com/EC-CUBE/doc4.ec-cube.net/){:target="_blank"}にて受け付けております。
 追加方法は[こちら](/documents/writing-and-formatting)をご覧ください。
 
-[こちら](https://www.ec-cube.net/committer/#Doc4Form){:target="_blank"}でドキュメントへのフィードバックを募集しています。
 
 ## ec-cube.coについて
 
@@ -115,7 +113,6 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 + [ドキュメントのリクエスト](/documents/request)
 + [ドキュメントの追加・書き方](/documents/writing-and-formatting)
 + [ドキュメントの投稿](/documents/contribute)
-+ [ドキュメントへのフィードバックを送る](https://www.ec-cube.net/committer/#Doc4Form){:target="_blank"}
 
 ## Supporters
 
