@@ -233,8 +233,8 @@ cd path/to/ec-cube
 # コンテナの起動 (初回のみビルド処理あり)
 docker-compose up -d
 
-# 初回はインストールスクリプトを実行( **`www-data` ユーザで実行する点に注意！** )
-docker-compose exec -u www-data ec-cube bin/console eccube:install
+# 初回はインストールスクリプトを実行( **`www-data` ユーザで実行する点、非対話モードを使用する点に注意！** )
+docker-compose exec -u www-data ec-cube bin/console eccube:install -n
 ```
 
 2回目以降の起動時も同様のコマンドを使用します。
@@ -248,6 +248,7 @@ docker-compose down
 ```
 
 docker-compose を使用したインストールでは、基本的な設定は `.env` ではなく、 `docker-compose.yml` の `environment` の項目で設定します。(詳細は[.env の使用について](#env-の使用について)の項目をご覧ください。)
+**また、 `eccube:install` コマンドの対話モードは使用できません。必ず非対話モード(`-n` オプション)を付与してください。**
 
 各種 `docker-compose.*.yml` を指定することで、ローカルディレクトリをマウントしたり、データベースを変更することができます。
 
