@@ -1,12 +1,12 @@
 ---
-title: 商品詳細画面へのYoutube動画の追加
+title: 商品詳細画面へのYouTube動画の追加
 keywords: core カスタマイズ Entity Product
 tags: [core, entity, product]
 permalink: sample-code/add-youtube-to-product-detail
 folder: sample-code
 ---
 
-## 商品詳細画面へのYoutube動画の追加
+## 商品詳細画面へのYouTube動画の追加
 
 1. ProductTraitの作成
 1. proxyの生成とDBスキーマの変更
@@ -66,7 +66,7 @@ trait ProductTrait
      *     type="\Symfony\Component\Form\Extension\Core\Type\TextType",
      *     options={
      *          "required": false,
-     *          "label": "Youtube URL"
+     *          "label": "YouTube URL"
      *     })
      */
     public $youtube_url;
@@ -118,18 +118,18 @@ bin/console doctrine:schema:update --dump-sql
 bin/console doctrine:schema:update --dump-sql --force
 ```
 
-これで管理画面では自動的にYoutubeのURLのフォームが追加されます。
+これで管理画面では自動的にYouTubeのURLのフォームが追加されます。
 
 <img width="914" alt="ss2021-01-12 16 11 00" src="https://user-images.githubusercontent.com/485749/104288126-bf1f7880-54fa-11eb-816d-75b0d947abef.png">
 
 ### detail.twigへのyoutubeタグ追加
 
-テンプレートの``Prdoduct/detail.twig``のYoutube動画を表示させたい箇所へYoutubeのタグを追加します。
+テンプレートの``Prdoduct/detail.twig``のYouTube動画を表示させたい箇所へYouTubeのタグを追加します。
 
 <script src="https://gist.github.com/tao-s/3b67f9f6dc19f78593eda49877df3b6b.js"></script>
 
 
-`youtube_url`がちゃんと定義されているかどうかをチェックして、定義されている時だけYoutubeのタグを出すようにします。
+`youtube_url`がちゃんと定義されているかどうかをチェックして、定義されている時だけYouTubeのタグを出すようにします。
 
 フロントではこの様に表示されます。
 
