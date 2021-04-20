@@ -9,4 +9,4 @@ folder: reverse-lookup
 
 ---
 
-- [商品詳細画面へのYoutube動画の追加](/reverse-lookup/sample-code/add-youtube-to-product-detail)
+- [商品詳細画面へのYouTube動画の追加](/reverse-lookup/sample-code/add-youtube-to-product-detail)
