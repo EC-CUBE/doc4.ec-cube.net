@@ -1,10 +1,10 @@
 ---
 layout: single
-title: パーミッションの設定について
+title: パーミッション設定
 keywords: permission
 tags: [quickstart, permission]
-permalink: permission
-folder: quickstart/permission
+permalink: quickstart/permission
+folder: quickstart
 description: パーミッション設定に関して
 ---
 

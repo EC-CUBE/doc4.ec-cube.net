@@ -1,13 +1,15 @@
 ---
 layout: single
-title: インストール方法
+title: Docker Composeを使用してインストールする(EC-CUBE4.0.5以下の場合)
 keywords: install
 tags: [quickstart, install, docker, docker-compose]
 permalink: quickstart/install_docker-compose_405orlower
 folder: quickstart
 description: Docker Composeを使用してインストールする場合(EC-CUBE4.0.5以下)の説明です。
 ---
-### Docker Composeを使用してインストールする(EC-CUBE4.0.5以下の場合)
+
+
+---
 
 **開発環境として関連サービス(DB、メールデバッグ環境等)も含め手軽に一括構築したい場合におすすめの方法です**
 

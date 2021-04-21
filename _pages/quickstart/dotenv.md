@@ -1,9 +1,9 @@
 ---
 layout: single
-title: インストール方法
+title: 本番環境での .env ファイル利用
 keywords: install
 tags: [quickstart, install, dotenv]
-permalink: quickstart_install/dotenv
+permalink: quickstart/dotenv
 folder: quickstart
 description: 本番環境での .env ファイルの利用についての説明です。
 ---

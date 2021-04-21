@@ -1,20 +1,56 @@
 ---
 layout: single
-title: インストール方法
+title: 各種インストール方法
 keywords: install
 tags: [quickstart, install]
-permalink: quickstart_install
-folder: quickstart/quickstart_install
-description: EC-CUBE 4系のインストールについての説明です。
+permalink: quickstart/install
+folder: quickstart
 ---
 
-## 初心者向けインストール方法
 
-初心者の方はこのまま[Webインストーラでインストール](/quickstart_install/web-installer)に進んでください。  
-  
-開発者以外の方で、ローカル環境構築したい方は、以下をご覧ください。  
-[Windows環境でのインストール方法](/quickstart_install/gui_win_install)  
-[Mac環境でのインストール方法](/quickstart_install/gui_mac_install)
+---
+
+各種インストール手順をまとめました。
+
+## ローカルへインストールする
+
+### GUIでインストールする
+
+パッケージ版をダウンロードしていただき、Webインストーラ(GUI)を使用してローカルへインストールする方法です。
+
++ [Windows環境でXAMPPを使用したインストール方法](/quickstart/gui_win_install)
++ [Mac環境でMAMPを使用したインストール方法](/quickstart/gui_mac_install)
+
+### CUI & GUIでインストールする
+
+コマンドを実行するとGitHub上にある最新のEC-CUBE4をダウンロード、その後はWebインストーラ(GUI)を使用してローカルへインストールする方法です。
+
++ [ComposerからWebインストーラでインストールする](/quickstart/composer_web_installer)
+
+### CUIでインストールする
+
+Githubから任意のブランチやタグをクローンいただき、コマンドを実行しインストールする方法です。
+
++ [Docker Composeを使用してインストールする](/quickstart/docker_compose_install)
++ [Dockerを使用してインストールする](/quickstart/docker_install)
++ [コマンドラインからインストールする](/quickstart/command_install)
+
+## サーバーへインストールする
+
+パッケージ版をダウンロードし、Webインストーラ(GUI)を使用してサーバーへインストールする方法です。
+
++ [サーバーへインストールする方法](/quickstart/web-installer)
+
+## Tips
+
++ [コマンドラインインターフェイス](quickstart_cli)
+
+
+
+
+
+
+
 
 ## 開発者向けインストール方法
 

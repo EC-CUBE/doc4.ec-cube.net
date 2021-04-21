@@ -2,7 +2,7 @@
 title: Mac環境でMAMPを使用したインストール方法
 keywords: install MAMP
 tags: [quickstart, install, gui]
-permalink: quickstart_install/gui_mac_install
+permalink: quickstart/gui_mac_install
 folder: quickstart
 description: EC-CUBE4系をMAMPを使用してMacのローカル環境へインストールする方法を解説します。
 ---

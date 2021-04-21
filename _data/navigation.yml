@@ -34,30 +34,20 @@ docs:
       - title: ログの取得
         url: /co/co_log
         output: web, pdf
-  - title: インストール方法
+  - title: Quick Start
     output: web, pdf
     children:
       - title: システム要件
-        url: /quickstart_requirement
+        url: /quickstart/requirement
         output: web, pdf
-      - title: 初心者向けインストール方法（Webインストーラ）
-        url: /quickstart_install/web-installer
+      - title: 本番環境での注意事項
+        url: /quickstart/cautions_of_prod
         output: web, pdf
-      - title: Windows環境でXAMPPを使用したインストール方法
-        url: /quickstart_install/gui_win_install
-      - title: Mac環境でMAMPを使用したインストール方法
-        url: /quickstart_install/gui_mac_install
+      - title: 各種インストール方法
+        url: /quickstart/install
         output: web, pdf
-      - title: 開発者向けインストール方法
-        url: /quickstart_install
-        output: web, pdf
-      - title: パーミッションの設定について（共通事項）
-        url: /permission
-      - title: 本番環境での .env ファイルの利用について（共通事項）
-        url: /quickstart_install/dotenv
-        output: web, pdf
-      - title: コマンドラインインターフェイス
-        url: /quickstart_cli
+      - title: Tips/コマンドラインインターフェイス
+        url: /quickstart/cli
         output: web, pdf
   - title: バージョンアップ
     output: web, pdf
