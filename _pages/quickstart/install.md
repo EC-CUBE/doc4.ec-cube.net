@@ -23,13 +23,13 @@ folder: quickstart
 
 ### CUI & GUIでインストールする
 
-コマンドを実行するとGitHub上にある最新のEC-CUBE4をダウンロード、その後はWebインストーラ(GUI)を使用してローカルへインストールする方法です。
+コマンドを実行するとGitHub上にあるデフォルトのEC-CUBE4をダウンロード、その後はWebインストーラ(GUI)を使用してローカルへインストールする方法です。
 
 + [ComposerからWebインストーラでインストールする](/quickstart/composer_web_installer)
 
 ### CUIでインストールする
 
-[GitHub](https://github.com/EC-CUBE/ec-cube){:target="_blank"}からcloneしていただき、コマンドを実行しインストールする方法です。
+[GitHub](https://github.com/EC-CUBE/ec-cube){:target="_blank"}から任意のEC-CUBE4をcloneしていただき、コマンドを実行しインストールする方法です。
 
 + [symfony/cliを使用してインストールする](https://qiita.com/nanasess/items/de9f5450717cc8ede51a){:target="_blank"}
 + [Docker Composeを使用してインストールする](/quickstart/docker_compose_install)
