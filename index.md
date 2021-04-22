@@ -25,6 +25,10 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 
 クラウド版「ec-cube.co」の技術情報については、[こちら](co)を御覧ください。
 
+## 初学者向け情報
+
++ [学習のステップ](/learning/learning_step)
+
 ## 運用者向け情報
 
 運用者向けには以下のサイトをご覧ください。
@@ -46,7 +50,13 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 + [4.0.3での注意点](/update/4_0_3)
 + [EC-CUBE4.0から4.1へのマイグレーション](/update-40-41)
 
-## 機能仕様
+## 本体の仕様
+
++ [ER図](https://github.com/EC-CUBE/eccube-specification/tree/4.0/ER-D){:target="_blank"}
++ [結合試験項目書](https://github.com/EC-CUBE/eccube-specification/tree/4.0/IntegrationTest){:target="_blank"}
++ [WebAPI仕様](https://github.com/EC-CUBE/eccube-api4){:target="_blank"}
+
+### 機能仕様
 
 + [機能一覧](https://www.ec-cube.net/product/functions.php){:target="_blank"}
 + [受注関連](spec_order)
@@ -100,6 +110,11 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 ## セキュリティテストの実施
 
 - [EC-CUBE Penetration Testing with OWASP ZAP](/penetration-testing)
+
+## 逆引きリファレンス
+
+- [Tips](/reverse-lookup/tips)
+- [カスタマイズサンプル集](/reverse-lookup/sample-code)
 
 ## 開発に参加する
 

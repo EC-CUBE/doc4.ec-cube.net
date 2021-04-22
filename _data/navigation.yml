@@ -34,6 +34,14 @@ docs:
       - title: ログの取得
         url: /co/co_log
         output: web, pdf
+
+  - title: 初学者向け情報
+    output: web, pdf
+    children:
+      - title: 学習のステップ
+        url: /learning/learning_step
+        output: web, pdf
+
   - title: はじめに
     output: web, pdf
     children:
@@ -43,6 +51,7 @@ docs:
       - title: 本番環境での注意事項
         url: /quickstart/cautions_of_prod
         output: web, pdf
+
   - title: インストール
     output: web, pdf
     children:
@@ -52,6 +61,7 @@ docs:
       - title: コマンドラインインターフェイス
         url: /quickstart/cli
         output: web, pdf
+
   - title: バージョンアップ
     output: web, pdf
     children:
@@ -67,6 +77,7 @@ docs:
       - title: EC-CUBE4.0から4.1へのマイグレーション
         url: /update-40-41
         output: web, pdf
+
   - title: 機能仕様
     output: web, pdf
     children:
@@ -79,6 +90,7 @@ docs:
       - title: 税率設定
         url: /spec_tax
         output: web, pdf
+
   - title: 本体カスタマイズ
     output: web, pdf
     children:
@@ -194,12 +206,14 @@ docs:
       - title: セッション保存方法
         url: /session_handler_settings
         output: web, pdf
+
   - title: 開発ツール
     output: web, pdf
     children:
       - title: MailCatcher
         url: /development-tools/mail-catcher
         output: web, pdf
+
   - title: "セキュリティテストの実施"
     output: web, pdf
     children:
@@ -228,12 +242,16 @@ docs:
         url: /penetration-testing/improvement
         output: web, pdf
 
-  - title: カスタマイズサンプル（逆引き）
+  - title: 逆引きリファレンス
     output: web,pdf
     children:
-    - title: 商品詳細画面にYoutube動画を登録する
-      url: /sample-code/add-youtube-to-product-detail
+    - title: Tips
+      url: /reverse-lookup/tips
       output: web, pdf
+    - title: カスタマイズサンプル集
+      url: /reverse-lookup/sample-code
+      output: web, pdf
+
   - title: 開発に参加する
     output: web, pdf
     children:

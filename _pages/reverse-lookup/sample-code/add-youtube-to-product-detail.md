@@ -2,7 +2,7 @@
 title: 商品詳細画面へのYouTube動画の追加
 keywords: core カスタマイズ Entity Product
 tags: [core, entity, product]
-permalink: sample-code/add-youtube-to-product-detail
+permalink: reverse-lookup/sample-code/add-youtube-to-product-detail
 folder: sample-code
 ---
 

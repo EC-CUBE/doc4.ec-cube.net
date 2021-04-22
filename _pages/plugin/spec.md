@@ -152,3 +152,7 @@ $ tar --exclude  ".git" --exclude ".DS_Store" -cvzf ../[PluginDir].tar.gz *
     - https://github.com/EC-CUBE/ec-cube/issues/2440
 - ファイル設置のみのプラグインはロードされない
     - dtb_pluginにレコードが登録されている必要があります。
+
+## プラグインサンプル
+
+- [決済プラグインサンプル](https://github.com/EC-CUBE/sample-payment-plugin){:target="_blank"}
