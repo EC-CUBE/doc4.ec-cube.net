@@ -15,7 +15,5 @@ folder: co
 |-|-|-|
 |リポジトリ名|eccube.co-[shopid]-customize||
 |ブランチ|master->本番環境, develop->テスト環境|※ スタンダードプランのみ|
-|namespace(本番環境)|[shopid]||
-|namespace(テスト環境)|stg-[shopid]|※ スタンダードプランのみ|
 |ショップURL(本番環境)|[shopid].ec-cuube.shop||
 |ショップURL(テスト環境)|stg-[shopid].ec-cuube.shop|※ スタンダードプランのみ|

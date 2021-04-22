@@ -283,6 +283,3 @@ docs:
       - title: ドキュメントの投稿
         url: /documents/contribute
         output: web, pdf
-      - title: ドキュメントへのフィードバック
-        url: https://www.ec-cube.net/committer/#Doc4Form
-        output: web, pdf
