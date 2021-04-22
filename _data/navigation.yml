@@ -34,7 +34,7 @@ docs:
       - title: ログの取得
         url: /co/co_log
         output: web, pdf
-  - title: クイックスタート
+  - title: はじめに
     output: web, pdf
     children:
       - title: システム要件
@@ -43,10 +43,13 @@ docs:
       - title: 本番環境での注意事項
         url: /quickstart/cautions_of_prod
         output: web, pdf
+  - title: インストール
+    output: web, pdf
+    children:
       - title: 各種インストール方法
         url: /quickstart/install
         output: web, pdf
-      - title: Tips/コマンドラインインターフェイス
+      - title: コマンドラインインターフェイス
         url: /quickstart/cli
         output: web, pdf
   - title: バージョンアップ

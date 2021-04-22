@@ -30,22 +30,14 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 運用者向けには以下のサイトをご覧ください。
 + [EC-CUBE 4管理・運用 マニュアル（株式会社シロハチ様）](https://www.shiro8.net/manual4/v40x/index.html){:target="_blank"}
 
-## クイックスタート
-
-### システム要件
+## はじめに
 
 + [システム要件](/quickstart/requirement)
-
-### 本番環境での注意事項について
-
 + [本番環境での注意事項](/quickstart/cautions_of_prod)
 
-### 各種インストール方法
+## インストール
 
 + [インストール方法](/quickstart/install)
-
-### Tips
-
 + [コマンドラインインターフェイス](/quickstart/cli)
 
 ## バージョンアップ
