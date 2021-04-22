@@ -49,7 +49,7 @@ cd ec-cube
 bin/console server:run --env=dev
 ```
 
-5.[http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin) にアクセスし、 EC-CUBE の管理ログイン画面が表示されればインストール成功です。  
+5.[http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin){:target='_blank'} にアクセスし、 EC-CUBE の管理ログイン画面が表示されればインストール成功です。  
 以下の ID/Password にてログインしてください。
 
 `ID: admin PW: password`

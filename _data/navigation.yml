@@ -34,7 +34,7 @@ docs:
       - title: ログの取得
         url: /co/co_log
         output: web, pdf
-  - title: Quick Start
+  - title: クイックスタート
     output: web, pdf
     children:
       - title: システム要件

@@ -1,5 +1,5 @@
 ---
-title: サーバーへインストールする方法
+title: サーバーへインストールする
 keywords: install
 tags: [quickstart, install]
 permalink: quickstart/web-installer
@@ -93,7 +93,7 @@ EC-CUBEのインストール画面が表示されたら[インストールウィ
 ### ダウンロードしたパッケージをアップロードする
 **[EC-CUBE Donloaderを使う](#ec-cubeダウンローダーを使ってファイルを展開する)方は不要のステップです。**
 
-[EC-CUBE 4のパッケージ](https://www.ec-cube.net/download/)をダウンロードし、解凍してください。
+[EC-CUBE 4のパッケージ](https://www.ec-cube.net/download/){:target='_blank'}をダウンロードし、解凍してください。
 
 FileZilla等のファイル転送ソフトを使用し、ファイルをサーバへアップロードしてください。  
 ※*ファイル数が多いためエラーが発生することがございます。エラー発生時は分割してアップロードをお願いします。*
