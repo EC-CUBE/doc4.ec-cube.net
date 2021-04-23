@@ -4,7 +4,7 @@ author_profile: false
 title: システム要件
 keywords:
 tags: [quickstart, getting_started]
-permalink: quickstart_requirement
+permalink: quickstart/requirement
 
 ---
 

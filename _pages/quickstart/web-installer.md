@@ -1,8 +1,8 @@
 ---
-title: Webインストーラでインストールする
+title: サーバーへインストールする
 keywords: install
 tags: [quickstart, install]
-permalink: quickstart_install/web-installer
+permalink: quickstart/web-installer
 folder: quickstart
 description: EC-CUBE 4系のインストールについての説明です。
 ---
@@ -93,7 +93,7 @@ EC-CUBEのインストール画面が表示されたら[インストールウィ
 ### ダウンロードしたパッケージをアップロードする
 **[EC-CUBE Donloaderを使う](#ec-cubeダウンローダーを使ってファイルを展開する)方は不要のステップです。**
 
-[EC-CUBE 4のパッケージ](https://www.ec-cube.net/download/)をダウンロードし、解凍してください。
+[EC-CUBE 4のパッケージ](https://www.ec-cube.net/download/){:target='_blank'}をダウンロードし、解凍してください。
 
 FileZilla等のファイル転送ソフトを使用し、ファイルをサーバへアップロードしてください。  
 ※*ファイル数が多いためエラーが発生することがございます。エラー発生時は分割してアップロードをお願いします。*
@@ -230,9 +230,9 @@ EC-CUBEのソースコードファイルの展開が完了後に、インスト�
   - EC-CUBEを動かそうとしているサーバからDBサーバに接続できるか確認してください。
 
 #### パーミッション（ファイル権限）エラー
-[ここ](/quickstart_install/#パーミッションの設定について共通事項)を見てパーミッションを確認してください。
+[ここ](/quickstart/permission/#パーミッションの設定について共通事項)を見てパーミッションを確認してください。
 
 #### その他
 
 - PHPのバージョンが合ってない/PHPのモジュールが足りない
-  - [システム要件](/quickstart_requirement)を確認してください。EC-CUBEを動かすためにはPHP Ver.7.1以上が必要です。
+  - [システム要件](/quickstart/requirement)を確認してください。EC-CUBEを動かすためにはPHP Ver.7.1以上が必要です。
