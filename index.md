@@ -20,6 +20,10 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 ドキュメントへの追記、記載内容の修正についても[GitHub](https://github.com/EC-CUBE/doc4.ec-cube.net/){:target="_blank"}にて受け付けております。
 追加方法は[こちら](/documents/writing-and-formatting)をご覧ください。
 
+{: .notice--danger}
+- 2021/05/10 [プラグイン開発者の方へ ソースコード確認の御願い](https://drive.google.com/drive/folders/1SEWr2B-6C8CVZLCJ_n6vzkpKyAFFNzSN){:target="_blank"}を公開いたしました。
+- 2021/05/10 EC-CUBE 4.0.5 以前には[危険度「高」の脆弱性](https://www.ec-cube.net/info/weakness/index.php?level=0&version=4.0.5){:target="_blank"}が含まれています。必ず EC-CUBE 4.0.5-p1 以降のバージョンへバージョンアップをお願いします。
+{: .notice--danger}
 
 ## ec-cube.coについて
 
