@@ -21,6 +21,13 @@ EC-CUBE自体も自動アップデートが行われ、最新の機能改善や�
 
 ec-cube.coは、サーバやアプリケーションの保守・運用から開放し、ショップ運営やサイト構築を行う店舗主・開発者を支援します。
 
+## 動画紹介
+
+クラウド版EC CUBE「ec cube co」スタンダードプラン完全活用セミナー
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YlzVlixPTGA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 ## システム情報
 
 ### ec-cube.coのアーキテクチャ
