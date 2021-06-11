@@ -13,7 +13,7 @@ summary : EC-CUBE本体のバージョンアップ手順について記載しま
 {: .notice--danger}
 EC-CUBE本体のコード(app/config/eccube, app/DoctrineMigrations, bin, src, htmlディレクトリ)をカスタマイズしている場合、ファイルが上書きされてしまうため、この手順ではバージョンアップできません。[各バージョンでの変更差分](#各バージョンでの変更差分)を確認して必要な差分を取り込んでください。
 {: .notice--danger}
-EC-CUBE 4.0.5 以前には[危険度「高」の脆弱性](https://www.ec-cube.net/info/weakness/index.php?level=0&version=4.0.5)が含まれています。必ず EC-CUBE 4.0.5-p1 以降のバージョンへバージョンアップをお願いします。
+EC-CUBE 4.0.5 以前には[危険度「高」の脆弱性](https://www.ec-cube.net/info/weakness/index.php?level=0&version=4.0)が含まれています。必ず EC-CUBE 4.0.6 以降のバージョンへバージョンアップをお願いします。
 {: .notice--danger}
 
 ## アップデートプラグインを利用したバージョンアップ方法
@@ -94,6 +94,7 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
 | 4.0.2 → 4.0.3        | composer.json<br>composer.lock<br>.htaccess<br>index.php|
 | 4.0.3 → 4.0.4        | composer.json<br>composer.lock<br>.htaccess<br>app/Customize/Resource<br>var/.htaccess|
 | 4.0.4 → 4.0.5-p1        | composer.json<br>composer.lock<br>.htaccess<br>robots.txt<br>app/template/plugin|
+| 4.0.5 → 4.0.6        | composer.lock<br>symfony.lock<br>.htaccess|
 
 - ※ 差し替え対象に、composer.json/composer.lockがある場合は 上書き後、`composer.json/composer.lockの更新の手順`を実施してください。
 - ※ `4.0.0 → 4.0.2` のように複数バージョンをまたぐバージョンアップを行う場合は、`4.0.0 → 4.0.1`→`4.0.1 → 4.0.2` のように段階的なバージョンアップを行ってください。
@@ -133,7 +134,7 @@ composer require psr/http-message
 
 以下のコマンドを実行してください。
 
-**※ 4.0.0 → 4.0.1, 4.0.1 → 4.0.2, 4.0.4 → 4.0.5-p1 へのアップデートでは、スキーマ更新は必要ありません。**
+**※ 4.0.0 → 4.0.1, 4.0.1 → 4.0.2, 4.0.4 → 4.0.5-p1, 4.0.5 → 4.0.6 へのアップデートでは、スキーマ更新は必要ありません。**
 
 参考：[プラグインが無効の状態だと Doctrine SchemaTool でエンティティ拡張が認識されない](https://github.com/EC-CUBE/ec-cube/issues/4056){:target="_blank"}
 
@@ -215,6 +216,9 @@ bin/console cache:warmup --env=prod
 
 <a href="https://github.com/EC-CUBE/ec-cube/pulls?q=is%3Apr+label%3Aaffected%3Atemplate+is%3Aclosed+milestone%3A4.0.5" target = "_blank">フロントテンプレートファイルの差分</a>
 
+#### 4.0.5-p1 → 4.0.6
+
+フロントテンプレートの更新はありません。
 
 ### 9.メンテナンスモードを無効にする（バージョン4.0.1以降）
 
@@ -264,4 +268,5 @@ EC-CUBEのバージョンアップ手順は以上です。
 | 4.0.2 → 4.0.3   | [https://github.com/EC-CUBE/ec-cube/compare/4.0.2...4.0.3](https://github.com/EC-CUBE/ec-cube/compare/4.0.2...4.0.3?w=1#files_bucket){:target="_blank"}   |
 | 4.0.3 → 4.0.4   | [https://github.com/EC-CUBE/ec-cube/compare/4.0.3...4.0.4](https://github.com/EC-CUBE/ec-cube/compare/4.0.3...4.0.4?w=1#files_bucket){:target="_blank"}   |
 | 4.0.4 → 4.0.5-p1   | [https://github.com/EC-CUBE/ec-cube/compare/4.0.4...4.0.5-p1](https://github.com/EC-CUBE/ec-cube/compare/4.0.4...4.0.5-p1?w=1#files_bucket){:target="_blank"}   |
+| 4.0.5-p1 → 4.0.6   | [https://github.com/EC-CUBE/ec-cube/compare/4.0.5-p1...4.0.6](https://github.com/EC-CUBE/ec-cube/compare/4.0.5-p1...4.0.6?w=1#files_bucket){:target="_blank"}   |
 
