@@ -172,7 +172,7 @@ docs:
       - title: プラグインのインストール
         url: /plugin_install
         output: web, pdf
-      - title: インストール失敗時の対処法
+      - title: プラグイン導入時のトラブル対処法
         url: /plugin_error
         output: web, pdf
       - title: プラグインサンプル
