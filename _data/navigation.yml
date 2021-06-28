@@ -13,6 +13,9 @@ docs:
       - title: ec-cube.coとは
         url: /co
         output: web, pdf
+      - title: セキュリティ対策について
+        url: /co/co_security
+        output: web, pdf
       - title: アップデート指針
         url: /co/co_update_guidelines
         output: web, pdf
