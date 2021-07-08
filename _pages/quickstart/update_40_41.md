@@ -316,3 +316,15 @@ Eccube\Applicationは削除されました。これに伴い、ServiceProvider �
         $session = $this->session;
     }
  ```
+
+
+## オーナーズストア経由でのプラグインインストールテスト
+
+EC-CUBE 4.1 では Composer2 対応が必要となりました。
+それに伴い EC-CUBE がオーナーズストア経由でプラグインをインストールする際にのエンドポイントが変更になっています。
+EC-CUBE 4.1 beta2 以前でテストをしたい場合は、EC-CUBE に以下の環境変数を設定することで Composer2 対応のエンドポイントへ切り替えられます。
+EC-CUBE 4.1 RC 以降ではこちらの対応は不要となる予定です。
+
+```
+ECCUBE_PACKAGE_API_URL=https://stg-c2-package-api.ec-cube.net
+```
