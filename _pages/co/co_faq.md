@@ -15,23 +15,23 @@ folder: co
 
 ### DBクライアントツールを使用して、直接.coのDBにアクセスはできますか？
 
-接続は不可となります。ご了承ください。
+セキュリティや運用の都合上、接続は不可とさせていただいております。  
+ご了承ください。
 
 ### DBのスキーマ変更は可能でしょうか？
 
 トライアル環境では不可となります。ご了承ください。
 
-本環境では、カスタマイズ領域を使えば可能です。  
-詳しくは以下のEntityによる拡張についてをご確認ください。  
-[開発ドキュメント：Entityのカスタマイズ 基本の拡張方法](https://doc4.ec-cube.net/customize_entity#%E5%9F%BA%E6%9C%AC%E3%81%AE%E6%8B%A1%E5%BC%B5%E6%96%B9%E6%B3%95){:target="_blank"}
+本契約後は、カスタマイズ領域を使えば可能です。  
+詳しくは [Entityのカスタマイズ 基本の拡張方法](https://doc4.ec-cube.net/customize_entity#%E5%9F%BA%E6%9C%AC%E3%81%AE%E6%8B%A1%E5%BC%B5%E6%96%B9%E6%B3%95){:target="_blank"} をご確認ください。
 
 ### 対応DBはPostgresSQLのみでしょうか？
 
 はい。PostgresSQLのみとなります。
 
-## DL版とcoの違い
+## DL版との違い
 
-### coとDL版はどのような点が異なるのでしょうか？
+### .coとDL版はどのような点が異なるのでしょうか？
 
 本体機能はDL版のEC-CUBE4系がベースになっており、同じです。  
 DL版同様、EC-CUBE4系対応の各種決済を含めたプラグイン、デザインテンプレートの利用が可能です。  
@@ -41,10 +41,10 @@ DL版同様、EC-CUBE4系対応の各種決済を含めたプラグイン、デ�
 
 ### Google Analyticsを設定したいのですが、どうすればいいでしょうか？
 
-[オーナーズストア](https://www.ec-cube.net/owners/){:target="_blank"} のプラグインを使用していただくことで実現可能です。  
+[オーナーズストア](https://www.ec-cube.net/owners/){:target="_blank"} のプラグインを使用していただくことで実現可能です。
   
-[【EC-CUBE4対応】Google Analytics eコマース/拡張eコマース対応プラグイン](https://www.ec-cube.net/products/detail.php?product_id=1715){:target="_blank"}  
-[Google Analytics Eコマース/User-ID対応プラグイン(4.0系)](https://www.ec-cube.net/products/detail.php?product_id=1722){:target="_blank"}
+- [【EC-CUBE4対応】Google Analytics eコマース/拡張eコマース対応プラグイン](https://www.ec-cube.net/products/detail.php?product_id=1715){:target="_blank"}
+- [Google Analytics Eコマース/User-ID対応プラグイン(4.0系)](https://www.ec-cube.net/products/detail.php?product_id=1722){:target="_blank"}
 
 ## STG環境(本契約のみ)
 
@@ -56,7 +56,7 @@ DL版同様、EC-CUBE4系対応の各種決済を含めたプラグイン、デ�
 
 ### サイトへアクセス制限をかけたいのですが、どうすればいいでしょうか？
 
-アクセス制限の目的により実現方法が異なります。
+目的により実現方法が異なります。
 
 - 会員限定サイトとして運用したい
 
@@ -70,8 +70,8 @@ DL版同様、EC-CUBE4系対応の各種決済を含めたプラグイン、デ�
 - .htaccessファイルで設定し、サイト全体にアクセス制限をかけたい
 
   - ご自身での設定は不可となります。  
-    Basic認証を希望される場合は[ec-cube.coに関するお問い合わせ](https://www.ec-cube.net/product/co/support.php){:target="_blank"}からご依頼ください。  
-    またBasic認証の設定範囲は、フロント・管理画面別々ではなく両方に設定となります。
+    Basic認証を希望される場合は[ec-cube.coに関するお問い合わせ](https://www.ec-cube.net/product/co/support.php){:target="_blank"} からご依頼ください。  
+    またBasic認証の設定範囲は、フロント・管理画面別々ではなく両方ともに設定となります。
 
 ## アップロード制限
 
@@ -81,31 +81,30 @@ DL版同様、EC-CUBE4系対応の各種決済を含めたプラグイン、デ�
 
 ### ファイルアップロード制限の最大値の変更は依頼できますか？もしくはカスタマイズで対応可能でしょうか？
 
-不可となります。ご了承ください。
+変更やカスタマイズは不可となります。ご了承ください。
 
 ## エラー/動作不良
 
-### 画面を操作していたら不安定だったりエラーが発生するのですが、どうしたらいいでしょうか？
-
-一概には言えませんが、プラグインインストール・アンインストール後の事象でご相談をいただくことがございます。  
-[ec-cube.coに関するお問い合わせ](https://www.ec-cube.net/product/co/support.php){:target="_blank"} からご相談ください。
+### 画面を操作したら不安定だったりエラーが発生するのですが、どうしたらいいでしょうか？
+ 
+[ec-cube.coに関するお問い合わせ](https://www.ec-cube.net/product/co/support.php){:target="_blank"} からご相談ください。  
+プラグインインストール・アンインストール後に不安定となりご相談いただくことが、一概には言えませんがございます。 
 
 ### 特に何もした覚えがないのですが、管理画面の特定のメニューが突然表示されなくなりました。
 
 キャッシュ不整合によるものだと考えられます。  
 管理画面のキャッシュ管理からキャッシュ削除をお試しください。  
-解消しない場合は[ec-cube.coに関するお問い合わせ](https://www.ec-cube.net/product/co/support.php){:target="_blank"} からご相談ください。
+解消しない場合は [ec-cube.coに関するお問い合わせ](https://www.ec-cube.net/product/co/support.php){:target="_blank"} からご相談ください。
 
 ## カスタマイズ
 
 ### 合計金額が一定金額を超えた場合は送料を無料にしたいのですが、どうしたらいいでしょうか？
 
-管理画面＞設定＞基本設定＞送料設定で送料無料条件を設定することで実現が可能となります。
-
+管理画面＞設定＞基本設定＞送料設定で送料無料条件を設定することで実現可能となります。
 
 ### 商品ごとに配送元・送料を設定したいのですが、どうしたらいいでしょうか？
 
-販売種別機能がございますので、そちらをご使用ください。
+[販売種別機能](https://www.shiro8.net/manual4/v40x/product/product_new.html){:target="_blank"} がございますので、そちらをご使用ください。
 
 ### 配送方法に「店舗受取」を設定したいのですが、どうしたらいいでしょうか？
 
@@ -186,7 +185,7 @@ DL版同様、EC-CUBE4系対応の各種決済を含めたプラグイン、デ�
 
 管理画面から受注ステータスの追加とともにプログラムの変更も必要となる為、不可となります。  
 ステータス代用や独自プラグインでの対応で実現は可能です。  
-詳しくは[Github Issue：マスタデータ管理から注文ステータスを追加しても、受注管理から操作できない](https://github.com/EC-CUBE/ec-cube/issues/4299){:target="_blank"} をご参照ください。
+詳しくは [Github Issue：マスタデータ管理から注文ステータスを追加しても、受注管理から操作できない](https://github.com/EC-CUBE/ec-cube/issues/4299){:target="_blank"} をご参照ください。
 
 ### フロントのデザイン変更方法を教えて欲しい
 
@@ -198,11 +197,11 @@ DL版同様、EC-CUBE4系対応の各種決済を含めたプラグイン、デ�
 で既存のコードを更新することにより、フロントのデザイン変更が可能です。  
 または自身で作成されたデザインテンプレートをアップロードすることで、フロントのデザイン変更は可能です。
 
-ただし、管理画面から直接コード(default_frame.twig)を編集することは不可となります。ご了承ください。
+ただし、管理画面から直接ファイル(default_frame.twig)を編集することは不可となります。ご了承ください。
 
 ### Instagramショッピング機能は導入出来ますか？
 
-[オーナーズストア](https://www.ec-cube.net/owners/){:target="_blank"} にございますFacebook社が提供する[Facebook連携プラグイン EC-CUBE4対応版](https://www.ec-cube.net/products/detail.php?product_id=1763){:target="_blank"} を導入することで可能です。
+[オーナーズストア](https://www.ec-cube.net/owners/){:target="_blank"} にございますFacebook社が提供する [Facebook連携プラグイン EC-CUBE4対応版](https://www.ec-cube.net/products/detail.php?product_id=1763){:target="_blank"} を導入することで可能です。
 
 ### 簡易カートへの追加機能やヘッダー上に最近見た商品表示機能などが実現可能でしょうか？
 
@@ -211,7 +210,7 @@ DL版同様、EC-CUBE4系対応の各種決済を含めたプラグイン、デ�
 - 商品一覧のカートマークをクリックすると、ポップアップで簡易カートに追加できる
 - ヘッダーの上に「最近見た商品」の一覧を横並びで表示する
 
-実装方法にもよりますが、本契約後はカスタマイズ領域の使用が可能となりますので実現は可能です。
+実装方法にもよりますが、本契約後はカスタマイズ領域の使用できるようになりますので実現可能です。
 
 ### どんなカスタマイズが可能でしょうか？
 
@@ -223,19 +222,19 @@ DL版同様、EC-CUBE4系対応の各種決済を含めたプラグイン、デ�
 
 ### 管理画面からコンテンツ管理のコードを変更したのですが、初期の状態に戻すにはどうしたらいいですか？
 
-ec-cube.coで利用されているEC-CUBEのソースコードは[co/masterブランチ](https://github.com/EC-CUBE/ec-cube/tree/co/master){:target="_blank"} で公開されております。  
+ec-cube.coで利用されているEC-CUBEのソースコードは [co/masterブランチ](https://github.com/EC-CUBE/ec-cube/tree/co/master){:target="_blank"} で公開されております。  
 ご参照いただき、該当のコードをコピーしてご自身の環境へ反映してください。
 
 ### デザイン面のサポートはどちらに相談したらよいでしょうか？
 
 [ec-cube.coに関するお問い合わせ](https://www.ec-cube.net/product/co/support.php){:target="_blank"} からご相談ください。  
-また、[EC-CUBE インテグレートパートナー](https://www.ec-cube.net/integrate/partner/){:target="_blank"} にご相談いただくことも可能です。
+また、 [EC-CUBE インテグレートパートナー](https://www.ec-cube.net/integrate/partner/){:target="_blank"} にご相談いただくことも可能です。
 
 ## サイト移行
 
 ### クラウド版からDL版へ移行する手順を教えてほしい
 
-対象のサイトURLとデータ抜き出し希望日時を[ec-cube.coに関するお問い合わせ](https://www.ec-cube.net/product/co/support.php){:target="_blank"}からご連絡ください。  
+対象のサイトURLとデータ抜き出し希望日時を [ec-cube.coに関するお問い合わせ](https://www.ec-cube.net/product/co/support.php){:target="_blank"} からご連絡ください。  
 ただし、環境停止後1週間以上経過しますと、データ保管期限が切れてしまいお渡しすることができなくなります。  
 ご了承ください。
 
@@ -260,7 +259,7 @@ ec-cube.coで利用されているEC-CUBEのソースコードは[co/masterブ�
 ### PCI DSSに準拠したサイト構築をしていく必要があるのですが、PCI DSSの要件に対応はしていますか？
 
 PCI DSSの要件に対応はしておりません。ご了承ください。  
-カード情報非保持化につきましては[オーナーズストア](https://www.ec-cube.net/owners/){:target="_blank"} の決済プラグインが対応しております。
+カード情報非保持化につきましては [オーナーズストア](https://www.ec-cube.net/owners/){:target="_blank"} の決済プラグインが対応しております。
 
 ## ダウンロード商品販売
 
@@ -273,7 +272,7 @@ PCI DSSの要件に対応はしておりません。ご了承ください。
 
 ### 本番で行ったテスト受注があり一括で消したいのですが、どうしたらいいでしょうか？
 
-[オーナーズストア](https://www.ec-cube.net/owners/){:target="_blank"} にございます[受注データ一括削除プラグイン for EC-CUBE4](https://www.ec-cube.net/products/detail.php?product_id=2101){:target="_blank"} を使用することで実現が可能です。
+[オーナーズストア](https://www.ec-cube.net/owners/){:target="_blank"} にございます [受注データ一括削除プラグイン for EC-CUBE4](https://www.ec-cube.net/products/detail.php?product_id=2101){:target="_blank"} を使用することで実現が可能です。
 
 ### 本番環境を最新にしたいのですが、DBダンプファイルなどの反映はお願いできますか？
 
@@ -283,7 +282,7 @@ PCI DSSの要件に対応はしておりません。ご了承ください。
 
 ### デザインテンプレートを適用したいのですが、.coで使用可能なものを教えてもらえますか？
 
-利用可能なデザインテンプレート一覧は[こちら](https://www.ec-cube.net/products/list.php?category_id=7&ecversion=4.0){:target="_blank"} になります。  
+利用可能なデザインテンプレート一覧は [こちら](https://www.ec-cube.net/products/list.php?category_id=7&ecversion=4.0){:target="_blank"} になります。  
 ただし容量が10Mを超えるものはファイルアップロード時の制限でエラーとなりますのでご注意ください。
 
 ## ドメイン
@@ -305,10 +304,10 @@ OK： https://shop.example.com
 
 ### 決済プラグインをインストールしたいのですが、.coで使用可能なものを教えてもらえますか？
 
-利用可能な決済プラグイン一覧は[こちら](https://www.ec-cube.net/products/list.php?ecversion=4.0&category_id=3){:target="_blank"} になります。  
-ただし、[定期購入プラグイン「リピートキューブ」4系用](https://www.ec-cube.net/products/detail.php?product_id=1918){:target="_blank"} のみ、個別で[ec-cube.coに関するお問い合わせ](https://www.ec-cube.net/product/co/support.php){:target="_blank"} からご相談ください。
+利用可能な決済プラグイン一覧は [こちら](https://www.ec-cube.net/products/list.php?ecversion=4.0&category_id=3){:target="_blank"} になります。  
+ただし、 [定期購入プラグイン「リピートキューブ」4系用](https://www.ec-cube.net/products/detail.php?product_id=1918){:target="_blank"} のみ、個別で [ec-cube.coに関するお問い合わせ](https://www.ec-cube.net/product/co/support.php){:target="_blank"} からご相談ください。
 
-上記以外の決済プラグインを使用した場合、[ec-cube.co利用規約](https://www.ec-cube.co/pdf/term.pdf){:target="_blank"} に基づきサイトを停止することがございます。ご了承ください。
+上記以外の決済プラグインを使用した場合、 [ec-cube.co利用規約](https://www.ec-cube.co/pdf/term.pdf){:target="_blank"} に基づきサイトを停止することがございます。ご了承ください。
 
 ### 複数のプラグイン導入を検討していますが、サイトの処理速度の低下の可能性はありますか？
 
@@ -323,7 +322,7 @@ OK： https://shop.example.com
 ### プラグインをインストール後、サーバーエラーとなってサイトへアクセスできなくなりました。どうしたらよいでしょうか？
 
 プラグインインストール時のトラブル(主にキャッシュ)によるものと考えられます。  
-管理画面へのログインが困難となることもございますので、[ec-cube.coに関するお問い合わせ](https://www.ec-cube.net/product/co/support.php){:target="_blank"} からご相談ください。
+管理画面へのログインが困難となることもございますので、 [ec-cube.coに関するお問い合わせ](https://www.ec-cube.net/product/co/support.php){:target="_blank"} からご相談ください。
 
 次回からの回避策として、手動でメンテナンスモードに切り替えてからプラグインインストール(アップデートも同様)を行うとトラブルは起こりにくくなるかと存じます。
 
@@ -332,7 +331,7 @@ OK： https://shop.example.com
 ### 商品購入メールが届かないとお客様から問い合わせがあったのですが、どうしたらよいでしょうか？
 
 お客様側(受信者)で受信拒否設定や迷惑メールでフィルタリングされている可能性がないか、ご確認をお願いいたします。  
-上記に問題がない場合は[ec-cube.coに関するお問い合わせ](https://www.ec-cube.net/product/co/support.php){:target="_blank"} からご相談ください。
+上記に問題がない場合は [ec-cube.coに関するお問い合わせ](https://www.ec-cube.net/product/co/support.php){:target="_blank"} からご相談ください。
 
 ## メールマガジン
 
@@ -386,7 +385,7 @@ STG環境では確認しづらい、もしくは不可能なことをローカ�
 
 [オーナーズストア](https://www.ec-cube.net/owners/){:target="_blank"} より外部サービス連携プラグインをインストールしていただく他、本契約後は独自プラグインやカスタマイズで実現が可能です。
 ただし決済機能につきましては、オーナーズストアでダウンロードできる決済のみ使用可能となります。  
-オーナーズストア以外でダウンロードした済プラグインを使用した場合、[ec-cube.co利用規約](https://www.ec-cube.co/pdf/term.pdf){:target="_blank"} に基づきサイトを停止することがございます。ご了承ください。
+オーナーズストア以外でダウンロードした済プラグインを使用した場合、 [ec-cube.co利用規約](https://www.ec-cube.co/pdf/term.pdf){:target="_blank"} に基づきサイトを停止することがございます。ご了承ください。
 
 ## 環境への接続
 
@@ -395,14 +394,14 @@ STG環境では確認しづらい、もしくは不可能なことをローカ�
 お客様にて操作可能なものとしましては、管理画面と本契約後にお渡しするコンソールのみとなっております。  
 SSH/telnet/SFTP/FTPなどを使用して環境へ直接接続することは不可となります。ご了承ください。
 
-画像を一括でアップロードしたい場合は、[商品画像一括アップロードプラグイン](https://www.ec-cube.net/products/detail.php?product_id=1957){:target="_blank"} を利用すれば可能です。
+画像を一括でアップロードしたい場合は、 [商品画像一括アップロードプラグイン](https://www.ec-cube.net/products/detail.php?product_id=1957){:target="_blank"} を利用すれば可能です。
 
 ## 監視
 
 ### リソース監視は実施されていますか？
 
 リソースについてはモニタリングを実施しております。  
-その他の実施しております監視につきましては[監視・モニタリング](http://localhost:4000/co/co_security#%E7%9B%A3%E8%A6%96%E3%83%A2%E3%83%8B%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0){:target="_blank"} をご参照ください。
+その他の実施しております監視につきましては [監視・モニタリング](http://localhost:4000/co/co_security#%E7%9B%A3%E8%A6%96%E3%83%A2%E3%83%8B%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0){:target="_blank"} をご参照ください。
 
 ## 機能
 
@@ -463,14 +462,14 @@ SSH/telnet/SFTP/FTPなどを使用して環境へ直接接続することは不�
 ### 決済プラグインの設定で必要なのですが、送信元のグローバルIPは固定でしょうか？
 
 はい。固定です。  
-IPに関してはトライアル申込後に改めて[ec-cube.coに関するお問い合わせ](https://www.ec-cube.net/product/co/support.php){:target="_blank"} からお問い合わせください。
+IPに関してはトライアル申込後に改めて [ec-cube.coに関するお問い合わせ](https://www.ec-cube.net/product/co/support.php){:target="_blank"} からお問い合わせください。
 
 ## 独自プラグイン/デザインテンプレート
 
 ### 独自にプラグインやデザインテンプレートを作ってインストールしたいのですが良いでしょうか？
 
 はい、可能です。技術的な制限はございません。  
-ですが、[オーナーズストア](https://www.ec-cube.net/owners/){:target="_blank"} に多種多様なプラグインやデザインテンプレートがございます。  
+ですが、 [オーナーズストア](https://www.ec-cube.net/owners/){:target="_blank"} に多種多様なプラグインやデザインテンプレートがございます。  
 こちらのご利用もぜひご検討ください。
 
 ## 問合わせ
