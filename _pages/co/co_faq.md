@@ -52,6 +52,13 @@ DL版同様、EC-CUBE4系対応の各種決済を含めたプラグイン、デ�
 
 [ec-cube.coに関するお問い合わせ](https://www.ec-cube.net/product/co/support.php){:target="_blank"} からお問い合わせください。
 
+## WebAPI
+
+### WebAPIは使用できますか？WebAPIでどんなことが実現できますか？
+
+[EC-CUBE 4.0 Web API プラグイン](https://www.ec-cube.net/products/detail.php?product_id=2121){:target="_blank"} を使用していただくことで実現可能です。  
+詳しくは[開発ドキュメント](https://doc.ec-cube.net/eccube-api4/){:target="_blank"} をご参照ください。
+
 ## アクセス制限
 
 ### サイトへアクセス制限をかけたいのですが、どうすればいいでしょうか？
