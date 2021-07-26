@@ -210,6 +210,13 @@ DL版同様、EC-CUBE4系対応の各種決済を含めたプラグイン、デ�
 ec-cube.coで利用されているEC-CUBEのソースコードは [co/masterブランチ](https://github.com/EC-CUBE/ec-cube/tree/co/master){:target="_blank"} で公開されております。  
 ご参照いただき、該当のコードをコピーしてご自身の環境へ反映してください。
 
+### 各社プラグインのカスタマイズの可・不可を教えて欲しい
+
+各社提供プラグインごとによってライセンスが異なり、イーシーキューブ社ではお答えできかねます。  
+ご了承ください。
+
+[オーナーズストア](https://www.ec-cube.net/owners/){:target="_blank"} の各社プラグインの商品詳細ページに掲載されておりますライセンス情報をご確認の上、各社へお問い合わせくださいますようお願いいたします。
+
 ### デザイン面のサポートはどちらに相談したらよいでしょうか？
 
 [ec-cube.coに関するお問い合わせ](https://www.ec-cube.net/product/co/support.php){:target="_blank"} からご相談ください。  
@@ -219,10 +226,12 @@ ec-cube.coで利用されているEC-CUBEのソースコードは [co/masterブ�
 
 ### DL版(2系、3系)から.coへ移行する手順を教えてほしい
 
-[2、3系データ移行マニュアル](https://www.ec-cube.co/pdf/migration_manual_flow.pdf){:target="_blank"} をご確認いただき、お手続きをお願いいたします。
+[2、3系データ移行マニュアル](https://www.ec-cube.co/pdf/migration_manual_flow.pdf){:target="_blank"} をご確認いただき、お手続きをお願いいたします。  
+上記マニュアルには掲載されていない内容についてのご相談は、[ec-cube.coに関するお問い合わせ](https://www.ec-cube.net/product/co/support.php){:target="_blank"} からご相談ください。 
 
 ### .coからDL版へ移行する手順を教えてほしい
 
+有料にてご提供が可能です。  
 [ec-cube.coに関するお問い合わせ](https://www.ec-cube.net/product/co/support.php){:target="_blank"} から以下の情報を添えてご連絡ください。
 - 対象のサイトURL
 - データ抜き出し希望日時
@@ -345,6 +354,9 @@ OK： https://shop.example.com
 ## メールマガジン
 
 ### メールマガジンの配信はできますか？
+
+目安として 1万2千通/月 の配信を上限とさせていただいております。  
+上限を超える場合は外部サービスの利用をお願いいたします。
 
 [オーナーズストア](https://www.ec-cube.net/owners/){:target="_blank"} よりプラグインをインストールしていただくことで実現可能です。
 - [メルマガ管理プラグイン](https://www.ec-cube.net/products/detail.php?product_id=1760){:target="_blank"}
@@ -472,6 +484,13 @@ OK： https://shop.example.com
 個別にご要望いただいたタイミングでメール通知の設定をいたします。  
 メールの設定は1サイトで1メールアドレスとさせていただきます。  
 複数のメールアドレスの設定は不可となりますのでご了承ください。
+
+## 商材説明動画のアップロード
+
+### 商材説明の動画をサイトにアップロードして商品詳細ページに埋め込みたいのですが、どうしたらよいでしょうか？
+
+可能です。ただし、1ファイル毎のファイルアップロード制限(10MB)があり、限界はございます。ご了承ください。  
+回避策として他のCDNなど外部サービスを利用することをお勧めします。
 
 ## 設定
 
