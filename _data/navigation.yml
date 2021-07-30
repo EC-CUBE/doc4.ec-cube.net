@@ -37,6 +37,9 @@ docs:
       - title: ログの取得
         url: /co/co_log
         output: web, pdf
+      - title: FAQ
+        url: /co/co_faq
+        output: web, pdf
 
   - title: 初学者向け情報
     output: web, pdf
