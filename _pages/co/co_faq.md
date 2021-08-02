@@ -224,7 +224,7 @@ ec-cube.coで利用されているEC-CUBEのソースコードは [co/masterブ�
 
 ## サイト移行
 
-###ダウンロード(2系、3系)からec-cube.coへ移行する手順を教えてほしい
+### ダウンロード(2系、3系)からec-cube.coへ移行する手順を教えてほしい
 
 [2、3系データ移行マニュアル](https://www.ec-cube.co/pdf/migration_manual_flow.pdf){:target="_blank"} をご確認いただき、お手続きをお願いいたします。  
 上記マニュアルには掲載されていない内容についてのご相談は、[ec-cube.coに関するお問い合わせ](https://www.ec-cube.net/product/co/support.php){:target="_blank"} からご相談ください。 
