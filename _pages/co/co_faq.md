@@ -25,9 +25,9 @@ folder: co
 スタンダードプランをご契約いただいた後は、カスタマイズ領域を使用して実現が可能です。  
 詳しくは [Entityのカスタマイズ 基本の拡張方法](https://doc4.ec-cube.net/customize_entity#%E5%9F%BA%E6%9C%AC%E3%81%AE%E6%8B%A1%E5%BC%B5%E6%96%B9%E6%B3%95){:target="_blank"} をご確認ください。
 
-### 対応DBはPostgresSQLのみでしょうか？
+### 対応DBはPostgreSQLのみでしょうか？
 
-はい。PostgresSQLのみとなります。
+はい。PostgreSQLのみとなります。
 
 ## ダウンロード版との違い
 
