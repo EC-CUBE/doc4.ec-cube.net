@@ -238,3 +238,53 @@ index 796a0b943e..940709df9c 100644
                      log_info('ログアウト完了');
 
 ```
+
+### 注文完了時のカート削除
+
+注文完了時にカートが削除されないようにします。
+
+*注文確認画面から注文完了画面への遷移は `/shopping/checkout` へ CSRF トークンを POST するのみですので、あまり有用ではないかもしれません。*
+
+``` diff
+diff --git a/src/Eccube/Controller/ShoppingController.php b/src/Eccube/Controller/ShoppingController.php
+index 8e99094d73..e8e744f39a 100644
+--- a/src/Eccube/Controller/ShoppingController.php
++++ b/src/Eccube/Controller/ShoppingController.php
+@@ -386,7 +386,7 @@ class ShoppingController extends AbstractShoppingController
+                     return $response;
+                 }
+
+-                $this->entityManager->flush();
++                //$this->entityManager->flush();
+
+                 log_info('[注文処理] 注文処理が完了しました.', [$Order->getId()]);
+             } catch (ShoppingException $e) {
+@@ -409,7 +409,7 @@ class ShoppingController extends AbstractShoppingController
+
+             // カート削除
+             log_info('[注文処理] カートをクリアします.', [$Order->getId()]);
+-            $this->cartService->clear();
++            //$this->cartService->clear();
+
+             // 受注IDをセッションにセット
+             $this->session->set(OrderHelper::SESSION_ORDER_ID, $Order->getId());
+@@ -417,7 +417,7 @@ class ShoppingController extends AbstractShoppingController
+             // メール送信
+             log_info('[注文処理] 注文メールの送信を行います.', [$Order->getId()]);
+             $this->mailService->sendOrderMail($Order);
+-            $this->entityManager->flush();
++            //$this->entityManager->flush();
+
+             log_info('[注文処理] 注文処理が完了しました. 購入完了画面へ遷移します.', [$Order->getId()]);
+
+@@ -463,7 +463,7 @@ class ShoppingController extends AbstractShoppingController
+         }
+
+         log_info('[注文完了] 購入フローのセッションをクリアします. ');
+-        $this->orderHelper->removeSession();
++        //$this->orderHelper->removeSession();
+
+         $hasNextCart = !empty($this->cartService->getCarts());
+
+```
+
