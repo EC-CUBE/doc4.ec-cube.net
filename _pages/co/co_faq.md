@@ -14,7 +14,7 @@ folder: co
 <section class="p-faq">
 
   <section class="p-db">
-    <h2 class="p-faq__title" id="データベース" style="padding-top:0;">データベース</h2>
+    <h2 class="p-faq__title" id="DB" style="padding-top:0;">DB</h2>
     <p class="p-faq__question">DBクライアントツールを使用して、直接ec-cube.coのDBにアクセスはできますか？</p>
     <div class="p-faq__answer">
     <p>
@@ -74,6 +74,7 @@ folder: co
     <h2 class="p-faq__title" id="アクセス制限">アクセス制限</h2>
     <p class="p-faq__question">サイトへアクセス制限をかけたいのですが、どうすればいいでしょうか？</p>
     <div class="p-faq__answer">
+    <p>目的により実現方法が異なります。</p>
       <ul>
       <li>会員限定サイトとして運用したい
         <ul>
@@ -156,7 +157,7 @@ folder: co
     <h2 class="p-faq__title" id="カスタマイズ">カスタマイズ</h2>
     <p class="p-faq__question">合計金額が一定金額を超えた場合は送料を無料にしたいのですが、どうしたらいいでしょうか？</p>
     <div class="p-faq__answer">
-      管理画面 ＞ 設定 ＞ 基本設定 ＞ 送料設定で、送料無料条件を設定してください。
+      <p>管理画面 ＞ 設定 ＞ 基本設定 ＞ 送料設定で、送料無料条件を設定してください。</p>
     </div>
     <p class="p-faq__question">商品ごとに配送元・送料を設定したいのですが、どうしたらいいでしょうか？</p>
     <div class="p-faq__answer">
