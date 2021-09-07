@@ -120,19 +120,7 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
 - symfony.lock
 - index.php
 
-上書き後、以下のコマンドでキャッシュの削除を行ってください。
-
-```
-bin/console cache:clear --no-warmup
-```
-
 ### 5. composer.json/composer.lockの更新
-
-以下のコマンドを実行してください。
-
-```
-bin/console eccube:composer:require-already-installed
-```
 
 packagist等の外部ライブラリを独自にインストールしている場合は、再度requireしてください。
 
@@ -158,6 +146,18 @@ $ cat app/Plugin/Api/composer.json
 $ composer require trikoder/oauth2-bundle:^2.1 --no-plugins --no-scripts
 $ composer require nyholm/psr7:^1.2 --no-plugins --no-scripts
 $ composer require webonyx/graphql-php:^14.0 --no-plugins --no-scripts
+```
+
+以下のコマンドでキャッシュの削除を行ってください。
+
+```
+bin/console cache:clear --no-warmup
+```
+
+以下のコマンドを実行してください。
+
+```
+bin/console eccube:composer:require-already-installed
 ```
 
 ### 6. スキーマ更新/マイグレーション
