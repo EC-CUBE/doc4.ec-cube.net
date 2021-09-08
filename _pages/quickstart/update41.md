@@ -20,7 +20,8 @@ EC-CUBE本体のコード(app/config/eccube, app/DoctrineMigrations, bin, src, h
 
 ### プラグインの対象バージョンの確認
 
-- プラグインをインストールしている場合、EC-CUBE4.1に対応しているかどうかをご確認ください
+- プラグインをインストールしている場合、EC-CUBE4.1に対応しているかどうかをご確認ください。
+- 4.1へのバージョンアップを実施する前に、使用されているプラグインを 4.1対応バージョンにアップデートしてください。
 
 ### カスタマイズや独自プラグインを利用している場合のマイグレーション
 
@@ -30,8 +31,7 @@ EC-CUBE本体のコード(app/config/eccube, app/DoctrineMigrations, bin, src, h
 
 - 4.1.0より、以下のプラグインはEC-CUBE本体へ取り込まれました。
   - [taba secure 2段階認証 プラグイン for EC-CUBE 4](https://www.ec-cube.net/products/detail.php?product_id=1750)
-- 該当のプラグインを利用している場合は、プラグインを無効化してください。
-- EC-CUBEのバージョンアップ後、プラグインは削除しても問題ありません。
+- 該当のプラグインを利用している場合は、プラグインを削除してください。
 
 ## アップデートプラグインを利用したバージョンアップ方法
 
@@ -120,19 +120,7 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
 - symfony.lock
 - index.php
 
-上書き後、以下のコマンドでキャッシュの削除を行ってください。
-
-```
-bin/console cache:clear --no-warmup
-```
-
 ### 5. composer.json/composer.lockの更新
-
-以下のコマンドを実行してください。
-
-```
-bin/console eccube:composer:require-already-installed
-```
 
 packagist等の外部ライブラリを独自にインストールしている場合は、再度requireしてください。
 
@@ -158,6 +146,18 @@ $ cat app/Plugin/Api/composer.json
 $ composer require trikoder/oauth2-bundle:^2.1 --no-plugins --no-scripts
 $ composer require nyholm/psr7:^1.2 --no-plugins --no-scripts
 $ composer require webonyx/graphql-php:^14.0 --no-plugins --no-scripts
+```
+
+以下のコマンドでキャッシュの削除を行ってください。
+
+```
+bin/console cache:clear --no-warmup
+```
+
+以下のコマンドを実行してください。
+
+```
+bin/console eccube:composer:require-already-installed
 ```
 
 ### 6. スキーマ更新/マイグレーション
