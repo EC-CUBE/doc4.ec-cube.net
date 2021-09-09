@@ -11,6 +11,63 @@ folder: co
 
 よくお問い合わせいただく事柄をまとめました。
 
+<style>
+.page__content h2{ 
+  font-size: 22px !important;
+  padding-top: 2.5rem !important;
+}
+.page__content h2:nth-of-type(1){
+  padding-top: 0 !important;
+}
+.page__content h3{
+  font-size: 17px !important;
+  padding: 1.5rem 1.5rem .5rem !important;
+  border-bottom: 1px solid #f2f3f3!important;
+  margin: 1rem 0 1rem!important;
+  position: relative;
+}
+.page__content h3::before{
+  content: "Q.";
+  display: block;
+  position: absolute;
+  bottom: .4rem;
+  left: 0;
+  font-size: 22px;
+  font-weight: bold;
+  color: #40ACAC;
+}
+.page__content h3::after{
+  content: "A.";
+  display: block;
+  position: absolute;
+  bottom: -2.1rem;
+  left: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.page__content > p{
+  font-size: 14px !important;
+  padding-left: 1.5rem !important;
+}
+.page__content > ul,
+.page__content > ol{
+  font-size: 14px !important;
+  padding-left: 1.0rem !important;
+  margin-left: 1.0rem !important;
+}
+.page__content li{
+  font-size: 14px !important;
+  margin-left: 1.0rem !important;
+}
+.toc__menu li{
+  font-size: 14px !important;
+  margin-left: 0 !important;
+}
+.toc__menu li ul li a{
+  font-size: 12px !important;
+}
+
+</style>
 ## DB
 
 ### DBクライアントツールを使用して、直接ec-cube.coのDBにアクセスはできますか？
@@ -504,7 +561,7 @@ OK： https://shop.example.com
 [オーナーズストア](https://www.ec-cube.net/owners/){:target="_blank"} に多種多様なプラグインやデザインテンプレートがございます。  
 こちらのご利用もぜひご検討ください。  
 
-## 問合わせ
+#### 問合わせ
 
 [ec-cube.coに関するお問い合わせ](https://www.ec-cube.net/product/co/support.php){:target="_blank"} 以外にも、目的に合わせてご活用ください。
 - ちょっとした不具合解消や工夫を相談したい
