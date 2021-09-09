@@ -65,6 +65,7 @@ folder: co
 }
 .toc__menu li ul li a{
   font-size: 12px !important;
+  padding: .5rem 1rem !important;
 }
 
 </style>
