@@ -11,15 +11,12 @@ permalink: quickstart/requirement
 | 分類 | ソフトウェア|Version|動作確認済み|
 |---|-------|---|-------|
 |WebServer|Apache |2.4.x <br> (mod_rewrite / mod_ssl 必須) |2.4.x |
-|PHP | PHP | 7.1 〜 7.4|7.3.x |
+|PHP | PHP | 7.3 〜 7.4 <small>(※)</small>|7.3.x / 7.4.x|
 |Database|PostgreSQL| 9.2.x / 10.x / 11.x / 12.x / 13.x <br> (pg_settingsテーブルへの参照権限 必須) |10.x |
 |Database|MySQL|5.5.x / 5.6.x / 5.7.x <br> (InnoDBエンジン 必須) |5.7.x |
 |Database|SQLite(開発用途向け) |3.x |-|
 
-※ 4.0.0, 4.0.1 は、PHP7.3で動作いたしません。PHP7.3をご利用の場合、4.0.2以降のバージョンをご使用ください。
-* 4.0.3以下のバージョンではPHP 7.4系には対応していません。 7.4系を使いたい場合は最新バージョンをご利用ください。
-
-[4.0.0, 4.0.1をお使いの方はPHP7.3をご利用の前に4.0.2以降へアップデートください。](/update)
+※ EC-CUBE 4.0.0〜4.0.1 は PHP 7.1〜7.2対応、4.0.2〜4.0.3 は PHP 7.1〜7.3対応、4.0.4〜4.0.x は PHP 7.1〜7.4対応となります
 
 # PHPライブラリ
 
