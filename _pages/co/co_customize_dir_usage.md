@@ -14,6 +14,23 @@ co/master ブランチを利用してEC-CUBEを起動し、 app/Customize ディ
 
 ## ローカル環境のセットアップ手順
 
+### 公開鍵の設定
+
+[SSH認証鍵](https://source.cloud.google.com/user/ssh_keys?register=true){:target="_blank"} へアクセスし、登録してください。  
+その際、スタンダードプラン契約時もしくはアップグレード時にイーシーキューブへ共有いただいたGoogleアカウントでログインしていることをご確認ください。  
+
+※詳しい設定方法については、上記ページの「詳細」リンク、もしくは[こちら](https://cloud.google.com/source-repositories/docs/authentication#ssh){:target="_blank"}よりご確認をお願いします。
+
+#### Googleグループアカウントご利用の場合
+
+以下のメールアドレスを例に説明します。
+- google groupメールアドレス：example@googlegroups.com
+- グループ内ユーザのメールアドレス：user1@example.com
+
+1. [SSH認証鍵](https://source.cloud.google.com/user/ssh_keys?register=true){:target="_blank"} へアクセスし、公開鍵を登録します。  
+  その際グループ内ユーザのメールアドレス「user1@example.com」でログインし、公開鍵を登録します。
+1. git cloneでは、「user1@example.com」を指定して実行します。
+
 ### ec-cube.coのレポジトリをclone
 
 ```
