@@ -49,7 +49,8 @@ EC-CUBE本体のコード(app/config/eccube, app/DoctrineMigrations, bin, src, h
 1. 個別ファイル差し替え
 1. composer.json/composer.lockの更新
 1. スキーマ更新/マイグレーション
-1. テンプレートファイルの更新
+1. キャッシュ等の再生成
+1. フロントテンプレートファイルの更新
 1. メンテナンスモードを無効にする
 
 ## 手順詳細
