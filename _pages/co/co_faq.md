@@ -568,7 +568,7 @@ OK： https://shop.example.com
 - ちょっとした不具合解消や工夫を相談したい
   - [EC-CUBE開発コミュニティ](https://xoops.ec-cube.net/){:target="_blank"}
 - ec-cube.coやEC-CUBE本体の技術情報を詳しく知りたい
-  - [EC-CUBE 4系 開発者向けドキュメント](https://doc4.ec-cube.net/){:target="_blank"}
+  - [EC-CUBE 4 開発者向けドキュメント](https://doc4.ec-cube.net/){:target="_blank"}
 - EC-CUBEに詳しい技術者に直接相談にのって欲しい  
   各ユーザーグループやイベント・セミナーに参加してみてはいかがでしょうか。
   - [ニュース・イベント・コミュニティコンテンツ](https://www.ec-cube.net/news/#events_information){:target="_blank"}
