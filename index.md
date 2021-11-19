@@ -1,15 +1,15 @@
 ---
 layout: single
 author_profile: false
-title: EC-CUBE 4.0 開発者向けドキュメント
-description: "EC-CUBE 4.0 の開発者向けドキュメントサイトです。EC-CUBEのインストール方法、本体カスタマイズやプラグイン開発についての情報を提供しています。"
+title: EC-CUBE 4 開発者向けドキュメント
+description: "EC-CUBE 4 の開発者向けドキュメントサイトです。EC-CUBEのインストール方法、本体カスタマイズやプラグイン開発についての情報を提供しています。"
 keywords: このサイトについて, QuickStart
 sidebar:
   nav: "docs"
 permalink: /
 ---
 
-EC-CUBE 4.0 の開発者向けドキュメントサイトです。
+EC-CUBE 4 の開発者向けドキュメントサイトです。
 EC-CUBEのインストール方法、開発ガイドラインや要素技術の概念、本体開発やプラグイン開発のチュートリアル、Cookbookなどの情報を提供しています。
 
 ドキュメント内容や、カスタマイズについて不明な点がございましたら、以下をご検討ください。

@@ -108,7 +108,7 @@ folder: co
 
 ### Web APIは使用できますか？WebAPIでどんなことが実現できますか？
 
-[EC-CUBE 4.0 Web API プラグイン](https://www.ec-cube.net/products/detail.php?product_id=2121){:target="_blank"} を使用していただくことで実現可能です。  
+[EC-CUBE Web API プラグイン](https://www.ec-cube.net/products/detail.php?product_id=2121){:target="_blank"} を使用していただくことで実現可能です。  
 詳しくは[開発ドキュメント](https://doc.ec-cube.net/eccube-api4/){:target="_blank"} をご参照ください。
 
 ## アクセス制限
@@ -568,7 +568,7 @@ OK： https://shop.example.com
 - ちょっとした不具合解消や工夫を相談したい
   - [EC-CUBE開発コミュニティ](https://xoops.ec-cube.net/){:target="_blank"}
 - ec-cube.coやEC-CUBE本体の技術情報を詳しく知りたい
-  - [EC-CUBE 4.0 開発者向けドキュメント](https://doc4.ec-cube.net/){:target="_blank"}
+  - [EC-CUBE 4 開発者向けドキュメント](https://doc4.ec-cube.net/){:target="_blank"}
 - EC-CUBEに詳しい技術者に直接相談にのって欲しい  
   各ユーザーグループやイベント・セミナーに参加してみてはいかがでしょうか。
   - [ニュース・イベント・コミュニティコンテンツ](https://www.ec-cube.net/news/#events_information){:target="_blank"}
