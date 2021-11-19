@@ -41,13 +41,6 @@ docs:
         url: /co/co_faq
         output: web, pdf
 
-  - title: 初学者向け情報
-    output: web, pdf
-    children:
-      - title: 学習のステップ
-        url: /learning/learning_step
-        output: web, pdf
-
   - title: はじめに
     output: web, pdf
     children:
@@ -56,6 +49,13 @@ docs:
         output: web, pdf
       - title: 本番環境での注意事項
         url: /quickstart/cautions_of_prod
+        output: web, pdf
+
+  - title: 初学者向け情報
+    output: web, pdf
+    children:
+      - title: 学習のステップ
+        url: /learning/learning_step
         output: web, pdf
 
   - title: インストール
