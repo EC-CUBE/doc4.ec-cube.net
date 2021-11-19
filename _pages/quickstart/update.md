@@ -4,7 +4,7 @@ title: 4.0本体バージョンアップ
 keywords: howto update
 tags: [quickstart, getting_started]
 permalink: update
-summary : EC-CUBE4.0.0から4.0.6-p1への本体バージョンアップ手順について記載します。
+summary : 4.0.0から4.0.6-p1への本体バージョンアップ手順について記載します。
 ---
 
 本番環境でバージョンアップを行う前に、テスト環境で事前検証を必ず行ってください。
