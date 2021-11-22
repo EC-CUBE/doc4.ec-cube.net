@@ -12,6 +12,36 @@ permalink: /penetration-testing/testing/apply_patch
 
 ## 管理画面
 
+### 規格、規格分類の削除防止
+
+``` diff
+diff --git a/src/Eccube/Repository/ClassCategoryRepository.php b/src/Eccube/Repository/ClassCategoryRepository.php
+index 8f08c2b9b2..4b4d9abdec 100644
+--- a/src/Eccube/Repository/ClassCategoryRepository.php
++++ b/src/Eccube/Repository/ClassCategoryRepository.php
+@@ -103,7 +103,7 @@ class ClassCategoryRepository extends AbstractRepository
+
+         $em = $this->getEntityManager();
+         $em->remove($ClassCategory);
+-        $em->flush();
++        // $em->flush();
+     }
+
+     /**
+diff --git a/src/Eccube/Repository/ClassNameRepository.php b/src/Eccube/Repository/ClassNameRepository.php
+index 7e894b0585..4809d8262b 100644
+--- a/src/Eccube/Repository/ClassNameRepository.php
++++ b/src/Eccube/Repository/ClassNameRepository.php
+@@ -92,6 +92,6 @@ class ClassNameRepository extends AbstractRepository
+
+         $em = $this->getEntityManager();
+         $em->remove($ClassName);
+-        $em->flush();
++        // $em->flush();
+     }
+ }
+```
+
 ### ログアウト防止
 
 ログアウトすると、セッションが切断され CSRF トークンが変更されてしまい、テストに失敗するため、ログアウトしないように設定する
