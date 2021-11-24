@@ -106,9 +106,6 @@ docs:
       - title: ディレクトリ構成
         url: /spec_directory-structure
         output: web, pdf
-      - title: Commandの開発
-        url: /customize_symfony#command
-        output: web, pdf
       - title: Controllerのカスタマイズ
         url: /customize_controller
         output: web, pdf
@@ -132,6 +129,9 @@ docs:
         output: web, pdf
       - title: Symfonyの機能を使った拡張
         url: /customize_symfony
+        output: web, pdf
+      - title: Commandの開発
+        url: /customize_symfony#command
         output: web, pdf
 
   - title: デザインカスタマイズ

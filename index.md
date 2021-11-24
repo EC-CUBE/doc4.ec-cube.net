@@ -14,7 +14,7 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 
 ドキュメント内容や、カスタマイズについて不明な点がございましたら、以下をご検討ください。
 + EC-CUBE本体と同様に[GitHub](https://github.com/EC-CUBE/doc4.ec-cube.net/){:target="_blank"}へIssueをご投稿いただく
-  詳細は[こちら](documents/request)をご覧ください
+  詳細は[こちら](/documents/request)をご覧ください
 + [実施予定のUGや勉強会](https://www.ec-cube.net/event/){:target="_blank"}を探して参加する
 
 ドキュメントへの追記、記載内容の修正についても[GitHub](https://github.com/EC-CUBE/doc4.ec-cube.net/){:target="_blank"}にて受け付けております。
@@ -29,30 +29,27 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 
 クラウド版「ec-cube.co」の技術情報については、[こちら](co)を御覧ください。
 
-## 初学者向け情報
-
-+ [学習のステップ](/learning/learning_step)
-
-## 運用者向け情報
-
-運用者向けには以下のサイトをご覧ください。
-+ [EC-CUBE 4管理・運用 マニュアル（株式会社シロハチ様）](https://www.shiro8.net/manual4/v40x/index.html){:target="_blank"}
-
 ## はじめに
 
 + [システム要件](/quickstart/requirement)
 + [本番環境での注意事項](/quickstart/cautions_of_prod)
 
+## 初学者向け情報
+
++ [学習のステップ](/learning/learning_step)
+
 ## インストール
 
-+ [インストール方法](/quickstart/install)
++ [各種インストール方法](/quickstart/install)
 + [コマンドラインインターフェイス](/quickstart/cli)
 
 ## バージョンアップ
 
-+ [バージョンアップ方法](/update)
++ [4.0から4.1への本体バージョンアップ](/update41)
++ [4.0から4.1へのマイグレーション](/update-40-41)
++ [4.0本体バージョンアップ](/update)
 + [4.0.3での注意点](/update/4_0_3)
-+ [EC-CUBE4.0から4.1へのマイグレーション](/update-40-41)
++ [SameSite Cookie 対応](/hotfix_samesite_cookie)
 
 ## 本体の仕様
 
@@ -63,49 +60,54 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 ### 機能仕様
 
 + [機能一覧](https://www.ec-cube.net/product/functions.php){:target="_blank"}
-+ [受注関連](spec_order)
-+ [税率設定](spec_tax)
++ [受注関連](/spec_order)
++ [税率設定](/spec_tax)
 
 ## 本体カスタマイズ
 
-+ [ディレクトリ構成](spec_directory-structure)
-+ [Controllerのカスタマイズ](customize_controller)
-+ [Entityのカスタマイズ](customize_entity)
-+ [Repositoryのカスタマイズ](customize_repository)
-+ [FormTypeのカスタマイズ](customize_formtype)
-+ [購入フローのカスタマイズ](customize_service)
-+ [受注ステータスのカスタマイズ](customize_order_state_machine)
-+ [テンプレートのカスタマイズ](customize_template)
-+ [Symfonyの機能を使った拡張](customize_symfony)
++ [ディレクトリ構成](/spec_directory-structure)
++ [Controllerのカスタマイズ](/customize_controller)
++ [Entityのカスタマイズ](/customize_entity)
++ [Repositoryのカスタマイズ](/customize_repository)
++ [FormTypeのカスタマイズ](/customize_formtype)
++ [購入フローのカスタマイズ](/customize_service)
++ [受注ステータスのカスタマイズ](/customize_order_state_machine)
++ [テンプレートのカスタマイズ](/customize_template)
++ [Symfonyの機能を使った拡張](/customize_symfony)
++ [Symfonyの機能を使った拡張 Commandの開発](/customize_symfony#command)
 
 ## デザインカスタマイズ
 
-+ [フロント画面デザイン参考資料（スタイルガイド）](http://eccube4-styleguide.herokuapp.com/){:target="_blank"}
-+ [管理画面デザイン参考資料（デザインガイド）](/pdf/ec-cube4_design-guide180930.pdf)
++ [デザインテンプレートの基礎](/design_template)
++ [フォームレイアウトの変更](/design_form)
++ [ブロックの利用](/design_block)
++ [レイアウト管理の利用](/design_layout)
++ [CSSの利用](/design_css)
++ [Sass(scss)の利用](/design_sass)
 
-+ [デザインテンプレートの基礎](design_template)
-+ [フォームレイアウトの変更](design_form)
-+ [ブロックの利用](design_block)
-+ [レイアウト管理の利用](design_layout)
-+ [CSSの利用](design_css)
-+ [Sass(scss)の利用](design_sass)
++ [フロント画面デザイン参考資料（スタイルガイド）](http://eccube4-styleguide.herokuapp.com/){:target="_blank"}
++ [管理画面デザイン参考資料（デザインガイド）](https://doc4.ec-cube.net/pdf/ec-cube4_design-guide180930.pdf){:target="_blank"}
+
 + [フロント画面テンプレート for Adobe XD](http://downloads.ec-cube.net/manual/documents/eccube4_xd_front_template.zip?argument=2qpV46CP&dmai=a5bf51b05bacc5){:target="_blank"}
 + [管理画面テンプレート for Adobe XD](http://downloads.ec-cube.net/manual/documents/eccube4_xd_admin_template.zip?argument=2qpV46CP&dmai=a5bf51b05bacc5){:target="_blank"}
 
 ## プラグイン開発
 
-+ [プラグイン仕様](plugin_spec)
-+ [プラグインのインストール](plugin_install)
-+ [インストール失敗時の対処法](plugin_error)
-+ [プラグインサンプル](plugin_sample)
-+ [オーナーズストア経由のインストールをテストする](plugin_mock_package_api)
-+ [プラグインで推奨の命名規則](plugin_naming_conventions)
++ [プラグイン仕様](/plugin_spec)
++ [プラグインのインストール](/plugin_install)
++ [プラグイン導入時のトラブル対処法](/plugin_error)
++ [プラグインサンプル](/plugin_sample)
++ [オーナーズストア経由のインストールをテストする](/plugin_mock_package_api)
++ [プラグインで推奨の命名規則](/plugin_naming_conventions)
 
-## 多言語化
+## 設定変更
 
-+ [多言語化](i18n_multilingualization)
-+ [通貨](i18n_currency)
-+ [タイムゾーン](i18n_timezone)
++ [多言語化](/i18n_multilingualization)
++ [通貨](/i18n_currency)
++ [タイムゾーン](/i18n_timezone)
++ [環境設定](/environmental_setting)
++ [デバッグモード](/debug_mode)
++ [セッション情報保存方法の変更](/session_handler_settings)
 
 ## 開発ツール
 
@@ -113,12 +115,24 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 
 ## セキュリティテストの実施
 
-- [EC-CUBE Penetration Testing with OWASP ZAP](/penetration-testing)
++ [はじめに](/penetration-testing)
++ [Quick Start](/penetration-testing/quick_start)
++ [イントロダクション](/penetration-testing/introduction)
++ [OWASP ZAP について](/penetration-testing/about_owaspzap)
++ [テスト計画](/penetration-testing/planning)
++ [テストの実施](/penetration-testing/testing)
++ [テスト評価](/penetration-testing/review)
++ [セキュリティの改善](/penetration-testing/improvement)
 
 ## 逆引きリファレンス
 
-- [Tips](/reverse-lookup/tips)
-- [カスタマイズサンプル集](/reverse-lookup/sample-code)
++ [Tips](/reverse-lookup/tips)
++ [カスタマイズサンプル集](/reverse-lookup/sample-code)
+
+## 運用者向け情報
+
+運用者向けには以下のサイトをご覧ください。
++ [EC-CUBE 4管理・運用 マニュアル（株式会社シロハチ様）](https://www.shiro8.net/manual4/v40x/index.html){:target="_blank"}
 
 ## 開発に参加する
 
