@@ -7,7 +7,40 @@ permalink: /penetration-testing/testing/apply_patch
 
 [パッチファイル全体はこちら](/patches/testing.patch)
 
+**Note:** これらの修正の他、各種削除機能のテストをする場合は、削除処理がロールバックされるように該当処理の `EntityManager::flush()` をコメントアウトする必要があります。
+{: .notice--warning}
+
 ## 管理画面
+
+### 規格、規格分類の削除防止
+
+``` diff
+diff --git a/src/Eccube/Repository/ClassCategoryRepository.php b/src/Eccube/Repository/ClassCategoryRepository.php
+index 8f08c2b9b2..4b4d9abdec 100644
+--- a/src/Eccube/Repository/ClassCategoryRepository.php
++++ b/src/Eccube/Repository/ClassCategoryRepository.php
+@@ -103,7 +103,7 @@ class ClassCategoryRepository extends AbstractRepository
+
+         $em = $this->getEntityManager();
+         $em->remove($ClassCategory);
+-        $em->flush();
++        // $em->flush();
+     }
+
+     /**
+diff --git a/src/Eccube/Repository/ClassNameRepository.php b/src/Eccube/Repository/ClassNameRepository.php
+index 7e894b0585..4809d8262b 100644
+--- a/src/Eccube/Repository/ClassNameRepository.php
++++ b/src/Eccube/Repository/ClassNameRepository.php
+@@ -92,6 +92,6 @@ class ClassNameRepository extends AbstractRepository
+
+         $em = $this->getEntityManager();
+         $em->remove($ClassName);
+-        $em->flush();
++        // $em->flush();
+     }
+ }
+```
 
 ### ログアウト防止
 
@@ -157,6 +190,46 @@ index d48b4f36b2..a658bbd33b 100644
 
 ## フロント画面
 
+### 会員情報変更防止
+
+会員情報が変更され、再ログインできなくなるのを防止します
+
+``` diff
+diff --git a/src/Eccube/Controller/Mypage/ChangeController.php b/src/Eccube/Controller/Mypage/ChangeController.php
+index 70121e110c..1846b6fbe6 100644
+--- a/src/Eccube/Controller/Mypage/ChangeController.php
++++ b/src/Eccube/Controller/Mypage/ChangeController.php
+@@ -97,7 +97,7 @@ class ChangeController extends AbstractController
+                     $encoder->encodePassword($Customer->getPassword(), $Customer->getSalt())
+                 );
+             }
+-            $this->entityManager->flush();
++            // $this->entityManager->flush();
+
+             log_info('会員編集完了');
+
+```
+
+### お届け先登録制限防止
+
+お届け先上限数に抵触してテストが失敗するのを防止します
+
+``` diff
+diff --git a/src/Eccube/Controller/Mypage/DeliveryController.php b/src/Eccube/Controller/Mypage/DeliveryController.php
+index af8dd653a6..803f3123f2 100644
+--- a/src/Eccube/Controller/Mypage/DeliveryController.php
++++ b/src/Eccube/Controller/Mypage/DeliveryController.php
+@@ -77,7 +77,7 @@ class DeliveryController extends AbstractController
+             $addressCurrNum = count($Customer->getCustomerAddresses());
+             $addressMax = $this->eccubeConfig['eccube_deliv_addr_max'];
+             if ($addressCurrNum >= $addressMax) {
+-                throw new NotFoundHttpException();
++                // throw new NotFoundHttpException();
+             }
+             $CustomerAddress = new CustomerAddress();
+             $CustomerAddress->setCustomer($Customer);
+```
+
 ### お届け先情報削除防止
 
 お届け先情報が削除され、商品購入が失敗しないようにします
@@ -178,9 +251,30 @@ index f3ecbc1ed0..7bd7290c1a 100644
 
 ```
 
+### お気に入り追加防止
+
+お気に入り追加(`/products/add_favorite/<id>`)のテストが失敗しないようにします
+*お気に入り削除防止のパッチと同時には使用できません*
+
+``` diff
+diff --git a/src/Eccube/Repository/CustomerFavoriteProductRepository.php b/src/Eccube/Repository/CustomerFavoriteProductRepository.php
+index 24430036a4..cff5db5a64 100644
+--- a/src/Eccube/Repository/CustomerFavoriteProductRepository.php
++++ b/src/Eccube/Repository/CustomerFavoriteProductRepository.php
+@@ -45,7 +45,7 @@ class CustomerFavoriteProductRepository extends AbstractRepository
+
+             $em = $this->getEntityManager();
+             $em->persist($CustomerFavoriteProduct);
+-            $em->flush();
++            // $em->flush();
+         }
+     }
+```
+
 ### お気に入り削除防止
 
 お気に入りが削除され、お気に入り関連のテストが失敗しないようにします
+*お気に入り追加防止のパッチと同時には使用できません*
 
 ```diff
 diff --git a/src/Eccube/Controller/Mypage/MypageController.php b/src/Eccube/Controller/Mypage/MypageController.php
@@ -237,4 +331,105 @@ index 796a0b943e..940709df9c 100644
 
                      log_info('ログアウト完了');
 
+```
+
+### 仮会員登録防止
+
+``` diff
+diff --git a/src/Eccube/Controller/EntryController.php b/src/Eccube/Controller/EntryController.php
+index 076ac0a991..30a089994a 100644
+--- a/src/Eccube/Controller/EntryController.php
++++ b/src/Eccube/Controller/EntryController.php
+@@ -180,7 +180,7 @@ class EntryController extends AbstractController
+                         ->setPoint(0);
+
+                     $this->entityManager->persist($Customer);
+-                    $this->entityManager->flush();
++                    // $this->entityManager->flush();
+
+                     log_info('会員登録完了');
+
+```
+
+### 本会員登録防止
+
+```
+@@ -293,7 +293,7 @@ class EntryController extends AbstractController
+         $CustomerStatus = $this->customerStatusRepository->find(CustomerStatus::REGULAR);
+         $Customer->setStatus($CustomerStatus);
+         $this->entityManager->persist($Customer);
+-        $this->entityManager->flush();
++        // $this->entityManager->flush();
+
+         log_info('本会員登録完了');
+
+```
+
+### 注文完了時のカート削除
+
+注文完了時にカートが削除されないようにします。
+
+*注文確認画面から注文完了画面への遷移は `/shopping/checkout` へ CSRF トークンを POST するのみですので、あまり有用ではないかもしれません。*
+
+``` diff
+diff --git a/src/Eccube/Controller/ShoppingController.php b/src/Eccube/Controller/ShoppingController.php
+index 8e99094d73..e8e744f39a 100644
+--- a/src/Eccube/Controller/ShoppingController.php
++++ b/src/Eccube/Controller/ShoppingController.php
+@@ -386,7 +386,7 @@ class ShoppingController extends AbstractShoppingController
+                     return $response;
+                 }
+
+-                $this->entityManager->flush();
++                //$this->entityManager->flush();
+
+                 log_info('[注文処理] 注文処理が完了しました.', [$Order->getId()]);
+             } catch (ShoppingException $e) {
+@@ -409,7 +409,7 @@ class ShoppingController extends AbstractShoppingController
+
+             // カート削除
+             log_info('[注文処理] カートをクリアします.', [$Order->getId()]);
+-            $this->cartService->clear();
++            //$this->cartService->clear();
+
+             // 受注IDをセッションにセット
+             $this->session->set(OrderHelper::SESSION_ORDER_ID, $Order->getId());
+@@ -417,7 +417,7 @@ class ShoppingController extends AbstractShoppingController
+             // メール送信
+             log_info('[注文処理] 注文メールの送信を行います.', [$Order->getId()]);
+             $this->mailService->sendOrderMail($Order);
+-            $this->entityManager->flush();
++            //$this->entityManager->flush();
+
+             log_info('[注文処理] 注文処理が完了しました. 購入完了画面へ遷移します.', [$Order->getId()]);
+
+@@ -463,7 +463,7 @@ class ShoppingController extends AbstractShoppingController
+         }
+
+         log_info('[注文完了] 購入フローのセッションをクリアします. ');
+-        $this->orderHelper->removeSession();
++        //$this->orderHelper->removeSession();
+
+         $hasNextCart = !empty($this->cartService->getCarts());
+
+```
+
+### クーポンプラグインの利用制限解除
+
+何回でも繰り返しクーポンを利用できるようにします
+
+```
+diff --git a/Controller/CouponShoppingController.php b/Controller/CouponShoppingController.php
+index 7551217..091bbd7 100644
+--- a/Controller/CouponShoppingController.php
++++ b/Controller/CouponShoppingController.php
+@@ -159,7 +159,7 @@ class CouponShoppingController extends AbstractController
+                     $form->get('coupon_cd')->addError(new FormError(trans('plugin_coupon.front.shopping.sameuser')));
+                     $error = true;
+                 }
+-
++                $error = false;
+                 // ----------------------------------
+                 // 値引き項目追加 / 合計金額上書き
+                 // ----------------------------------
 ```
