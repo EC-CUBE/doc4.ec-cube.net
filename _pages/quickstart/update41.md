@@ -1,10 +1,10 @@
 ---
 layout: single
-title: EC-CUBE本体のバージョンアップ
+title: 4.0から4.1への本体バージョンアップ
 keywords: howto update
 tags: [quickstart, getting_started]
 permalink: update41
-summary : EC-CUBE4.0から4.1へのバージョンアップ手順について記載します。
+summary : EC-CUBE4.0から4.1への本体バージョンアップ手順について記載します。
 ---
 
 本番環境でバージョンアップを行う前に、テスト環境で事前検証を必ず行ってください。

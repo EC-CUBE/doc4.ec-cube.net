@@ -71,7 +71,13 @@ docs:
   - title: バージョンアップ
     output: web, pdf
     children:
-      - title: バージョンアップ方法
+      - title: 4.0から4.1への本体バージョンアップ
+        url: /update41
+        output: web, pdf
+      - title: 4.0から4.1へのマイグレーション
+        url: /update-40-41
+        output: web, pdf
+      - title: 4.0本体バージョンアップ
         url: /update
         output: web, pdf
       - title: 4.0.3での注意点
@@ -79,12 +85,6 @@ docs:
         output: web, pdf
       - title: SameSite Cookie 対応
         url: /hotfix_samesite_cookie
-        output: web, pdf
-      - title: EC-CUBE4.0から4.1へのマイグレーション
-        url: /update-40-41
-        output: web, pdf
-      - title: EC-CUBE本体のバージョンアップ
-        url: /update41
         output: web, pdf
 
   - title: 機能仕様

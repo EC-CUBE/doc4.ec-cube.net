@@ -1,6 +1,6 @@
 ---
 layout: single
-title: EC-CUBE4.0から4.1へのマイグレーション
+title: 4.0から4.1へのマイグレーション
 keywords: howto update
 tags: [quickstart, getting_started]
 permalink: update-40-41
