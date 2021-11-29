@@ -84,5 +84,5 @@ class CompanyNameRequiredExtension extends AbstractTypeExtension
 
 ## Entityからフォームを生成する拡張
 
-Entityカスタマイズの頁を参照してください。  ## TODO リンクを貼る
+[Entityのカスタマイズ](/customize_entity) を参照してください。
 
