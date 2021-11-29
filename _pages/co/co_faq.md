@@ -280,6 +280,13 @@ ec-cube.coで利用されているEC-CUBEのソースコードは [co/masterブ�
 [ec-cube.coに関するお問い合わせ](https://www.ec-cube.net/product/co/support.php){:target="_blank"} からご相談ください。  
 また、 [EC-CUBE インテグレートパートナー](https://www.ec-cube.net/integrate/partner/){:target="_blank"} にご相談いただくことも可能です。
 
+### コアコードを変更せずにカスタマイズする方法はありますか？
+
+コアのクラスやパラメータを触らずに上書きする方法がございます。詳しくは以下ページを参考に実施してください。 
+
+- [EC-CUBE4で、コアのクラスを触らずに上書きする](https://qiita.com/chihiro-adachi/items/b3bb70e6abbc0f824965){:target="_blank"}
+- [EC-CUBE4で、パラメータを上書きする](https://qiita.com/chihiro-adachi/items/7edaf82845f9352d6500){:target="_blank"}
+
 ## サイト移行
 
 ### ダウンロード(2系、3系)からec-cube.coへ移行する手順を教えてほしい
