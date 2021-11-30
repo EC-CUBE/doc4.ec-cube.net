@@ -5,7 +5,7 @@ permalink: /penetration-testing/about_owaspzap
 **OWASP Zed Attack Proxy(ZAP)** は The **O**pen **W**eb **A**pplication **S**ecurity **P**roject(OWASP) が開発したオープンソースのWebセキュリティ検査ツールです。
 国際的なボランティアの献身的なチームによって、活発に開発されています。
 
-Official: [https://www.zaproxy.org](https://www.zaproxy.org)
+Official: [https://www.zaproxy.org](https://www.zaproxy.org){:target="_blank"}
 
 ## OWASP ZAP でのテストの流れ
 
