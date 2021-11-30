@@ -14,7 +14,7 @@ permalink: /penetration-testing
 手っ取り早くテスト環境を作成したい方のために [Quick Start](/penetration-testing/quick_start) をご用意しました。
 {: .notice--success}
 
-現在、このテストの自動化を進めています。試してみたい方は [こちらの README](https://github.com/EC-CUBE/ec-cube/tree/4.1/zap/selenium/ci/TypeScript#automated-security-tests-with-owasp-zap) をご覧ください。
+現在、このテストの自動化を進めています。試してみたい方は [こちらの README](https://github.com/EC-CUBE/ec-cube/tree/4.1/zap/selenium/ci/TypeScript#automated-security-tests-with-owasp-zap){:target="_blank"} をご覧ください。
 {: .notice--success}
 
 このドキュメントは、EC-CUBE のリリース前に実施しているセキュリティテストを横展開し、より多くのユーザーに利用してもらうことを目的に作成しています。
