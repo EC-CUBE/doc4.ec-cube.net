@@ -50,6 +50,7 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 
 EC-CUBEの基本情報やご確認いただきたいことについてまとめました。
 
++ [最新バージョン ](/quickstart/latest_version)
 + [システム要件](/quickstart/requirement)
 + [本番環境での注意事項](/quickstart/cautions_of_prod)
 
