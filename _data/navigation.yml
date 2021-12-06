@@ -44,6 +44,9 @@ docs:
   - title: はじめに
     output: web, pdf
     children:
+      - title: 最新バージョン
+        url: /quickstart/latest_version
+        output: web, pdf
       - title: システム要件
         url: /quickstart/requirement
         output: web, pdf
