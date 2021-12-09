@@ -9,8 +9,8 @@ folder: co
 
 ---
 
-.coで動作しているEC-CUBE本体のソースコードは、EC-CUBEリポジトリの co/master ブランチのソースです。 
-co/master ブランチを利用してEC-CUBEを起動し、 app/Customize ディレクトリでのカスタマイズを行います。
+.coで動作しているEC-CUBE本体のソースコードは、EC-CUBEリポジトリの 4.0の場合 co/master、 4.1の場合 co/4.1 ブランチのソースです。 
+各ブランチを利用してEC-CUBEを起動し、 app/Customize ディレクトリでのカスタマイズを行います。
 
 ## ローカル環境のセットアップ手順
 
@@ -51,10 +51,10 @@ $ git fetch ec-cube
 $ git checkout -b develop origin/develop
 ```
 
-### co/master に追従する
+### co/(master もしくは 4.1) に追従する
 
 ```
-$ git merge --allow-unrelated-histories ec-cube/co/master
+$ git merge --allow-unrelated-histories ec-cube/co/(master もしくは 4.1)
 ```
 
 ## テスト環境・本番環境への反映方法
