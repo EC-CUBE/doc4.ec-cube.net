@@ -147,22 +147,6 @@ bin/console doctrine:migrations:migrate
 
 <a href="https://github.com/EC-CUBE/ec-cube/pulls?q=is%3Apr+label%3Aaffected%3Atemplate+is%3Aclosed+milestone%3A4.1.1" target = "_blank">フロントテンプレートファイルの差分</a>
 
-todo
-
-<https://github.com/EC-CUBE/ec-cube/compare/4.1.0...4.1.1-20211130#diff-7c5e07a80a9e28ecaec51b42e0b96c00ef6b569c2d82e03f64d698102cb601fc>
-
-    - src/Eccube/Resource/template/admin/Content/file.twig
-    - src/Eccube/Resource/template/admin/Order/edit.twig
-    - src/Eccube/Resource/template/admin/Order/mail_view.twig
-    - src/Eccube/Resource/template/admin/Product/index.twig
-    - src/Eccube/Resource/template/admin/Product/tag.twig
-    - src/Eccube/Resource/template/admin/Setting/Shop/calendar.twig
-    - src/Eccube/Resource/template/default/Block/calendar.twig
-    - src/Eccube/Resource/template/default/Contact/index.twig
-    - src/Eccube/Resource/template/default/Mail/order.twig
-    - src/Eccube/Resource/template/default/Shopping/confirm.twig
-    - src/Eccube/Resource/template/install/complete.twig
-
 ### 8.メンテナンスモードを無効にする
 
 EC-CUBEの管理画面へアクセスし、「コンテンツ管理」の「メンテナンス管理」から、メンテナンスモードを無効にしてください。
