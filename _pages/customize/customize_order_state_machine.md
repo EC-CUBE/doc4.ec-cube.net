@@ -67,4 +67,4 @@ class SampleTransitionListener implements EventSubscriberInterface
 
 EC-CUBE のデフォルトのイベントは [src/Eccube/Service/OrderStateMachine.php](https://github.com/EC-CUBE/ec-cube/blob/4.0/src/Eccube/Service/OrderStateMachine.php) に実装されています。
 
-https://symfony.com/doc/current/workflow/usage.html#using-events
+[Using Events](https://symfony.com/doc/current/workflow/usage.html#using-events){:target="_blank"}
