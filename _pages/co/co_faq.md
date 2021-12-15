@@ -178,7 +178,7 @@ folder: co
 
 ### 商品ごとに配送元・送料を設定したいのですが、どうしたらいいでしょうか？
 
-[販売種別機能](https://www.shiro8.net/manual4/v40x/product/product_new.html){:target="_blank"} がございますので、そちらをご使用ください。
+[販売種別機能](https://www.ec-cube.net/manual/ec-cube4/product/product_new.php){:target="_blank"} がございますので、そちらをご使用ください。
 
 ### 配送方法に「店舗受取」を設定したいのですが、どうしたらいいでしょうか？
 
@@ -492,7 +492,7 @@ OK： https://shop.example.com
 以下のサイトをご参照ください。
 
 - [EC-CUBE4系・機能一覧](https://www.ec-cube.net/product/functions.php){:target="_blank"}
-- [EC-CUBE4 管理・運用 マニュアル](https://www.shiro8.net/manual4/v40x/index.html){:target="_blank"}
+- [EC-CUBE4 管理・運用 マニュアル](https://www.ec-cube.net/manual/ec-cube4/){:target="_blank"}
 
 ## 決済
 

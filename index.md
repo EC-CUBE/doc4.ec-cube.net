@@ -176,7 +176,7 @@ EC-CUBEの基本情報やご確認いただきたいことについてまとめ�
 
 運用のマニュアルはこちらを御覧ください。
 
-+ [EC-CUBE 4管理・運用 マニュアル（株式会社シロハチ様）](https://www.shiro8.net/manual4/v40x/index.html){:target="_blank"}
++ [EC-CUBE 4管理・運用 マニュアル](https://www.ec-cube.net/manual/ec-cube4/){:target="_blank"}
 
 ## 開発に参加する
 
