@@ -52,7 +52,7 @@ permalink: /penetration-testing/quick_start
     ```
    **Note:** *複数のコンテキストを同時にインポートすると、セッションが競合してログインできなくなる場合があるため注意*
    {: .notice--warning}
-1. OWASP ZAP のツールバーにある [Forced User Mode On/Off ボタン](https://www.zaproxy.org/docs/desktop/ui/tltoolbar/#--forced-user-mode-on--off) を ON にすると、OWASP ZAP の自動ログインが有効になり、ユーザーログイン中のテストが有効になります
+1. OWASP ZAP のツールバーにある [Forced User Mode On/Off ボタン](https://www.zaproxy.org/docs/desktop/ui/tltoolbar/#--forced-user-mode-on--off){:target="_blank"} を ON にすると、OWASP ZAP の自動ログインが有効になり、ユーザーログイン中のテストが有効になります
    ![Forced User Mode On/Off ボタン](/images/penetration-testing/quick_start_forceusermode.png)
 1. テストを実施します
    1. Firefox でページを巡回(手動探索)します
@@ -62,6 +62,6 @@ permalink: /penetration-testing/quick_start
 
 ## 参考
 
-- [DockerでOWASP ZAPを使う](https://pc.atsuhiro-me.net/entry/2019/08/19/011324)
-- [Docker版OWASP ZAPを動かしてみる](https://qiita.com/koujimatsuda11/items/83558cd62c20141ebdda)
-- [テスティングガイド](https://owasp.org/www-pdf-archive/OTGv3Japanese.pdf)
+- [DockerでOWASP ZAPを使う](https://pc.atsuhiro-me.net/entry/2019/08/19/011324){:target="_blank"}
+- [Docker版OWASP ZAPを動かしてみる](https://qiita.com/koujimatsuda11/items/83558cd62c20141ebdda){:target="_blank"}
+- [テスティングガイド](https://owasp.org/www-pdf-archive/OTGv3Japanese.pdf){:target="_blank"}
