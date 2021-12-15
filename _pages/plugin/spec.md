@@ -134,7 +134,7 @@ Twigファイルからこの `sample.jpg` へのパスは以下の記述で取�
 
 ```bash
 $ cd app/Plugin/[PluginDir]
-$ tar --exclude  ".git" --exclude ".DS_Store" -cvzf ../[PluginDir].tar.gz *
+$ COPYFILE_DISABLE=1 tar --exclude  ".git" --exclude ".DS_Store" -cvzf ../[PluginDir].tar.gz *
 ```
 
 ## 3.0.xからの変更点
