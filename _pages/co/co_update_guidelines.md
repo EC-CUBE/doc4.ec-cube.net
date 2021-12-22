@@ -9,10 +9,6 @@ folder: co
 
 ---
 
-## 自動アップデート
-
-ec-cube.coでは、EC-CUBEの自動アップデートが提供されます。
-
 ## 適用されるソースコード
 
 ec-cube.co(4.0/4.1)で利用されているEC-CUBEのソースコードは [co/masterブランチ](https://github.com/EC-CUBE/ec-cube/tree/co/master){:target="_blank"}、[co/4.1ブランチ](https://github.com/EC-CUBE/ec-cube/tree/co/4.1){:target="_blank"} で公開されています。  
