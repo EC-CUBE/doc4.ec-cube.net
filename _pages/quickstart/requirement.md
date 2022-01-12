@@ -33,9 +33,9 @@ permalink: quickstart/requirement
 
 | OS | ブラウザ|
 |---|-------|
-|Windows(Windows10以降) | Edge 最新 |
+|Windows | Edge 最新 |
 ||FireFox 最新 |
 ||Google Chrome 最新 |
-|Mac(OS X以降)|Safari 最新|
-|iOS (10以降)|Safari 最新|
-|Android (4.4以降)| 標準ブラウザ 最新|
+|Mac|Safari 最新|
+|iOS|Safari 最新|
+|Android| 標準ブラウザ 最新|
