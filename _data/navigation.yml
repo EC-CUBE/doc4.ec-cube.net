@@ -105,6 +105,9 @@ docs:
       - title: 税率設定
         url: /spec_tax
         output: web, pdf
+      - title: 支払方法設定
+        url: /spec_payment
+        output: web, pdf
 
   - title: 本体カスタマイズ
     output: web, pdf
