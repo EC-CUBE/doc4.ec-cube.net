@@ -33,7 +33,7 @@ permalink: quickstart/requirement
 
 | OS | ブラウザ|
 |---|-------|
-|Windows(Windows7以降) | Internet Explorer11以降|
+|Windows(Windows10以降) | Edge 最新 |
 ||FireFox 最新 |
 ||Google Chrome 最新 |
 |Mac(OS X以降)|Safari 最新|
