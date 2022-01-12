@@ -1,6 +1,6 @@
 ---
 layout: single
-title: EC-CUBE4.0から4.1へのマイグレーション
+title: 4.0から4.1へのマイグレーション
 keywords: howto update
 tags: [quickstart, getting_started]
 permalink: update-40-41
@@ -316,3 +316,15 @@ Eccube\Applicationは削除されました。これに伴い、ServiceProvider �
         $session = $this->session;
     }
  ```
+
+
+## オーナーズストア経由でのプラグインインストールテスト
+
+EC-CUBE 4.1 では Composer2 対応が必要となりました。
+それに伴い EC-CUBE がオーナーズストア経由でプラグインをインストールする際のエンドポイントが変更になっています。
+EC-CUBE 4.1 beta3 以前でテストをしたい場合は、EC-CUBE に以下の環境変数を設定することで Composer2 対応のエンドポイントへ切り替えられます。
+GitHub の最新の 4.1 ブランチではこちらの対応は不要です。
+
+```
+ECCUBE_PACKAGE_API_URL=https://package-api-c2.ec-cube.net
+```

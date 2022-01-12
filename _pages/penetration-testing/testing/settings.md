@@ -17,7 +17,7 @@ permalink: /penetration-testing/testing/settings
 **Note:** 後ほど詳細含めて追記します
 {: .notice}
 
-### docker-compose-owaspzap.yml で自動設定される内容
+### docker-compose.owaspzap.yml で自動設定される内容
 
 #### VOLUME マウントディレクトリ
 

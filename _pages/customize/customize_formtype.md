@@ -34,7 +34,7 @@ public function getExtendedType()
 - configureOptions()
 - finishView()
 
-EC-CUBE 4.0では、SymfonyのFormExtensionの仕組みを利用しています。  
+EC-CUBE 4では、SymfonyのFormExtensionの仕組みを利用しています。  
 拡張方法の詳細についてはSymfonyのドキュメントを参照してください。
 https://symfony.com/doc/current/form/create_form_type_extension.html
 
@@ -84,5 +84,5 @@ class CompanyNameRequiredExtension extends AbstractTypeExtension
 
 ## Entityからフォームを生成する拡張
 
-Entityカスタマイズの頁を参照してください。  ## TODO リンクを貼る
+[Entityのカスタマイズ](/customize_entity) を参照してください。
 

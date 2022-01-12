@@ -271,9 +271,9 @@ namespace Plugin\PurchaseProcessors\Processor;
 use Eccube\Entity\ItemInterface;
 use Eccube\Service\PurchaseFlow\InvalidItemException;
 use Eccube\Service\PurchaseFlow\PurchaseContext;
-use Eccube\Service\PurchaseFlow\ValidatableItemProcessor;
+use Eccube\Service\PurchaseFlow\ItemValidator;
 
-class ValidatableEmptyProcessor extends ValidatableItemProcessor
+class ValidatableEmptyProcessor extends ItemValidator
 {
     protected function validate(ItemInterface $item, PurchaseContext $context)
     {

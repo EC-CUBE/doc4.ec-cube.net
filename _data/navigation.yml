@@ -10,36 +10,80 @@ docs:
   - title: ec-cube.co
     output: web, pdf
     children:
-      - title: ec-cube.co
+      - title: ec-cube.coとは
         url: /co
         output: web, pdf
-  - title: インストール方法
+      - title: セキュリティ対策について
+        url: /co/co_security
+        output: web, pdf
+      - title: アップデート指針
+        url: /co/co_update_guidelines
+        output: web, pdf
+      - title: Console
+        url: /co/co_console
+        output: web, pdf
+      - title: ネーミングルール
+        url: /co/co_naming_rules
+        output: web, pdf
+      - title: Git管理機能の仕様
+        url: /co/co_git
+        output: web, pdf
+      - title: カスタマイズディレクトリ利用方法
+        url: /co/co_customize_dir_usage
+        output: web, pdf
+      - title: テスト環境の構築
+        url: /co/co_staging
+        output: web, pdf
+      - title: ログの取得
+        url: /co/co_log
+        output: web, pdf
+      - title: FAQ
+        url: /co/co_faq
+        output: web, pdf
+
+  - title: はじめに
     output: web, pdf
     children:
+      - title: 最新バージョン
+        url: /quickstart/latest_version
+        output: web, pdf
       - title: システム要件
-        url: /quickstart_requirement
+        url: /quickstart/requirement
         output: web, pdf
-      - title: 初心者向けインストール方法（Webインストーラ）
-        url: /quickstart_install/web-installer
+      - title: 本番環境での注意事項
+        url: /quickstart/cautions_of_prod
         output: web, pdf
-      - title: Windows環境でXAMPPを使用したインストール方法
-        url: /quickstart_install/gui_win_install
-      - title: Mac環境でMAMPを使用したインストール方法
-        url: /quickstart_install/gui_mac_install
+
+  - title: 初学者向け情報
+    output: web, pdf
+    children:
+      - title: 学習のステップ
+        url: /learning/learning_step
         output: web, pdf
-      - title: 開発者向けインストール方法
-        url: /quickstart_install
-        output: web, pdf
-      - title: パーミッションの設定について（共通事項）
-        url: /permission
+
+  - title: インストール
+    output: web, pdf
+    children:
+      - title: 各種インストール方法
+        url: /quickstart/install
         output: web, pdf
       - title: コマンドラインインターフェイス
-        url: /quickstart_cli
+        url: /quickstart/cli
         output: web, pdf
+
   - title: バージョンアップ
     output: web, pdf
     children:
-      - title: バージョンアップ方法
+      - title: 4.0から4.1への本体バージョンアップ
+        url: /update41
+        output: web, pdf
+      - title: 4.0から4.1へのマイグレーション
+        url: /update-40-41
+        output: web, pdf
+      - title: 4.1本体バージョンアップ
+        url: /update41x
+        output: web, pdf
+      - title: 4.0本体バージョンアップ
         url: /update
         output: web, pdf
       - title: 4.0.3での注意点
@@ -48,9 +92,7 @@ docs:
       - title: SameSite Cookie 対応
         url: /hotfix_samesite_cookie
         output: web, pdf
-      - title: EC-CUBE4.0から4.1へのマイグレーション
-        url: /update-40-41
-        output: web, pdf
+
   - title: 機能仕様
     output: web, pdf
     children:
@@ -66,6 +108,7 @@ docs:
       - title: 支払方法設定
         url: /spec_payment
         output: web, pdf
+
   - title: 本体カスタマイズ
     output: web, pdf
     children:
@@ -95,6 +138,9 @@ docs:
         output: web, pdf
       - title: Symfonyの機能を使った拡張
         url: /customize_symfony
+        output: web, pdf
+      - title: Commandの開発
+        url: /customize_symfony#command
         output: web, pdf
 
   - title: デザインカスタマイズ
@@ -126,7 +172,7 @@ docs:
         url: https://eccube4-styleguide.herokuapp.com
         output: web, pdf
       - title: 管理画面デザイン参考資料（デザインガイド）
-        url: /pdf/ec-cube4_design-guide180930.pdf
+        url: https://doc4.ec-cube.net/pdf/ec-cube4_design-guide180930.pdf
         output: web, pdf
       - title: フロント画面テンプレート for Adobe XD
         url: http://downloads.ec-cube.net/manual/documents/eccube4_xd_front_template.zip?argument=2qpV46CP&dmai=a5bf51b05bacc5
@@ -135,7 +181,7 @@ docs:
         url: http://downloads.ec-cube.net/manual/documents/eccube4_xd_admin_template.zip?argument=2qpV46CP&dmai=a5bf51b05bacc5
         output: web, pdf
 
-  - title: プラグインカスタマイズ
+  - title: プラグイン開発
     output: web, pdf
     children:
       - title: プラグイン仕様
@@ -144,7 +190,7 @@ docs:
       - title: プラグインのインストール
         url: /plugin_install
         output: web, pdf
-      - title: インストール失敗時の対処法
+      - title: プラグイン導入時のトラブル対処法
         url: /plugin_error
         output: web, pdf
       - title: プラグインサンプル
@@ -155,6 +201,9 @@ docs:
         output: web, pdf
       - title: プラグインで推奨の命名規則
         url: /plugin_naming_conventions
+        output: web, pdf
+      - title: 管理画面ナビの拡張
+        url: /plugin_admin_nav
         output: web, pdf
 
   - title: 設定変更
@@ -178,12 +227,14 @@ docs:
       - title: セッション保存方法
         url: /session_handler_settings
         output: web, pdf
+
   - title: 開発ツール
     output: web, pdf
     children:
       - title: MailCatcher
         url: /development-tools/mail-catcher
         output: web, pdf
+
   - title: "セキュリティテストの実施"
     output: web, pdf
     children:
@@ -211,6 +262,17 @@ docs:
       - title: "セキュリティの改善"
         url: /penetration-testing/improvement
         output: web, pdf
+
+  - title: 逆引きリファレンス
+    output: web,pdf
+    children:
+    - title: Tips
+      url: /reverse-lookup/tips
+      output: web, pdf
+    - title: カスタマイズサンプル集
+      url: /reverse-lookup/sample-code
+      output: web, pdf
+
   - title: 開発に参加する
     output: web, pdf
     children:
@@ -235,7 +297,4 @@ docs:
         output: web, pdf
       - title: ドキュメントの投稿
         url: /documents/contribute
-        output: web, pdf
-      - title: ドキュメントへのフィードバック
-        url: https://www.ec-cube.net/committer/#Doc4Form
         output: web, pdf

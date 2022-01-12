@@ -69,8 +69,8 @@ public function index()
     dump($Product->maker_name);
 
     $Product->maker_name = 'あああ';
-    $app['orm.em']->persist($Product);
-    $app['orm.em']->flush();
+    $this->entityManger->persist($Product);
+    $this->entityManger->flush();
     ...
 ```
 
