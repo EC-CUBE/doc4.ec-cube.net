@@ -13,7 +13,7 @@ description: ドキュメントのリクエスト方法を記載します。
 
 ## ISSUEの登録方法
 
-1. EC-CUBE 4.0 開発ドキュメントの[ISSUEのページ](https://github.com/EC-CUBE/doc4.ec-cube.net/issues){:target="_blank"}を開く
+1. EC-CUBE 4 開発ドキュメントの[ISSUEのページ](https://github.com/EC-CUBE/doc4.ec-cube.net/issues){:target="_blank"}を開く
 1. New issueをクリックする   
 ![New issueの作成](/images/github/img-github-issue.png)
 1. 内容を記入後、Submit new issueをクリックする

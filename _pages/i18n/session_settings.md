@@ -43,7 +43,7 @@ services:
         sess_lifetime INTEGER NOT NULL
     );
     ```
-    https://symfony.com/doc/3.4/doctrine/pdo_session_storage.html#postgresql
+    [pdo_session_storage #postgresql](https://symfony.com/doc/3.4/doctrine/pdo_session_storage.html#postgresql){:target="_blank"}
 
 
 - MySQLの場合
@@ -56,7 +56,7 @@ services:
         `sess_lifetime` MEDIUMINT NOT NULL
     ) COLLATE utf8_bin, ENGINE = InnoDB;
     ```
-    https://symfony.com/doc/3.4/doctrine/pdo_session_storage.html#mysql
+    [pdo_session_storage.html #mysql](https://symfony.com/doc/3.4/doctrine/pdo_session_storage.html#mysql){:target="_blank"}
 
 
 ### Memcacheに保存する

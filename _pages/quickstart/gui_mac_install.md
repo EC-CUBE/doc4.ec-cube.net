@@ -2,7 +2,7 @@
 title: Mac環境でMAMPを使用したインストール方法
 keywords: install MAMP
 tags: [quickstart, install, gui]
-permalink: quickstart_install/gui_mac_install
+permalink: quickstart/gui_mac_install
 folder: quickstart
 description: EC-CUBE4系をMAMPを使用してMacのローカル環境へインストールする方法を解説します。
 ---
@@ -207,7 +207,7 @@ MAMPを開き、「Open WebStart page」をクリックしてMAMPトップペー
 **おめでとうございます！**  
 この画面が表示されたらインストール完了です。  
 
-管理画面の使い方は[こちら](https://www.shiro8.net/manual4/v40x/index.html){:target="_blank"}。
+管理画面の使い方は[こちら](https://www.ec-cube.net/manual/ec-cube4/){:target="_blank"}。
 
 *管理画面を表示*をクリックすると、管理画面のログイン画面に遷移します。  
 [店舗の基本情報](#店舗の基本情報)で入力した管理者の情報で管理画面にログインしてください。  

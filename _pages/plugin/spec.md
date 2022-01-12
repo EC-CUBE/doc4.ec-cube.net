@@ -133,8 +133,8 @@ Twigファイルからこの `sample.jpg` へのパスは以下の記述で取�
 - `.git` ディレクトリや `.DS_Store` ファイル等をアーカイブに含めないようにする
 
 ```bash
-$ cd app/[PluginDir]
-$ tar --exclude  ".git" --exclude ".DS_Store" -cvzf ../[PluginDir].tar.gz *
+$ cd app/Plugin/[PluginDir]
+$ COPYFILE_DISABLE=1 tar --exclude  ".git" --exclude ".DS_Store" -cvzf ../[PluginDir].tar.gz *
 ```
 
 ## 3.0.xからの変更点
@@ -152,3 +152,7 @@ $ tar --exclude  ".git" --exclude ".DS_Store" -cvzf ../[PluginDir].tar.gz *
     - https://github.com/EC-CUBE/ec-cube/issues/2440
 - ファイル設置のみのプラグインはロードされない
     - dtb_pluginにレコードが登録されている必要があります。
+
+## プラグインサンプル
+
+- [決済プラグインサンプル](https://github.com/EC-CUBE/sample-payment-plugin){:target="_blank"}

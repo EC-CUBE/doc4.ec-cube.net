@@ -164,5 +164,4 @@ twig内で翻訳する場合は、transフィルタを使用します。
 EC-CUBEの翻訳機構は、SymfonyのTranslationコンポーネントを利用しています。
 より詳しく知りたい場合は、Symfonyの公式ドキュメントを参照してみてください。
 
-Translations
-http://symfony.com/doc/current/translation.html
+[Translations](http://symfony.com/doc/current/translation.html){:target="_blank"}

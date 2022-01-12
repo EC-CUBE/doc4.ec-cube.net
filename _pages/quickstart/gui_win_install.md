@@ -2,14 +2,14 @@
 title: Windows環境でXAMPPを使用したインストール方法
 keywords: install XAMPP
 tags: [quickstart, install, gui]
-permalink: quickstart_install/gui_win_install
+permalink: quickstart/gui_win_install
 folder: quickstart
 description: EC-CUBE4系をXAMPPを使用してWindowsのローカル環境へインストールする方法を解説します。
 ---
 
 ## インストールの前に
 XAMPPを使用してWindowsのローカル環境へインストールする方法を解説します。  
-[システム要件](/quickstart_requirement)からご使用されるEC-CUBEに対応しているphpバージョン等をご確認ください。  
+[システム要件](/quickstart/requirement)からご使用されるEC-CUBEに対応しているphpバージョン等をご確認ください。  
 この記事の構築環境は以下の通りです。  
 ```
 // サンプルの構築環境
@@ -231,7 +231,7 @@ XAMPPのApacheとMySQLのActions項目の「Stop」をクリックします。
 **おめでとうございます！**  
 この画面が表示されたらインストール完了です。  
 
-管理画面の使い方は[こちら](https://www.shiro8.net/manual4/v40x/index.html){:target="_blank"}。
+管理画面の使い方は[こちら](https://www.ec-cube.net/manual/ec-cube4/){:target="_blank"}。
 
 *管理画面を表示*をクリックすると、管理画面のログイン画面に遷移します。[店舗の基本情報](#店舗の基本情報)で入力した管理者の情報で管理画面にログインしてください。  
 
