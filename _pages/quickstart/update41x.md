@@ -4,7 +4,7 @@ title: 4.1 本体バージョンアップ
 keywords: howto update
 tags: [quickstart, getting_started]
 permalink: update41x
-summary : 4.1.0 から 4.1.1 への本体バージョンアップ手順について記載します。
+summary : 4.1.x の本体バージョンアップ手順について記載します。
 ---
 
 本番環境でバージョンアップを行う前に、テスト環境で事前検証を必ず行ってください。
@@ -92,8 +92,9 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
 | バージョンアップ対象 | 差し替え対象ファイル                                                                              |
 |----------------------|---------------------------------------------------------------------------------------------------|
 | 4.1.0 → 4.1.1        | composer.json<br>composer.lock<br>.htaccess<br>index.php<br>symfony.lock<br>package.json<br>package-lock.json|
+| 4.1.1 → 4.1.2        | composer.json<br>composer.lock<br>.htaccess<br>index.php<br>symfony.lock<br>package.json<br>package-lock.json|
 
-- ※ FTP等でファイルをアップロードするとパーミッションが変更される可能性があります。[パーミッションの設定について](/permission)を参考にパーミッションの確認をお願いします。
+※ FTP等でファイルをアップロードするとパーミッションが変更される可能性があります。[パーミッションの設定について](/permission)を参考にパーミッションの確認をお願いします。
 
 上書き後、以下のコマンドでキャッシュの削除を行ってください。
 
@@ -147,6 +148,10 @@ bin/console doctrine:migrations:migrate
 
 <a href="https://github.com/EC-CUBE/ec-cube/pulls?q=is%3Apr+label%3Aaffected%3Atemplate+is%3Aclosed+milestone%3A4.1.1" target = "_blank">フロントテンプレートファイルの差分</a>
 
+#### 4.1.1 → 4.1.2
+
+<a href="https://github.com/EC-CUBE/ec-cube/pulls?q=is%3Apr+label%3Aaffected%3Atemplate+is%3Aclosed+milestone%3A4.1.2" target = "_blank">フロントテンプレートファイルの差分</a>
+
 ### 8.メンテナンスモードを無効にする
 
 EC-CUBEの管理画面へアクセスし、「コンテンツ管理」の「メンテナンス管理」から、メンテナンスモードを無効にしてください。
@@ -164,4 +169,5 @@ EC-CUBEのバージョンアップ手順は以上です。
 | バージョン      | 差分ページ                                                                                                             |
 |-----------------|------------------------------------------------------------------------------------------------------------------------|
 | 4.1.0 → 4.1.1   | [https://github.com/EC-CUBE/ec-cube/compare/4.1.0...4.1.1](https://github.com/EC-CUBE/ec-cube/compare/4.1.0...4.1.1?w=1#files_bucket){:target="_blank"}   |
+| 4.1.1 → 4.1.2   | [https://github.com/EC-CUBE/ec-cube/compare/4.1.1...4.1.2](https://github.com/EC-CUBE/ec-cube/compare/4.1.1...4.1.2?w=1#files_bucket){:target="_blank"}   |
 
