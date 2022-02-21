@@ -4,7 +4,7 @@ title: 4.1 本体バージョンアップ
 keywords: howto update
 tags: [quickstart, getting_started]
 permalink: update41x
-summary : 4.1.0 から 4.1.1 への本体バージョンアップ手順について記載します。
+summary : 4.1.x の本体バージョンアップ手順について記載します。
 ---
 
 本番環境でバージョンアップを行う前に、テスト環境で事前検証を必ず行ってください。
@@ -13,11 +13,14 @@ summary : 4.1.0 から 4.1.1 への本体バージョンアップ手順につい
 {: .notice--danger}
 EC-CUBE本体のコード(app/config/eccube, app/DoctrineMigrations, bin, src, htmlディレクトリ)をカスタマイズしている場合、ファイルが上書きされてしまうため、この手順ではバージョンアップできません。[各バージョンでの変更差分](#各バージョンでの変更差分)を確認して必要な差分を取り込んでください。
 {: .notice--danger}
+2022年2月21日に公開された「HTTP Hostヘッダの処理に脆弱性」は、EC-CUBEのバージョンアップを行っても修正されません。[脆弱性詳細ページ](https://www.ec-cube.net/info/weakness/20220221/)を参考に、適切な設定を行ってください。
+{: .notice--danger}
 
 
 ## 作業の流れ
 1. サイトのバックアップ
 1. メンテナンスモードを有効にする
+1. プラグインのアップデート
 1. EC-CUBEのソースファイルをバージョンアップしたものに置き換え
 1. 個別ファイル差し替え
 1. composer.json/composer.lockの更新
@@ -33,7 +36,7 @@ EC-CUBEのインストールディレクトリ以下をすべてバックアッ�
 
 お使いのデータベースも全てバックアップしてください。
 
-### 2.メンテナンスモードを有効にする
+### 2. メンテナンスモードを有効にする
 
 EC-CUBEの管理画面へアクセスし、「コンテンツ管理」の「メンテナンス管理」から、メンテナンスモードを有効にしてください。
 
@@ -48,7 +51,11 @@ EC-CUBEの管理画面へアクセスし、「コンテンツ管理」の「メ�
 
 ※ メンテナンスモード使用時は、管理画面以外のページにアクセスするとメンテナンス画面が表示されます。
 
-### 3. EC-CUBEのソースファイルをバージョンアップしたものに置き換え
+### 3. プラグインのアップデート
+
+インストール済みのプラグインのうち、アップデート可能なものがあれば、事前にアップデートを行ってください。
+
+### 4. EC-CUBEのソースファイルをバージョンアップしたものに置き換え
 
 EC-CUBEのソースファイルについて、ディレクトリごとにそれぞれバージョンアップしたソースファイルに置き換えていきます。置き換える対象のディレクトリとなるのは、今回のバージョンアップで変更となったものとなります。
 （`app/config/eccube` `app/DoctrineMigrations` `bin` `src` `html` `vendor` など）
@@ -83,7 +90,7 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
   │
 ```
 
-### 4. 個別ファイル差し替え
+### 5. 個別ファイル差し替え
 
 対象となるバージョンごとに、個別のファイル差し替えが必要です。
 
@@ -92,8 +99,9 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
 | バージョンアップ対象 | 差し替え対象ファイル                                                                              |
 |----------------------|---------------------------------------------------------------------------------------------------|
 | 4.1.0 → 4.1.1        | composer.json<br>composer.lock<br>.htaccess<br>index.php<br>symfony.lock<br>package.json<br>package-lock.json|
+| 4.1.1 → 4.1.2        | composer.json<br>composer.lock<br>.htaccess<br>index.php<br>symfony.lock<br>package.json<br>package-lock.json|
 
-- ※ FTP等でファイルをアップロードするとパーミッションが変更される可能性があります。[パーミッションの設定について](/permission)を参考にパーミッションの確認をお願いします。
+※ FTP等でファイルをアップロードするとパーミッションが変更される可能性があります。[パーミッションの設定について](/permission)を参考にパーミッションの確認をお願いします。
 
 上書き後、以下のコマンドでキャッシュの削除を行ってください。
 
@@ -101,7 +109,7 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
 bin/console cache:clear --no-warmup
 ```
 
-### 5. composer.json/composer.lockの更新
+### 6. composer.json/composer.lockの更新
 
 以下のコマンドを実行してください。
 
@@ -117,7 +125,7 @@ packagist等の外部ライブラリを独自にインストールしている�
 composer require psr/http-message
 ```
 
-### 6. スキーマ更新/マイグレーション
+### 7. スキーマ更新/マイグレーション
 
 スキーマ更新およびマイグレーション機能を利用して、データベースのバージョンアップを行います。
 
@@ -135,7 +143,7 @@ bin/console doctrine:schema:update --force --dump-sql
 bin/console doctrine:migrations:migrate
 ```
 
-### 7. フロントテンプレートファイルの更新
+### 8. フロントテンプレートファイルの更新
 
 対象となるバージョンごとに、フロントテンプレートファイル(twig)の更新が必要です。
 
@@ -147,7 +155,11 @@ bin/console doctrine:migrations:migrate
 
 <a href="https://github.com/EC-CUBE/ec-cube/pulls?q=is%3Apr+label%3Aaffected%3Atemplate+is%3Aclosed+milestone%3A4.1.1" target = "_blank">フロントテンプレートファイルの差分</a>
 
-### 8.メンテナンスモードを無効にする
+#### 4.1.1 → 4.1.2
+
+<a href="https://github.com/EC-CUBE/ec-cube/pulls?q=is%3Apr+label%3Aaffected%3Atemplate+is%3Aclosed+milestone%3A4.1.2" target = "_blank">フロントテンプレートファイルの差分</a>
+
+### 9.メンテナンスモードを無効にする
 
 EC-CUBEの管理画面へアクセスし、「コンテンツ管理」の「メンテナンス管理」から、メンテナンスモードを無効にしてください。
 
@@ -164,4 +176,5 @@ EC-CUBEのバージョンアップ手順は以上です。
 | バージョン      | 差分ページ                                                                                                             |
 |-----------------|------------------------------------------------------------------------------------------------------------------------|
 | 4.1.0 → 4.1.1   | [https://github.com/EC-CUBE/ec-cube/compare/4.1.0...4.1.1](https://github.com/EC-CUBE/ec-cube/compare/4.1.0...4.1.1?w=1#files_bucket){:target="_blank"}   |
+| 4.1.1 → 4.1.2   | [https://github.com/EC-CUBE/ec-cube/compare/4.1.1...4.1.2](https://github.com/EC-CUBE/ec-cube/compare/4.1.1...4.1.2?w=1#files_bucket){:target="_blank"}   |
 

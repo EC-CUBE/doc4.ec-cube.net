@@ -10,9 +10,9 @@ permalink: quickstart/latest_version
 
 現時点での最新バージョン情報は以下のとおりです。
 
-- [4.1.1](https://github.com/EC-CUBE/ec-cube/tree/4.1.1){:target="_blank"}
-- [4.1.1 リリースノート](https://github.com/EC-CUBE/ec-cube/releases/latest){:target="_blank"}
-- [4.1.1 ダウンロード](https://www.ec-cube.net/download/){:target="_blank"}
+- [4.1.2](https://github.com/EC-CUBE/ec-cube/tree/4.1.2){:target="_blank"}
+- [4.1.2 リリースノート](https://github.com/EC-CUBE/ec-cube/releases/latest){:target="_blank"}
+- [4.1.2 ダウンロード](https://www.ec-cube.net/download/){:target="_blank"}
 
 - [システム要件](requirement)
 
