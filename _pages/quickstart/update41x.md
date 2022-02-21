@@ -13,6 +13,8 @@ summary : 4.1.x の本体バージョンアップ手順について記載しま�
 {: .notice--danger}
 EC-CUBE本体のコード(app/config/eccube, app/DoctrineMigrations, bin, src, htmlディレクトリ)をカスタマイズしている場合、ファイルが上書きされてしまうため、この手順ではバージョンアップできません。[各バージョンでの変更差分](#各バージョンでの変更差分)を確認して必要な差分を取り込んでください。
 {: .notice--danger}
+2022年2月21日に公開された「HTTP Hostヘッダの処理に脆弱性」は、EC-CUBEのバージョンアップを行っても修正されません。[脆弱性詳細ページ](https://www.ec-cube.net/info/weakness/20220221/)を参考に、適切な設定を行ってください。
+{: .notice--danger}
 
 
 ## 作業の流れ
