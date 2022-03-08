@@ -34,7 +34,7 @@ php composer.phar selfupdate --1
 3.composer.pharが入っているディレクトリにコマンドラインで移動していることを確認し、以下のコマンドを実行します。
 
 ```shell
-php composer.phar create-project ec-cube/ec-cube ec-cube "4.0.x-dev" --keep-vcs
+php composer.phar create-project ec-cube/ec-cube ec-cube "4.1.x-dev" --keep-vcs
 ```
 
 ※ 初期状態では SQLite3 を使用します。   
