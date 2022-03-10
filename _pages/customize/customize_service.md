@@ -291,7 +291,35 @@ class ValidatableEmptyProcessor extends ItemValidator
 
 ```
 
-独自に作成した Processor を有効にするには、 `app/config/eccube/packages/purchaseflow.yaml` の定義を修正します。
+####  Processor の追加
+独自に作成した Processor を追加するには、 次のいずれかの方法で PurchaseFlow に　Processor を追加します。
+
+- Processor にアノテーションを付ける
+- `purchaseflow.yaml` を修正する
+
+##### Processor にアノテーションを付ける
+作成した　Processor を既存の　Processor　の後に実行するだけであれば、`purchaseflow.yaml` を修正しなくても以下のアノテーションを付けるだけで、PurchaseFlowに追加されます。
+
+|アノテーション|対象となるフロー|
+|---|---|
+|`@CartFlow`|カートのPurchaseFlow (`eccube.purchase.flow.cart`)|
+|`@ShoppingFlow`|購入フローのPurchaseFlow (`eccube.purchase.flow.shopping`)|
+|`@OrderFlow`|受注管理画面でのPurchaseFlow (`eccube.purchase.flow.order`)|
+
+`EmptyProcessor` を購入時のフローに追加したい場合は以下のようにアノテーションします。
+
+```php
+
+use Eccube\Annotation\CartFlow;
+
+/**
+ * @CartFlow
+ */
+class EmptyProcessor implements ItemPreProcessor
+```
+
+##### `purchaseflow.yaml` を修正する
+作成した Processor を任意の順番で実行されるようにするには、 `app/config/eccube/packages/purchaseflow.yaml` の定義を修正します。既存の Processor の順序に影響があるため、十分にテストしてください。
 
 ```yaml
     eccube.purchase.flow.cart.item_processors:
