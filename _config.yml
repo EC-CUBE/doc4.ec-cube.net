@@ -10,17 +10,16 @@
 # Review documentation to determine if you should use `theme` or `remote_theme`
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
-theme                  : "minimal-mistakes-jekyll"
 remote_theme           : "mmistakes/minimal-mistakes@4.16.5"
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "ja-JP"
-title                    : "< for EC-CUBE 4.0 Developers />"
+title                    : "< for EC-CUBE 4 Developers />"
 title_separator          : "-"
-subtitle                 : "EC-CUBE 4.0 開発者向けドキュメントサイト"# site tagline that appears below site title in masthead
+subtitle                 : "EC-CUBE 4 開発者向けドキュメントサイト"# site tagline that appears below site title in masthead
 name                     : "EC-CUBE"
-description              : "EC-CUBE 4.0 開発者向けドキュメントサイト"
+description              : "EC-CUBE 4 開発者向けドキュメントサイト"
 url                      : "https://doc4.ec-cube.net" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "EC-CUBE/doc4.ec-cube.net" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"

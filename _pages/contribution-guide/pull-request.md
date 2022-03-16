@@ -33,10 +33,10 @@ $ git remote add upstream https://github.com/EC-CUBE/ec-cube.git
 
 ## ローカルのmasterブランチの更新
 
-eccubeは4.0ブランチがmasterブランチとなっています。
+eccubeは4.1ブランチがmasterブランチとなっています。
 
 ```sh
-$ git pull upstream 4.0
+$ git pull upstream 4.1
 ```
 
 ## 開発用ブランチの作成

@@ -88,7 +88,7 @@ ec-cube.coやサーバーにアップロードする方法が難しい場合で�
 こちらについては、直接追加することはお勧めできません。
 
  - 商品登録からアップした画像ディレクトリのパス<br>
-    `ECCUBEROOT/html/upload/saveimage/`<br>
+    `ECCUBEROOT/html/upload/save_image/`<br>
     ※EC-CUBEがインストールされているディレクトリを ECCUBEROOT とします。
 
 ### 商品登録からアップした画像へのリンク方法

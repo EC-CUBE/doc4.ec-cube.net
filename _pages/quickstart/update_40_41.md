@@ -1,6 +1,6 @@
 ---
 layout: single
-title: EC-CUBE4.0から4.1へのマイグレーション
+title: 4.0から4.1へのマイグレーション
 keywords: howto update
 tags: [quickstart, getting_started]
 permalink: update-40-41
@@ -279,4 +279,52 @@ services:
 
 #### Application.php
 
-Eccube\Applicationは削除されました。SymfonyのContainerを使用するようにしてください。
+Eccube\Applicationは削除されました。これに伴い、ServiceProvider も廃止されています。SymfonyのContainerを使用するようにしてください。
+
+##### app['session'] を使用して、セッションを取得していた場合の変更例
+
+**4.0まで**
+
+``` php
+    public function index(Application $app, Request $request)
+    {
+        // SessionServiceProvider からセッションを取得
+        $session = $app['session'];
+    }
+
+ ```
+
+**4.1以降**
+
+ ```php
+    use Symfony\Component\HttpFoundation\Session\SessionInterface;
+
+    /** @var SessionInterface */
+    protected $session
+
+    /**
+     * @param SessionInterface $session
+     */
+    public function __construct(SessionInterface $session)
+    {
+        $this->session = $session;
+    }
+
+    public function index(Request $request)
+    {
+        // コンストラクタインジェクションでセッションを取得
+        $session = $this->session;
+    }
+ ```
+
+
+## オーナーズストア経由でのプラグインインストールテスト
+
+EC-CUBE 4.1 では Composer2 対応が必要となりました。
+それに伴い EC-CUBE がオーナーズストア経由でプラグインをインストールする際のエンドポイントが変更になっています。
+EC-CUBE 4.1 beta3 以前でテストをしたい場合は、EC-CUBE に以下の環境変数を設定することで Composer2 対応のエンドポイントへ切り替えられます。
+GitHub の最新の 4.1 ブランチではこちらの対応は不要です。
+
+```
+ECCUBE_PACKAGE_API_URL=https://package-api-c2.ec-cube.net
+```

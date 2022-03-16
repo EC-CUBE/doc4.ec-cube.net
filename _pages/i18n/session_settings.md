@@ -8,13 +8,13 @@ folder: i18n
 
 ## 概要
 
-初期設定ではファイルシステム上にセッションデータが保存されますが、複数台のWebサーバーで稼働させる場合などにセッション情報の保存を変更することができます。
+初期設定ではファイルシステム上にセッションデータが保存されますが、複数台のWebサーバーで稼働させる場合などにセッション情報の保存方法を変更することができます。
 EC-CUBEではSameSite Cookie対応のために独自のセッションハンドラー(`SameSiteNoneCompatSessionHandler`)を利用しています。セッション情報の保存方法を変更するには `SameSiteNoneCompatSessionHandler` 内で利用するセッションハンドラーを変更します。
 
 
-### RDBMS保存する
+### RDBMSに保存する
 
-#### 設定
+#### 設定例
 EC-CUBEのアプリケーションで利用しているデータベースと同じものを利用するには以下の設定を追加します。
 
 ```
@@ -43,7 +43,7 @@ services:
         sess_lifetime INTEGER NOT NULL
     );
     ```
-    https://symfony.com/doc/3.4/doctrine/pdo_session_storage.html#postgresql
+    [pdo_session_storage #postgresql](https://symfony.com/doc/3.4/doctrine/pdo_session_storage.html#postgresql){:target="_blank"}
 
 
 - MySQLの場合
@@ -56,7 +56,7 @@ services:
         `sess_lifetime` MEDIUMINT NOT NULL
     ) COLLATE utf8_bin, ENGINE = InnoDB;
     ```
-    https://symfony.com/doc/3.4/doctrine/pdo_session_storage.html#mysql
+    [pdo_session_storage.html #mysql](https://symfony.com/doc/3.4/doctrine/pdo_session_storage.html#mysql){:target="_blank"}
 
 
 ### Memcacheに保存する

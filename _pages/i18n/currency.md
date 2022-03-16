@@ -61,5 +61,4 @@ twig上で金額を表示する際は、priceフィルタを利用すること�
 
 ## 参考
 
-通貨の切り替え機構を追加
-https://github.com/EC-CUBE/ec-cube/pull/2431
+[通貨の切り替え機構を追加](https://github.com/EC-CUBE/ec-cube/pull/2431){:target="_blank"}

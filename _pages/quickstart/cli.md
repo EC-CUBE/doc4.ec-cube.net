@@ -2,7 +2,7 @@
 title: コマンドラインインターフェイス
 keywords: CLI
 tags: [quickstart, cli]
-permalink: quickstart_cli
+permalink: quickstart/cli
 folder: quickstart
 ---
 

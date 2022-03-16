@@ -4,22 +4,21 @@ author_profile: false
 title: システム要件
 keywords:
 tags: [quickstart, getting_started]
-permalink: quickstart_requirement
+permalink: quickstart/requirement
 
 ---
 
 | 分類 | ソフトウェア|Version|動作確認済み|
 |---|-------|---|-------|
-|WebServer|Apache |2.4.x <br> (mod_rewrite / mod_ssl 必須) |2.4.6|
-|PHP | PHP | 7.1 〜 7.4|7.2.19|
-|Database|PostgreSQL| 9.2.x / 10.x <br> (pg_settingsテーブルへの参照権限 必須) |9.6.6|
-|Database|MySQL|5.5.x / 5.6.x / 5.7.x <br> (InnoDBエンジン 必須) |5.6.33|
+|WebServer|Apache |2.4.x <br> (mod_rewrite / mod_ssl 必須) |2.4.x |
+|PHP | PHP | 7.3 〜 7.4 <small>(※1)</small>|7.3.x / 7.4.x|
+|Database|PostgreSQL| 9.6.x 〜 14.x <small>(※2)</small><br> (pg_settingsテーブルへの参照権限 必須) |10.x |
+|Database|MySQL|5.7.x <small>(※3)</small><br> (InnoDBエンジン 必須) |5.7.x |
 |Database|SQLite(開発用途向け) |3.x |-|
 
-※ 4.0.0, 4.0.1 は、PHP7.3で動作いたしません。PHP7.3をご利用の場合、4.0.2以降のバージョンをご使用ください。
-* 4.0.3以下のバージョンではPHP 7.4系には対応していません。 7.4系を使いたい場合は最新バージョンをご利用ください。
-
-[4.0.0, 4.0.1をお使いの方はPHP7.3をご利用の前に4.0.2以降へアップデートください。](/update)
+※1 EC-CUBE 4.0.0〜4.0.1 は PHP 7.1〜7.2対応、4.0.2〜4.0.3 は PHP 7.1〜7.3対応、4.0.4〜4.0.x は PHP 7.1〜7.4対応となります  
+※2 EC-CUBE 4.0系は PostgreSQL 9.2.x〜13.x 対応となります  
+※3 EC-CUBE 4.0系 は MySQL 5.5.x〜5.7.x 対応となります
 
 # PHPライブラリ
 
@@ -34,9 +33,9 @@ permalink: quickstart_requirement
 
 | OS | ブラウザ|
 |---|-------|
-|Windows(Windows7以降) | Internet Explorer11以降|
+|Windows | Edge 最新 |
 ||FireFox 最新 |
 ||Google Chrome 最新 |
-|Mac(OS X以降)|Safari 最新|
-|iOS (10以降)|Safari 最新|
-|Android (4.4以降)| 標準ブラウザ 最新|
+|Mac|Safari 最新|
+|iOS|Safari 最新|
+|Android| 標準ブラウザ 最新|

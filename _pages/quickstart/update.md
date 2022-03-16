@@ -1,10 +1,10 @@
 ---
 layout: single
-title: EC-CUBE本体のバージョンアップ
+title: 4.0本体バージョンアップ
 keywords: howto update
 tags: [quickstart, getting_started]
 permalink: update
-summary : EC-CUBE本体のバージョンアップ手順について記載します。
+summary : 4.0.0から4.0.6-p1への本体バージョンアップ手順について記載します。
 ---
 
 本番環境でバージョンアップを行う前に、テスト環境で事前検証を必ず行ってください。
@@ -12,6 +12,8 @@ summary : EC-CUBE本体のバージョンアップ手順について記載しま
 この手順では、ec-cube.netからダウンロードしたEC-CUBEのパッケージを利用していることを想定しています。
 {: .notice--danger}
 EC-CUBE本体のコード(app/config/eccube, app/DoctrineMigrations, bin, src, htmlディレクトリ)をカスタマイズしている場合、ファイルが上書きされてしまうため、この手順ではバージョンアップできません。[各バージョンでの変更差分](#各バージョンでの変更差分)を確認して必要な差分を取り込んでください。
+{: .notice--danger}
+EC-CUBE 4.0.6 以前には[危険度「高」の脆弱性](https://www.ec-cube.net/info/weakness/index.php?level=0&version=4.0)が含まれています。必ず EC-CUBE 4.0.6-p1 以降のバージョンへバージョンアップをお願いします。
 {: .notice--danger}
 
 ## アップデートプラグインを利用したバージョンアップ方法
@@ -24,14 +26,15 @@ EC-CUBE本体のコード(app/config/eccube, app/DoctrineMigrations, bin, src, h
 
 ## 作業の流れ
 1. サイトのバックアップ
-2. メンテナンスモードを有効にする
-3. EC-CUBEのソースファイルをバージョンアップしたものに置き換え
-4. 個別ファイル差し替え
-5. composer.json/composer.lockの更新
-6. スキーマ更新/マイグレーション
-7. テンプレートファイルの更新
-8. メンテナンスモードを無効にする
-9. その他
+1. メンテナンスモードを有効にする
+1. EC-CUBEのソースファイルをバージョンアップしたものに置き換え
+1. 個別ファイル差し替え
+1. composer.json/composer.lockの更新
+1. スキーマ更新/マイグレーション
+1. プロキシの再生成
+1. フロントテンプレートファイルの更新
+1. メンテナンスモードを無効にする
+1. その他
 
 ## 手順詳細
 
@@ -63,6 +66,8 @@ EC-CUBEの管理画面へアクセスし、「コンテンツ管理」の「メ�
 EC-CUBEのソースファイルについて、ディレクトリごとにそれぞれバージョンアップしたソースファイルに置き換えていきます。置き換える対象のディレクトリとなるのは、今回のバージョンアップで変更となったものとなります。
 （`app/config/eccube` `app/DoctrineMigrations` `bin` `src` `html` `vendor` など）
 
+#### `vendor` ディレクトリ以外の置き換え
+
 置き換える対象となるディレクトリを削除し、バージョンアップするEC-CUBEのバージョンのディレクトリにそれぞれ置き換えてください。
 
 （対象ディレクトリの上書きではなくディレクトリの中のすべてのファイルを置き換える必要があります。古いファイルが残ってしまうと、予期せぬ動作となる恐れがありますので、必ず置き換える対象となるディレクトリごとにすべてのファイルを置き換えるようにしてください。）
@@ -75,6 +80,18 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
   ├──[bin]
   ├──[src]
   ├──[html]
+  │
+```
+
+#### `vendor` ディレクトリの置き換え
+
+`vendor` ディレクトリは削除せず、バージョンアップするEC-CUBEのバージョンの `vendor` ディレクトリで上書きしてください。
+
+（ Web API プラグインなど Symfony bundle を利用の場合に `vendor` ディレクトリを完全に削除してしまうと以降の手順でエラーが発生します。ステップ(5) の `bin/console eccube:composer:require-already-installed` コマンドで `vendor` ディレクトリ内の不要なファイルは削除されます。）
+
+```
+[root]
+  │
   ├──[vendor]
   │
 ```
@@ -91,11 +108,14 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
 | 4.0.1 → 4.0.2        | composer.json<br>composer.lock|
 | 4.0.2 → 4.0.3        | composer.json<br>composer.lock<br>.htaccess<br>index.php|
 | 4.0.3 → 4.0.4        | composer.json<br>composer.lock<br>.htaccess<br>app/Customize/Resource<br>var/.htaccess|
-| 4.0.4 → 4.0.5        | composer.json<br>composer.lock<br>.htaccess<br>robots.txt<br>app/template/plugin|
+| 4.0.4 → 4.0.5-p1        | composer.json<br>composer.lock<br>.htaccess<br>robots.txt<br>app/template/plugin|
+| 4.0.5 → 4.0.6        | composer.lock<br>symfony.lock<br>.htaccess|
+| 4.0.6 → 4.0.6-p1     | .htaccess|
 
 - ※ 差し替え対象に、composer.json/composer.lockがある場合は 上書き後、`composer.json/composer.lockの更新の手順`を実施してください。
 - ※ `4.0.0 → 4.0.2` のように複数バージョンをまたぐバージョンアップを行う場合は、`4.0.0 → 4.0.1`→`4.0.1 → 4.0.2` のように段階的なバージョンアップを行ってください。
 - ※ FTP等でファイルをアップロードするとパーミッションが変更される可能性があります。[パーミッションの設定について](/permission)を参考にパーミッションの確認をお願いします。
+- ※ [公式サイトの脆弱性リスト](https://www.ec-cube.net/info/weakness/)を確認をして該当バージョンで検索し、必要なパッチを適用してください。
 
 上書き後、以下のコマンドでキャッシュの削除を行ってください。
 
@@ -130,7 +150,7 @@ composer require psr/http-message
 
 以下のコマンドを実行してください。
 
-**※ 4.0.0 → 4.0.1, 4.0.1 → 4.0.2, 4.0.4 → 4.0.5 へのアップデートでは、スキーマ更新は必要ありません。**
+**※ 4.0.0 → 4.0.1, 4.0.1 → 4.0.2, 4.0.4 → 4.0.5-p1, 4.0.5 → 4.0.6, 4.0.6 → 4.0.6-p1 へのアップデートでは、スキーマ更新は必要ありません。**
 
 参考：[プラグインが無効の状態だと Doctrine SchemaTool でエンティティ拡張が認識されない](https://github.com/EC-CUBE/ec-cube/issues/4056){:target="_blank"}
 
@@ -153,7 +173,7 @@ bin/console doctrine:migrations:migrate
 
 プロキシファイルを削除
 ```
-rm -f app/proxy/entity/*.php
+rm -rf app/proxy/entity/*
 ```
 
 autoloadファイルの再生成
@@ -208,10 +228,13 @@ bin/console cache:warmup --env=prod
 
 <a href="https://github.com/EC-CUBE/ec-cube/pulls?q=is%3Apr+label%3Aaffected%3Atemplate+is%3Aclosed+milestone%3A4.0.4" target = "_blank">フロントテンプレートファイルの差分</a>
 
-#### 4.0.4 → 4.0.5
+#### 4.0.4 → 4.0.5-p1
 
 <a href="https://github.com/EC-CUBE/ec-cube/pulls?q=is%3Apr+label%3Aaffected%3Atemplate+is%3Aclosed+milestone%3A4.0.5" target = "_blank">フロントテンプレートファイルの差分</a>
 
+#### 4.0.5-p1 → 4.0.6、4.0.6 → 4.0.6-p1
+
+フロントテンプレートの更新はありません。
 
 ### 9.メンテナンスモードを無効にする（バージョン4.0.1以降）
 
@@ -260,4 +283,7 @@ EC-CUBEのバージョンアップ手順は以上です。
 | 4.0.1 → 4.0.2   | [https://github.com/EC-CUBE/ec-cube/compare/4.0.1...4.0.2](https://github.com/EC-CUBE/ec-cube/compare/4.0.1...4.0.2?w=1#files_bucket){:target="_blank"}   |
 | 4.0.2 → 4.0.3   | [https://github.com/EC-CUBE/ec-cube/compare/4.0.2...4.0.3](https://github.com/EC-CUBE/ec-cube/compare/4.0.2...4.0.3?w=1#files_bucket){:target="_blank"}   |
 | 4.0.3 → 4.0.4   | [https://github.com/EC-CUBE/ec-cube/compare/4.0.3...4.0.4](https://github.com/EC-CUBE/ec-cube/compare/4.0.3...4.0.4?w=1#files_bucket){:target="_blank"}   |
-| 4.0.4 → 4.0.5   | [https://github.com/EC-CUBE/ec-cube/compare/4.0.4...4.0.5](https://github.com/EC-CUBE/ec-cube/compare/4.0.4...4.0.5?w=1#files_bucket){:target="_blank"}   |
+| 4.0.4 → 4.0.5-p1   | [https://github.com/EC-CUBE/ec-cube/compare/4.0.4...4.0.5-p1](https://github.com/EC-CUBE/ec-cube/compare/4.0.4...4.0.5-p1?w=1#files_bucket){:target="_blank"}   |
+| 4.0.5-p1 → 4.0.6   | [https://github.com/EC-CUBE/ec-cube/compare/4.0.5-p1...4.0.6](https://github.com/EC-CUBE/ec-cube/compare/4.0.5-p1...4.0.6?w=1#files_bucket){:target="_blank"}   |
+| 4.0.6 → 4.0.6-p1   | [https://github.com/EC-CUBE/ec-cube/compare/4.0.6...4.0.6-p1](https://github.com/EC-CUBE/ec-cube/compare/4.0.6...4.0.6-p1?w=1#files_bucket){:target="_blank"}   |
+
