@@ -15,7 +15,7 @@ folder: quickstart
 [コマンドラインからインストールする](/quickstart/command_install)にて、3.の工程の部分を以下のコマンドで実行してください。
 
 ```shell
-php composer.phar create-project --no-scripts ec-cube/ec-cube ec-cube "4.0.x-dev" --keep-vcs
+php composer.phar create-project --no-scripts ec-cube/ec-cube ec-cube "4.1.x-dev" --keep-vcs
 ```
 
 ec-cube ディレクトリが生成されますので、`cd ec-cube`で移動し、  
