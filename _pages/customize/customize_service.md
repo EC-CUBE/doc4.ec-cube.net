@@ -231,6 +231,21 @@ ItemHolder に対して処理を行います。また、PurchaseContext を通�
 PurchaseFlow の実行結果を保持するクラスです。
 ItemProcessor で発生したエラーは Warning, ItemHolderProcessor で発生したエラーは Error として扱います。
 
+##### Processor
+
+目的に応じてクラスまたはインタフェースを継承または実装します。
+
+
+| クラス、インタフェース      | 概要と具体例                                              |
+|-------------------------|--------------------------------------------------|
+| ItemValidator           | 明細単位(Item)の妥当性検証のクラス。<br>商品価格の変更チェック、商品の公開ステータスのチェックなど |
+| ItemHolderValidator     | カート/受注(ItemHolder)の妥当性検証を行うクラス。<br>在庫チェック、販売制限数チェックなど |
+| ItemPreprocessor        | 明細単位(Item)の前処理行うインターフェス。 |
+| ItemHolderPreprocessor  | カート/受注(ItemHolder)の前処理行うインターフェス。<br>送料明細の追加、支払い手数料明細の追加など |
+| DiscountProcessor       | 値引き処理を行うインタフェース。<br>ポイント値引き迷彩の追加など |
+| ItemHolderPostValidator | 各処理後にカート/受注の妥当性検証を行うクラス。<br>合計金額のマイナスチェックなど |
+| PurchaseProcessor       | 受注の仮確定/確定/確定取り消し処理を行うインターフェイス。<br>在庫の更新処理、ポイントの更新処理など |
+
 ####  Processor の実装例
 
 `EmptyProcessor::process()` がコールされると、情報ログを出力します。
@@ -291,7 +306,11 @@ class ValidatableEmptyProcessor extends ItemValidator
 
 ```
 
-独自に作成した Processor を有効にするには、 `app/config/eccube/packages/purchaseflow.yaml` の定義を修正します。
+####  Processorの有効化
+
+独自に作成した Processor を有効にするには、 `app/config/eccube/packages/purchaseflow.yaml` に定義を追加するか、アノテーションで追加対象のフローを指定します。
+
+##### `purchaseflow.yaml` に定義を追加
 
 ```yaml
     eccube.purchase.flow.cart.item_processors:
@@ -305,5 +324,47 @@ class ValidatableEmptyProcessor extends ItemValidator
                 - '@Eccube\Service\PurchaseFlow\Processor\StockValidator'
                 - '@Eccube\Service\PurchaseFlow\Processor\ProductStatusValidator'
                 - '@Plugin\PurchaseProcessors\Processor\ValidatableEmptyProcessor' # 追加
+```
 
+##### アノテーションで追加対象のフローを指定
+
+`@CartFlow`, `@ShoppingFlow`, `@OrderFlow` のアノテーションで追加対象のフローを指定できます。
+
+| アノテーション    | 概要                                              |
+|----------------|--------------------------------------------------|
+| @CartFlow      | カートのPurchaseFlowにProcessorを追加する場合に指定    |
+| @ShoppingFlow  | 購入フローのPurchaseFlowにProcessorを追加する場合に指定 |
+| @OrderFlow     | 管理画面でのPurchaseFlowにProcessorを追加する場合に指定 |
+
+```php
+<?php
+
+namespace Customize\Service\PurchaseFlow\Processor;
+
+use Eccube\Annotation\CartFlow;
+use Eccube\Annotation\OrderFlow;
+use Eccube\Annotation\ShoppingFlow;
+use Eccube\Entity\ItemInterface;
+use Eccube\Service\PurchaseFlow\PurchaseContext;
+use Eccube\Service\PurchaseFlow\ItemValidator;
+
+/**
+ * 全てのフローでプロセッサを有効にする
+ *
+ * @CartFlow
+ * @ShoppingFlow
+ * @OrderFlow
+ */
+class SampleValidator extends ItemValidator
+{
+    protected function validate(ItemInterface $item, PurchaseContext $context)
+    {
+        // 省略
+    }
+
+    protected function handle(ItemInterface $item, PurchaseContext $context)
+    {
+        // 省略
+    }
+}
 ```
