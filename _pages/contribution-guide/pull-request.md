@@ -42,7 +42,7 @@ $ git pull upstream 4.1
 ## 開発用ブランチの作成
 
 ```sh
-$ git checkout -b [任意のブランチ名] upstream/master
+$ git checkout -b [任意のブランチ名] upstream/4.1
 ```
 
 ## 自身のGithubリポジトリの更新
