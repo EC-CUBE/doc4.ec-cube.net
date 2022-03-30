@@ -16,12 +16,21 @@ FormExtensionの仕組みを利用すれば、既存のフォームをカスタ�
 
 #### 拡張するフォーム種類の指定
 
-getExtendedType関数は必ず実装し、拡張するフォームの種類を指定する必要があります。
+EC-CUBE 4.0では、getExtendedType関数は必ず実装し、拡張するフォームの種類を指定する必要があります。
 
 ```php
 public function getExtendedType()
 {
     return EntryType::class;
+}
+```
+
+EC-CUBE 4.1以降は、getExtendedType関数は必ず実装し、拡張するフォームの種類を指定する必要があります。
+
+```php
+public static function getExtendedTypes(): iterable
+{
+    yeild EntryType::class;
 }
 ```
 
@@ -77,6 +86,14 @@ class CompanyNameRequiredExtension extends AbstractTypeExtension
     public function getExtendedType()
     {
         return EntryType::class;
+    }
+    
+    /**
+     * {@inheritdoc}
+     */
+    public static function getExtendedTypes(): iterable
+    {
+        yield EntryType::class;
     }
 }
 
