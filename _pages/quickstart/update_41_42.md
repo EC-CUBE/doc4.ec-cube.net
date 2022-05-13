@@ -13,7 +13,7 @@ EC-CUBE本体および一部公式プラグインをEC-CUBE4.2対応し、コー
 
 - [EC-CUBE 4.2 Roadmap](https://github.com/EC-CUBE/ec-cube/issues/5356){:target="_blank"}
 - [Symfony5 support](https://github.com/EC-CUBE/ec-cube/pull/5353){:target="_blank"}
-- [メルマガプラグイン](https://github.com/EC-CUBE/eccube-api4/pull/106){:target="_blank"}
+- [メルマガプラグイン](https://github.com/EC-CUBE/mail-magazine-plugin/compare/4.n){:target="_blank"}
 
 ## プラグインコードの変更
 
