@@ -27,7 +27,7 @@ composer.jsonのプラグインコードを変更します。
 
 以下はメルマガプラグインの修正例です。
 
-```
+```diff
 {
 -  "name": "ec-cube/mailmagazine4",
 +  "name": "ec-cube/mailmagazine42",
@@ -50,7 +50,7 @@ namespaceをプラグインコードにあわせ、変更します。
 
 以下はメルマガプラグインの修正例です。
 
-```php
+```diff
 <?php
 - namespace Plugin\MailMagazine4;
 + namespace Plugin\MailMagazine42;
