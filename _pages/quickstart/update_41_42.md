@@ -91,7 +91,7 @@ getExtendedTypesの戻り値の型を定義する必要があります。
 
 ManagerRegistryのnamespaceが変更されました。
 
-`Doctrine\Common\Persistence\ManagerRegistry`へ変更します。
+`Doctrine\Persistence\ManagerRegistry`へ変更します。
 
 ```diff
 <?php
