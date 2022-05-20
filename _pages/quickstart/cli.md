@@ -11,14 +11,14 @@ EC-CUBEでは、コマンドラインで実行できる各種ユーティリテ�
 
 ```bash
 $ cd [ec-cube ルートディレクトリ]
-$ bin/console eccube:install
+$ php bin/console eccube:install
 ```
 
 コマンド名は省略することも可能です。
 コマンド名が`eccube:install`であれば、`e:i`でも実行できます。
 
 ```bash
-$ bin/console e:i
+$ php bin/console e:i
 ```
 
 ## EC-CUBEが提供しているコマンド
@@ -61,7 +61,7 @@ SymfonyやDoctrineが提供しているコマンドの一覧と概要です。
 コマンドの一覧は、
 
 ```bash
-$ bin/console list
+$ php bin/console list
 ```
 
 で確認できます。
@@ -69,7 +69,7 @@ $ bin/console list
 また、
 
 ```bash
-$ bin/console [command name] --help
+$ php bin/console [command name] --help
 ```
 
 で使い方を確認できます。
