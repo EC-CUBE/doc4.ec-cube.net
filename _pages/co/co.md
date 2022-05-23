@@ -38,7 +38,7 @@ ec-cube.co(4.0/4.1)で利用されているEC-CUBEのソースコードは [co/m
 
 - Apache 2.4.x
 - PostgreSQL 10.x
-- PHP 7.3.x
+- PHP 7.4.x
 - PHP拡張一覧
   - Core, date, libxml, openssl, pcre, sqlite3, zlib, ctype, curl, dom, fileinfo, filter, ftp, hash, iconv, json, mbstring, SPL, PDO, session, posix, Reflection, standard, SimpleXML, pdo_sqlite, Phar, tokenizer, xml, xmlreader, xmlwriter, mysqlnd, apache2handler, exif, gd, intl, pdo_pgsql, sodium, zip, Zend OPcache
 
