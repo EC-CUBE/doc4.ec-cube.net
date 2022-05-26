@@ -19,11 +19,11 @@ php composer.phar create-project --no-scripts ec-cube/ec-cube ec-cube "4.1.x-dev
 ```
 
 ec-cube ディレクトリが生成されますので、`cd ec-cube`で移動し、  
-`bin/console server:run` コマンドを実行すると、ビルトインウェブサーバが起動します。
+`php bin/console server:run` コマンドを実行すると、ビルトインウェブサーバが起動します。
 
 ```shell
 cd ec-cube
-bin/console server:run
+php bin/console server:run
 ```
 
 [http://127.0.0.1:8000/](http://127.0.0.1:8000/){:target="_blank"} にアクセスすると、 EC-CUBEのインストール画面が立ち上がりますので、指示にしたがってインストールしてください。
