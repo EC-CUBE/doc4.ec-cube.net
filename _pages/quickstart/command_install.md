@@ -42,11 +42,11 @@ php composer.phar create-project ec-cube/ec-cube ec-cube "4.1.x-dev" --keep-vcs
 
 
 4.ec-cube ディレクトリが生成されますので、`cd ec-cube`で移動し、  
-`bin/console server:run --env=dev` コマンドを実行すると、ビルトインウェブサーバが起動します。
+`php bin/console server:run --env=dev` コマンドを実行すると、ビルトインウェブサーバが起動します。
 
 ```shell
 cd ec-cube
-bin/console server:run --env=dev
+php bin/console server:run --env=dev
 ```
 
 5.[http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin){:target='_blank'} にアクセスし、 EC-CUBE の管理ログイン画面が表示されればインストール成功です。  
@@ -60,7 +60,7 @@ bin/console server:run --env=dev
 
 #### データベースの種類を変更したい場合
 
-インストール後、 `bin/console eccube:install` コマンドを実行し、 `Database Url` を以下のように設定してください。
+インストール後、 `php bin/console eccube:install` コマンドを実行し、 `Database Url` を以下のように設定してください。
 
 ```shell
 ## for MySQL
@@ -72,21 +72,21 @@ postgres://<user>:<password>@<host>/<database name>
 
 #### Windows 環境を使用する場合
 
-`bin/console eccube:install` コマンドは使用できません。
+`php bin/console eccube:install` コマンドは使用できません。
 代替として、以下のコマンド使用して下さい。
 
 ```shell
 # (optional) データベース削除
-bin/console doctrine:database:drop --force
+php bin/console doctrine:database:drop --force
 # データベース作成
-bin/console doctrine:database:create
+php bin/console doctrine:database:create
 # (optional) スキーマ削除
-bin/console doctrine:schema:drop --force
+php bin/console doctrine:schema:drop --force
 # スキーマ生成
-bin/console doctrine:schema:create
+php bin/console doctrine:schema:create
 # 初期データ生成
-bin/console eccube:fixtures:load
+php bin/console eccube:fixtures:load
 ```
 
-- *`bin/console eccube:install` コマンドでは、これらのコマンドを内部的に実行しています。*
+- *`php bin/console eccube:install` コマンドでは、これらのコマンドを内部的に実行しています。*
 - Symfony と Windows 環境の相性があまり良くないため、動作が大変遅くなる可能性があります。 [Docker Composeを使用してインストールする](/quickstart/docker_compose_install) をおすすめします。
