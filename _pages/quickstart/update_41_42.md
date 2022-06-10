@@ -112,8 +112,10 @@ use Eccube\Doctrine\Query\Queries;
 forループでのifは利用できなくなります。filterを使用してください。
 
 ```diff
+{% raw %}
 - {% for f in searchForm if f.vars.eccube_form_options.auto_render %}
 + {% for f in searchForm|filter(f => f.vars.eccube_form_options.auto_render) %}
+{% endraw %}
 ```
 
 ### SwiftMailer関連
