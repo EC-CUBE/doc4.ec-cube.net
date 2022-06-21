@@ -30,7 +30,7 @@ EC-CUBE 4.1以降は、getExtendedType関数は必ず実装し、拡張するフ
 ```php
 public static function getExtendedTypes(): iterable
 {
-    yeild EntryType::class;
+    yield EntryType::class;
 }
 ```
 
