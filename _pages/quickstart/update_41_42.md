@@ -198,6 +198,56 @@ setUp/tearDownメソッドは、戻り値の型を定義する必要がありま
 
 ```
 
-### その他の仕様変更
+## Bootstrap5対応
+
+Bootstrapを5.0に更新しました。
+
+ここで記載した内容は一部です。変更点の詳細は以下のドキュメントをご確認ください。
+
+https://getbootstrap.jp/docs/5.0/migration/
+
+### data変数のbsプレフィクス
+
+モーダルなど、bootstrapで使われるdata変数にbsプレフィクスがつくようになりました。
+
+```diff
+
+- data-keyword
++ data-bs-keyword
+
+- data-dismiss
+ data-bs-dismiss
+
+- data-toggle
++ data-bs-toggle
+
+```
+
+## Close buttton
+
+閉じるボタンのクラス名が変更されました。
+
+```diff
+
+- .close 
++ .btn-close
+
+```
+
+### text-right, text-left
+
+右寄せ、左寄せのクラス名が変更されました。
+
+```diff
+
+- .text-left
++ .text-start
+
+- .text-right
++ .text-end
+
+```
+
+## その他の仕様変更
 
 ### その他削除された関数・機能
