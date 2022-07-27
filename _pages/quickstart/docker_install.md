@@ -9,8 +9,8 @@ folder: quickstart
 
 ---
 
-前提として、 [Docker Desktop のインストール](https://hub.docker.com){:target="_blank"} が必要です。
-
++ 前提として、 [Docker Desktop のインストール](https://hub.docker.com){:target="_blank"} が必要です。
+  + Windowsの場合は [Docker Desktop WSL 2 バックエンド](https://docs.docker.jp/docker-for-windows/wsl.html#docker-desktop-wsl-2){:target="_blank"} モードで動作させ、Linuxファイルシステム上にワークスペースを作成することで良好なパフォーマンスが得られます。
 + 初期状態では SQLite3 を使用します
 + コンテナ上のファイルを使用しても、VOLUME をマウントしても使用可能です
 

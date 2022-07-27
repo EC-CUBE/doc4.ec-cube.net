@@ -13,8 +13,8 @@ folder: quickstart
 
 **開発環境として関連サービス(DB、メールデバッグ環境等)も含め手軽に一括構築したい場合におすすめの方法です**
 
-前提として、 [Docker Desktop のインストール](https://hub.docker.com){:target="_blank"} が必要です。
-
++ 前提として、 [Docker Desktop のインストール](https://hub.docker.com){:target="_blank"} が必要です。
+  + Windowsの場合は [Docker Desktop WSL 2 バックエンド](https://docs.docker.jp/docker-for-windows/wsl.html#docker-desktop-wsl-2){:target="_blank"} モードで動作させ、Linuxファイルシステム上にワークスペースを作成することで良好なパフォーマンスが得られます。
 + 初期状態では SQLite3 を使用します
 
 ```shell
