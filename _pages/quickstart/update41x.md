@@ -100,6 +100,7 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
 |----------------------|---------------------------------------------------------------------------------------------------|
 | 4.1.0 → 4.1.1        | composer.json<br>composer.lock<br>.htaccess<br>index.php<br>symfony.lock<br>package.json<br>package-lock.json|
 | 4.1.1 → 4.1.2        | composer.json<br>composer.lock<br>.htaccess<br>index.php<br>symfony.lock<br>package.json<br>package-lock.json|
+| 4.1.2 → 4.1.2-p1        | -|
 
 ※ FTP等でファイルをアップロードするとパーミッションが変更される可能性があります。[パーミッションの設定について](/permission)を参考にパーミッションの確認をお願いします。
 
@@ -177,4 +178,5 @@ EC-CUBEのバージョンアップ手順は以上です。
 |-----------------|------------------------------------------------------------------------------------------------------------------------|
 | 4.1.0 → 4.1.1   | [https://github.com/EC-CUBE/ec-cube/compare/4.1.0...4.1.1](https://github.com/EC-CUBE/ec-cube/compare/4.1.0...4.1.1?w=1#files_bucket){:target="_blank"}   |
 | 4.1.1 → 4.1.2   | [https://github.com/EC-CUBE/ec-cube/compare/4.1.1...4.1.2](https://github.com/EC-CUBE/ec-cube/compare/4.1.1...4.1.2?w=1#files_bucket){:target="_blank"}   |
+| 4.1.2 → 4.1.2-p1   | [https://github.com/EC-CUBE/ec-cube/compare/4.1.2...4.1.2-p1](https://github.com/EC-CUBE/ec-cube/compare/4.1.2...4.1.2-p1?w=1#files_bucket){:target="_blank"}   |
 
