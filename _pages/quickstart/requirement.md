@@ -8,13 +8,24 @@ permalink: quickstart/requirement
 
 ---
 
-| 分類 | ソフトウェア|Version|動作確認済み|
-|---|-------|---|-------|
-|WebServer|Apache |2.4.x <br> (mod_rewrite / mod_ssl 必須) |2.4.x |
-|PHP | PHP | 7.3 〜 7.4 <small>(※1)</small>|7.3.x / 7.4.x|
-|Database|PostgreSQL| 9.6.x 〜 14.x <small>(※2)</small><br> (pg_settingsテーブルへの参照権限 必須) |10.x |
-|Database|MySQL|5.7.x <small>(※3)</small><br> (InnoDBエンジン 必須) |5.7.x |
-|Database|SQLite(開発用途向け) |3.x |-|
+## 4.2
+
+| 分類 | ソフトウェア|Version|
+|---|-------|---|
+|WebServer|Apache |2.4.x <br> (mod_rewrite / mod_ssl 必須) |
+|PHP | PHP | 7.4 〜 8.1|
+|Database|PostgreSQL| 10.x 〜 14.x <br> (pg_settingsテーブルへの参照権限 必須) |
+|Database|MySQL|5.7 or 8.0<br> (InnoDBエンジン 必須) |
+|Database|SQLite(開発用途向け) |3.x |
+
+## 4.0/4.1
+| 分類 | ソフトウェア|Version|
+|---|-------|---|
+|WebServer|Apache |2.4.x <br> (mod_rewrite / mod_ssl 必須) |
+|PHP | PHP | 7.3 〜 7.4 <small>(※1)</small>|
+|Database|PostgreSQL| 9.6.x 〜 14.x <small>(※2)</small><br> (pg_settingsテーブルへの参照権限 必須) |
+|Database|MySQL|5.7.x <small>(※3)</small><br> (InnoDBエンジン 必須) |
+|Database|SQLite(開発用途向け) |3.x |
 
 ※1 EC-CUBE 4.0.0〜4.0.1 は PHP 7.1〜7.2対応、4.0.2〜4.0.3 は PHP 7.1〜7.3対応、4.0.4〜4.0.x は PHP 7.1〜7.4対応となります  
 ※2 EC-CUBE 4.0系は PostgreSQL 9.2.x〜13.x 対応となります  

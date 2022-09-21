@@ -28,9 +28,10 @@ ec-cube.coは、サーバやアプリケーションの保守・運用から開�
 
 ### EC-CUBE
 
-ec-cube.co(4.0/4.1)で利用されているEC-CUBEのソースコードは [co/masterブランチ](https://github.com/EC-CUBE/ec-cube/tree/co/master){:target="_blank"}、[co/4.1ブランチ](https://github.com/EC-CUBE/ec-cube/tree/co/4.1){:target="_blank"} で公開されています。  
-[4.1ブランチ](https://github.com/EC-CUBE/ec-cube/tree/4.1){:target="_blank"} のHEADが [co/4.1ブランチ](https://github.com/EC-CUBE/ec-cube/tree/co/4.1){:target="_blank"} に適宜マージされ、週次メンテナンスのタイミングで取り込まれます。  
-  
+ec-cube.co(4.0/4.1/4.2)で利用されているEC-CUBEのソースコードは [co/masterブランチ](https://github.com/EC-CUBE/ec-cube/tree/co/master){:target="_blank"}、[co/4.1ブランチ](https://github.com/EC-CUBE/ec-cube/tree/co/4.1){:target="_blank"} 、[co/4.2ブランチ](https://github.com/EC-CUBE/ec-cube/tree/co/4.2){:target="_blank"} で公開されています。  
+[4.2ブランチ](https://github.com/EC-CUBE/ec-cube/tree/4.2){:target="_blank"} のHEADが [co/4.2ブランチ](https://github.com/EC-CUBE/ec-cube/tree/co/4.2){:target="_blank"} に適宜マージされ、週次メンテナンスのタイミングで取り込まれます。
+
+現在ec-cube.co(4.2版)に適用されているEC-CUBEのソースコードは、[co/4.2-YYYYMMDD](https://github.com/EC-CUBE/ec-cube/tags){:target="_blank"} をご確認ください。
 現在ec-cube.co(4.1版)に適用されているEC-CUBEのソースコードは、[co/4.1-YYYYMMDD](https://github.com/EC-CUBE/ec-cube/tags){:target="_blank"} をご確認ください。  
 現在ec-cube.co(4.0版)に適用されているEC-CUBEのソースコードは、[co/YYYYMMDD](https://github.com/EC-CUBE/ec-cube/tags){:target="_blank"} をご確認ください。
 
