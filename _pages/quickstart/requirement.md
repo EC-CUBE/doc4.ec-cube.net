@@ -19,6 +19,7 @@ permalink: quickstart/requirement
 |Database|SQLite(開発用途向け) |3.x |
 
 ## 4.0/4.1
+
 | 分類 | ソフトウェア|Version|
 |---|-------|---|
 |WebServer|Apache |2.4.x <br> (mod_rewrite / mod_ssl 必須) |
