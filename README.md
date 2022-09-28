@@ -18,7 +18,7 @@ PullRequestを送信する際は、EC-CUBEのコピーライトポリシーに�
 
 ## 本ドキュメントサイトの構成ツールについて
 
-EC-CUBE 4.0 開発者向けドキュメントは[github pages](https://pages.github.com/)でホスティングされています。
+EC-CUBE 4 開発者向けドキュメントは[github pages](https://pages.github.com/)でホスティングされています。
 
 また、[Jekyll](http://jekyllrb-ja.github.io/)の[Minimal Mistakes Jekyll theme](https://mmistakes.github.io/minimal-mistakes/)というテーマを利用しています。
 
