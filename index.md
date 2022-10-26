@@ -135,6 +135,7 @@ EC-CUBEの基本情報やご確認いただきたいことについてまとめ�
 + [プラグインのインストール](/plugin_install)
 + [プラグイン導入時のトラブル対処法](/plugin_error)
 + [プラグインサンプル](/plugin_sample)
++ [プラグインを開発する](/plugin_development)
 + [オーナーズストア経由のインストールをテストする](/plugin_mock_package_api)
 + [プラグインで推奨の命名規則](/plugin_naming_conventions)
 + [管理画面ナビの拡張](plugin_admin_nav)

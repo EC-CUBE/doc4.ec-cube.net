@@ -199,6 +199,9 @@ docs:
       - title: プラグインサンプル
         url: /plugin_sample
         output: web, pdf
+      - title: プラグインを開発する
+        url: /plugin_development
+        output: web, pdf
       - title: オーナーズストア経由のインストールをテストする
         url: /plugin_mock_package_api
         output: web, pdf
