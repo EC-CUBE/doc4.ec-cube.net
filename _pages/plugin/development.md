@@ -75,4 +75,8 @@ bin/console eccube:plugin:install --code Sample
 
 [Composerを使いこなしてEC-CUBE4系プラグインの開発効率を爆上げする](https://zenn.dev/nanasess/articles/ec-cube4-plugin-development){:target="_blank"}
 
+プラグインの E2E テストをしたい場合は、以下の記事を参考にしてください。
+
+[10分でEC-CUBEプラグインのE2Eテストを書いてみる](https://zenn.dev/nanasess/articles/ec-cube-plugin-e2etesting-in-10mins){:target="_blank"}
+
 オーナーズストアへ登録するプラグインのテストをしたい場合は、[次のページをご確認ください](/plugin_mock_package_api)。
