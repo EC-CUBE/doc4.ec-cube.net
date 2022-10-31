@@ -31,18 +31,18 @@ ec-cubeのリポジトリをリモートに追加します。
 $ git remote add upstream https://github.com/EC-CUBE/ec-cube.git
 ```
 
-## ローカルのmasterブランチの更新
+## ローカルのmainブランチの更新
 
-eccubeは4.1ブランチがmasterブランチとなっています。
+ec-cubeは4.2ブランチがmainブランチとなっています。
 
 ```sh
-$ git pull upstream 4.1
+$ git pull upstream 4.2
 ```
 
 ## 開発用ブランチの作成
 
 ```sh
-$ git checkout -b [任意のブランチ名] upstream/4.1
+$ git checkout -b [任意のブランチ名] upstream/4.2
 ```
 
 ## 自身のGithubリポジトリの更新
