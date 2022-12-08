@@ -242,7 +242,7 @@ ItemProcessor で発生したエラーは Warning, ItemHolderProcessor で発生
 | ItemHolderValidator     | カート/受注(ItemHolder)の妥当性検証を行うクラス。<br>在庫チェック、販売制限数チェックなど |
 | ItemPreprocessor        | 明細単位(Item)の前処理行うインターフェス。 |
 | ItemHolderPreprocessor  | カート/受注(ItemHolder)の前処理行うインターフェス。<br>送料明細の追加、支払い手数料明細の追加など |
-| DiscountProcessor       | 値引き処理を行うインタフェース。<br>ポイント値引き迷彩の追加など |
+| DiscountProcessor       | 値引き処理を行うインタフェース。<br>ポイント値引き明細の追加など |
 | ItemHolderPostValidator | 各処理後にカート/受注の妥当性検証を行うクラス。<br>合計金額のマイナスチェックなど |
 | PurchaseProcessor       | 受注の仮確定/確定/確定取り消し処理を行うインターフェイス。<br>在庫の更新処理、ポイントの更新処理など |
 
