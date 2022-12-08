@@ -139,6 +139,9 @@ docs:
       - title: テンプレートのカスタマイズ
         url: /customize_template
         output: web, pdf
+      - title: スロットリング機能のカスタマイズ
+        url: /customize_throttling
+        output: web, pdf
       - title: Symfonyの機能を使った拡張
         url: /customize_symfony
         output: web, pdf
