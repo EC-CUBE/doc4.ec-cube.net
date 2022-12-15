@@ -259,19 +259,19 @@ rawフィルタ以外でもHTMLエスケープの解除は可能です。
 以下のtwigフィルタやphp関数を利用する場合も注意してください。
 
 ```
-{% raw %}{% apply raw %}
+{% apply raw %}
 
 {{ variable }}
 
-{% endapply %}{% endraw %}
+{% endapply %}
 ```
 
 ```
-{% raw %}{% autoescape false %}
+{% autoescape false %}
 
 {{ variable }}
 
-{% endautoescape %}{% endraw %}
+{% endautoescape %}
 ```
 
 ```
@@ -294,7 +294,7 @@ strip_tags
 URLのバリデーションは、Symfony標準のUrlValidatorを利用するようにし、http://およびhttps://で始まるURLのみ許容するようにしてください。
 
 ```php
-{% raw %}class XxxType extends AbstractType
+class XxxType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -303,7 +303,7 @@ URLのバリデーションは、Symfony標準のUrlValidatorを利用するよ�
                 'constraints' => [
                     new Assert\Url(),
                 ],
-            ]);{% endraw %}
+            ]);
 ```
 
 #### [根本的解決] `<script>...</script>` 要素の内容を動的に生成しない
@@ -312,7 +312,7 @@ URLのバリデーションは、Symfony標準のUrlValidatorを利用するよ�
 
 記述は避けるべき記述パターン
 ```
-{% raw %}<script>{{ script_text|raw}}</script>{% endraw %}
+<script>{{ script_text|raw}}</script>
 ```
 
 対策としては、以下をおすすめします。
@@ -320,7 +320,7 @@ URLのバリデーションは、Symfony標準のUrlValidatorを利用するよ�
 　
 管理画面のテンプレートでは以下のような使い方をしております。
 ```html
-{% raw %}<script src="{{ asset('assets/js/layout_design.js', 'admin') }}"></script>{% endraw %}
+script src="{{ asset('assets/js/layout_design.js', 'admin') }}"></script>
 ```
 
 ・また、「動的生成をしない」という対策に反することになりますが、以下のようなエスケープにより対策を行うことも可能です。ただし、手順が複雑で対策漏れが発生する可能性があるため、おすすめはしません。
@@ -346,13 +346,13 @@ URLのバリデーションは、Symfony標準のUrlValidatorを利用するよ�
 なお、EC-CUBEではフォームの入力項目を各モデルごとのhogehogeType.phpというものに定義をしています。
 その中で値のバリデーションが実施できていれば問題ありません。
 ```php
-{% raw %}$builder->add('sample_form_name', TextType::class, [
+$builder->add('sample_form_name', TextType::class, [
         'constraints' => [
             new Assert\NotBlank(),
             new Assert\Length(['max' => 20]),
         ],
         'data' => $postedValue
-    ]);{% endraw %}
+    ]);
 ```
 
 
@@ -361,7 +361,7 @@ URLのバリデーションは、Symfony標準のUrlValidatorを利用するよ�
 #### [根本的解決] 入力されたHTMLテキストから構文解析木を作成し、スクリプトを含まない必要な要素のみを抽出する
 入力されたHTMLテキストに対して構文解析を行い、「ホワイトリスト方式」で許可する要素のみを抽出します。ただし、これには複雑なコーディングが要求され、処理に負荷がかかるといった影響もあるため、実装には十分な検討が必要です。
 
-ただし、EC-CUBE4.1以降、フロントからの入力値はhtmlテキストはエスケープもしくは無害文字列への置換が行っており、アプリケーション全体に適用される（プラグインやカスタマイズのコードにも適用される）ため問題ありません。
+ただし、EC-CUBE4.1以降、フロントからの入力値はhtmlテキストはエスケープもしくは無害文字列への置換を行っており、アプリケーション全体に適用される（プラグインやカスタマイズのコードにも適用される）ため問題ありません。
 
 なお、当該処理を独自実装するのではなく、html purifier等の広く使われているライブラリを利用することが望ましいです。
 ※html purifierの利用にあたっては以下のような議論があり、今後推奨外となる可能性があります。
