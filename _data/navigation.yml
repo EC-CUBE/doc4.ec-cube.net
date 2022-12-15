@@ -272,6 +272,13 @@ docs:
         url: /penetration-testing/improvement
         output: web, pdf
 
+  - title: セキュリティガイドライン
+    output: web, pdf
+    children:
+      - title: コーディングについて
+        url: /security-guideline/coding
+        output: web, pdf
+
   - title: 逆引きリファレンス
     output: web,pdf
     children:

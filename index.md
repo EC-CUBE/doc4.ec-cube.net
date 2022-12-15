@@ -171,6 +171,12 @@ EC-CUBEの基本情報やご確認いただきたいことについてまとめ�
 + [テスト評価](/penetration-testing/review)
 + [セキュリティの改善](/penetration-testing/improvement)
 
+## セキュリティガイドライン
+
+インストール方法についてまとめました。
+
++ [コーディングについて](/security-guideline/coding)
+
 ## 逆引きリファレンス
 
 知っているとちょっと便利な情報をまとめました。
