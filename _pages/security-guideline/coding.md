@@ -253,26 +253,26 @@ EC-CUBEのtwigテンプレートでの出力は、標準ではHTMLエスケー�
 rawフィルタ等を用い、意図的にエスケープを解除することは可能ですが、その際、外部からの入力値が含まれていると、攻撃手段として利用される可能性があります。
 
 ```
-{% raw %}{{ variable|raw }}{% endraw %}
+{{ "{% raw " }}%}{{"{{ variable|raw " }}}}{{ "{% endraw " }}%}
 ```
 
 rawフィルタ以外でもHTMLエスケープの解除は可能です。
 以下のtwigフィルタやphp関数を利用する場合も注意してください。
 
 ```
-{% apply raw %}
+{{ "{% apply raw " }}%}
 
-{{ variable }}
+{{"{{ variable " }}}}
 
-{% endapply %}
+{{ "{% endapply " }}%}
 ```
 
 ```
-{% autoescape false %}
+{{ "{% autoescape false " }}%}
 
-{{ variable }}
+{{"{{ variable " }}}}
 
-{% endautoescape %}
+{{ "{% endautoescape " }}%}
 ```
 
 ```
@@ -313,7 +313,7 @@ class XxxType extends AbstractType
 
 記述は避けるべき記述パターン
 ```
-<script>{{ script_text|raw}}</script>
+<script>{{"{{ script_text|raw " }}}}</script>
 ```
 
 対策としては、以下をおすすめします。
@@ -321,7 +321,7 @@ class XxxType extends AbstractType
 　
 管理画面のテンプレートでは以下のような使い方をしております。
 ```html
-script src="{{ asset('assets/js/layout_design.js', 'admin') }}"></script>
+<script src="{{ "{{ asset('assets/js/layout_design.js', 'admin') " }}}}"></script>
 ```
 
 ・また、「動的生成をしない」という対策に反することになりますが、以下のようなエスケープにより対策を行うことも可能です。ただし、手順が複雑で対策漏れが発生する可能性があるため、おすすめはしません。
