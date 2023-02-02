@@ -233,7 +233,16 @@ folder: co
 
 ### Instagramショッピング機能は導入出来ますか？
 
-[オーナーズストア](https://www.ec-cube.net/owners/){:target="_blank"} にございますFacebook社が提供する [Facebook連携プラグイン EC-CUBE4対応版](https://www.ec-cube.net/products/detail.php?product_id=1763){:target="_blank"} を導入することで可能です。
+[オーナーズストア](https://www.ec-cube.net/owners/){:target="_blank"} に下記のプラグインがございます。
+
+[Instagram投稿管理プラグイン[EC-CUBE4]](https://www.ec-cube.net/products/detail.php?product_id=2356){:target="_blank"}  
+
+上記以外にも多数のプラグインがございます。  
+ご希望の機能を持つプラグインが見つかるかもしれませんので、よろしければお探しくださいませ。  
+[https://www.ec-cube.net/owners/](https://www.ec-cube.net/owners/){:target="_blank"}  
+
+※プラグインの詳細につきましては、プラグイン提供元にご相談いただきますようお願い申し上げます。  
+※Facebook連携プラグインは現在ご利用いただけません。  
 
 ### 簡易カートへの追加機能やヘッダー上に最近見た商品表示機能などが実現可能でしょうか？
 
