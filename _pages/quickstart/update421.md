@@ -1,53 +1,30 @@
 ---
 layout: single
-title: 4.2.0から4.2.1への本体バージョンアップ
+title: 4.2 本体バージョンアップ
 keywords: howto update
 tags: [quickstart, getting_started]
 permalink: update421
-summary : EC-CUBE4.2.0から4.2.1への本体バージョンアップ手順について記載します。
+summary : 4.2.1 の本体バージョンアップ手順について記載します。
 ---
 
 本番環境でバージョンアップを行う前に、テスト環境で事前検証を必ず行ってください。
 {: .notice--danger}
 この手順では、ec-cube.netからダウンロードしたEC-CUBEのパッケージを利用していることを想定しています。
 {: .notice--danger}
-この手順では、EC-CUBE4.2.0から4.2.1へのバージョンアップを想定しています。
-{: .notice--danger}
 EC-CUBE本体のコード(app/config/eccube, app/DoctrineMigrations, bin, src, htmlディレクトリ)をカスタマイズしている場合、ファイルが上書きされてしまうため、この手順ではバージョンアップできません。[各バージョンでの変更差分](#各バージョンでの変更差分)を確認して必要な差分を取り込んでください。
 {: .notice--danger}
+#TODO 追記要否の確認　2022年2月21日に公開された「HTTP Hostヘッダの処理に脆弱性」は、EC-CUBEのバージョンアップを行っても修正されません。[脆弱性詳細ページ](https://www.ec-cube.net/info/weakness/20220221/)を参考に、適切な設定を行ってください。
+{: .notice--danger}
 
-## 事前準備
-
-### プラグインの対象バージョンの確認
-
-- プラグインをインストールしている場合、EC-CUBE4.2.0に対応しているかどうかをご確認ください。
-- 4.2.1へのバージョンアップを実施する前に、使用されているプラグインを 4.2.0対応バージョンにアップデートしてください。
-
-### カスタマイズや独自プラグインを利用している場合のマイグレーション
-
-- Customize領域を使ったカスタマイズや、独自プラグインを利用している場合は、[EC-CUBE4.1から4.2へのマイグレーション](/update-41-42)を参考に、4.2.0対応を行ってください。
-
-### 本体に取り込まれたプラグインの無効化
-
-- TODO: 今回該当なし？
-
-## アップデートプラグインを利用したバージョンアップ方法
-
-- 4系のEC-CUBEのバージョンアップには、アップデートプラグインをご利用いただけます。
-- アップデートプラグインは、お使いのEC-CUBEの管理画面の「オーナーズストア/プラグインを探す」から「EC-CUBEアップデートプラグイン」で検索を行い、ご利用ください。
-
-アップデートプラグインでバージョンアップを行なった場合は、以下の手順は必要ありません。
-{: .notice--info}
 
 ## 作業の流れ
-
 1. サイトのバックアップ
 1. メンテナンスモードを有効にする
+1. プラグインのアップデート
 1. EC-CUBEのソースファイルをバージョンアップしたものに置き換え
 1. 個別ファイル差し替え
 1. composer.json/composer.lockの更新
 1. スキーマ更新/マイグレーション
-1. キャッシュ等の再生成
 1. フロントテンプレートファイルの更新
 1. メンテナンスモードを無効にする
 
@@ -59,7 +36,7 @@ EC-CUBEのインストールディレクトリ以下をすべてバックアッ�
 
 お使いのデータベースも全てバックアップしてください。
 
-### 2.メンテナンスモードを有効にする
+### 2. メンテナンスモードを有効にする
 
 EC-CUBEの管理画面へアクセスし、「コンテンツ管理」の「メンテナンス管理」から、メンテナンスモードを有効にしてください。
 
@@ -74,7 +51,11 @@ EC-CUBEの管理画面へアクセスし、「コンテンツ管理」の「メ�
 
 ※ メンテナンスモード使用時は、管理画面以外のページにアクセスするとメンテナンス画面が表示されます。
 
-### 3. EC-CUBEのソースファイルをバージョンアップしたものに置き換え
+### 3. プラグインのアップデート
+
+インストール済みのプラグインのうち、アップデート可能なものがあれば、事前にアップデートを行ってください。
+
+### 4. EC-CUBEのソースファイルをバージョンアップしたものに置き換え
 
 EC-CUBEのソースファイルについて、ディレクトリごとにそれぞれバージョンアップしたソースファイルに置き換えていきます。置き換える対象のディレクトリとなるのは、今回のバージョンアップで変更となったものとなります。
 （`app/config/eccube` `app/DoctrineMigrations` `bin` `src` `html` `vendor` など）
@@ -109,50 +90,25 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
   │
 ```
 
-### 4. 個別ファイル差し替え
+### 5. 個別ファイル差し替え
 
-下記の差し替え対象ファイルを確認して最新のファイルで上書きしてください。
+対象となるバージョンごとに、個別のファイル差し替えが必要です。
 
-- composer.json
-- composer.lock
-- .htaccess
-- symfony.lock
-- index.php
+下記から差し替え対象ファイルを確認して最新のファイルで上書きしてください。
 
-### 5. composer.json/composer.lockの更新
+| バージョンアップ対象 | 差し替え対象ファイル                                                                              |
+|----------------------|---------------------------------------------------------------------------------------------------|
+| 4.2.0 → 4.2.1        | composer.json<br>composer.lock<br>package.json<br>package-lock.json|
 
-packagist等の外部ライブラリを独自にインストールしている場合は、再度requireしてください。
+※ FTP等でファイルをアップロードするとパーミッションが変更される可能性があります。[パーミッションの設定について](/permission)を参考にパーミッションの確認をお願いします。
 
-例えば、psr/http-messageをインストールしている場合は、以下のようにインストールしてください。
-
-```
-composer require psr/http-message --no-plugins --no-scripts
-```
-
-Symfony Bundleを使ったプラグインを利用している場合、プラグインのcomposer.jsonを確認し、依存しているライブラリをインストールしてください。
-
-例えば、APIプラグインの場合は、以下のようにcomposer.jsonを確認し、依存ライブラリをインストールしてください。
-
-```
-$ cat app/Plugin/Api/composer.json
-  - TODO: Webインストーラとの兼ね合い確認
-...
-  "require": {
-    "ec-cube/plugin-installer": "~0.0.6 || ^2.0",
-    "trikoder/oauth2-bundle": "^2.1",
-    "nyholm/psr7": "^1.2",
-    "webonyx/graphql-php": "^14.0"
-
-$ composer require trikoder/oauth2-bundle:^2.1 --no-plugins --no-scripts
-$ composer require nyholm/psr7:^1.2 --no-plugins --no-scripts
-$ composer require webonyx/graphql-php:^14.0 --no-plugins --no-scripts
-```
-
-以下のコマンドでキャッシュの削除を行ってください。
+上書き後、以下のコマンドでキャッシュの削除を行ってください。
 
 ```
 bin/console cache:clear --no-warmup
 ```
+
+### 6. composer.json/composer.lockの更新
 
 以下のコマンドを実行してください。
 
@@ -160,7 +116,15 @@ bin/console cache:clear --no-warmup
 bin/console eccube:composer:require-already-installed
 ```
 
-### 6. スキーマ更新/マイグレーション
+packagist等の外部ライブラリを独自にインストールしている場合は、再度requireしてください。
+
+例えば、psr/http-messageをインストールしている場合は、以下のコマンドを実行してください。
+
+```
+composer require psr/http-message
+```
+
+### 7. スキーマ更新/マイグレーション
 
 スキーマ更新およびマイグレーション機能を利用して、データベースのバージョンアップを行います。
 
@@ -178,67 +142,17 @@ bin/console doctrine:schema:update --force --dump-sql
 bin/console doctrine:migrations:migrate
 ```
 
-### 7. キャッシュ等の再生成
-
-autoloadファイルの再生成
-```
-composer dump-autoload
-```
-
-プロキシファイルを再生成
-```
-bin/console eccube:generate:proxies
-```
-
-キャッシュファイルの再生成
-```
-bin/console cache:warmup --env=prod
-```
-
-セッションの削除
-```
-rm -rf var/sessions
-```
-
 ### 8. フロントテンプレートファイルの更新
 
 対象となるバージョンごとに、フロントテンプレートファイル(twig)の更新が必要です。
 
 管理画面のコンテンツ管理もしくは店舗設定＞メール設定から、該当するページ/ブロック/メールテンプレートを編集してください。
 
-4.2.0から4.2.1への変更ファイル一覧は以下のとおりです。
-変更対象の差分は、[変更差分](#変更差分)からご確認いただけます。
+変更対象の差分は、以下リンクからご確認いただくが[各バージョンでの変更差分](#各バージョンでの変更差分)からご確認いただけます。
 
-- src/Eccube/Resource/template/admin/Customer/edit.twig
-- src/Eccube/Resource/template/admin/Customer/index.twig
-- src/Eccube/Resource/template/admin/Order/confirmationModal.twig
-- src/Eccube/Resource/template/admin/Order/index.twig
-- src/Eccube/Resource/template/admin/Product/category.twig
-- src/Eccube/Resource/template/admin/Product/class_category.twig
-- src/Eccube/Resource/template/admin/Product/class_name.twig
-- src/Eccube/Resource/template/admin/Product/product.twig
-- src/Eccube/Resource/template/admin/Product/tag.twig
-- src/Eccube/Resource/template/admin/Setting/Shop/calendar.twig
-- src/Eccube/Resource/template/admin/Setting/Shop/delivery_time_prototype.twig
-- src/Eccube/Resource/template/admin/Setting/Shop/order_status.twig
-- src/Eccube/Resource/template/admin/Setting/Shop/payment_edit.twig
-- src/Eccube/Resource/template/admin/Setting/System/security.twig
-- src/Eccube/Resource/template/admin/Store/authentication_setting.twig
-- src/Eccube/Resource/template/admin/nav.twig
-- src/Eccube/Resource/template/admin/pager.twig
-- src/Eccube/Resource/template/admin/search_items.twig
-- src/Eccube/Resource/template/default/Contact/confirm.twig
-- src/Eccube/Resource/template/default/Contact/index.twig
-- src/Eccube/Resource/template/default/Entry/confirm.twig
-- src/Eccube/Resource/template/default/Entry/index.twig
-- src/Eccube/Resource/template/default/Mail/entry_complete.html.twig
-- src/Eccube/Resource/template/default/Mail/entry_complete.twig
-- src/Eccube/Resource/template/default/Mypage/change.twig
-- src/Eccube/Resource/template/default/Mypage/delivery_edit.twig
-- src/Eccube/Resource/template/default/Shopping/login.twig
-- src/Eccube/Resource/template/default/Shopping/shopping_edit.twig
-- src/Eccube/Resource/template/default/Shopping/shopping_multiple_edit.twig
-- src/Eccube/Resource/template/default/error.twig
+#### 4.2.0 → 4.2.1
+TODO:
+<a href="https://github.com/EC-CUBE/ec-cube/pulls?q=is%3Apr+label%3Aaffected%3Atemplate+is%3Aclosed+milestone%3A4.1.1" target = "_blank">フロントテンプレートファイルの差分</a>
 
 
 ### 9.メンテナンスモードを無効にする
@@ -247,8 +161,16 @@ EC-CUBEの管理画面へアクセスし、「コンテンツ管理」の「メ�
 
 または、EC-CUBEのルートディレクトリに「.maintenance」ファイルを削除することでメンテナンスモードを無効にすることもできます。
 
-## 変更差分
+---
 
-4.2.0から4.2.1への詳細な変更差分は、以下のリンク先で確認することができます。
+EC-CUBEのバージョンアップ手順は以上です。
 
-[https://github.com/EC-CUBE/ec-cube/compare/4.2.0...4.2.1](https://github.com/EC-CUBE/ec-cube/compare/4.2.0...4.2.1?w=1#files_bucket){:target="_blank"}
+## 各バージョンでの変更差分
+
+バージョンごとの詳細な変更差分は、以下のリンク先で確認することができます。
+
+| バージョン      | 差分ページ                                                                                                             |
+|-----------------|------------------------------------------------------------------------------------------------------------------------|
+| 4.2.0 → 4.2.1   | [https://github.com/EC-CUBE/ec-cube/compare/4.2.0...4.2.1](https://github.com/EC-CUBE/ec-cube/compare/4.2.0...4.2.1?w=1#files_bucket){:target="_blank"}   |
+{:target="_blank"}   |
+
