@@ -3,17 +3,13 @@ layout: single
 title: 4.2 本体バージョンアップ
 keywords: howto update
 tags: [quickstart, getting_started]
-permalink: update421
-summary : 4.2.1 の本体バージョンアップ手順について記載します。
+permalink: update42x
+summary : 4.2.x の本体バージョンアップ手順について記載します。
 ---
 
 本番環境でバージョンアップを行う前に、テスト環境で事前検証を必ず行ってください。
 {: .notice--danger}
 この手順では、ec-cube.netからダウンロードしたEC-CUBEのパッケージを利用していることを想定しています。
-{: .notice--danger}
-EC-CUBE本体のコード(app/config/eccube, app/DoctrineMigrations, bin, src, htmlディレクトリ)をカスタマイズしている場合、ファイルが上書きされてしまうため、この手順ではバージョンアップできません。[各バージョンでの変更差分](#各バージョンでの変更差分)を確認して必要な差分を取り込んでください。
-{: .notice--danger}
-#TODO 追記要否の確認　2022年2月21日に公開された「HTTP Hostヘッダの処理に脆弱性」は、EC-CUBEのバージョンアップを行っても修正されません。[脆弱性詳細ページ](https://www.ec-cube.net/info/weakness/20220221/)を参考に、適切な設定を行ってください。
 {: .notice--danger}
 
 
@@ -151,8 +147,7 @@ bin/console doctrine:migrations:migrate
 変更対象の差分は、以下リンクからご確認いただくが[各バージョンでの変更差分](#各バージョンでの変更差分)からご確認いただけます。
 
 #### 4.2.0 → 4.2.1
-TODO:
-<a href="https://github.com/EC-CUBE/ec-cube/pulls?q=is%3Apr+label%3Aaffected%3Atemplate+is%3Aclosed+milestone%3A4.1.1" target = "_blank">フロントテンプレートファイルの差分</a>
+<a href="https://github.com/EC-CUBE/ec-cube/pulls?q=is%3Apr+label%3Aaffected%3Atemplate+is%3Aclosed+milestone%3A4.2.1+" target = "_blank">フロントテンプレートファイルの差分</a>
 
 
 ### 9.メンテナンスモードを無効にする

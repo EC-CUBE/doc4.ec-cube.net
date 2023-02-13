@@ -74,9 +74,6 @@ docs:
   - title: バージョンアップ
     output: web, pdf
     children:
-      - title: 4.2から4.2.1への本体バージョンアップ
-        url: /update421
-        output: web, pdf
       - title: 4.1から4.2へのマイグレーション
         url: /update-41-42
         output: web, pdf
@@ -85,6 +82,9 @@ docs:
         output: web, pdf
       - title: 4.0から4.1へのマイグレーション
         url: /update-40-41
+        output: web, pdf
+      - title: 4.2 本体バージョンアップ
+        url: /update42x
         output: web, pdf
       - title: 4.1本体バージョンアップ
         url: /update41x
