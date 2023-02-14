@@ -14,7 +14,7 @@ folder: customize
 
 ※この機能はEC-CUBE 4.2.1から利用できます。
 
-https://github.com/EC-CUBE/ec-cube/pull/5881
+[EC-CUBE/ec-cube#5881](https://github.com/EC-CUBE/ec-cube/pull/5881)
 
 クレジットマスター等への抑止として、スロットリング機能が追加されました。
 
@@ -135,8 +135,8 @@ bin/console cache:pool:clear rate_limiter.cache --env=<APP_ENV>
 
 ログインのスロットリング機能については、以下を参照してください。
 
-- https://github.com/EC-CUBE/ec-cube/issues/4249
-- https://github.com/EC-CUBE/ec-cube/pull/5473
+- [EC-CUBE/ec-cube#4249](https://github.com/EC-CUBE/ec-cube/issues/4249)
+- [EC-CUBE/ec-cube#5473](https://github.com/EC-CUBE/ec-cube/pull/5473)
 
 ## 参考情報
 
