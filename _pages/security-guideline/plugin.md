@@ -1,13 +1,10 @@
 ---
 layout: single
-title: セキュリティ強化
+title: プラグイン開発におけるセキュリティ強化
 keywords: plugin プラグイン セキュリティ
-tags: [plugin, security]
-permalink: security_guideline_plugin
-folder: security_guideline
----
-
-
+tags: [security-guideline, plugin, security]
+permalink: security-guideline/plugin
+folder: security-guideline
 ---
 
 ## プラグイン開発におけるセキュリティ強化について

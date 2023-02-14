@@ -278,6 +278,9 @@ docs:
       - title: コーディングについて
         url: /security-guideline/coding
         output: web, pdf
+      - title: プラグイン開発におけるセキュリティ強化
+        url: /security-guideline/plugin
+        output: web, pdf
 
   - title: 逆引きリファレンス
     output: web,pdf
