@@ -102,7 +102,7 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
 | 4.1.1 → 4.1.2        | composer.json<br>composer.lock<br>.htaccess<br>index.php<br>symfony.lock<br>package.json<br>package-lock.json|
 | 4.1.2 → 4.1.2-p1        | -|
 
-※ FTP等でファイルをアップロードするとパーミッションが変更される可能性があります。[パーミッションの設定について](/permission)を参考にパーミッションの確認をお願いします。
+※ FTP等でファイルをアップロードするとパーミッションが変更される可能性があります。[パーミッションの設定について](/quickstart/permission)を参考にパーミッションの確認をお願いします。
 
 上書き後、以下のコマンドでキャッシュの削除を行ってください。
 
