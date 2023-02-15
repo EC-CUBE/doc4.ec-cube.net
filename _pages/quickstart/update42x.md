@@ -1,19 +1,15 @@
 ---
 layout: single
-title: 4.1 本体バージョンアップ
+title: 4.2 本体バージョンアップ
 keywords: howto update
 tags: [quickstart, getting_started]
-permalink: update41x
-summary : 4.1.x の本体バージョンアップ手順について記載します。
+permalink: update42x
+summary : 4.2.x の本体バージョンアップ手順について記載します。
 ---
 
 本番環境でバージョンアップを行う前に、テスト環境で事前検証を必ず行ってください。
 {: .notice--danger}
 この手順では、ec-cube.netからダウンロードしたEC-CUBEのパッケージを利用していることを想定しています。
-{: .notice--danger}
-EC-CUBE本体のコード(app/config/eccube, app/DoctrineMigrations, bin, src, htmlディレクトリ)をカスタマイズしている場合、ファイルが上書きされてしまうため、この手順ではバージョンアップできません。[各バージョンでの変更差分](#各バージョンでの変更差分)を確認して必要な差分を取り込んでください。
-{: .notice--danger}
-2022年2月21日に公開された「HTTP Hostヘッダの処理に脆弱性」は、EC-CUBEのバージョンアップを行っても修正されません。[脆弱性詳細ページ](https://www.ec-cube.net/info/weakness/20220221/)を参考に、適切な設定を行ってください。
 {: .notice--danger}
 
 
@@ -98,9 +94,7 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
 
 | バージョンアップ対象 | 差し替え対象ファイル                                                                              |
 |----------------------|---------------------------------------------------------------------------------------------------|
-| 4.1.0 → 4.1.1        | composer.json<br>composer.lock<br>.htaccess<br>index.php<br>symfony.lock<br>package.json<br>package-lock.json|
-| 4.1.1 → 4.1.2        | composer.json<br>composer.lock<br>.htaccess<br>index.php<br>symfony.lock<br>package.json<br>package-lock.json|
-| 4.1.2 → 4.1.2-p1        | -|
+| 4.2.0 → 4.2.1        | composer.json<br>composer.lock<br>package.json<br>package-lock.json|
 
 ※ FTP等でファイルをアップロードするとパーミッションが変更される可能性があります。[パーミッションの設定について](/quickstart/permission)を参考にパーミッションの確認をお願いします。
 
@@ -152,13 +146,9 @@ bin/console doctrine:migrations:migrate
 
 変更対象の差分は、以下リンクからご確認いただくが[各バージョンでの変更差分](#各バージョンでの変更差分)からご確認いただけます。
 
-#### 4.1.0 → 4.1.1
+#### 4.2.0 → 4.2.1
+<a href="https://github.com/EC-CUBE/ec-cube/pulls?q=is%3Apr+label%3Aaffected%3Atemplate+is%3Aclosed+milestone%3A4.2.1+" target = "_blank">フロントテンプレートファイルの差分</a>
 
-<a href="https://github.com/EC-CUBE/ec-cube/pulls?q=is%3Apr+label%3Aaffected%3Atemplate+is%3Aclosed+milestone%3A4.1.1" target = "_blank">フロントテンプレートファイルの差分</a>
-
-#### 4.1.1 → 4.1.2
-
-<a href="https://github.com/EC-CUBE/ec-cube/pulls?q=is%3Apr+label%3Aaffected%3Atemplate+is%3Aclosed+milestone%3A4.1.2" target = "_blank">フロントテンプレートファイルの差分</a>
 
 ### 9.メンテナンスモードを無効にする
 
@@ -176,7 +166,6 @@ EC-CUBEのバージョンアップ手順は以上です。
 
 | バージョン      | 差分ページ                                                                                                             |
 |-----------------|------------------------------------------------------------------------------------------------------------------------|
-| 4.1.0 → 4.1.1   | [https://github.com/EC-CUBE/ec-cube/compare/4.1.0...4.1.1](https://github.com/EC-CUBE/ec-cube/compare/4.1.0...4.1.1?w=1#files_bucket){:target="_blank"}   |
-| 4.1.1 → 4.1.2   | [https://github.com/EC-CUBE/ec-cube/compare/4.1.1...4.1.2](https://github.com/EC-CUBE/ec-cube/compare/4.1.1...4.1.2?w=1#files_bucket){:target="_blank"}   |
-| 4.1.2 → 4.1.2-p1   | [https://github.com/EC-CUBE/ec-cube/compare/4.1.2...4.1.2-p1](https://github.com/EC-CUBE/ec-cube/compare/4.1.2...4.1.2-p1?w=1#files_bucket){:target="_blank"}   |
+| 4.2.0 → 4.2.1   | [https://github.com/EC-CUBE/ec-cube/compare/4.2.0...4.2.1](https://github.com/EC-CUBE/ec-cube/compare/4.2.0...4.2.1?w=1#files_bucket){:target="_blank"}   |
+{:target="_blank"}   |
 
