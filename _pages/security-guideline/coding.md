@@ -422,6 +422,8 @@ script:exec()"></a>
 EC-CUBE4ではHttpOnly属性は標準で指定済であるため、問題ありません。  
 ただし、カスタマイズ時は独自にCookieを発行する場合はHttpOnly属性を指定してください。
 
+※現状ではほとんどのブラウザでHttpOnly属性が活用できます
+
 TRACEメソッドについて：[https://blog.tokumaru.org/2013/01/TRACE-method-is-not-so-dangerous-in-fact.html](https://blog.tokumaru.org/2013/01/TRACE-method-is-not-so-dangerous-in-fact.html)
 
 #### [保険的対策] クロスサイト・スクリプティングの潜在的な脆弱性対策として有効なブラウザの機能を有効にするレスポンスヘッダを返す
