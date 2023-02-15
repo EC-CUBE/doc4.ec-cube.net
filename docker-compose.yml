@@ -1,7 +1,7 @@
 version: "3"
 services:
   jekyll:
-    image: bretfisher/jekyll-serve
+    image: bretfisher/jekyll-serve:stable-20220916052939
     command: [ "bundle", "exec", "jekyll", "serve", "--incremental", "--force_polling", "-H", "0.0.0.0", "-P", "4000" ]
     volumes:
       - .:/site:cached
