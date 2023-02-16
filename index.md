@@ -15,6 +15,7 @@ EC-CUBEのインストール方法、開発ガイドラインや要素技術の�
 {: .notice--danger}
 - 2021/05/10 [プラグイン開発者の方へ ソースコード確認の御願い](https://drive.google.com/file/d/1kCHwoWrveHGPPkH2mu1cz6o2XfNv4Lsq/view?usp=sharing){:target="_blank"} を公開いたしました。
 - 2021/06/29 EC-CUBE 4.0.6 以前には [危険度「高」の脆弱性](https://www.ec-cube.net/info/weakness/index.php?level=0&version=4.0){:target="_blank"} が含まれています。必ず EC-CUBE 4.0.6-p1 以降のバージョンへバージョンアップをお願いします。
+- 2023/02/20 [4.2系でプラグインがインストールできない問題の対応策](/quickstart/trouble-shooting-for-plugin-install)を公開いたしました。特に**レンタルサーバーで4.2系のプラグインがインストール出来ない方**はご参考下さい。
 {: .notice--danger}
 
 ドキュメント内容や、カスタマイズについて不明な点がございましたら、以下をご検討ください。

@@ -39,7 +39,8 @@ permalink: quickstart/requirement
 |必須ライブラリ|pgsql / mysqli (利用するデータベースに合わせること) <br> pdo_pgsql / pdo_mysql / pdo_sqlite (利用するデータベースに合わせること) <br> pdo <br> phar <br> mbstring <br> zlib <br> ctype <br> session <br> JSON <br> xml <br> libxml <br> OpenSSL <br> zip <br> cURL <br> fileinfo <br> intl <br> GD <br> Sodium(※4) |
 |推奨ライブラリ|hash <br> APCu / WinCache (利用する環境に合わせること) <br> Zend OPcache |
 
-※4 EC-CUBE 4.2系は Web API プラグインを利用する場合、Sodium拡張 が必要になります。
+※4 EC-CUBE 4.2系は Web API プラグインを利用する場合、Sodium拡張 が必要になります。  
+プラグインのインストールが出来ない方は[こちらの項目](/quickstart/trouble-shooting-for-plugin-install)をご参考下さい
 
 # 動作確認ブラウザ
 
