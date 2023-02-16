@@ -52,7 +52,7 @@ $qb = $this->createQueryBuilder('p')
 
 ※`$price` の中身に`1 or 1=1` といったような文字が入り込むと、すべてのレコードが返ってくることになります。
 
-* 推奨された例：
+* 推奨例：
 
 ```php
 $qb = $this->createQueryBuilder('p')
@@ -185,7 +185,7 @@ EC-CUBEでは、ファイル管理機能でファイル名の指定を行って�
 ```
 ・ファイル名を固定にする
 ・ファイル名をセッション変数に保持する
-・ファイル名を直接指定するのではなく番号などで間接的に指定する"
+・ファイル名を直接指定するのではなく番号などで間接的に指定する
 ```
 ※参考（ディレクトリ・トラバーサルの対策）：「体系的に学ぶ安全なWebアプリケーションの作り方 第2版」（徳丸浩 著）P.285
 
@@ -324,10 +324,11 @@ class XxxType extends AbstractType
 <script src="{{ "{{ asset('assets/js/layout_design.js', 'admin') " }}}}"></script>
 ```
 
-・また、「動的生成をしない」という対策に反することになりますが、以下のようなエスケープにより対策を行うことも可能です。ただし、手順が複雑で対策漏れが発生する可能性があるため、おすすめはしません。
+* また、「動的生成をしない」という対策に反することになりますが、以下のようなエスケープにより対策を行うことも可能です。ただし、手順が複雑で対策漏れが発生する可能性があるため、おすすめはしません。
 ※script要素内のJavaScript動的生成時の対策
-1．JavaScriptの文法から、引用符（「"」と「'」）と「\」や改行をエスケープする
-2．1の結果に`「</script>」`という文字列が出現しないようにする
+
+1. JavaScriptの文法から、引用符（「"」と「'」）と「\」や改行をエスケープする
+2. 1の結果に「`</script>`」という文字列が出現しないようにする
 
 
 #### [根本的解決] スタイルシートを任意のサイトから取り込めるようにしない
@@ -335,7 +336,7 @@ class XxxType extends AbstractType
 
 使用する場合は、`integrity`を指定し、改ざんの確認を行うようにしてください。
 
-```
+```html
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 ```
 
@@ -419,7 +420,9 @@ script:exec()"></a>
 > 本対策は、クロスサイト・スクリプティングの脆弱性のすべての脅威をなくすものではなく、Cookie漏えい以外の脅威は依然として残るものであること、また、利用者のブラウザによっては、この対策が有効に働かない場合があることを理解した上で、対策の実施を検討してください。
 
 EC-CUBE4ではHttpOnly属性は標準で指定済であるため、問題ありません。  
-ただし、カスタマイズ時は独自にCookieを発行する場合はHTTP_ONLY属性を指定してください。
+ただし、カスタマイズ時は独自にCookieを発行する場合はHttpOnly属性を指定してください。
+
+※現状ではほとんどのブラウザでHttpOnly属性が活用できます
 
 TRACEメソッドについて：[https://blog.tokumaru.org/2013/01/TRACE-method-is-not-so-dangerous-in-fact.html](https://blog.tokumaru.org/2013/01/TRACE-method-is-not-so-dangerous-in-fact.html)
 
@@ -428,11 +431,8 @@ TRACEメソッドについて：[https://blog.tokumaru.org/2013/01/TRACE-method-
 > ブラウザには、クロスサイト・スクリプティング攻撃のブロックを試みる機能を備えたものがあります。しかし、ユーザの設定によっては無効になってしまっている場合があるため、サーバ側から明示的に有効にするレスポンスヘッダを返すことで、ウェブアプリケーションにクロスサイト・スクリプティング脆弱性があった場合にも悪用を避けることができます。ただし、下記に示すレスポンスヘッダは、いずれもブラウザによって対応状況に差があるため、全てのウェブサイト閲覧者に有効な対策ではありません。
 > 
 > 「X-XSS-Protection」は、ブラウザの「XSSフィルタ」の設定を有効にするパラメータです。ブラウザで明示的に無効になっている場合でも、このパラメータを受信することで有効になります。 HTTP レスポンスヘッダに`「X-XSS-Protection: 1; mode=block」`のように設定することで、クロスサイト・スクリプティング攻撃のブロックを試みる機能が有効になります。
-> 
-> 「Content Security Policy (CSP)」は、ブラウザで起こりうる問題を緩和するセキュリティの追加レイヤーです。その機能の一つに、反射型クロスサイト・スクリプティング攻撃を防止する「reflected-xss」があります。HTTP レスポンスヘッダに`「Content-Security-Policy: reflected-xss block」`のように設定することで、クロスサイト・スクリプティング攻撃のブロックを試みる機能が有効になります。
 
-
-ただし、EC-CUBEでは、.htaccessにて以下を指定することに対策を行っており問題ありません。
+ただし、EC-CUBEでは、.htaccessにて以下を指定することにより対策を行っており問題ありません。
 ```
 x-content-type-options: nosniff
 x-xss-protection: 1; mode=block
