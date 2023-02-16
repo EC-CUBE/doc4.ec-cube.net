@@ -349,13 +349,13 @@ var message = {{"'{{ form.value|escape('js')" }}}}';
 * 誤った例
 
 ```javascript
-$('#modal').text(this);
+$('#modal').html(this);
 ```
 
 * 推奨例
 
 ```javascript
-$('#modal').html(this);
+$('#modal').text(this);
 ```
 
 ※HTMLをそのまま使用する処理を書くのではなく、エスケープした状態で使用する処理に変更する
