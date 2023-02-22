@@ -14,8 +14,9 @@ folder: customize
 
 ※この機能はEC-CUBE 4.2.1から利用できます。
 
-[EC-CUBE/ec-cube#5881](https://github.com/EC-CUBE/ec-cube/pull/5881)
-
+- [EC-CUBE/ec-cube#5881](https://github.com/EC-CUBE/ec-cube/pull/5881)
+- [EC-CUBE/ec-cube#5942](https://github.com/EC-CUBE/ec-cube/pull/5942)
+ 
 クレジットマスター等への抑止として、スロットリング機能が追加されました。
 
 IPごと、または会員ごとのスロットリングを行うことができます。
@@ -131,6 +132,28 @@ eccube:
 ```
 bin/console cache:pool:clear rate_limiter.cache --env=<APP_ENV> 
 ```
+
+### スロットリング情報の保存先を変更する
+
+デフォルトでは、スロットリング情報の保存先はファイルシステムとなっています。
+
+app/config/eccube/packages/rate_limiter.yml で、保存先を変更することが可能です。
+
+```
+# config/packages/rate_limiter.yaml
+framework:
+    cache:
+        pools:
+            rate_limiter.cache:
+                adapter: cache.adapter.filesystem
+```
+
+設定方法は [https://symfony.com/doc/5.4/cache.html](https://symfony.com/doc/5.4/cache.html) を参照してください。
+
+{: .notice--danger}
+現在、[EC-CUBE/ec-cube#5957](https://github.com/EC-CUBE/ec-cube/issues/5957) の不具合があり、スロットリング情報の保存先にcache.adapter.doctrine_dbalを選択することができません。
+冗長構成をとる場合は、redisやmemcachedを設定してください。
+{: .notice--danger}
 
 ### ログインスロットリング
 
