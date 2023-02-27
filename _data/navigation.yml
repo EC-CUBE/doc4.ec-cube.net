@@ -83,7 +83,7 @@ docs:
       - title: 4.0から4.1へのマイグレーション
         url: /update-40-41
         output: web, pdf
-      - title: 4.2 本体バージョンアップ
+      - title: 4.2本体バージョンアップ
         url: /update42x
         output: web, pdf
       - title: 4.1本体バージョンアップ
