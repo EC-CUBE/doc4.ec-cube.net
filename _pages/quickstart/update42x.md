@@ -98,26 +98,44 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
 
 ※ FTP等でファイルをアップロードするとパーミッションが変更される可能性があります。[パーミッションの設定について](/quickstart/permission)を参考にパーミッションの確認をお願いします。
 
-上書き後、以下のコマンドでキャッシュの削除を行ってください。
+### 6. composer.json/composer.lockの更新
+
+packagist等の外部ライブラリを独自にインストールしている場合は、再度requireしてください。
+
+例えば、psr/http-messageをインストールしている場合は、以下のようにインストールしてください。
+
+```
+composer require psr/http-message --no-plugins --no-scripts
+```
+
+Symfony Bundleを使ったプラグインを利用している場合、プラグインのcomposer.jsonを確認し、依存しているライブラリをインストールしてください。
+
+例えば、APIプラグインの場合は、以下のようにcomposer.jsonを確認し、依存ライブラリをインストールしてください。
+
+```
+$ cat app/Plugin/Api/composer.json
+...
+  "require": {
+    "ec-cube/plugin-installer": "~0.0.6 || ^2.0",
+    "trikoder/oauth2-bundle": "^2.1",
+    "nyholm/psr7": "^1.2",
+    "webonyx/graphql-php": "^14.0"
+
+$ composer require trikoder/oauth2-bundle:^2.1 --no-plugins --no-scripts
+$ composer require nyholm/psr7:^1.2 --no-plugins --no-scripts
+$ composer require webonyx/graphql-php:^14.0 --no-plugins --no-scripts
+```
+
+以下のコマンドでキャッシュの削除を行ってください。
 
 ```
 bin/console cache:clear --no-warmup
 ```
 
-### 6. composer.json/composer.lockの更新
-
 以下のコマンドを実行してください。
 
 ```
 bin/console eccube:composer:require-already-installed
-```
-
-packagist等の外部ライブラリを独自にインストールしている場合は、再度requireしてください。
-
-例えば、psr/http-messageをインストールしている場合は、以下のコマンドを実行してください。
-
-```
-composer require psr/http-message
 ```
 
 ### 7. スキーマ更新/マイグレーション
