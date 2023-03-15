@@ -51,10 +51,22 @@ $ git fetch ec-cube
 $ git checkout -b develop origin/develop
 ```
 
-### co/(master もしくは 4.1) に追従する
+### coブランチに追従する
 
 ```
-$ git merge --allow-unrelated-histories ec-cube/co/(master もしくは 4.1)
+$ git merge --allow-unrelated-histories ec-cube/<coブランチ名>
+```
+
+coブランチは、バージョンによって異なります。
+
+- 4.0 -> co/master
+- 4.1 -> co/4.1
+- 4.2 -> co/4.2
+
+例えば4.2環境をご利用の場合は、以下のようにマージしてください。
+
+```
+$ git merge --allow-unrelated-histories ec-cube/co/4.2
 ```
 
 ## テスト環境・本番環境への反映方法
