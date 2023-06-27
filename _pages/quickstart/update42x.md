@@ -101,6 +101,10 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
 ※ FTP等でファイルをアップロードするとパーミッションが変更される可能性があります。[パーミッションの設定について](/quickstart/permission)を参考にパーミッションの確認をお願いします。
 
 ### 6. composer.json/composer.lockの更新
+※ 4.2.2へのバージョンアップ時に、手順の入れ替えが必要となります。
+「7. スキーマ更新/マイグレーション」の手順を先に実行して、「6. composer.json/composer.lockの更新」へと進んでください。
+通常の手順だと「6. composer.json/composer.lockの更新」のステップでrequire-already-installedが実行されます。
+この時、dtb_base_infoにアクセスするため、エラーが発生します。上記の手順の入れ替えることで、エラーの回避ができます。
 
 packagist等の外部ライブラリを独自にインストールしている場合は、再度requireしてください。
 
