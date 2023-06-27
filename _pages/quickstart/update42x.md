@@ -95,10 +95,18 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
 | バージョンアップ対象 | 差し替え対象ファイル                                                                              |
 |----------------------|---------------------------------------------------------------------------------------------------|
 | 4.2.0 → 4.2.1        | composer.json<br>composer.lock<br>package.json<br>package-lock.json|
+---------------------------------------------------------------------------------------------------|
+| 4.2.1 → 4.2.2        | package.json<br>package-lock.json|
 
 ※ FTP等でファイルをアップロードするとパーミッションが変更される可能性があります。[パーミッションの設定について](/quickstart/permission)を参考にパーミッションの確認をお願いします。
 
 ### 6. composer.json/composer.lockの更新
+<span style="color:#ff0000;">
+※ 4.2.2へのバージョンアップ時に、手順の入れ替えが必要となります。
+「7. スキーマ更新/マイグレーション」の手順を先に実行して、「6. composer.json/composer.lockの更新」へと進んでください。
+通常の手順だと「6. composer.json/composer.lockの更新」のステップでrequire-already-installedが実行されます。
+この時、dtb_base_infoにアクセスするため、エラーが発生します。上記の手順を入れ替えることで、エラーの回避ができます。
+</span>
 
 packagist等の外部ライブラリを独自にインストールしている場合は、再度requireしてください。
 
@@ -167,6 +175,8 @@ bin/console doctrine:migrations:migrate
 #### 4.2.0 → 4.2.1
 <a href="https://github.com/EC-CUBE/ec-cube/pulls?q=is%3Apr+label%3Aaffected%3Atemplate+is%3Aclosed+milestone%3A4.2.1+" target = "_blank">フロントテンプレートファイルの差分</a>
 
+#### 4.2.1 → 4.2.2
+4.2.2ではフロントテンプレートの変更はありません。
 
 ### 9.メンテナンスモードを無効にする
 
@@ -185,5 +195,4 @@ EC-CUBEのバージョンアップ手順は以上です。
 | バージョン      | 差分ページ                                                                                                             |
 |-----------------|------------------------------------------------------------------------------------------------------------------------|
 | 4.2.0 → 4.2.1   | [https://github.com/EC-CUBE/ec-cube/compare/4.2.0...4.2.1](https://github.com/EC-CUBE/ec-cube/compare/4.2.0...4.2.1?w=1#files_bucket){:target="_blank"}   |
-{:target="_blank"}   |
-
+| 4.2.1 → 4.2.2   | [https://github.com/EC-CUBE/ec-cube/compare/4.2.1...4.2.2](https://github.com/EC-CUBE/ec-cube/compare/4.2.1...4.2.2?w=1#files_bucket){:target="_blank"}   |
