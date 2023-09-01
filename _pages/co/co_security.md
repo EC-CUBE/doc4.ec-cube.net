@@ -45,8 +45,7 @@ WAFによりWebアプリケーションへの攻撃を検知し、攻撃者か�
 ## 開発としての対策
 
 ### 個人情報の取り扱い
-
-[個人情報の取扱いについて](https://www.ec-cube.co/pdf/privacy_policy.pdf){:target="_blank"} を参照してください。
+[個人情報保護方針](https://www.ec-cube.net/policy/privacy.php){:target="_blank"}、並びに[個人情報の取扱いについて](https://www.ec-cube.net/policy/){:target="_blank"} を参照してください。
 
 ### 開発・運用端末
 
