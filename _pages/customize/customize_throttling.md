@@ -25,7 +25,8 @@ IPごと、または会員ごとのスロットリングを行うことができ
 
 | 画面 | ルーティング | IPベース | 会員ベース | 備考 |
 |---|---|---|---|---|
-| 会員登録 | entry | 5回/30分 | - |  |
+| 会員登録 | entry | 25回/30分 | - | 新規会員登録（入力）画面から確認画面に遷移する時に実施 |
+| 会員登録(完了) | entry | 5回/30分 | - | 新規会員登録画面で会員登録を完了した時に実施 |
 | パスワード再発行 | forgot | 5回/30分 | - |  |
 | 問い合わせ | contact | 5回/30分 | - |  |
 | 注文確認画面 | shopping_confirm | 25回/30分 | 10回/30分 | バリデーション等が完了し、決済プラグインへ処理を移譲する直前で実施 |
@@ -169,6 +170,7 @@ framework:
 - [EC-CUBE/ec-cube#4249](https://github.com/EC-CUBE/ec-cube/issues/4249)
 - [EC-CUBE/ec-cube#5473](https://github.com/EC-CUBE/ec-cube/pull/5473)
 - [EC-CUBE/ec-cube#6035](https://github.com/EC-CUBE/ec-cube/pull/6035)
+- [EC-CUBE/ec-cube#6038](https://github.com/EC-CUBE/ec-cube/pull/6038)
 
 ## 参考情報
 
