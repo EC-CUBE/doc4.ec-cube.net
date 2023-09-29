@@ -36,6 +36,7 @@ IPごと、または会員ごとのスロットリングを行うことができ
 | 会員お届け先削除 | mypage_delivery_delete | - | 10回/30分 | ログイン後の画面のため、会員ベースのみ |
 | カート内会員複数配送設定 | shopping_shipping_multiple_edit | - | 10回/30分 | ログイン後の画面のため、会員ベースのみ |
 | カート内会員お届け先編集 | shopping_shipping_edit | - | 10回/30分 | ログイン後の画面のため、会員ベースのみ |
+| 管理画面ログイン（2段階認証) | admin_two_factor_auth | - | 5回/30分 | 管理画面ログイン後の画面のため、管理者ユーザベースのみ |
 
 また、プラグインやCustomizeからもこの機能を利用できます。
 
@@ -45,7 +46,7 @@ IPごと、または会員ごとのスロットリングを行うことができ
 
 以下のようにyamlで設定を行うことで、ルーティングに対しスロットリングが自動実行されます。
 
-スロットリングの制御はipごと/会員ごとを指定可能です。
+スロットリングの制御はipごと/会員（または管理者ユーザ）ごとを指定可能です。
 
 yamlファイルは、
 
@@ -60,7 +61,7 @@ eccube:
         forgot:
             route: forgot # スロットリングを実行するルーティングを指定します。
             method: ['POST'] # スロットリングを実行するmethodを指定します。デフォルトはPOSTです。
-            type: ip # スロットリングの制御方法を設定します。ip, customerを指定します。複数指定も可能です。
+            type: ip # スロットリングの制御方法を設定します。ip, userを指定します。複数指定も可能です。(4.2.3以降は customer ではなく userを指定してください。)
             limit: 5
             interval: '30 minutes'
         entry:
@@ -68,7 +69,7 @@ eccube:
             method: ['POST']
             params:
                 mode: complete # 会員登録画面のように、確認画面を挟む遷移をする場合、遷移用のパラメータを指定できます。
-            type: [ 'ip', 'customer' ]
+            type: [ 'ip', 'user' ]
             limit: 5
             interval: '30 minutes'
         shopping_confirm_ip:
@@ -116,7 +117,7 @@ eccube:
   forgot:
    route: forgot # スロットリングを実行するルーティングを指定します。
    method: ['POST'] # スロットリングを実行するmethodを指定します。デフォルトはPOSTです。
-   type: ip # スロットリングの制御方法を設定します。ip, customerを指定します。複数指定も可能です。
+   type: ip # スロットリングの制御方法を設定します。ip, userを指定します。複数指定も可能です。(4.2.3以降は customer ではなく userを指定してください。)
    limit: 5
    interval: '30 minutes'
 ```
@@ -167,6 +168,7 @@ framework:
 
 - [EC-CUBE/ec-cube#4249](https://github.com/EC-CUBE/ec-cube/issues/4249)
 - [EC-CUBE/ec-cube#5473](https://github.com/EC-CUBE/ec-cube/pull/5473)
+- [EC-CUBE/ec-cube#6035](https://github.com/EC-CUBE/ec-cube/pull/6035)
 
 ## 参考情報
 
