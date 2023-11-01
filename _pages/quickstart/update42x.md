@@ -181,8 +181,9 @@ bin/console doctrine:migrations:migrate
 4.2.2ではフロントテンプレートの変更はありません。
 
 #### 4.2.2 → 4.2.3
-<!-- ここのリンクはリリースまでに修正する -->
-[フロントテンプレートファイルの差分](https://github.com/EC-CUBE/ec-cube/pulls?q=is%3Apr+label%3Aaffected%3Atemplate+is%3Aclosed+milestone%3A4.2.3+){:target="_blank"}
+
+脆弱性対策として出しているページに、テンプレートの変更箇所を記載しております。  
+[こちらのページ](https://www.ec-cube.net/info/weakness/20231026/index.php){:target="_blank"}を参考に適用をお願い致します。
 
 ### 9.メンテナンスモードを無効にする
 
