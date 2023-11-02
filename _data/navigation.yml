@@ -145,7 +145,7 @@ docs:
       - title: スロットリング機能のカスタマイズ
         url: /customize_throttling
         output: web, pdf
-      - title: Twig Sandboxによるホワイトリスト制御
+      - title: Twig Sandboxによる許可リスト制御
         url: /customize_twig_sandbox
         output: web, pdf
       - title: Symfonyの機能を使った拡張

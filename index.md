@@ -110,7 +110,7 @@ EC-CUBEの基本情報やご確認いただきたいことについてまとめ�
 + [受注ステータスのカスタマイズ](/customize_order_state_machine)
 + [テンプレートのカスタマイズ](/customize_template)
 + [スロットリング機能のカスタマイズ](/customize_throttling)
-+ [Twig Sandboxにおけるホワイトリスト制御](/customize_twig_sandbox)
++ [Twig Sandboxにおける許可リスト制御](/customize_twig_sandbox)
 + [Symfonyの機能を使った拡張](/customize_symfony)
 + [Symfonyの機能を使った拡張 Commandの開発](/customize_symfony#command)
 
