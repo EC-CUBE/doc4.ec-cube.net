@@ -151,4 +151,4 @@ Filter "abs" is not allowed in "__string_template__cceb5b1ce6c6124b4a33368da2e5f
 当機能の許可リスト制御は、twigのSandboxを利用しております。  
 こちらのドキュメントも併せてご参照ください。
 
-[Sandbox Extension](https://php-log.net/twig/3.x/api.html#sandbox-extension){:target="_blank"}
+[Sandbox Extension](https://twig.symfony.com/doc/3.x/api.html#sandbox-extension){:target="_blank"}
