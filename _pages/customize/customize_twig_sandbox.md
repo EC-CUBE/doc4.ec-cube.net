@@ -57,7 +57,7 @@ Sandbox内ではtwigの機能のうち、許可リストに記載されたもの
 以下のファイルを編集します。
 
 * デフォルトの許可リストの場合、 `app/config/eccube/packages/twig_extensions.yaml`
-* Customizeの場合、`app/Customize/Resource/config/services.yaml``
+* Customizeの場合、`app/Customize/Resource/config/services.yaml`
 
 以下のリストを用意し、追加・削除を行ってください。
 
