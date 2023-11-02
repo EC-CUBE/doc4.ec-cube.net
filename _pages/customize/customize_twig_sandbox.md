@@ -19,10 +19,8 @@ folder: customize
 
 ### Tips: twigの機能について
 
-EC-CUBEはSymfonyを用いて開発しています。  
-そのSymfonyでは、twigをデフォルトのテンプレートエンジンとして採用しています。  
-twigでは、関数や変数を使用することができ、  
-その組み合わせによってViewの構築を便利にできるというメリットがあります。
+EC-CUBEでは、テンプレートエンジンにtwigを使用しています。  
+twigでは、関数や変数を使用することができ、その組み合わせによってViewの構築を便利にできるというメリットがあります。  
 ただし一方で、その便利な機能を悪用することで予期せぬ情報流出が起きるリスクもあります。  
 
 EC-CUBEのtwigテンプレートでの出力は、標準ではHTMLエスケープが行われます。  
@@ -38,7 +36,7 @@ EC-CUBEのtwigテンプレートでの出力は、標準ではHTMLエスケー�
 上記のリスクを無くすために、EC-CUBEでは以下の部分に対してSandboxを適用しています。  
 
 * 商品詳細フリーエリア
-* 商品詳細メタタグ
+* メタタグ （管理画面＞コンテンツ管理＞ページ管理>メタタグ）
 
 Sandbox内ではtwigの機能のうち、ホワイトリストに記載されたものしか使用できなくなります。  
 （通常の文字列は問題なく記述頂くことが可能です）
@@ -50,146 +48,164 @@ Sandbox内ではtwigの機能のうち、ホワイトリストに記載された
 **※以下に記載のあるtwigの機能のみ、Snadbox内で使用することが出来ます。**  
 記載のない機能は使用できないので、もし必要がある場合はホワイトリストに記載ください。
 
-| 種類 | キーワード | 
-| --- | -----|
-| tag | apply | 
-| tag | block | 
-| tag | deprecated | 
-| tag | embed | 
-| tag | extends | 
-| tag | flush | 
-| tag | for | 
-| tag | if | 
-| tag | set | 
-| tag | spaceless | 
-| tag | verbatim | 
-| tag | with | 
-| tag | form_theme | 
-| tag | stopwatch | 
-| tag | trans | 
-| tag | trans_default_domain | 
-| filter | abs | 
-| filter | batch |
-| filter | capitalize |
-| filter | column |
-| filter | convert_encoding |
-| filter | country_name |
-| filter | currency_name |
-| filter | currency_symbol |
-| filter | date |
-| filter | date_modify |
-| filter | default |
-| filter | escape |
-| filter | first |
-| filter | format |
-| filter | format_currency |
-| filter | format_date |
-| filter | format_datetime |
-| filter | format_number |
-| filter | format_time |
-| filter | join |
-| filter | json_encode |
-| filter | keys |
-| filter | language_name |
-| filter | last |
-| filter | length |
-| filter | locale_name |
-| filter | lower |
-| filter | merge |
-| filter | nl2br |
-| filter | number_format |
-| filter | replace |
-| filter | reverse |
-| filter | round |
-| filter | slice |
-| filter | spaceless |
-| filter | split |
-| filter | striptags |
-| filter | timezone_name |
-| filter | title |
-| filter | trim |
-| filter | upper |
-| filter | url_encode |
-| filter | abbr_class |
-| filter | abbr_method |
-| filter | file_link |
-| filter | file_relative |
-| filter | format_args |
-| filter | format_args_as_text |
-| filter | humanize |
-| filter | serialize |
-| filter | trans |
-| filter | yaml_dump |
-| filter | yaml_encode |
-| filter | currency_symbol |
-| filter | date_day |
-| filter | date_day_with_weekday |
-| filter | date_format |
-| filter | date_min |
-| filter | date_sec |
-| filter | doctrine_format_sql |
-| filter | doctrine_prettify_sql |
-| filter | doctrine_pretty_query |
-| filter | doctrine_replace_query_parameters |
-| filter | e |
-| filter | ellipsis |
-| filter | file_ext_icon |
-| filter | form_encode_currency |
-| filter | format_*_number |
-| filter | format_log_message |
-| filter | no_image_product |
-| filter | price |
-| filter | purify |
-| filter | time_ago |
-| functions | cycle |
-| functions | date |
-| functions | max |
-| functions | min |
-| functions | random |
-| functions | range |
-| functions | country_timezones |
-| functions | absolute_url |
-| functions | asset |
-| functions | asset_version |
-| functions | csrf_token |
-| functions | form_parent |
-| functions | fragment_uri |
-| functions | impersonation_exit_path |
-| functions | impersonation_exit_url |
-| functions | is_granted |
-| functions | logout_path |
-| functions | logout_url |
-| functions | path |
-| functions | relative_path |
-| functions | t |
-| functions | url |
-| functions | active_menus |
-| functions | class_categories_as_json |
-| functions | country_names |
-| functions | csrf_token_for_anchor |
-| functions | currency_names |
-| functions | currency_symbol |
-| functions | field_choices |
-| functions | field_errors |
-| functions | field_help |
-| functions | field_label |
-| functions | field_name |
-| functions | field_value |
-| functions | get_all_carts |
-| functions | get_cart |
-| functions | get_carts_total_price |
-| functions | get_carts_total_quantity |
-| functions | has_errors |
-| functions | is_reduced_tax_rate |
-| functions | language_names |
-| functions | product |
-| functions | workflow_can |
-| functions | workflow_has_marked_place |
-| functions | workflow_marked_places |
-| functions | workflow_metadata |
-| functions | workflow_transition |
-| functions | workflow_transition_blockers |
-| functions | workflow_transitions |
+<details>
+<summary>tagのホワイトリスト</summary>
+
+{{ "* apply" | markdownify }}
+{{ "* block" | markdownify }}
+{{ "* deprecated" | markdownify }}
+{{ "* embed" | markdownify }}
+{{ "* extends" | markdownify }}
+{{ "* flush" | markdownify }}
+{{ "* for " | markdownify }}
+{{ "* if" | markdownify }}
+{{ "* set" | markdownify }}
+{{ "* spaceless" | markdownify }}
+{{ "* verbatim" | markdownify }}
+{{ "* with" | markdownify }}
+{{ "* form_theme" | markdownify }}
+{{ "* stopwatch" | markdownify }}
+{{ "* trans" | markdownify }}
+{{ "* trans_default_domain" | markdownify }}
+
+</details>
+
+
+<details>
+<summary>filterのホワイトリスト</summary>
+
+{{ "* abs" | markdownify }}
+{{ "* batch" | markdownify }}
+{{ "* capitalize" | markdownify }}
+{{ "* column" | markdownify }}
+{{ "* convert_encoding" | markdownify }}
+{{ "* country_name" | markdownify }}
+{{ "* currency_name" | markdownify }}
+{{ "* currency_symbol" | markdownify }}
+{{ "* date" | markdownify }}
+{{ "* date_modify" | markdownify }}
+{{ "* default" | markdownify }}
+{{ "* escape" | markdownify }}
+{{ "* first" | markdownify }}
+{{ "* format" | markdownify }}
+{{ "* format_currency" | markdownify }}
+{{ "* format_date" | markdownify }}
+{{ "* format_datetime" | markdownify }}
+{{ "* format_number" | markdownify }}
+{{ "* format_time" | markdownify }}
+{{ "* join" | markdownify }}
+{{ "* json_encode" | markdownify }}
+{{ "* keys" | markdownify }}
+{{ "* language_name" | markdownify }}
+{{ "* last" | markdownify }}
+{{ "* length" | markdownify }}
+{{ "* locale_name" | markdownify }}
+{{ "* lower" | markdownify }}
+{{ "* merge" | markdownify }}
+{{ "* nl2br" | markdownify }}
+{{ "* number_format" | markdownify }}
+{{ "* replace" | markdownify }}
+{{ "* reverse" | markdownify }}
+{{ "* round" | markdownify }}
+{{ "* slice" | markdownify }}
+{{ "* spaceless" | markdownify }}
+{{ "* split" | markdownify }}
+{{ "* striptags" | markdownify }}
+{{ "* timezone_name" | markdownify }}
+{{ "* title" | markdownify }}
+{{ "* trim" | markdownify }}
+{{ "* upper" | markdownify }}
+{{ "* url_encode" | markdownify }}
+{{ "* abbr_class" | markdownify }}
+{{ "* abbr_method" | markdownify }}
+{{ "* file_link" | markdownify }}
+{{ "* file_relative" | markdownify }}
+{{ "* format_args" | markdownify }}
+{{ "* format_args_as_text" | markdownify }}
+{{ "* humanize" | markdownify }}
+{{ "* serialize" | markdownify }}
+{{ "* trans" | markdownify }}
+{{ "* yaml_dump" | markdownify }}
+{{ "* yaml_encode" | markdownify }}
+{{ "* currency_symbol" | markdownify }}
+{{ "* date_day" | markdownify }}
+{{ "* date_day_with_weekday" | markdownify }}
+{{ "* date_format" | markdownify }}
+{{ "* date_min" | markdownify }}
+{{ "* date_sec" | markdownify }}
+{{ "* doctrine_format_sql" | markdownify }}
+{{ "* doctrine_prettify_sql" | markdownify }}
+{{ "* doctrine_pretty_query" | markdownify }}
+{{ "* doctrine_replace_query_parameters" | markdownify }}
+{{ "* e" | markdownify }}
+{{ "* ellipsis" | markdownify }}
+{{ "* file_ext_icon" | markdownify }}
+{{ "* form_encode_currency" | markdownify }}
+{{ "* format_*_number" | markdownify }}
+{{ "* format_log_message" | markdownify }}
+{{ "* no_image_product" | markdownify }}
+{{ "* price" | markdownify }}
+{{ "* purify" | markdownify }}
+{{ "* time_ago" | markdownify }}
+
+</details>
+
+
+<details>
+<summary>functionのホワイトリスト</summary>
+
+{{ "* cycle" | markdownify }}
+{{ "* date" | markdownify }}
+{{ "* max" | markdownify }}
+{{ "* min" | markdownify }}
+{{ "* random" | markdownify }}
+{{ "* range" | markdownify }}
+{{ "* country_timezones" | markdownify }}
+{{ "* absolute_url" | markdownify }}
+{{ "* asset" | markdownify }}
+{{ "* asset_version" | markdownify }}
+{{ "* csrf_token" | markdownify }}
+{{ "* form_parent" | markdownify }}
+{{ "* fragment_uri" | markdownify }}
+{{ "* impersonation_exit_path" | markdownify }}
+{{ "* impersonation_exit_url" | markdownify }}
+{{ "* is_granted" | markdownify }}
+{{ "* logout_path" | markdownify }}
+{{ "* logout_url" | markdownify }}
+{{ "* path" | markdownify }}
+{{ "* relative_path" | markdownify }}
+{{ "* t" | markdownify }}
+{{ "* url" | markdownify }}
+{{ "* active_menus" | markdownify }}
+{{ "* class_categories_as_json" | markdownify }}
+{{ "* country_names" | markdownify }}
+{{ "* csrf_token_for_anchor" | markdownify }}
+{{ "* currency_names" | markdownify }}
+{{ "* currency_symbol" | markdownify }}
+{{ "* field_choices" | markdownify }}
+{{ "* field_errors" | markdownify }}
+{{ "* field_help" | markdownify }}
+{{ "* field_label" | markdownify }}
+{{ "* field_name" | markdownify }}
+{{ "* field_value" | markdownify }}
+{{ "* get_all_carts" | markdownify }}
+{{ "* get_cart" | markdownify }}
+{{ "* get_carts_total_price" | markdownify }}
+{{ "* get_carts_total_quantity" | markdownify }}
+{{ "* has_errors" | markdownify }}
+{{ "* is_reduced_tax_rate" | markdownify }}
+{{ "* language_names" | markdownify }}
+{{ "* product" | markdownify }}
+{{ "* workflow_can" | markdownify }}
+{{ "* workflow_has_marked_place" | markdownify }}
+{{ "* workflow_marked_places" | markdownify }}
+{{ "* workflow_metadata" | markdownify }}
+{{ "* workflow_transition" | markdownify }}
+{{ "* workflow_transition_blockers" | markdownify }}
+{{ "* workflow_transitions" | markdownify }}
+
+</details>
+
 
 ## ホワイトリストを編集する場合
 
@@ -266,8 +282,8 @@ parameters:
 
 現在、Sandbox内でホワイトリストで許可されていない記述が現れた場合、
 
-* 本番モード（`APP_ENV=prod`）では、「ログ出力し、sandbox内の記述を消す」
-* 開発モード（`APP_ENV=dev`）では、「エラーを発生させる」
+* 本番モード（`APP_ENV=prod`）では、「エラーをログ出力し、sandbox内の記述を消す」
+* 開発モード（`APP_ENV=dev`）では、「エラーを表示させる」
 
 という挙動をするようになっております。
 
