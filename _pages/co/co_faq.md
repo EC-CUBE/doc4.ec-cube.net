@@ -359,7 +359,9 @@ PCI DSSの要件に対応はしておりません。ご了承ください。
 
 ### 本番で行ったテスト受注があり一括で消したいのですが、どうしたらいいでしょうか？
 
-[オーナーズストア](https://www.ec-cube.net/owners/){:target="_blank"} にございます [受注データ一括削除プラグイン for EC-CUBE4](https://www.ec-cube.net/products/detail.php?product_id=2101){:target="_blank"} を使用することで実現が可能です。
+[オーナーズストア](https://www.ec-cube.net/owners/){:target="_blank"} にございます下記を使用することで実現が可能です。  
+- 4.2系＞ [受注データ一括削除プラグイン for EC-CUBE4.2](https://www.ec-cube.net/products/detail.php?product_id=2851){:target="_blank"}
+- 4.0～4.1系＞ [受注データ一括削除プラグイン for EC-CUBE4](https://www.ec-cube.net/products/detail.php?product_id=2101){:target="_blank"}
 
 ### 本番環境を最新にしたいのですが、DBダンプファイルなどの反映はお願いできますか？
 
