@@ -15,6 +15,14 @@ EC-CUBE本体および一部公式プラグインをEC-CUBE4.3対応し、コー
 - [Symfony6 対応](https://github.com/EC-CUBE/ec-cube/pull/6073){:target="_blank"}
 - [商品レビュープラグイン：Symfony 6対応](https://github.com/EC-CUBE/ProductReview-plugin/pull/93){:target="_blank"}
 
+## プラグインの互換性について
+
+EC-CUBE 4.2と4.3はプラグインの互換性を担保しています。
+
+本ドキュメントの修正を実施いただくことで、両バージョンでプラグインを動作させることができます。
+
+両バージョンでプラグインを動作させる場合、`composer.json` のプラグインコードの変更は不要です。
+
 ## PHP8.3対応
 
 EC-CUBE 4.3では、PHPのシステム要件は8.1〜8.3となります。
