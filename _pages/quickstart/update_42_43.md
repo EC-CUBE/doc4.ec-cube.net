@@ -185,7 +185,7 @@ PluginMangerでのサービス呼び出しも、本仕様変更の影響を受�
 
 `PasswordEncoder`は廃止され、`PasswordHaser`を利用するようになりました。
 
-`PasswordHaser`を使用する際のパスワードのハッシュ化処理は、以下のようにコードになります。
+`PasswordHaser`を使用する際のパスワードのハッシュ化処理は、以下のようなコードになります。
 
 ```diff
 - use Symfony\Component\Security\Core\Encoder\EncoderFactoryInterface;
@@ -210,6 +210,23 @@ if ($Customer->getPlainPassword() !== $this->eccubeConfig['eccube_default_passwo
 +    $Customer->setPassword($this->passwordHasher->hashPassword($Customer, $Customer->getPlainPassword()));
 }
 ```
+
+独自にPasswordEncoderを実装している場合は、以下のようにPasswordHasherを使用するように変更してください。
+
+```diff
+- class UserPasswordEncoder implements UserPasswordEncoderInterface
++ class UserPasswordEncoder
+```
+
+```diff
+Plugin\Api42\EventListener\UserResolveListener:
+    arguments:
+        - '@Eccube\Security\Core\User\MemberProvider'
+-        - '@Plugin\Api42\Security\Core\Encoder\UserPasswordEncoder'
++        - '@Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface'
+```
+
+`@Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface` に差し替え、動作が確認できれば、PasswordEncoderは削除して問題ありません。
 
 #### パスワードのハッシュアルゴリズムの自動更新
 
