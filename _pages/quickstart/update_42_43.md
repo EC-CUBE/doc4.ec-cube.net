@@ -14,6 +14,8 @@ EC-CUBE本体および一部公式プラグインをEC-CUBE4.3対応し、コー
 - [EC-CUBE 4.3 Roadmap](https://github.com/EC-CUBE/ec-cube/issues/6069){:target="_blank"}
 - [Symfony6 対応](https://github.com/EC-CUBE/ec-cube/pull/6073){:target="_blank"}
 - [商品レビュープラグイン：Symfony 6対応](https://github.com/EC-CUBE/ProductReview-plugin/pull/93){:target="_blank"}
+- [APIプラグイン：Symfony 6対応](https://github.com/EC-CUBE/eccube-api4/pull/164){:target="_blank"}
+- [メルマガプラグイン：Symfony 6対応](https://github.com/EC-CUBE/mail-magazine-plugin/pull/146){:target="_blank"}
 
 ## プラグインの互換性について
 
