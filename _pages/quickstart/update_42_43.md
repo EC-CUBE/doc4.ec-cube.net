@@ -341,3 +341,8 @@ eccube.purchase.flow.item.validator.product.status.validator: # 商品の公開�
     tags:
         - { name: eccube.item.validator, flow_type: cart, priority: 90 }
 ```
+### アノテーションを用いた指定をしている場合
+カスタマイズ等で@cartなどのアノテーションを用いた指定方法を行っている場合は、変更する必要はございません。
+こちらの指定方法はpriorityに対応しておらず、未指定で登録されます。
+<br>
+※ 未指定の場合はpriorityは0で登録されます。
