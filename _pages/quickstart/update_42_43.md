@@ -342,7 +342,9 @@ eccube.purchase.flow.item.validator.product.status.validator: # 商品の公開�
         - { name: eccube.item.validator, flow_type: cart, priority: 90 }
 ```
 ### アノテーションを用いた指定をしている場合
-カスタマイズ等で@cartなどのアノテーションを用いた指定方法を行っている場合は、変更する必要はございません。
-こちらの指定方法はpriorityに対応しておらず、未指定で登録されます。
-<br>
-※ 未指定の場合はpriorityは0で登録されます。
+
+@CartFlowなどのアノテーションを用いた指定方法は、引き続き4.3でも利用することができます。
+アノテーションで指定した場合、priorityは常に0で登録されます。
+
+アノテーションとyaml両方で指定した場合は、yamlの指定のみ反映されます。
+両方の形式で指定することで、4.2/4.3どちらでも動作させることが可能です。
