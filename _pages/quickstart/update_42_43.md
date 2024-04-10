@@ -304,3 +304,47 @@ EC-CUBE がオーナーズストア経由でプラグインをインストール
 ```
 ECCUBE_PACKAGE_API_URL=https://package-api-c2.ec-cube.net/v43
 ```
+
+## purchaseflow.yamlの変更
+4.3からpurchaseflow.yamlの形式が変更されました。
+従来の「親から子のメソッドを設定する」方式から、「どのメソッドをどの親に設定するか」という方式に変更されています。
+またpriorityの設定によって、purchaseflow内の実行順を変更することができます。
+実装の詳細は[こちら](https://github.com/EC-CUBE/ec-cube/pull/5147)を参照ください。
+### 修正例
+例としてProductStatusValidatorの変更を取り上げます。<br>
+以下が4.2での定義になります。
+```yaml
+# 4.2_purchaseflow.yaml
+eccube.purchase.flow.cart:
+    class: Eccube\Service\PurchaseFlow\PurchaseFlow
+    calls:
+        - [setFlowType, ['cart']]
+        - [setItemValidators, ['@eccube.purchase.flow.cart.item_validators']]
+            
+eccube.purchase.flow.cart.item_validators:
+    class: Doctrine\Common\Collections\ArrayCollection
+    arguments:
+        - #
+            - '@Eccube\Service\PurchaseFlow\Processor\ProductStatusValidator' # 商品の公開状態のチェック
+```
+
+続いて以下が4.3での定義になります。
+```yaml
+# 4.3_purchaseflow.yaml
+eccube.purchase.flow.cart:
+    class: Eccube\Service\PurchaseFlow\PurchaseFlow
+    calls:
+        - [ setFlowType, [ 'cart' ] ]
+
+eccube.purchase.flow.item.validator.product.status.validator: # 商品の公開状態のチェック
+    class: Eccube\Service\PurchaseFlow\Processor\ProductStatusValidator
+    tags:
+        - { name: eccube.item.validator, flow_type: cart, priority: 90 }
+```
+### アノテーションを用いた指定をしている場合
+
+@CartFlowなどのアノテーションを用いた指定方法は、引き続き4.3でも利用することができます。
+アノテーションで指定した場合、priorityは常に0で登録されます。
+
+アノテーションとyaml両方で指定した場合は、yamlの指定のみ反映されます。
+両方の形式で指定することで、4.2/4.3どちらでも動作させることが可能です。
