@@ -345,6 +345,3 @@ eccube.purchase.flow.item.validator.product.status.validator: # 商品の公開�
 
 @CartFlowなどのアノテーションを用いた指定方法は、引き続き4.3でも利用することができます。
 アノテーションで指定した場合、priorityは常に0で登録されます。
-
-アノテーションとyaml両方で指定した場合は、yamlの指定のみ反映されます。
-両方の形式で指定することで、4.2/4.3どちらでも動作させることが可能です。
