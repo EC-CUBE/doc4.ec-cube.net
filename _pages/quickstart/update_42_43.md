@@ -339,12 +339,100 @@ eccube.purchase.flow.cart:
 eccube.purchase.flow.item.validator.product.status.validator: # 商品の公開状態のチェック
     class: Eccube\Service\PurchaseFlow\Processor\ProductStatusValidator
     tags:
-        - { name: eccube.item.validator, flow_type: cart, priority: 90 }
+        - { name: eccube.item.validator, flow_type: cart, priority: 900 }
 ```
-### アノテーションを用いた指定をしている場合
 
-@CartFlowなどのアノテーションを用いた指定方法は、引き続き4.3でも利用することができます。
-アノテーションで指定した場合、priorityは常に0で登録されます。
+### プラグインで、4.2/4.3両バージョンに対応する
 
-アノテーションとyaml両方で指定した場合は、yamlの指定のみ反映されます。
-両方の形式で指定することで、4.2/4.3どちらでも動作させることが可能です。
+プラグインで、purchase flowを利用している際に、4.2/4.3両バージョンに対応する方法を解説します。
+
+#### アノテーションで指定している場合
+
+@CartFlowなどのアノテーションは引き続き4.3でも利用することができます。
+
+priorityは常に0となり、従来通りプロセッサーは末尾に追加されます。
+
+#### yamlファイルで指定している場合
+
+yamlファイルで既存の設定を上書きしている場合、phpファイルで設定するようにし、EC-CUBEのバージョンで分岐してください。
+
+以下に、SampleProcessorを既存のプロセッサの先頭で実行している場合の修正例を記載します。
+
+SampleProcessor
+```php
+<?php
+
+namespace Plugin\Sample\Service\PurchaseFlow;
+
+use Eccube\Entity\ItemInterface;
+use Eccube\Service\PurchaseFlow\ItemValidator;
+use Eccube\Service\PurchaseFlow\PurchaseContext;
+
+class SampleProcessor extends ItemValidator
+{
+    protected function validate(ItemInterface $item, PurchaseContext $context)
+    {
+        dump(123);
+    }
+}
+```
+
+4.2での設定
+```yaml
+# Plugin/Sample/Resource/config/services.yaml
+
+eccube.purchase.flow.cart.item_validators:
+  class: Doctrine\Common\Collections\ArrayCollection
+  arguments:
+    - #
+      - '@Plugin\Sample\Service\PurchaseFlow\SampleProcessor' # SampleProcessor
+      - '@Eccube\Service\PurchaseFlow\Processor\DeliverySettingValidator' # 配送設定のチェック
+      - '@Eccube\Service\PurchaseFlow\Processor\ProductStatusValidator' # 商品の公開状態のチェック
+      - '@Eccube\Service\PurchaseFlow\Processor\PriceChangeValidator' # 商品価格の変更検知
+      - '@Eccube\Service\PurchaseFlow\Processor\StockValidator' # 在庫のチェック
+      - '@Eccube\Service\PurchaseFlow\Processor\SaleLimitValidator' # 販売制限数のチェック
+      - '@Eccube\Service\PurchaseFlow\Processor\ClassCategoryValidator' # 商品規格の公開状態チェック
+```
+
+4.2/4.3両バージョンに対応する場合の設定
+
+services.yamlを削除し、services.phpを作成してください。services.php内でバージョン分岐を行います。
+```php
+# Plugin/Sample/Resource/config/services.php
+
+<?php
+
+namespace Symfony\Component\DependencyInjection\Loader\Configurator;
+
+use Doctrine\Common\Collections\ArrayCollection;
+use Eccube\Common\Constant;
+use Plugin\Sample\Service\PurchaseFlow\SampleProcessor;
+
+return function(ContainerConfigurator $containerConfigurator) {
+    $services = $containerConfigurator->services();
+
+    // 4.3
+    if (version_compare(Constant::VERSION, '4.3', '>=')) {
+        $services
+            ->set(SampleProcessor::class)
+            ->tag('eccube.item.validator', ['flow_type' => 'cart', 'priority' => 2000]); // 先頭で実行するため、既存のプロセッサよりもpriorityを大きくする
+    // 4.2
+    } else {
+        $services
+            ->set(SampleProcessor::class);
+
+        $services
+            ->set('eccube.purchase.flow.cart.item_validators')
+            ->class(ArrayCollection::class)
+            ->args([[
+                service('Plugin\Sample\Service\PurchaseFlow\SampleProcessor'), # SampleProcessor
+                service('Eccube\Service\PurchaseFlow\Processor\DeliverySettingValidator'), # 配送設定のチェック
+                service('Eccube\Service\PurchaseFlow\Processor\ProductStatusValidator'), # 商品の公開状態のチェック
+                service('Eccube\Service\PurchaseFlow\Processor\PriceChangeValidator'), # 商品価格の変更検知
+                service('Eccube\Service\PurchaseFlow\Processor\StockValidator'), # 在庫のチェック
+                service('Eccube\Service\PurchaseFlow\Processor\SaleLimitValidator'), # 販売制限数のチェック
+                service('Eccube\Service\PurchaseFlow\Processor\ClassCategoryValidator'), # 商品規格の公開状態チェック
+            ]]);
+    }
+};
+```
