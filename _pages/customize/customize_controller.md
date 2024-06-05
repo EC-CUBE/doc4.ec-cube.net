@@ -27,14 +27,13 @@ folder: customize
 namespace Customize\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 
 class SamplePageController
 {
     /**
-     * @Method("GET")
-     * @Route("/sample")
+     * @Route("/sample", methods={"GET")
      */
     public function testMethod()
     {
@@ -56,15 +55,14 @@ class SamplePageController
 namespace Customize\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Response;
 
 class SamplePageController
 {
     /**
-     * @Method("GET")
-     * @Route("/sample")
+     * @Route("/sample", methods={"GET")
      * @Template("Sample/index.twig")
      */
     public function testMethod()
@@ -94,8 +92,7 @@ class SamplePageController
 
 ```php
     /**
-     * @Method("GET")
-     * @Route("/sample/{id}")
+     * @Route("/sample/{id}", methods={"GET")
      */
     public function testMethod($id)
     {
@@ -110,8 +107,7 @@ class SamplePageController
 
 ```php
     /**
-     * @Method("GET")
-     * @Route("/sample/{id}", name="sample_page")
+     * @Route("/sample/{id}", name="sample_page", methods={"GET")
      */
     public function testMethod($id)
     {
@@ -135,8 +131,7 @@ EC-CUBE既存のルーティングを上書きするには、同じパスと名�
 
 ```php
     /**
-     * @Method("GET")
-     * @Route("/help/about", name="help_about")
+     * @Route("/help/about", name="help_about", methods={"GET")
      */
     public function testMethod()
     {
@@ -150,8 +145,7 @@ EC-CUBE既存のルーティングを上書きするには、同じパスと名�
 
 ```php
     /**
-     * @Method("GET")
-     * @Route("/%eccube_admin_route%/sample")
+     * @Route("/%eccube_admin_route%/sample", methods={"GET")
      */
     public function testMethod()
     {
@@ -168,8 +162,7 @@ AbstractControllerを継承して `redirectToRoute` 関数を利用すること�
 
 ```php
     /**
-     * @Method("GET")
-     * @Route("/sample")
+     * @Route("/sample", methods={"GET")
      */
     public function testMethod()
     {
@@ -192,14 +185,13 @@ namespace Customize\Controller;
 use Eccube\Controller\AbstractController;
 use Eccube\Entity\Product;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 
 class SamplePageController extends AbstractController
 {
     /**
-     * @Method("GET")
-     * @Route("/sample")
+     * @Route("/sample", methods={"GET")
      */
     public function testMethod()
     {
@@ -224,7 +216,7 @@ EntityManger以外に、AbstractControllerを継承することで利用でき�
 namespace Customize\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 
 class SamplePageController
@@ -242,8 +234,7 @@ class SamplePageController
     }
 
     /**
-     * @Method("GET")
-     * @Route("/sample")
+     * @Route("/sample", methods={"GET"})
      */
     public function testMethod()
     {
@@ -261,8 +252,7 @@ Responseのレスポンスコードやヘッダーを指定することも可能
 
 ```php
     /**
-     * @Method("GET")
-     * @Route("/sample")
+     * @Route("/sample", methods={"GET"})
      */
     public function testMethod()
     {
