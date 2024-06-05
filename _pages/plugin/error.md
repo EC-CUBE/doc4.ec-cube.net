@@ -1,5 +1,5 @@
 ---
-title: プラグイン導入時のトラブル対処法
+title: プラグインのトラブル対処法
 keywords: plugin error trouble プラグインエラー プラグイントラブル
 tags: [quickstart, getting_started]
 permalink: plugin_error
