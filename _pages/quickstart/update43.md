@@ -127,16 +127,18 @@ Symfony Bundleを使ったプラグインを利用している場合、プラグ
 例えば、APIプラグインの場合は、以下のようにcomposer.jsonを確認し、依存ライブラリをインストールしてください。
 
 ```
-$ cat app/Plugin/Api/composer.json
+$ cat app/Plugin/Api42/composer.json
 ...
   "require": {
-    "ec-cube/plugin-installer": "~0.0.6 || ^2.0",
-    "trikoder/oauth2-bundle": "^2.1",
+    "ec-cube/plugin-installer": "^2.0",
+    "league/oauth2-server-bundle": "^0.5",
     "nyholm/psr7": "^1.2",
+    "php-http/message-factory": "*",
     "webonyx/graphql-php": "^14.0"
 
-$ composer require trikoder/oauth2-bundle:^2.1 --no-plugins --no-scripts
+$ composer require league/oauth2-server-bundle:^0.5 --no-plugins --no-scripts
 $ composer require nyholm/psr7:^1.2 --no-plugins --no-scripts
+$ composer require php-http/message-factory:* --no-plugins --no-scripts
 $ composer require webonyx/graphql-php:^14.0 --no-plugins --no-scripts
 ```
 
