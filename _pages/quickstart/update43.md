@@ -145,6 +145,7 @@ $ composer require webonyx/graphql-php:^14.0 --no-plugins --no-scripts
 以下のコマンドでキャッシュの削除を行ってください。
 
 ```
+rm -rf var
 bin/console cache:clear --no-warmup
 ```
 
