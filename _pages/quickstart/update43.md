@@ -138,7 +138,7 @@ $ cat app/Plugin/Api42/composer.json
 
 $ composer require league/oauth2-server-bundle:^0.5 --no-plugins --no-scripts
 $ composer require nyholm/psr7:^1.2 --no-plugins --no-scripts
-$ composer require php-http/message-factory:* --no-plugins --no-scripts
+$ composer require php-http/message-factory --no-plugins --no-scripts
 $ composer require webonyx/graphql-php:^14.0 --no-plugins --no-scripts
 ```
 
