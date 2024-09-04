@@ -151,7 +151,7 @@ services
                 Eccube\Repository\CustomerRepository: '@Eccube\Repository\CustomerRepository'
 ```
 
-PluginMangerでのサービス呼び出しも、本仕様変更の影響を受けます。
+PluginManagerでのサービス呼び出しも、本仕様変更の影響を受けます。
 
 コンテナからのサービス取得は、以下が可能です。
 
