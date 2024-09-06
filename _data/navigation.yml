@@ -64,6 +64,9 @@ docs:
   - title: インストール
     output: web, pdf
     children:
+      - title: 開発者向け環境構築スタートアップ
+        url: /quickstart/dev-startup-v2
+        output: web, pdf
       - title: 各種インストール方法
         url: /quickstart/install
         output: web, pdf
