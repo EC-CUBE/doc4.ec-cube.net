@@ -127,7 +127,7 @@ EC-CUBEの基本情報やご確認いただきたいことについてまとめ�
 + [CSSの利用](/design_css)
 + [Sass(scss)の利用](/design_sass)
 
-+ [フロント画面デザイン参考資料（スタイルガイド）](http://eccube4-styleguide.herokuapp.com/){:target="_blank"}
++ [フロント画面デザイン参考資料（スタイルガイド）](https://github.com/EC-CUBE/Eccube-Styleguide){:target="_blank"}
 + [管理画面デザイン参考資料（デザインガイド）](https://doc4.ec-cube.net/pdf/ec-cube4_design-guide180930.pdf){:target="_blank"}
 
 + [フロント画面テンプレート for Adobe XD](http://downloads.ec-cube.net/manual/documents/eccube4_xd_front_template.zip?argument=2qpV46CP&dmai=a5bf51b05bacc5){:target="_blank"}
