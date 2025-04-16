@@ -226,6 +226,9 @@ docs:
       - title: 管理画面ナビの拡張
         url: /plugin_admin_nav
         output: web, pdf
+      - title: EC-CUBE4.0系(Composer v1)利用時の注意点
+        url: /plugin_eccube40
+        output: web, pdf
 
   - title: 設定変更
     output: web, pdf
