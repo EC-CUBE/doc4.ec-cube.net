@@ -30,7 +30,7 @@ EC-CUBEのCSSは、[Sass(scss)](http://sass-lang.com){:target="_blank"} を使�
 
 scssディレクトリ内はメンテナンスしやすいように構成されております。<br>
 コンポーネント設計及びCSSの記述方針についてはFLOCSSルールを採用しております。<br>
-[スタイルガイド](https://eccube4-styleguide.herokuapp.com/){:target="_blank"} も合わせてご参照ください。
+[スタイルガイド](https://github.com/EC-CUBE/Eccube-Styleguide){:target="_blank"} も合わせてご参照ください。
 
 ```
 [assets]
@@ -47,11 +47,9 @@ scssディレクトリ内はメンテナンスしやすいように構成され�
 
 - component<br>
   見出しやボタンなど、ベースとなる最小モジュール（部品）が格納されています。<br>
-  [スタイルガイド](https://eccube4-styleguide.herokuapp.com/){:target="_blank"} 1-9までの項目
 
 - project<br>
   ヘッダーやフッター、トップページで使用されているモジュール（部品）が格納されています。<br>
-  [スタイルガイド](https://eccube4-styleguide.herokuapp.com/){:target="_blank"} 11-22までの項目
 
 - mixins <br>
   再利用や複数の場所で呼び出しするスタイルの設定が格納されています。
