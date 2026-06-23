@@ -58,7 +58,7 @@ $ docker start mailcatcher
 
 ### Docker Compose
 
-また、docker-composeを利用する場合、`docker-compose.yml`を作成してください。
+また、docker composeを利用する場合、`docker-compose.yml`を作成してください。
 
 ```yml
 version: '3'
@@ -72,14 +72,14 @@ services:
 ```
 
 ```bash
-$ docker-compose up -d
+$ docker compose up -d
 ```
 を実行することで、MailCatcherのコンテナが作成されます。
 
 終了する場合は以下のコマンドです。
 
 ```bash
-$ docker-compose down
+$ docker compose down
 ```
 
 ## メールクライアント

@@ -95,11 +95,11 @@ $ git push origin master -u
 ### ローカル環境の立ち上げ
 
 ```
-$ docker-compose -f docker-compose.yml -f docker-compose.pgsql.yml -f docker-compose.dev.yml up
-$ docker-compose exec -u www-data ec-cube bin/console eccube:install --no-interaction
-$ docker-compose exec -u www-data ec-cube bin/console eccube:generate:proxies
-$ docker-compose exec -u www-data ec-cube bin/console doctrine:schema:update --force --dump-sql
-$ docker-compose exec -u www-data ec-cube bin/console doctrine:migrations:migrate
+$ docker compose -f docker-compose.yml -f docker-compose.pgsql.yml -f docker-compose.dev.yml up
+$ docker compose exec -u www-data ec-cube bin/console eccube:install --no-interaction
+$ docker compose exec -u www-data ec-cube bin/console eccube:generate:proxies
+$ docker compose exec -u www-data ec-cube bin/console doctrine:schema:update --force --dump-sql
+$ docker compose exec -u www-data ec-cube bin/console doctrine:migrations:migrate
 ```
 
 ### ブラウザで表示
@@ -121,6 +121,6 @@ $ docker exec <postgres container name> psql -U dbuser eccubedb -c "update dtb_b
 ### プラグインのインストール・有効化
 
 ```
-$ docker-compose exec -u www-data ec-cube bin/console eccube:composer:require ec-cube/<プラグインコード>
-$ docker-compose exec -u www-data ec-cube bin/console eccube:plugin:enable --code=<プラグインコード>
+$ docker compose exec -u www-data ec-cube bin/console eccube:composer:require ec-cube/<プラグインコード>
+$ docker compose exec -u www-data ec-cube bin/console eccube:plugin:enable --code=<プラグインコード>
 ```

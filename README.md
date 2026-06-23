@@ -97,13 +97,13 @@ $ cd doc4.ec-cube.net
 # サーバを起動します。(初回)
 # * 起動するまでに多少時間がかかります。ご注意ください。
 # * マークダウンファイルを編集すれば数秒後にHTMLの再生成が行われます。
-$ docker-compose up
+$ docker compose up
 
 # サーバを停止します。
-$ docker-compose stop
+$ docker compose stop
 
 # サーバを起動します。(二回目以降)
-$ docker-compose start
+$ docker compose start
 ```
 
 Windows、Macの環境で動作確認済みです。

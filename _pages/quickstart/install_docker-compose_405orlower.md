@@ -23,19 +23,19 @@ description: Docker Composeを使用してインストールする場合(EC-CUBE
 cd path/to/ec-cube
 
 # コンテナの起動 (初回のみビルド処理あり)
-docker-compose up -d
+docker compose up -d
 
 # 初回はインストールスクリプトを実行( **`www-data` ユーザで実行する点に注意！** )
-docker-compose exec -u www-data ec-cube bin/console eccube:install
+docker compose exec -u www-data ec-cube bin/console eccube:install
 ```
 
 2回目以降の起動時も同様のコマンドを使用します。
 ```shell
 # コンテナの起動
-docker-compose up -d
+docker compose up -d
 
 # コンテナの停止
-docker-compose down
+docker compose down
 ```
 
 #### 各種コンテナの使用
@@ -51,10 +51,10 @@ EC-CUBE 4が動作するWebサーバを含め、以下のコンテナが簡単�
 起動時にコンテナ名を列挙することで、各種コンテナを起動します。
 ```shell
 # 例：EC-CUBEとMySQLとphpMyAdminとMailCatcherを起動する
-docker-compose up -d ec-cube mysql mailcatcher
+docker compose up -d ec-cube mysql mailcatcher
 
 # 省略した場合はすべてのサービスが起動します
-docker-compose up -d
+docker compose up -d
 ```
 各種コンテナと連携させる場合は、以下の通り設定が必要です。
 ##### メール送信を使用する場合
@@ -66,7 +66,7 @@ docker-compose up -d
 データベーススキーマを初期化していない場合は、以下の実行が必要です。
 ```
 # スキーマ作成+初期データ投入
-docker-compose exec ec-cube composer run-script compile
+docker compose exec ec-cube composer run-script compile
 ```
 
 ##### MySQL を使用する場合
@@ -75,13 +75,13 @@ docker-compose exec ec-cube composer run-script compile
 データベーススキーマを初期化していない場合は、以下の実行が必要です。
 ```
 # スキーマ作成+初期データ投入
-docker-compose exec ec-cube composer run-script compile
+docker compose exec ec-cube composer run-script compile
 ```
 
 
 #### ファイルの同期
 
-docker-composeを用いてインストールした場合、ホストのローカルディレクトリとコンテナ上のファイルは同期します。`.env`等の設定ファイルについても、ホスト上のファイルを直接編集します。
+docker composeを用いてインストールした場合、ホストのローカルディレクトリとコンテナ上のファイルは同期します。`.env`等の設定ファイルについても、ホスト上のファイルを直接編集します。
 
 なお、一部環境において著しいパフォーマンスの劣化が発生する場合があるため、以下のフォルダは同期の対象から除外しています。
  - /var
