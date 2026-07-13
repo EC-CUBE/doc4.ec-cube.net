@@ -109,7 +109,7 @@ folder: co
 ### Web APIは使用できますか？WebAPIでどんなことが実現できますか？
 
 [EC-CUBE Web API プラグイン](https://www.ec-cube.net/products/detail.php?product_id=2121){:target="_blank"} を使用していただくことで実現可能です。  
-詳しくは[開発ドキュメント](https://doc4.ec-cube.net/eccube-api4/){:target="_blank"} をご参照ください。
+詳しくは[開発ドキュメント](https://doc.ec-cube.net/eccube-api4/){:target="_blank"} をご参照ください。
 
 ## アクセス制限
 
