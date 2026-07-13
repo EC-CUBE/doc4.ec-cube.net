@@ -1,9 +1,25 @@
-version: "3"
 services:
   jekyll:
-    image: bretfisher/jekyll-serve
-    command: [ "bundle", "exec", "jekyll", "serve", "--incremental", "--force_polling", "-H", "0.0.0.0", "-P", "4000" ]
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /site
+    command:
+      - bundle
+      - exec
+      - jekyll
+      - serve
+      - --incremental
+      - --force_polling
+      - --host
+      - 0.0.0.0
+      - --port
+      - "4000"
     volumes:
-      - .:/site:cached
+      - .:/site
+      - bundle_cache:/usr/local/bundle
     ports:
-      - '4000:4000'
+      - "4000:4000"
+
+volumes:
+  bundle_cache:
