@@ -51,7 +51,7 @@ EC-CUBE で Web API を実行する際、顧客情報を参照したり、受注
 
 Authorization Code Flow のみに対応しています。
 
-- [Authorization Code Flow](authZ_code_grant) の設定方法
+- [Authorization Code Flow](eccube-api4/authZ_code_grant) の設定方法
 
 ### エンドポイント
 
@@ -70,26 +70,26 @@ Token endpoint: https://<ec-cubeのホスト名>/token
 API endpoint: https://<ec-cubeのホスト名>/api
 ```
 
-GraphQLの[スキーマ](schema)は `bin/console eccube:api:dump-schema` コマンドで出力できます。
+GraphQLの[スキーマ](eccube-api4/schema)は `bin/console eccube:api:dump-schema` コマンドで出力できます。
 
 GraphQL の Query で以下のデータの取得が可能です。
 
-- [商品情報の取得](query/products)
-- [受注情報の取得](query/orders)
-- [顧客情報の取得](query/customers)
+- [商品情報の取得](eccube-api4/query/products)
+- [受注情報の取得](eccube-api4/query/orders)
+- [顧客情報の取得](eccube-api4/query/customers)
 
 GraphQL の Mutation で以下のデータを更新可能です。
 
-- [商品在庫の更新](mutation/product_stock)
-- [出荷ステータスの更新](mutation/update_shipped)
+- [商品在庫の更新](eccube-api4/mutation/product_stock)
+- [出荷ステータスの更新](eccube-api4/mutation/update_shipped)
 
 商品/受注/会員情報の変更時(登録/更新/削除)に登録されたWebHookに対して変更を通知します。
 
-- [WebHook による通知](webhook)
+- [WebHook による通知](eccube-api4/webhook)
 
 ## 拡張機構
 
 CustomizeディレクトリやプラグインでAPIを拡張できます。
 
-- [取得可能なデータの追加](customize/allow_list)
-- [Query/Mutationの追加](customize/query)
+- [取得可能なデータの追加](eccube-api4/customize/allow_list)
+- [Query/Mutationの追加](eccube-api4/customize/query)
