@@ -273,7 +273,7 @@ services:
                 Plugin\Maker4\Entity\Maker: ['id', 'name', 'sort_no', 'create_date', 'update_date']
 ```
 
-詳しくは[Web API プラグインのドキュメント](https://doc.ec-cube.net/eccube-api4/customize/allow_list){:target="_blank"}をご確認ください。
+詳しくは[Web API プラグインのドキュメント](https://doc4.ec-cube.net/eccube-api4/customize/allow_list){:target="_blank"}をご確認ください。
 
 ### その他削除された関数・機能
 
