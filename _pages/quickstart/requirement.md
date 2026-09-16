@@ -8,6 +8,16 @@ permalink: quickstart/requirement
 
 ---
 
+## 4.4
+
+| 分類 | ソフトウェア|Version|
+|---|-------|---|
+|WebServer|Apache |2.4.x <br> (mod_rewrite / mod_ssl 必須) |
+|PHP |PHP |8.2 〜 8.5 |
+|Database|PostgreSQL|13.x 〜 18.x |
+|Database|MySQL| 8.4.x (LTS) <br> (InnoDBエンジン 必須) |
+|Database|SQLite(開発用途向け) |3.x |
+
 ## 4.3
 
 | 分類 | ソフトウェア|Version|
@@ -46,11 +56,12 @@ permalink: quickstart/requirement
 
 | 分類 | ライブラリ|
 |---|---|
-|必須ライブラリ|pgsql / mysqli (利用するデータベースに合わせること) <br> pdo_pgsql / pdo_mysql / pdo_sqlite (利用するデータベースに合わせること) <br> pdo <br> phar <br> mbstring <br> zlib <br> ctype <br> session <br> JSON <br> xml <br> libxml <br> OpenSSL <br> zip <br> cURL <br> fileinfo <br> intl <br> GD <br> Sodium(※4) |
-|推奨ライブラリ|hash <br> APCu / WinCache (利用する環境に合わせること) <br> Zend OPcache |
+|必須ライブラリ|pgsql / mysqli (利用するデータベースに合わせること) <br> pdo_pgsql / pdo_mysql / pdo_sqlite (利用するデータベースに合わせること) <br> pdo <br> phar <br> mbstring <br> zlib <br> ctype <br> session <br> filter <br> tokenizer <br> JSON <br> xml <br> libxml <br> OpenSSL <br> zip <br> cURL <br> fileinfo <br> intl <br> GD <br> Sodium(※4) |
+|推奨ライブラリ|hash <br> bcmath(※5) <br> APCu / WinCache (利用する環境に合わせること) <br> Zend OPcache |
 
 ※4 EC-CUBE 4.2系は Web API プラグインを利用する場合、Sodium拡張 が必要になります。  
-プラグインのインストールが出来ない方は[こちらの項目](/quickstart/trouble-shooting-for-plugin-install)をご参考下さい
+プラグインのインストールが出来ない方は[こちらの項目](/quickstart/trouble-shooting-for-plugin-install)をご参考下さい  
+※5 EC-CUBE 4.4系は金額計算に BCMath 関数を使用します。拡張が無い環境でも polyfill で動作しますが、拡張がある方が高速です。
 
 # 動作確認ブラウザ
 
