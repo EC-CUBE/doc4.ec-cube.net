@@ -1,5 +1,6 @@
 ---
 title: 受注ステータスのカスタマイズ
+description: Symfony Workflow を利用した受注ステータス遷移時の処理の追加方法を説明します。
 keywords: core カスタマイズ 受注ステータス OrderStatus
 tags: [core, OrderStatus]
 permalink: customize_order_state_machine
@@ -100,10 +101,10 @@ stateDiagram-v2
 
 ### 基本の拡張方法
 
-[Symfony Workflow Component](https://symfony.com/doc/current/components/workflow.html)を利用して実装しています。
+[Symfony Workflow Component](https://symfony.com/doc/current/components/workflow.html){:target="_blank"}を利用して実装しています。
 
 ステータス遷移時に行う処理を追加するには、ステータス遷移時のイベントを実装します。
-ステータスの遷移は[app/config/eccube/packages/order_state_machine.php](https://github.com/EC-CUBE/ec-cube/blob/4.3/app/config/eccube/packages/order_state_machine.php)に定義しています。
+ステータスの遷移は[app/config/eccube/packages/order_state_machine.php](https://github.com/EC-CUBE/ec-cube/blob/4.3/app/config/eccube/packages/order_state_machine.php){:target="_blank"}に定義しています。
 
 イベントを実装することで受注の遷移時に任意の処理を追加できます。
 
@@ -135,7 +136,7 @@ class SampleTransitionListener implements EventSubscriberInterface
     public function onReturn(Event $event): void
     {
         /* @var Order $Order */
-        $Order = $event->getSubject();
+        $Order = $event->getSubject()->getOrder();
         .... /* 処理を実装する */
     }
 
@@ -151,6 +152,6 @@ class SampleTransitionListener implements EventSubscriberInterface
 
 ### 参考
 
-EC-CUBE のデフォルトのイベントは [src/Eccube/Service/OrderStateMachine.php](https://github.com/EC-CUBE/ec-cube/blob/4.3/src/Eccube/Service/OrderStateMachine.php) に実装されています。
+EC-CUBE のデフォルトのイベントは [src/Eccube/Service/OrderStateMachine.php](https://github.com/EC-CUBE/ec-cube/blob/4.3/src/Eccube/Service/OrderStateMachine.php){:target="_blank"} に実装されています。
 
 [Using Events](https://symfony.com/doc/current/workflow/usage.html#using-events){:target="_blank"}
