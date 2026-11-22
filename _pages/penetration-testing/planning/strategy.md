@@ -1,5 +1,6 @@
 ---
-Title: テスト戦略
+title: テスト戦略
+description: EC-CUBE のペネトレーションテストにおけるテスト戦略の立て方を説明します。
 permalink: /penetration-testing/planning/strategy
 ---
 ## ターゲットを把握
