@@ -4,6 +4,7 @@ keywords: design img customize
 tags: [design]
 permalink: design_img
 summary: 画像管理や呼び出し方などの説明
+description: デザインカスタマイズで使用する画像の追加方法と呼び出し方について説明します。
 ---
 
 ## 画像について
@@ -37,7 +38,7 @@ summary: 画像管理や呼び出し方などの説明
 
 以下の書き方も可能です。※ただしデザインテンプレートを切り替えた際に表示されなくなります。
 ```html
-<img src="html/template/defult/assets/img/top/hoge.jpg" alt="hoge">
+<img src="html/template/default/assets/img/top/hoge.jpg" alt="hoge">
 ```
 
 ## 管理画面から画像追加する方法
