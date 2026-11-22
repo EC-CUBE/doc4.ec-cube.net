@@ -3,7 +3,7 @@ title: プラグイン仕様
 keywords: plugin spec プラグイン 仕様
 tags: [quickstart, getting_started]
 permalink: plugin_spec
-
+description: EC-CUBE4のプラグインのディレクトリ構成や設定ファイルなどの仕様を解説します。
 ---
 
 ## 概要
@@ -14,7 +14,7 @@ permalink: plugin_spec
 
 プラグインの一般的なディレクトリ構成を示します。
 
-```
+```text
 app/Plugin/SamplePlugin/
 ├── Command
 ├── Common
@@ -70,13 +70,14 @@ app/Plugin/SamplePlugin/
         - `"ec-cube/plugin-installer": 	"~0.0.6 || ^2.0"` は常に記述してください。
     - EC-CUBE 4.2系以降
         - `"ec-cube/plugin-installer": 	"^2.0"` は常に記述してください。
+- extra: 追加情報
     - `"code": "[プラグインコード]"` を記述してください。
 
 記載例は以下の通りです。
 
-```yaml
+```json
 {
-    "name": "ec-cube/productreview42"
+    "name": "ec-cube/productreview42",
     "version": "4.3.0",
     "description": "商品レビュー管理プラグイン",
     "type": "eccube-plugin",
@@ -92,11 +93,11 @@ app/Plugin/SamplePlugin/
 ### services.yaml
 
 コンテナの定義を行います。
-`[プラグインディレクトリ]/Resouce/config/services.yaml`に設置します。
+`[プラグインディレクトリ]/Resource/config/services.yaml`に設置します。
 yamlフォーマットの他に、phpやxmlでも記述可能です。
 
 コンテナの定義については、Symfonyの公式ドキュメントを参照してください。
-[https://symfony.com/doc/current/service_container.html](https://symfony.com/doc/current/service_container.html)
+[https://symfony.com/doc/current/service_container.html](https://symfony.com/doc/current/service_container.html){:target="_blank"}
 
 ### その他の設定ファイル
 その他のプラグイン独自の設定ファイルをプラグイン内に含めることは可能ですが、プラグインインストール後に生成または変更される設定ファイルは `app/PluginData` ディレクトリ以下に設置するようにしてください。プラグインのディレクトリ内にこれらのファイルを配置した場合、**プラグインのアップデートや再インストールの操作によって設定ファイルが失われます。**
@@ -104,12 +105,12 @@ yamlフォーマットの他に、phpやxmlでも記述可能です。
 
 ## 静的コンテンツ
 
-プラグインで利用する静的コンテンツ (html,css,js,画像など) は、`Resource/assets` 以下に配置します。プラグイン以下の `Resource/assets` ディレクトリはインストール/アップデート時に `[EC-CUBEホームディレクトリ]/html/plugin/[プラグインコード]/assets` 以下にコピーされます。 [#3821](https://github.com/EC-CUBE/ec-cube/pull/3821)
+プラグインで利用する静的コンテンツ (html,css,js,画像など) は、`Resource/assets` 以下に配置します。プラグイン以下の `Resource/assets` ディレクトリはインストール/アップデート時に `[EC-CUBEホームディレクトリ]/html/plugin/[プラグインコード]/assets` 以下にコピーされます。 [#3821](https://github.com/EC-CUBE/ec-cube/pull/3821){:target="_blank"}
 
 
 例えば、以下のように `sample.jpg` ファイルを配置しておくと、 `[EC-CUBEホームディレクトリ]/html/plugin/SamplePlugin/assets/sample.jpg` にコピーされます。
 
-```
+```text
 SamplePlugin
  └── Resource
       └── assets
@@ -124,7 +125,7 @@ Twigファイルからこの `sample.jpg` へのパスは以下の記述で取�
 
 展開されたパスは以下のようになります。
 
-```
+```text
 /html/plugin/SamplePlugin/assets/sample.jpg
 ```
 
@@ -154,7 +155,7 @@ $ COPYFILE_DISABLE=1 tar --exclude  ".git" --exclude ".DS_Store" -cvzf ../[Plugi
 - フックポイントの非推奨化
     - `eccube.event.admin.request`など、リクエストの実行前後に動作するフックポイントは非推奨となりました。
     - twigファイルにパーツを差し込むために利用している場合は、スニペットを用意し、ユーザに貼り付けてもらう方式になります。
-    - Responseフックポイントは、レンダリング後のHTMLレスポンスに対して id や class を基準に介入する方式で、プラグイン間の競合やデザイン自由度の低下といった課題があったため非推奨となりました。[#2440](https://github.com/EC-CUBE/ec-cube/issues/2440)
+    - Responseフックポイントは、レンダリング後のHTMLレスポンスに対して id や class を基準に介入する方式で、プラグイン間の競合やデザイン自由度の低下といった課題があったため非推奨となりました。[#2440](https://github.com/EC-CUBE/ec-cube/issues/2440){:target="_blank"}
 - ファイル設置のみのプラグインはロードされない
     - dtb_pluginにレコードが登録されている必要があります。
 
@@ -191,12 +192,12 @@ public function addSnippet($snippet, $include = true)
 ### 実装例（サンプル決済プラグイン）
 以下は、[サンプル決済プラグイン](https://github.com/EC-CUBE/sample-payment-plugin){:target="_blank"}に含まれる実装例です。
 
-- [sample-payment-plugin/SamplePaymentEvent.php](https://github.com/EC-CUBE/sample-payment-plugin/blob/d025ecde6042c0e935125fe48cf59ae5af570b25/SamplePaymentEvent.php)
+- [sample-payment-plugin/SamplePaymentEvent.php](https://github.com/EC-CUBE/sample-payment-plugin/blob/d025ecde6042c0e935125fe48cf59ae5af570b25/SamplePaymentEvent.php){:target="_blank"}
 
 ```php
     /**
      * リッスンしたいサブスクライバのイベント名の配列を返します。
-     * 配列のキーはイベント名、値は以下のどれかをしてします。
+     * 配列のキーはイベント名、値は以下のどれかを指定します。
      * - 呼び出すメソッド名
      * - 呼び出すメソッド名と優先度の配列
      * - 呼び出すメソッド名と優先度の配列の配列
