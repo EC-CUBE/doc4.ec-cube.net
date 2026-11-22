@@ -34,7 +34,7 @@ doc4.ec-cube.netのリポジトリをご自身のGithubリポジトリにForkし
 
 Forkしたご自身のリポジトリからソースを、`git clone` コマンドで自身のPCにコピーします。
 
-```
+```shell
 $ git clone https://github.com/[ご自身のアカウント名]/doc4.ec-cube.net.git
 ```
 
@@ -42,13 +42,13 @@ $ git clone https://github.com/[ご自身のアカウント名]/doc4.ec-cube.net
 
 本家のリポジトリの名前を`upstream`（任意）で登録します。
 
-```
+```shell
 $ cd doc4.ec-cube.net/
 $ git remote add upstream https://github.com/EC-CUBE/doc4.ec-cube.net.git
 ```
 
-### ローカルのブランチを最新し、修正用のブランチを作成する
-```
+### ローカルのブランチを最新にし、修正用のブランチを作成する
+```shell
 $ git pull upstream master
 $ git checkout -b [任意のブランチ名]
 ```
@@ -69,7 +69,7 @@ _config.ymlはサイト全体に適用されている設定ファイルです。
 
 ### 自身のリポジトリに修正内容を反映する
 
-```
+```shell
 $ git add [修正したファイル]
 $ git commit -m "[コメント]"
 $ git push origin [ブランチ名]
@@ -83,7 +83,7 @@ $ git push origin [ブランチ名]
 
 ローカル開発環境を構築することにより、
 
-ドキュメントを修正した場合際に、ローカルPCで変更箇所を確認することができます。
+ドキュメントを修正した際に、ローカルPCで変更箇所を確認することができます。
 
 ### Dockerを利用する
 
@@ -118,31 +118,31 @@ Windows、Macの環境で動作確認済みです。
 
 ※ Rubyのバージョン確認方法
 
-```
+```shell
 $ ruby -v
 ruby 2.4.5p335 (2018-10-18 revision 65137) [x64-mingw32]
 ```
 
 #### gem（rubyのライブラリ）のインストールを行う
 
-`bundle install`により、gemfile.lockを元にgemのインストールを行います。
+`bundle install`により、Gemfile.lockを元にgemのインストールを行います。
 
-```
+```shell
 $ bundle install
 ```
 
-※ Windows環境では、gemfile.lockが更新されてしまいますが、
+※ Windows環境では、Gemfile.lockが更新されてしまいますが、
 
-git管理から除外（コミット対象から除外する）するように下さい。
+git管理から除外（コミット対象から除外）してください。
 
-```
+```text
 eventmachine (1.2.7-x64-mingw32)
 ```
 #### ローカルサーバーでサイトを立ち上げる
 
 以下のコマンドでサイトが立ち上がります。
 
-```
+```shell
 $ bundle exec jekyll serve
 （省略）
 Server address: http://localhost:4000
