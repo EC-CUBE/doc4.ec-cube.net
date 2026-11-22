@@ -3,7 +3,8 @@ title: 4.2系でプラグインがインストールできない問題の対応�
 keywords: weakness
 tags: [quickstart, plugin]
 permalink: quickstart/trouble-shooting-for-plugin-install
-folder: security-guideline
+folder: quickstart
+description: EC-CUBE 4.2系でsodium拡張がない環境においてプラグインがインストールできない問題の原因と対応策について説明します。
 ---
 
 ## 事象
@@ -39,5 +40,5 @@ EC-CUBE 4.2.1 にて、sodium拡張がインストールされていない環境
 
 詳しくは以下をご確認ください。
 
-- [EC-CUBE#5912](https://github.com/EC-CUBE/ec-cube/issues/5912#issuecomment-1420335054)
-- [EC-CUBE#5934](https://github.com/EC-CUBE/ec-cube/pull/5934)
+- [EC-CUBE#5912](https://github.com/EC-CUBE/ec-cube/issues/5912#issuecomment-1420335054){:target="_blank"}
+- [EC-CUBE#5934](https://github.com/EC-CUBE/ec-cube/pull/5934){:target="_blank"}
