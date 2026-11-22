@@ -37,11 +37,9 @@ EC-CUBE本体の開発はGitHub Flowにもとづいて行なっています。
 
 ### テスト・コード解析
 
-- <a href="https://travis-ci.org/" target="_blank">Travis</a>
-    - テストコードを指定した環境で、ユニットテストを行います。
-
-- <a href="https://ci.appveyor.com/login" target="_blank">AppVeyor</a>
-    - こちらはWindows環境テスト用のCIです。
-
-- <a href="https://scrutinizer-ci.com/" target="_blank">Scrutinizer</a>
-    - 静的コード解析を行います。
+- <a href="https://github.com/EC-CUBE/ec-cube/actions" target="_blank">GitHub Actions</a>
+    - push・プルリクエスト時に、以下のチェックを自動で実行します。
+        - 静的コード解析（PHPStan、PHP CS Fixer、Rector）
+        - ユニットテスト
+        - E2Eテスト
+        - プラグインテスト
