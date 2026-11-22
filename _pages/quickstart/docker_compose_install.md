@@ -4,6 +4,7 @@ keywords: install Docker docker composer
 tags: [quickstart, install, docker, docker-compose]
 permalink: quickstart/docker_compose_install
 folder: quickstart
+description: Docker Composeを使用してEC-CUBE 4系をインストールする方法を解説します。
 ---
 
 
@@ -52,7 +53,7 @@ docker compose -f docker-compose.yml -f docker-compose.pgsql.yml up -d
 
 データベーススキーマを初期化していない場合は、以下の実行が必要です。
 
-```
+```shell
 # スキーマ作成+初期データ投入
 docker compose -f docker-compose.yml -f docker-compose.pgsql.yml exec ec-cube composer run-script compile
 ```
@@ -67,7 +68,7 @@ docker compose -f docker-compose.yml -f docker-compose.mysql.yml up -d
 
 データベーススキーマを初期化していない場合は、以下の実行が必要です。
 
-```
+```shell
 # スキーマ作成+初期データ投入
 docker compose -f docker-compose.yml -f docker-compose.mysql.yml exec ec-cube composer run-script compile
 ```
@@ -76,7 +77,7 @@ docker compose -f docker-compose.yml -f docker-compose.mysql.yml exec ec-cube co
 
 `docker-compose.dev.yml` を指定します。
 
-```
+```shell
 ## MySQL を使用する例
 docker compose -f docker-compose.yml -f docker-compose.mysql.yml -f docker-compose.dev.yml up -d
 ```
@@ -87,12 +88,12 @@ docker compose を使用したインストールでは、 `DATABASE_URL` など�
 
 `.env` を使用したい場合は、以下のように設定し ec-cube コンテナを up することで利用できます。
 
-1. `docker compose*.yml` で `APP_ENV: ~` とする
+1. `docker-compose*.yml` で `APP_ENV: ~` とする
 1. ローカルディレクトリの `.env` の `APP_ENV` をコメントアウトする
 
 各種環境変数の設定される優先順位は以下の通りです。
 
-1. `docker compose*.yml` の `environment`
+1. `docker-compose*.yml` の `environment`
 1. ローカルディレクトリの `.env` (phpdotenv ではなく docker compose 経由で設定される)
 1. ec-cube コンテナの `.env` (phpdotenv で設定される)
 
