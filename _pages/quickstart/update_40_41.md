@@ -5,6 +5,7 @@ keywords: howto update
 tags: [quickstart, getting_started]
 permalink: update-40-41
 summary : EC-CUBE4.0から4.1へのマイグレーションについて記載します。
+description: EC-CUBE4.0から4.1へのマイグレーションについて記載します。
 ---
 
 EC-CUBE4.0から4.1へのマイグレーションを解説します。
@@ -65,9 +66,9 @@ namespace Plugin\ExamplePlugin;
 
 修正内容について詳しくは[GitHubのIssue](https://github.com/EC-CUBE/ec-cube/issues/4737){:target="_blank"}をご覧ください。
 
-2020/12/09時点でEC-CUBEが通信するオーナースズトア(package-api)側の4.1対応はされていません。
+2020/12/09時点でEC-CUBEが通信するオーナーズストア(package-api)側の4.1対応はされていません。
 
-プラグインのインストールの4.1でのテストは4.0と同様に[オーナーズストア経由のインストールをテストする](plugin_mock_package_api)の手順で行えます。
+プラグインのインストールの4.1でのテストは4.0と同様に[オーナーズストア経由のインストールをテストする](/plugin_mock_package_api)の手順で行えます。
 
 ## Symfony4.4対応
 
@@ -202,7 +203,7 @@ services.yamlの記述例：
 
 ```diff
 + services:
-+      Plugin\SamplePayment\Service\HogeService
++      Plugin\SamplePayment\Service\HogeService:
 +          public: true
 ```
 
@@ -275,7 +276,7 @@ services:
 
 詳しくは[Web API プラグインのドキュメント](https://doc4.ec-cube.net/eccube-api4/customize/allow_list){:target="_blank"}をご確認ください。
 
-### その他削除された関数・機能
+## その他削除された関数・機能
 
 #### Application.php
 
@@ -285,7 +286,7 @@ Eccube\Applicationは削除されました。これに伴い、ServiceProvider �
 
 **4.0まで**
 
-``` php
+```php
     public function index(Application $app, Request $request)
     {
         // SessionServiceProvider からセッションを取得
@@ -300,7 +301,7 @@ Eccube\Applicationは削除されました。これに伴い、ServiceProvider �
     use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
     /** @var SessionInterface */
-    protected $session
+    protected $session;
 
     /**
      * @param SessionInterface $session
@@ -325,6 +326,6 @@ EC-CUBE 4.1 では Composer2 対応が必要となりました。
 EC-CUBE 4.1 beta3 以前でテストをしたい場合は、EC-CUBE に以下の環境変数を設定することで Composer2 対応のエンドポイントへ切り替えられます。
 GitHub の最新の 4.1 ブランチではこちらの対応は不要です。
 
-```
+```text
 ECCUBE_PACKAGE_API_URL=https://package-api-c2.ec-cube.net
 ```
