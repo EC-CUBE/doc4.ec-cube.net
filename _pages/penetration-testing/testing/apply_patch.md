@@ -1,5 +1,6 @@
 ---
-title: テストが止まらないようにするための設定
+title: テストが止まらないようにするための修正
+description: ペネトレーションテストを安定して実施するために EC-CUBE 本体へ加える修正を説明します。
 permalink: /penetration-testing/testing/apply_patch
 ---
 例えば、テスト中の動作によって、セキュリティテストを実行中のユーザーが削除されてしまったり、ページのアクセス権が変更されてしまい、アクセスできなくなってしまう可能性があります。
@@ -147,8 +148,7 @@ index d48b4f36b2..a658bbd33b 100644
 -            file_put_contents($envFile, $env);
 +            // file_put_contents($envFile, $env);
 
--            // 管理画面URLの更新. 変更されている場合はログアウトし再ログインさ
-せる.
+-            // 管理画面URLの更新. 変更されている場合はログアウトし再ログインさせる.
 -            $adminRoute = $this->eccubeConfig['eccube_admin_route'];
 -            if ($adminRoute !== $data['admin_route_dir']) {
 -                $env = StringUtil::replaceOrAddEnv($env, [
@@ -353,7 +353,7 @@ index 076ac0a991..30a089994a 100644
 
 ### 本会員登録防止
 
-```
+```diff
 @@ -293,7 +293,7 @@ class EntryController extends AbstractController
          $CustomerStatus = $this->customerStatusRepository->find(CustomerStatus::REGULAR);
          $Customer->setStatus($CustomerStatus);
@@ -418,7 +418,7 @@ index 8e99094d73..e8e744f39a 100644
 
 何回でも繰り返しクーポンを利用できるようにします
 
-```
+```diff
 diff --git a/Controller/CouponShoppingController.php b/Controller/CouponShoppingController.php
 index 7551217..091bbd7 100644
 --- a/Controller/CouponShoppingController.php
