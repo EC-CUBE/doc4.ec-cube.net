@@ -1,7 +1,9 @@
 ---
 title: セッション情報保存方法の変更
 keywords: session_handler
+tags: [session, env]
 permalink: session_handler_settings
+description: EC-CUBEのセッション情報の保存先をRDBMS・Memcache・MongoDBに変更する方法について説明します。
 folder: i18n
 
 ---
@@ -17,7 +19,7 @@ EC-CUBEではSameSite Cookie対応のために独自のセッションハンド�
 #### 設定例
 EC-CUBEのアプリケーションで利用しているデータベースと同じものを利用するには以下の設定を追加します。
 
-```
+```yaml
 services:
   db_session_handler:
     class: Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler
@@ -35,7 +37,7 @@ services:
 
 - PostgreSQLの場合
 
-    ```
+    ```sql
     CREATE TABLE sessions (
         sess_id VARCHAR(128) NOT NULL PRIMARY KEY,
         sess_data BYTEA NOT NULL,
@@ -48,7 +50,7 @@ services:
 
 - MySQLの場合
 
-    ```
+    ```sql
     CREATE TABLE `sessions` (
         `sess_id` VARCHAR(128) NOT NULL PRIMARY KEY,
         `sess_data` BLOB NOT NULL,
@@ -62,13 +64,13 @@ services:
 ### Memcacheに保存する
 
 #### 必須ライブラリ
-- [memcached 拡張モジュール](https://www.php.net/manual/ja/book.memcached.php)
+- [memcached 拡張モジュール](https://www.php.net/manual/ja/book.memcached.php){:target="_blank"}
 
 #### 設定例
 
 Memcacheがlocalhostのポート11211番で稼働しているとき以下のような設定になります。
 
-```
+```yaml
 services:
   memcached:
     class: Memcached
@@ -90,14 +92,14 @@ services:
 ### MongoDBに保存する
 
 #### 必須ライブラリ
-- [MongoDB driver 拡張モジュール](https://www.php.net/manual/ja/set.mongodb.php)
-- [mongodb/mongodb パッケージ](https://github.com/mongodb/mongo-php-library)
+- [MongoDB driver 拡張モジュール](https://www.php.net/manual/ja/set.mongodb.php){:target="_blank"}
+- [mongodb/mongodb パッケージ](https://github.com/mongodb/mongo-php-library){:target="_blank"}
 
 #### 設定
 
 MongoDBがlocalhostのポート27017番で稼働しているとき以下のような設定になります。
 
-```
+```yaml
 services:
     mongo_client:
         class: MongoDB\Client
