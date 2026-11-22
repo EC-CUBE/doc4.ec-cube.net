@@ -33,16 +33,16 @@ $ git remote add upstream https://github.com/EC-CUBE/ec-cube.git
 
 ## ローカルのmainブランチの更新
 
-ec-cubeは4.2ブランチがmainブランチとなっています。
+ec-cubeは4.4ブランチがmainブランチ（デフォルトブランチ）となっています。
 
 ```sh
-$ git pull upstream 4.2
+$ git pull upstream 4.4
 ```
 
 ## 開発用ブランチの作成
 
 ```sh
-$ git checkout -b [任意のブランチ名] upstream/4.2
+$ git checkout -b [任意のブランチ名] upstream/4.4
 ```
 
 ## 自身のGithubリポジトリの更新
@@ -57,18 +57,16 @@ $ git push origin [任意のブランチ名]
 
 自身のGithubリポジトリのページから、<a href="https://github.com/EC-CUBE/ec-cube" target="_blank">ec-cube</a> へプルリクエストを作成します。
 
-- GitHubの自分のレポトリから、PullRequestする
+- GitHubの自分のリポジトリから、PullRequestする
 
 ### プルリクエストのマージ条件
 
-以下がクリアされる事で本体の「Master」にマージされます。
+以下がクリアされる事で本体の4.4ブランチにマージされます。
 
 1. 開発者・コミッターのレビュー
 
 2. CIのチェック
-    - Travis			 : ユニットテスト
-    - AppVeyor		 : ユニットテスト( Win環境 )
-    - Scritinizer	: 静的コード解析
+    - GitHub Actions : 静的コード解析（PHPStan、PHP CS Fixer、Rector）、ユニットテスト、E2Eテスト、プラグインテスト
 
 ### プルリクエストを送る際に行ってもらいたいこと
 
@@ -95,7 +93,7 @@ squash 334455667 機能A修正
 $ git log --pretty=format:"%h - %an : %s"
 445566778 - myself : 機能A追加
 001122334 - other_user : 別ユーザーのコミット
-$ git push origin master
+$ git push -f origin [任意のブランチ名]
 $ ...
 ```
 
