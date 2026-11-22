@@ -4,6 +4,7 @@ keywords: install Docker
 tags: [quickstart, install, docker]
 permalink: quickstart/docker_install
 folder: quickstart
+description: Dockerを使用してEC-CUBE 4系をインストールする方法を解説します。
 ---
 
 
@@ -46,7 +47,9 @@ root@de5372ce7139:/var/www/html# vi .env
 mailcatcher を使用します
 
 ```shell
-## .env にて MAILER_URL=smtp://mailcatcher:1025 としておく
+## .env にて以下のように設定しておく
+## EC-CUBE 4.2 以降: MAILER_DSN=smtp://mailcatcher:1025
+## EC-CUBE 4.1 以前: MAILER_URL=smtp://mailcatcher:1025
 docker run -d -p 1080:1080 -p 1025:1025 --name mailcatcher schickling/mailcatcher
 docker run --name ec-cube -p "8080:80" -p "4430:443"  --link mailcatcher:mailcatcher eccube4-php-apache
 ```
@@ -57,7 +60,7 @@ docker run --name ec-cube -p "8080:80" -p "4430:443"  --link mailcatcher:mailcat
 
 ```shell
 ## .env にて DATABASE_URL=pgsql://postgres:password@db/cube4_dev としておく
-docker run --name container_postgres -e POSTGRES_PASSWORD=password  -p 5432:5432 -d postgres
+docker run --name container_postgres -e POSTGRES_PASSWORD=password  -p 5432:5432 -d postgres:14
 docker run --name ec-cube -p "8080:80" -p "4430:443" --link container_postgres:db eccube4-php-apache
 ```
 
@@ -65,6 +68,7 @@ docker run --name ec-cube -p "8080:80" -p "4430:443" --link container_postgres:d
 
 ```shell
 ## .env にて DATABASE_URL=mysql://root:password@db/cube4_dev としておく
-docker run --name container_mysql -e MYSQL_ROOT_PASSWORD=password  -d -p 3306:3306 mysql:5.7
+## EC-CUBE 4.1 以前を使用する場合は mysql:8.0 を mysql:5.7 に変更する
+docker run --name container_mysql -e MYSQL_ROOT_PASSWORD=password  -d -p 3306:3306 mysql:8.0
 docker run --name ec-cube -p "8080:80" -p "4430:443" --link container_mysql:db eccube4-php-apache
 ```
