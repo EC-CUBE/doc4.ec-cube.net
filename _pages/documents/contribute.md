@@ -5,7 +5,6 @@ tags: [guideline]
 permalink: documents/contribute
 folder: document
 description: ドキュメントの投稿方法を記載します。
-description: ドキュメントの投稿方法を記載します。
 ---
 
 開発ドキュメントの内容は、GitHub上で管理されています。
