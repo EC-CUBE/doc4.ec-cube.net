@@ -4,6 +4,7 @@ keywords: CLI
 tags: [quickstart, cli]
 permalink: quickstart/cli
 folder: quickstart
+description: EC-CUBE 4系で利用できるコマンドラインインターフェイス（bin/console）のコマンドを紹介します。
 ---
 
 EC-CUBEでは、コマンドラインで実行できる各種ユーティリティコマンドを提供しています。
@@ -52,7 +53,7 @@ SymfonyやDoctrineが提供しているコマンドの一覧と概要です。
 |--------------------------|-----------------------------------------------------------------|
 | cache:clear              | キャッシュを削除します。 `--no-warmup` を指定するのが望ましいです。 |
 | cache:warmup             | キャッシュの生成を行います。                                    |
-| server:run               | 開発用のWebサーバを立ち上げます。                               |
+| server:run               | 開発用のWebサーバを立ち上げます。（EC-CUBE 4.1 まで）           |
 | debug:router             | ルーティングの一覧を確認できます。                              |
 | doctrine:database:create | データベースの作成を行います。                                  |
 | doctrine:database:drop   | データベースの削除を行います。                                  |

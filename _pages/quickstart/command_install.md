@@ -4,6 +4,7 @@ keywords: install Docker
 tags: [quickstart, install, command]
 permalink: quickstart/command_install
 folder: quickstart
+description: Composerを使用してコマンドラインからEC-CUBE 4系をインストールする方法を解説します。
 ---
 
 
@@ -16,7 +17,7 @@ folder: quickstart
 1.EC-CUBEをインストールしたいディレクトリへ移動
 
 ```shell
-cd ディレクトリのアドレス指定（もしくはディレクトリをドラック＆ドロップ）
+cd ディレクトリのアドレス指定（もしくはディレクトリをドラッグ＆ドロップ）
 ```
 
 ※ 上記ディレクトリ内に ec-cube ディレクトリが生成されます。
@@ -24,7 +25,8 @@ cd ディレクトリのアドレス指定（もしくはディレクトリを�
 2.ディレクトリ移動後にcomposer.pharファイルを生成  
 リンク先の [Composer のインストール](https://getcomposer.org/download/){:target="_blank"} の最初に登場するpreタグで囲まれているコマンドを実行しcomposer.pharファイルを生成します。  
 
-composer.phar のバージョンをEC-CUBE 4.0の対応しているバージョン（1.x）に変更します。
+EC-CUBE 4.0 をインストールする場合は、composer.phar のバージョンをEC-CUBE 4.0の対応しているバージョン（1.x）に変更します。  
+EC-CUBE 4.1 以降は Composer 2.x に対応しているため、この手順は不要です。
 
 ```shell
 php composer.phar selfupdate --1
@@ -34,19 +36,32 @@ php composer.phar selfupdate --1
 3.composer.pharが入っているディレクトリにコマンドラインで移動していることを確認し、以下のコマンドを実行します。
 
 ```shell
-php composer.phar create-project ec-cube/ec-cube ec-cube "4.1.x-dev" --keep-vcs
+php composer.phar create-project ec-cube/ec-cube ec-cube "4.3.x-dev" --keep-vcs
 ```
+
+※ 上記は EC-CUBE 4.3 をインストールする例です。他のバージョンをインストールする場合は `"4.3.x-dev"` の部分を `"4.2.x-dev"` などに変更してください。
 
 ※ 初期状態では SQLite3 を使用します。   
 ※ MacのOSによってはphp-intlが入っておらず、エラーとなるケースがあります。homebrewなどで新しいPHPをインストールし、再度お試しください。
 
 
-4.ec-cube ディレクトリが生成されますので、`cd ec-cube`で移動し、  
-`php bin/console server:run --env=dev` コマンドを実行すると、ビルトインウェブサーバが起動します。
+4.ec-cube ディレクトリが生成されますので、`cd ec-cube`で移動し、ビルトインウェブサーバを起動します。
+
+EC-CUBE 4.0 / 4.1 の場合は、`php bin/console server:run --env=dev` コマンドを実行します。
 
 ```shell
 cd ec-cube
 php bin/console server:run --env=dev
+```
+
+EC-CUBE 4.2 以降では `server:run` コマンドは利用できません。[Symfony CLI](https://symfony.com/download){:target="_blank"} の `symfony server:start` コマンド、または PHP のビルトインウェブサーバを使用してください。
+
+```shell
+cd ec-cube
+# Symfony CLI を使用する場合
+symfony server:start --no-tls
+# PHP のビルトインウェブサーバを使用する場合
+php -S 127.0.0.1:8000
 ```
 
 5.[http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin){:target='_blank'} にアクセスし、 EC-CUBE の管理ログイン画面が表示されればインストール成功です。  
@@ -66,14 +81,14 @@ php bin/console server:run --env=dev
 ## for MySQL
 mysql://<user>:<password>@<host>/<database name>
 
-## for PostgreSQl
+## for PostgreSQL
 postgres://<user>:<password>@<host>/<database name>
 ```
 
 #### Windows 環境を使用する場合
 
 `php bin/console eccube:install` コマンドは使用できません。
-代替として、以下のコマンド使用して下さい。
+代替として、以下のコマンドを使用して下さい。
 
 ```shell
 # (optional) データベース削除
