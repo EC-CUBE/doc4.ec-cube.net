@@ -19,7 +19,7 @@ description: 本番環境での .env ファイルの利用についての説明�
 
 httpd.conf や、 .htaccess ファイルに設定します。
 
-```
+```apache
 SetEnv APP_ENV prod
 SetEnv APP_DEBUG 0
 SetEnv DATABASE_URL pgsql://dbuser:password@127.0.0.1/cube4_dev
@@ -48,7 +48,7 @@ SetEnv ECCUBE_COOKIE_PATH /
 .env を使用しない場合は、 shell の環境変数に設定をします。
 この場合、 `.bashrc` などの shell の設定ファイルのパーミッションは 600 など、オーナー以外は読み書きできない設定にしておくことを強く推奨します。
 
-```
+```bash
 ## .bashrc の設定例
 export APP_ENV="prod"
 export APP_DEBUG="0"
