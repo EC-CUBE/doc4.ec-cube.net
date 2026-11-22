@@ -5,6 +5,7 @@ keywords: howto update
 tags: [quickstart, getting_started]
 permalink: update41x
 summary : 4.1.x の本体バージョンアップ手順について記載します。
+description: 4.1.x の本体バージョンアップ手順について記載します。
 ---
 
 本番環境でバージョンアップを行う前に、テスト環境で事前検証を必ず行ってください。
@@ -13,7 +14,7 @@ summary : 4.1.x の本体バージョンアップ手順について記載しま�
 {: .notice--danger}
 EC-CUBE本体のコード(app/config/eccube, app/DoctrineMigrations, bin, src, htmlディレクトリ)をカスタマイズしている場合、ファイルが上書きされてしまうため、この手順ではバージョンアップできません。[各バージョンでの変更差分](#各バージョンでの変更差分)を確認して必要な差分を取り込んでください。
 {: .notice--danger}
-2022年2月21日に公開された「HTTP Hostヘッダの処理に脆弱性」は、EC-CUBEのバージョンアップを行っても修正されません。[脆弱性詳細ページ](https://www.ec-cube.net/info/weakness/20220221/)を参考に、適切な設定を行ってください。
+2022年2月21日に公開された「HTTP Hostヘッダの処理に脆弱性」は、EC-CUBEのバージョンアップを行っても修正されません。[脆弱性詳細ページ](https://www.ec-cube.net/info/weakness/20220221/){:target="_blank"}を参考に、適切な設定を行ってください。
 {: .notice--danger}
 
 
@@ -42,7 +43,7 @@ EC-CUBEの管理画面へアクセスし、「コンテンツ管理」の「メ�
 
 または、EC-CUBEのルートディレクトリに「.maintenance」ファイルを設置することでメンテナンスモードを有効にすることもできます。
 
-```
+```text
 [root]
   │
   ├──.maintenance
@@ -66,7 +67,7 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
 
 （対象ディレクトリの上書きではなくディレクトリの中のすべてのファイルを置き換える必要があります。古いファイルが残ってしまうと、予期せぬ動作となる恐れがありますので、必ず置き換える対象となるディレクトリごとにすべてのファイルを置き換えるようにしてください。）
 
-```
+```text
 [root]
   │
   ├──[app/config/eccube]
@@ -81,9 +82,9 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
 
 `vendor` ディレクトリは削除せず、バージョンアップするEC-CUBEのバージョンの `vendor` ディレクトリで上書きしてください。
 
-（ Web API プラグインなど Symfony bundle を利用の場合に `vendor` ディレクトリを完全に削除してしまうと以降の手順でエラーが発生します。ステップ(5) の `bin/console eccube:composer:require-already-installed` コマンドで `vendor` ディレクトリ内の不要なファイルは削除されます。）
+（ Web API プラグインなど Symfony bundle を利用の場合に `vendor` ディレクトリを完全に削除してしまうと以降の手順でエラーが発生します。ステップ(6) の `bin/console eccube:composer:require-already-installed` コマンドで `vendor` ディレクトリ内の不要なファイルは削除されます。）
 
-```
+```text
 [root]
   │
   ├──[vendor]
@@ -106,7 +107,7 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
 
 上書き後、以下のコマンドでキャッシュの削除を行ってください。
 
-```
+```bash
 bin/console cache:clear --no-warmup
 ```
 
@@ -114,7 +115,7 @@ bin/console cache:clear --no-warmup
 
 以下のコマンドを実行してください。
 
-```
+```bash
 bin/console eccube:composer:require-already-installed
 ```
 
@@ -122,7 +123,7 @@ packagist等の外部ライブラリを独自にインストールしている�
 
 例えば、psr/http-messageをインストールしている場合は、以下のコマンドを実行してください。
 
-```
+```bash
 composer require psr/http-message
 ```
 
@@ -134,13 +135,13 @@ composer require psr/http-message
 
 スキーマ更新
 
-```
+```bash
 bin/console doctrine:schema:update --force --dump-sql
 ```
 
 マイグレーション
 
-```
+```bash
 bin/console doctrine:migrations:migrate
 ```
 
@@ -150,7 +151,7 @@ bin/console doctrine:migrations:migrate
 
 管理画面のコンテンツ管理もしくは店舗設定＞メール設定から、該当するページ/ブロック/メールテンプレートを編集してください。
 
-変更対象の差分は、以下リンクからご確認いただくが[各バージョンでの変更差分](#各バージョンでの変更差分)からご確認いただけます。
+変更対象の差分は、[各バージョンでの変更差分](#各バージョンでの変更差分)からご確認いただけます。
 
 #### 4.1.0 → 4.1.1
 
@@ -164,7 +165,7 @@ bin/console doctrine:migrations:migrate
 
 EC-CUBEの管理画面へアクセスし、「コンテンツ管理」の「メンテナンス管理」から、メンテナンスモードを無効にしてください。
 
-または、EC-CUBEのルートディレクトリに「.maintenance」ファイルを削除することでメンテナンスモードを無効にすることもできます。
+または、EC-CUBEのルートディレクトリの「.maintenance」ファイルを削除することでメンテナンスモードを無効にすることもできます。
 
 ---
 
