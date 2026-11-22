@@ -5,6 +5,7 @@ keywords: howto update
 tags: [quickstart, getting_started]
 permalink: update42x
 summary : 4.2.x の本体バージョンアップ手順について記載します。
+description: 4.2.x の本体バージョンアップ手順について記載します。
 ---
 
 本番環境でバージョンアップを行う前に、テスト環境で事前検証を必ず行ってください。
@@ -38,7 +39,7 @@ EC-CUBEの管理画面へアクセスし、「コンテンツ管理」の「メ�
 
 または、EC-CUBEのルートディレクトリに「.maintenance」ファイルを設置することでメンテナンスモードを有効にすることもできます。
 
-```
+```text
 [root]
   │
   ├──.maintenance
@@ -62,7 +63,7 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
 
 （対象ディレクトリの上書きではなくディレクトリの中のすべてのファイルを置き換える必要があります。古いファイルが残ってしまうと、予期せぬ動作となる恐れがありますので、必ず置き換える対象となるディレクトリごとにすべてのファイルを置き換えるようにしてください。）
 
-```
+```text
 [root]
   │
   ├──[app/config/eccube]
@@ -77,9 +78,9 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
 
 `vendor` ディレクトリは削除せず、バージョンアップするEC-CUBEのバージョンの `vendor` ディレクトリで上書きしてください。
 
-（ Web API プラグインなど Symfony bundle を利用の場合に `vendor` ディレクトリを完全に削除してしまうと以降の手順でエラーが発生します。ステップ(5) の `bin/console eccube:composer:require-already-installed` コマンドで `vendor` ディレクトリ内の不要なファイルは削除されます。）
+（ Web API プラグインなど Symfony bundle を利用の場合に `vendor` ディレクトリを完全に削除してしまうと以降の手順でエラーが発生します。ステップ(6) の `bin/console eccube:composer:require-already-installed` コマンドで `vendor` ディレクトリ内の不要なファイルは削除されます。）
 
-```
+```text
 [root]
   │
   ├──[vendor]
@@ -95,9 +96,7 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
 | バージョンアップ対象 | 差し替え対象ファイル                                                                              |
 |----------------------|---------------------------------------------------------------------------------------------------|
 | 4.2.0 → 4.2.1        | composer.json<br>composer.lock<br>package.json<br>package-lock.json|
-|---------------------------------------------------------------------------------------------------|
 | 4.2.1 → 4.2.2        | package.json<br>package-lock.json|
-|---------------------------------------------------------------------------------------------------|
 | 4.2.2 → 4.2.3        | package.json<br>package-lock.json|
 
 ※ FTP等でファイルをアップロードするとパーミッションが変更される可能性があります。[パーミッションの設定について](/quickstart/permission)を参考にパーミッションの確認をお願いします。
@@ -114,7 +113,7 @@ packagist等の外部ライブラリを独自にインストールしている�
 
 例えば、psr/http-messageをインストールしている場合は、以下のようにインストールしてください。
 
-```
+```bash
 composer require psr/http-message --no-plugins --no-scripts
 ```
 
@@ -122,7 +121,7 @@ Symfony Bundleを使ったプラグインを利用している場合、プラグ
 
 例えば、APIプラグインの場合は、以下のようにcomposer.jsonを確認し、依存ライブラリをインストールしてください。
 
-```
+```text
 $ cat app/Plugin/Api/composer.json
 ...
   "require": {
@@ -138,13 +137,13 @@ $ composer require webonyx/graphql-php:^14.0 --no-plugins --no-scripts
 
 以下のコマンドでキャッシュの削除を行ってください。
 
-```
+```bash
 bin/console cache:clear --no-warmup
 ```
 
 以下のコマンドを実行してください。
 
-```
+```bash
 bin/console eccube:composer:require-already-installed
 ```
 
@@ -156,13 +155,13 @@ bin/console eccube:composer:require-already-installed
 
 スキーマ更新
 
-```
+```bash
 bin/console doctrine:schema:update --force --dump-sql
 ```
 
 マイグレーション
 
-```
+```bash
 bin/console doctrine:migrations:migrate
 ```
 
@@ -172,7 +171,7 @@ bin/console doctrine:migrations:migrate
 
 管理画面のコンテンツ管理もしくは店舗設定＞メール設定から、該当するページ/ブロック/メールテンプレートを編集してください。
 
-変更対象の差分は、以下リンクからご確認いただくが[各バージョンでの変更差分](#各バージョンでの変更差分)からご確認いただけます。
+変更対象の差分は、[各バージョンでの変更差分](#各バージョンでの変更差分)からご確認いただけます。
 
 #### 4.2.0 → 4.2.1
 <a href="https://github.com/EC-CUBE/ec-cube/pulls?q=is%3Apr+label%3Aaffected%3Atemplate+is%3Aclosed+milestone%3A4.2.1+" target = "_blank">フロントテンプレートファイルの差分</a>
@@ -189,7 +188,7 @@ bin/console doctrine:migrations:migrate
 
 EC-CUBEの管理画面へアクセスし、「コンテンツ管理」の「メンテナンス管理」から、メンテナンスモードを無効にしてください。
 
-または、EC-CUBEのルートディレクトリに「.maintenance」ファイルを削除することでメンテナンスモードを無効にすることもできます。
+または、EC-CUBEのルートディレクトリの「.maintenance」ファイルを削除することでメンテナンスモードを無効にすることもできます。
 
 ---
 
