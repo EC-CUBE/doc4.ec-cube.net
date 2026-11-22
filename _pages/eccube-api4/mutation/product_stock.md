@@ -1,5 +1,6 @@
 ---
 title: EC-CUBE4 Web API プラグイン
+description: EC-CUBE4 Web API プラグインの updateProductStock による商品在庫の更新方法を説明します。
 keywords: plugin EC-CUBE4 Web API
 tags: [plugin, eccube, eccube-api]
 permalink: eccube-api4/mutation/product_stock
@@ -54,7 +55,7 @@ mutation {
     "updateProductStock": {
       "code": "sand-01",
       "stock": 10,
-      "stock_unlimited": false,
+      "stock_unlimited": false
     }
   }
 }
@@ -83,7 +84,7 @@ mutation {
     "updateProductStock": {
       "code": "sand-01",
       "stock": null,
-      "stock_unlimited": true,
+      "stock_unlimited": true
     }
   }
 }
