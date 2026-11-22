@@ -5,6 +5,7 @@ title: 最新バージョン
 keywords:
 tags: [quickstart, latest_version]
 permalink: quickstart/latest_version
+description: EC-CUBE 4系の最新バージョン情報です。
 
 ---
 
@@ -14,6 +15,6 @@ permalink: quickstart/latest_version
 - [4.3 リリースノート](https://github.com/EC-CUBE/ec-cube/releases/latest){:target="_blank"}
 - [4.3 ダウンロード](https://www.ec-cube.net/download/){:target="_blank"}
 
-- [システム要件](requirement)
+- [システム要件](/quickstart/requirement)
 
 - [4.2から4.3へのマイグレーション](/update-42-43)
