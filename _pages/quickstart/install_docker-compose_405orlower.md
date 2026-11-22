@@ -50,7 +50,7 @@ EC-CUBE 4が動作するWebサーバを含め、以下のコンテナが簡単�
 
 起動時にコンテナ名を列挙することで、各種コンテナを起動します。
 ```shell
-# 例：EC-CUBEとMySQLとphpMyAdminとMailCatcherを起動する
+# 例：EC-CUBEとMySQLとMailCatcherを起動する
 docker compose up -d ec-cube mysql mailcatcher
 
 # 省略した場合はすべてのサービスが起動します
@@ -64,7 +64,7 @@ docker compose up -d
 `.env` にて `DATABASE_URL=postgres://dbuser:secret@postgres/eccubedb` としておきます。
 
 データベーススキーマを初期化していない場合は、以下の実行が必要です。
-```
+```shell
 # スキーマ作成+初期データ投入
 docker compose exec ec-cube composer run-script compile
 ```
@@ -73,7 +73,7 @@ docker compose exec ec-cube composer run-script compile
 `.env` にて `DATABASE_URL=mysql://dbuser:secret@mysql/eccubedb` としておきます。
 
 データベーススキーマを初期化していない場合は、以下の実行が必要です。
-```
+```shell
 # スキーマ作成+初期データ投入
 docker compose exec ec-cube composer run-script compile
 ```
