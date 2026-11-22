@@ -1,5 +1,6 @@
 ---
 title: EC-CUBE4 Web API プラグイン
+description: EC-CUBE4 Web API プラグインの WebHook による変更通知の仕様を説明します。
 keywords: plugin EC-CUBE4 Web API
 tags: [plugin, eccube, eccube-api]
 permalink: eccube-api4/webhook
@@ -14,23 +15,25 @@ permalink: eccube-api4/webhook
 
 以下のようなコマンドと同等の内容を送信します。
 
-```
+```sh
 curl \
     -X POST \
     --header "Content-Type: application/json" \
-    --header 'X-ECCUBE-URL': 'https://eccube.exampel.com/' \
-    --header 'X-ECCUBE-Signature': '1e577a7deaa9df89edeaf060c1032326814f362a74525e2c534751e82a6f802e' \
+    --header 'X-ECCUBE-URL: https://eccube.example.com/' \
+    --header 'X-ECCUBE-Signature: 1e577a7deaa9df89edeaf060c1032326814f362a74525e2c534751e82a6f802e' \
     'https://webhook.example.com' \
-    --data '{
-                "entity": "product",
-                "id": 13,
-                "action": "created"
-            },
-            {
-                "entity": "product",
-                "id": 14,
-                "action": "created"
-            }'
+    --data '[
+                {
+                    "entity": "product",
+                    "id": 13,
+                    "action": "created"
+                },
+                {
+                    "entity": "product",
+                    "id": 14,
+                    "action": "created"
+                }
+            ]'
 ```
 
 ### 対象のEntity
