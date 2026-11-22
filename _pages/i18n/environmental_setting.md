@@ -3,6 +3,7 @@ title: 環境設定
 keywords: debug
 tags: [debug, env]
 permalink: environmental_setting
+description: APP_ENVによる環境ごとの設定方法と、開発環境でのプロファイラの表示について説明します。
 folder: i18n
 
 ---
@@ -24,7 +25,7 @@ APP_ENVの設定値を変更することで、環境毎に異なる設定を行�
 
 本番環境では、以下のように設定します。
 
-```
+```bash
 APP_ENV=prod
 ```
 
@@ -34,7 +35,7 @@ APP_ENV=prod
 開発環境では以下のように設定します。
 
 
-```
+```bash
 APP_ENV=dev
 ```
 
@@ -43,7 +44,7 @@ APP_ENV=dev
 
 テスト環境では以下のように設定します。
 
-```
+```bash
 APP_ENV=test
 ```
 
