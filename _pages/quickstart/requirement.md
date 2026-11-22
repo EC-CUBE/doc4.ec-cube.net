@@ -5,6 +5,7 @@ title: システム要件
 keywords:
 tags: [quickstart, getting_started]
 permalink: quickstart/requirement
+description: EC-CUBE 4系のバージョンごとのシステム要件、必要なPHPライブラリ、動作確認ブラウザについて説明します。
 
 ---
 
@@ -42,7 +43,7 @@ permalink: quickstart/requirement
 ※2 EC-CUBE 4.0系は PostgreSQL 9.2.x〜13.x 対応となります  
 ※3 EC-CUBE 4.0系 は MySQL 5.5.x〜5.7.x 対応となります
 
-# PHPライブラリ
+## PHPライブラリ
 
 | 分類 | ライブラリ|
 |---|---|
@@ -52,14 +53,14 @@ permalink: quickstart/requirement
 ※4 EC-CUBE 4.2系は Web API プラグインを利用する場合、Sodium拡張 が必要になります。  
 プラグインのインストールが出来ない方は[こちらの項目](/quickstart/trouble-shooting-for-plugin-install)をご参考下さい
 
-# 動作確認ブラウザ
+## 動作確認ブラウザ
 
 管理画面と標準のフロントテンプレート
 
 | OS | ブラウザ|
 |---|-------|
 |Windows | Edge 最新 |
-||FireFox 最新 |
+||Firefox 最新 |
 ||Google Chrome 最新 |
 |Mac|Safari 最新|
 |iOS|Safari 最新|
