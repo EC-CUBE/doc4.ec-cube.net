@@ -1,11 +1,22 @@
 ---
 title: テスト対象のURL一覧
+description: ペネトレーションテストでテスト対象となる EC-CUBE の URL 一覧です。
 permalink: /penetration-testing/testing/manual_inspection_urls
 ---
 `bin/console debug:router` コマンドの出力を元に、 EC-CUBE の URL 一覧をまとめました。
-マニュアル探索や動的スキャンの際に漏れなくテストできているか、チェックする際にご活用ください。
+手動探索や動的スキャンの際に漏れなくテストできているか、チェックする際にご活用ください。
 
-OWASP ZAP の `Import → Import a Containing URLs` よりインポート可能な URL 一覧は [こちら](https://raw.githubusercontent.com/nanasess/ec-cube4-penetration-testing/use-zap/zap/containing_urls.txt?token=AAGHEY5QKWZBN7VQNY2NRJ27MBGPW) にあります。
+OWASP ZAP の `Import → Import a File Containing URLs` よりインポート可能な URL 一覧は [こちら](https://github.com/EC-CUBE/ec-cube/blob/4.3/zap/containing_urls.txt){:target="_blank"} にあります。
+
+<div class="notice--warning" markdown="1">
+**Note:** 以下の一覧は EC-CUBE 4.0 系の URL を元にしています。4.1 以降では一部の URL が異なります。
+
+- 4.1 で削除: `/admin/order/mail/view`, `/admin/product/product/1/display`
+- 4.2 で変更: `/admin/product/product/image/add` → `/admin/product/product/image/process`, `/admin/product/product/image/load`, `/admin/product/product/image/revert`
+- 4.2 で変更: `/admin/setting/shop/payment/image/add` → `/admin/setting/shop/payment/image/process`, `/admin/setting/shop/payment/image/load`, `/admin/setting/shop/payment/image/revert`
+
+また、4.1 以降で追加された URL（2要素認証、ログイン履歴など）は含まれていません。
+</div>
 
 Note: 現在整理中です
 {: .notice}
