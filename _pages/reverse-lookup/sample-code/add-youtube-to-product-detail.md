@@ -1,5 +1,6 @@
 ---
 title: 商品詳細画面へのYouTube動画の追加
+description: ProductTraitでProductエンティティを拡張し、商品詳細画面にYouTube動画を表示するサンプルコードです。
 keywords: core カスタマイズ Entity Product
 tags: [core, entity, product]
 permalink: reverse-lookup/sample-code/add-youtube-to-product-detail
@@ -26,7 +27,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Eccube\Annotation\EntityExtension;
 
 /**
-  * @EntityExtension("Eccube\Entity\Product")
+ * @EntityExtension("Eccube\Entity\Product")
  */
 trait ProductTrait
 {
@@ -101,13 +102,13 @@ trait ProductTrait
 
 trait の実装ができたら、 `bin/console eccube:generate:proxies` コマンドで Proxy クラスを生成します。
 
-```
+```shell
 bin/console eccube:generate:proxies
 ```
 
 Proxy を生成できたら、 `bin/console doctrine:schema:update` コマンドで、定義をデータベースに反映します。
 
-```
+```shell
 ## 作成した Proxy クラスを確実に認識できるようキャッシュを削除
 bin/console cache:clear --no-warmup
 
@@ -124,7 +125,7 @@ bin/console doctrine:schema:update --dump-sql --force
 
 ### detail.twigへのyoutubeタグ追加
 
-テンプレートの``Prdoduct/detail.twig``のYouTube動画を表示させたい箇所へYouTubeのタグを追加します。
+テンプレートの``Product/detail.twig``のYouTube動画を表示させたい箇所へYouTubeのタグを追加します。
 
 <script src="https://gist.github.com/tao-s/3b67f9f6dc19f78593eda49877df3b6b.js"></script>
 

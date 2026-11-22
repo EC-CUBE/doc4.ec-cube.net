@@ -1,5 +1,6 @@
 ---
 title: Tips
+description: EC-CUBEの開発でつまづいた時に役に立つTipsを紹介します。
 keywords: Tips tips つまづいた 困った
 tags: [tips]
 permalink: reverse-lookup/tips
@@ -23,7 +24,7 @@ folder: reverse-lookup
 
 デバッグモードを有効にしソースにdump関数を埋め込むと、Symfonyツールバーから確認ができ便利です。
 
-```
+```php
 // ソースへの埋め込み
 dump([中身を確認したいオブジェクトのインスタンス]);
 ```
@@ -34,8 +35,8 @@ dump([中身を確認したいオブジェクトのインスタンス]);
 
 本体、サーバーなど様々な要因が考えられますが、まずは本体のログを確認してみると良いかもしれません。
 
-```
-[EC−CUBE本体ディレクトリ]/var/log 配下
+```text
+[EC-CUBE本体ディレクトリ]/var/log 配下
 ```
 
 ### 開発時に送信メール内容を確認したい
@@ -51,26 +52,29 @@ MailCatcherを使うと便利です。
 
 ### テーブルにカラムを追加したい
 
-Entityを編集後、以下のスキーマ更新のコマンドを実行してください。
+Entityを編集後、以下のスキーマ更新のコマンドを実行してください。  
+Traitを使ってEntityを拡張した場合は、スキーマ更新の前に `eccube:generate:proxies` コマンドでProxyクラスを生成する必要があります。
 
-```
+```shell
 $ cd {EC-CUBEディレクトリのパス}
+# Traitを使ってEntityを拡張した場合は、先にProxyクラスを生成する
+$ bin/console eccube:generate:proxies
 $ bin/console doctrine:schema:update --force --dump-sql
 ```
 
 ### スキーマ更新のコマンドを実行したのだけれど、テーブルに反映されない
 
-どうやらDoctolinのキャッシュが残ってしまっているようです。  
+どうやらDoctrineのキャッシュが残ってしまっているようです。  
 以下のコマンドでキャッシュを削除してください。
 
-```
+```shell
 $ cd {EC-CUBEディレクトリのパス}
 $ rm -rf var/cache
 ```
 
 ### テーブルに登録されたデータを確認してみたら、日時のデータがなんだかズレている？
 
-EC−CUBE本体とDBのタイムゾーン設定のドキュメントを読んでみると謎がとけます。
+EC-CUBE本体とDBのタイムゾーン設定のドキュメントを読んでみると謎がとけます。
 
 [タイムゾーン](/i18n_timezone)
 
