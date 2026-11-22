@@ -1,5 +1,6 @@
 ---
 title: EC-CUBE4 Web API プラグイン
+description: EC-CUBE4 Web API プラグインを GitHub からインストールする手順を説明します。
 keywords: plugin EC-CUBE4 Web API
 tags: [plugin, eccube, eccube-api]
 permalink: eccube-api4/quickstart
@@ -8,11 +9,17 @@ permalink: eccube-api4/quickstart
 
 ## GitHubからインストール（開発者向け）
 
-1. EC-CUBE（4.0.5以降）をcloneします。
+1. EC-CUBE（4.2 または 4.3）をcloneします。
     ```sh
-    git clone https://github.com/EC-CUBE/ec-cube.git
+    # 4.2 を利用する場合は -b 4.2 を指定してください
+    git clone -b 4.3 https://github.com/EC-CUBE/ec-cube.git
     cd ec-cube
     composer install
+    ```
+
+1. `.env.dist` をコピーして `.env` を作成します。
+    ```sh
+    cp .env.dist .env
     ```
 
 1. DATABASE_URL と DATABASE_SERVER_VERSION を適宜変更。*(実際の環境に合わせること)*
@@ -34,11 +41,11 @@ permalink: eccube-api4/quickstart
     ```
 
 1. EC-CUBEオーナーズストアのモックサーバーをセットアップします。
-    ``` sh
+    ```sh
     # プラグインの保管ディレクトリを作成
     mkdir ${PWD}/repos
     # mockサーバを起動。ここでは9999をポート番号に設定していますが、必要に応じて変更してください
-    docker run -d --rm -v ${PWD}/repos:/repos -e MOCK_REPO_DIR=/repos -p 9999:8080 eccube/mock-package-api
+    docker run -d --rm -v ${PWD}/repos:/repos -e MOCK_REPO_DIR=/repos -p 9999:8080 eccube/mock-package-api:composer2
     # mockサーバを参照するように環境変数を定義
     echo ECCUBE_PACKAGE_API_URL=http://127.0.0.1:9999 >> .env
     ```
@@ -49,11 +56,11 @@ permalink: eccube-api4/quickstart
     ```
 
 1. プラグインのパッケージを配置します。
-    ``` sh
+    ```sh
     cd repos
-    git clone https://github.com/EC-CUBE/eccube-api4.git
+    git clone -b 4.2 https://github.com/EC-CUBE/eccube-api4.git
     cd eccube-api4
-    tar cvzf ../Api-1.0.0.tgz *
+    tar cvzf ../Api42.tgz *
     cd ../../
     ```
 
@@ -66,7 +73,10 @@ permalink: eccube-api4/quickstart
 
 1. ビルトインウェブサーバーを起動
     ```sh
-    bin/console server:run
+    # Symfony CLI を利用する場合
+    symfony server:start
+    # PHP のビルトインウェブサーバーを利用する場合
+    php -S 127.0.0.1:8000
     ```
 
 API プラグインの開発のため Git リポジトリで置き換える場合は以下のとおり。
@@ -75,8 +85,7 @@ API プラグインの開発のため Git リポジトリで置き換える場�
 ```sh
 cd app/Plugin/
 
-rm -rf Api
-git clone https://github.com/EC-CUBE/eccube-api4.git
-mv eccube-api4 Api
+rm -rf Api42
+git clone -b 4.2 https://github.com/EC-CUBE/eccube-api4.git Api42
 ```
 
