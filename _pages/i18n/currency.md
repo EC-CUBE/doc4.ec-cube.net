@@ -3,6 +3,7 @@ title: 通貨
 keywords: currency
 tags: [i18n, currency]
 permalink: i18n_currency
+description: EC-CUBEの通貨表示の切り替え方法、PriceType、priceフィルタについて説明します。
 folder: i18n
 
 ---
@@ -19,7 +20,7 @@ folder: i18n
 EC-CUBEのルートディレクトリ直下に、`.env`ファイルを作成し、`ECCUBE_LOCALE`および`ECCUBE_CURRENCY`を設定します。
 
 ```bash
-//.env
+# .env
 
 ECCUBE_LOCALE=en
 ECCUBE_CURRENCY=USD
@@ -52,8 +53,10 @@ twig上で金額を表示する際は、priceフィルタを利用すること�
 
 以下のように使用します。
 
-```
+```twig
+{% raw %}
 {{ 123|price }}
+{% endraw %}
 ```
 
 ![通貨の表示](https://user-images.githubusercontent.com/8196725/28563890-5e370800-7162-11e7-9015-b2eab14ab726.png)
