@@ -143,6 +143,9 @@ docs:
       - title: レイアウト管理の利用
         url: /design_layout
         output: web, pdf
+      - title: 新規ページの作成
+        url: /design_page
+        output: web, pdf
       - title: 画像管理について
         url: /design_img
         output: web, pdf
