@@ -3,6 +3,7 @@ title: デバッグモード
 keywords: debug
 tags: [debug, env]
 permalink: debug_mode
+description: EC-CUBEのデバッグモードの概要と、環境変数による有効化・無効化の方法について説明します。
 folder: i18n
 
 ---
@@ -29,10 +30,10 @@ ec-cubeプロジェクトのルートにある.envファイルを開くと、`AP
 
 `APP_DEBUG=1` に設定すると、デバッグモードが有効となり、
 
-デバッグモード時にエラーが発生すると以下ような画面が表示されます。
+デバッグモード時にエラーが発生すると以下のような画面が表示されます。
 
 ![エラー画面](/images/debug_mode/debug_error.png)
 
-一般的には`APP_ENV＝dev`、`APP_ENV＝test`の時は1を設定し、`APP_ENV＝prod`の場合には0を設定します。
+一般的には`APP_ENV=dev`、`APP_ENV=test`の時は1を設定し、`APP_ENV=prod`の場合には0を設定します。
 
 

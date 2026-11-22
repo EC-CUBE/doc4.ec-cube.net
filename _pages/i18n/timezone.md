@@ -1,8 +1,9 @@
 ---
 title: タイムゾーン
 keywords: timezone
-tags: [i18n, currency]
+tags: [i18n, timezone]
 permalink: i18n_timezone
+description: EC-CUBEの日時データの取り扱いと、タイムゾーン設定の変更方法について説明します。
 folder: i18n
 
 ---
@@ -44,7 +45,7 @@ EC-CUBEのルートディレクトリ直下に、`.env.dist`ファイルをコ�
 `.env`ファイル内の`ECCUBE_TIMEZONE`のコメントアウトを外し、任意のタイムゾーンを記載します。
 
 ```bash
-//.env
+# .env
 
 ECCUBE_TIMEZONE=Pacific/Honolulu
 ```
