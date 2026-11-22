@@ -4,6 +4,7 @@ keywords: mailcatcher
 tags: [development-tools, mail-catcher]
 permalink: /development-tools/mail-catcher
 folder: development-tools
+description: MailCatcherを使用して、EC-CUBEのローカル開発環境にメールサーバーを導入する手順を紹介します。
 ---
 
 ## 概要
@@ -27,7 +28,15 @@ DockerHubのレジストリから<a href="https://hub.docker.com/r/schickling/ma
 
 EC-CUBEの`.env`ファイルに以下の設定を行います。
 
+EC-CUBE 4.2 以降の場合は `MAILER_DSN` を設定します。
+
+```bash
+MAILER_DSN=smtp://127.0.0.1:1025
 ```
+
+EC-CUBE 4.1 以前の場合は `MAILER_URL` を設定します。
+
+```bash
 MAILER_URL=smtp://127.0.0.1:1025
 ```
 
