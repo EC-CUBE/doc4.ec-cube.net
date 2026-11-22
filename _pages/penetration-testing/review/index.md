@@ -1,5 +1,6 @@
 ---
 title: テスト評価
+description: OWASP ZAP のレポート出力とセキュリティアラートの評価方法を説明します。
 permalink: /penetration-testing/review
 ---
 ## レポート出力
@@ -35,6 +36,6 @@ permalink: /penetration-testing/review
 特に、 **High** のアラートが検出された場合は、慎重な確認が必要です。
 判断に迷う場合は専門家に判断を仰ぐと良いでしょう
 
-XSS が検出され、レスポンスの送信も再現するが、実際には実行されることない誤検知の例
-![XSS positive false](/images/penetration-testing/review_positive_false.png)
+XSS が検出され、レスポンスの送信も再現するが、実際には実行されることのない誤検知の例
+![XSS false positive](/images/penetration-testing/review_positive_false.png)
 {: .notice}

@@ -1,5 +1,6 @@
 ---
 title: Quick Start
+description: OWASP ZAP を使用して EC-CUBE のペネトレーションテストをすぐに始める手順を説明します。
 permalink: /penetration-testing/quick_start
 ---
 
@@ -7,7 +8,7 @@ permalink: /penetration-testing/quick_start
 ![プロテクトモードを使用すること](/images/penetration-testing/quick_start_protect_mode.png)
 {: .notice--danger}
 
-1. [docker compose を使用して EC-CUBE をインストールします](https://doc4.ec-cube.net/quickstart/docker_compose_install)
+1. [docker compose を使用して EC-CUBE をインストールします](/quickstart/docker_compose_install)
 1. テスト用のデータを生成しておきます
     ```shell
     ## APP_ENV: dev に設定

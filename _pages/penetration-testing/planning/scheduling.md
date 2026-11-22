@@ -1,5 +1,6 @@
 ---
-Title: スケジューリングの目安
+title: スケジューリングの目安
+description: EC-CUBE のペネトレーションテストを実施する際のスケジュール策定の目安を説明します。
 permalink: /penetration-testing/planning/scheduling
 ---
 EC-CUBEのペネトレーションテストを実施する上で、EC-CUBE に関する知識と、セキュリティに関する専門知識が重要になってきます。
