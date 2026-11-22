@@ -5,6 +5,7 @@ keywords: howto update
 tags: [quickstart, getting_started]
 permalink: update-41-42
 summary : EC-CUBE4.1から4.2へのマイグレーションについて記載します。
+description: EC-CUBE4.1から4.2へのマイグレーションについて記載します。
 ---
 
 EC-CUBE4.1から4.2へのマイグレーションを解説します。
@@ -147,7 +148,7 @@ SwiftMailerを直接使用している場合は、SymfonyMailerでの実装に�
 
 こちらの差分も合わせて参考にしてください。
 
-https://github.com/EC-CUBE/ec-cube/pull/5353/commits/ff6a6962736c87fe8e9b7427ba2cbebbb3000c43
+[https://github.com/EC-CUBE/ec-cube/pull/5353/commits/ff6a6962736c87fe8e9b7427ba2cbebbb3000c43](https://github.com/EC-CUBE/ec-cube/pull/5353/commits/ff6a6962736c87fe8e9b7427ba2cbebbb3000c43){:target="_blank"}
 
 ### Event関連
 
@@ -204,7 +205,7 @@ Bootstrapを5.0に更新しました。
 
 ここで記載した内容は一部です。変更点の詳細は以下のドキュメントをご確認ください。
 
-https://getbootstrap.jp/docs/5.0/migration/
+[https://getbootstrap.jp/docs/5.0/migration/](https://getbootstrap.jp/docs/5.0/migration/){:target="_blank"}
 
 ### data変数のbsプレフィクス
 
@@ -216,14 +217,14 @@ https://getbootstrap.jp/docs/5.0/migration/
 + data-bs-keyword
 
 - data-dismiss
- data-bs-dismiss
++ data-bs-dismiss
 
 - data-toggle
 + data-bs-toggle
 
 ```
 
-## Close buttton
+### Close button
 
 閉じるボタンのクラス名が変更されました。
 
@@ -247,7 +248,3 @@ https://getbootstrap.jp/docs/5.0/migration/
 + .text-end
 
 ```
-
-## その他の仕様変更
-
-### その他削除された関数・機能
