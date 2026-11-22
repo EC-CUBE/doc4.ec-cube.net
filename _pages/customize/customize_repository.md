@@ -1,5 +1,6 @@
 ---
 title: リポジトリのカスタマイズ
+description: QueryCustomizer などを利用して、リポジトリクラスが生成する QueryBuilder の検索条件やソート順をカスタマイズする方法を説明します。
 keywords: core カスタマイズ リポジトリ
 tags: [core, repository]
 permalink: customize_repository
@@ -15,10 +16,8 @@ folder: customize
 |---------------------------------------------------------------|--------------------------------------|
 | ProductRepository::getQueryBuilderBySearchData()              | QueryKey::PRODUCT_SEARCH             |
 | ProductRepository::getQueryBuilderBySearchDataForAdmin()      | QueryKey::PRODUCT_SEARCH_ADMIN       |
-| ProductRepository::getFavoriteProductQueryBuilderByCustomer() | QueryKey::PRODUCT_GET_FAVORITE       |
 | CustomerRepository::getQueryBuilderBySearchData()             | QueryKey::CUSTOMER_SEARCH            |
-| OrderRepository::getQueryBuilderBySearchData()                | QueryKey::ORDER_SEARCH               |
-| OrderRepository.getQueryBuilderBySearchDataForAdmin()         | QueryKey::ORDER_SEARCH_ADMIN         |
+| OrderRepository::getQueryBuilderBySearchDataForAdmin()        | QueryKey::ORDER_SEARCH_ADMIN         |
 | OrderRepository::getQueryBuilderByCustomer()                  | QueryKey::ORDER_SEARCH_BY_CUSTOMER   |
 | LoginHistoryRepository::getQueryBuilderBySearchDataForAdmin() | QueryKey::LOGIN_HISTORY_SEARCH_ADMIN |
 
