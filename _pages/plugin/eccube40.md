@@ -3,7 +3,7 @@ title: EC-CUBE4.0系(Composer v1)利用時の注意点
 keywords: plugin EC-CUBE4.0 Composer1
 tags: [plugin, eccube, composer]
 permalink: plugin_eccube40
-
+description: EC-CUBE4.0系でComposer v1のメタデータ廃止に伴うプラグイン管理への影響と対応方法を解説します。
 ---
 
 EC-CUBE4.0系で利用している Composer v1 のメタデータが 2025年8月1日以降廃止されるというアナウンスがありました。
@@ -23,7 +23,7 @@ composer.lock ファイルにダウンロードURLは記録されていますの
 ### composer.json の修正
 
 1. require-dev セクションを削除します。
-   以下のような require-dev セクションを削除しておきます。このセクションは発時にのみ利用するため、削除しても問題ありません。
+   以下のような require-dev セクションを削除しておきます。このセクションは開発時にのみ利用するため、削除しても問題ありません。
 
    ``` json
 
@@ -71,10 +71,10 @@ composer.lock ファイルにダウンロードURLは記録されていますの
 
 ### composer install コマンドの実行
 
-次にssh を利用して composer install --no-scripts --no-plugins コマンドを実行しておきます。vendor 以下の整合性を維持するために必要です。—no-dev オプションを付与せず、require-dev のパッケージもインストールしておくことがポイントです。
+次にssh を利用して composer install --no-scripts --no-plugins コマンドを実行しておきます。vendor 以下の整合性を維持するために必要です。`--no-dev` オプションを付与せず、require-dev のパッケージもインストールしておくことがポイントです。
 (composer.json の require-dev は削除済みですが、composer.lock の情報を参照して依存関係を更新しようとする場合があるため)
 
-```
+```bash
 composer install --no-scripts --no-plugins
 ```
 
@@ -84,13 +84,13 @@ composer.json の修正 とcomposer install コマンドの実行が完了すれ
 
 ### 他のパッケージと依存関係のあるプラグインの場合
 
-[Web APIプラグイン](https://www.ec-cube.net/products/detail.php?product_id=2121)など、他のパッケージと依存関係のあるプラグインの場合は、Composer v1 メタデータアクセス廃止の影響を受けてしまいます。
+[Web APIプラグイン](https://www.ec-cube.net/products/detail.php?product_id=2121){:target="_blank"}など、他のパッケージと依存関係のあるプラグインの場合は、Composer v1 メタデータアクセス廃止の影響を受けてしまいます。
 
 他のパッケージと依存関係のある場合でも、 composer.json に依存先のGitHub リポジトリを記載することで対応可能です。
 
 以下のように、app/Plugin/<プラグインコード>/composer.json の require セクションに ec-cube/plugin-installer 以外のパッケージが含まれている場合は、他のパッケージに依存関係があります。
 
-```
+```json
 "require": {
     "ec-cube/plugin-installer": "~0.0.6 || ^2.0",
     "trikoder/oauth2-bundle": "^2.1",
@@ -107,7 +107,7 @@ composer.json の修正 とcomposer install コマンドの実行が完了すれ
 
 ***// ここから // ここまで** は追加時には削除してください。構文エラーになってしまいます*
 
-```
+```json
     "repositories": {
         "eccube": {
             "type": "composer",
@@ -214,7 +214,7 @@ A) 何らかの原因でプラグインの不整合が発生している可能�
 
 - [packagist.org](http://packagist.org){:target="_blank"} のメタデータにアクセスしようとして発生するエラー
     
-    ```diff
+    ```text
     Your requirements could not be resolved to an installable set of packages.
     
       Problem 1
@@ -231,7 +231,7 @@ A) 何らかの原因でプラグインの不整合が発生している可能�
 
 - 何らかの原因で依存ライブラリの更新に失敗するエラー
     
-    ```
+    ```text
     [21.1MiB/8.61s] Package operations: 0 installs, 0 updates, 42 removals
     [21.1MiB/8.61s]   - Removing webmozart/assert (1.6.0)
     
@@ -262,26 +262,26 @@ https://getcomposer.org/download/ にも記載されていますが、 2025年8�
 
 1. EC-CUBEのインストールディレクトリへ移動
     
-    ```
+    ```bash
     cd path/to/ec-cube
     ```
     
 2. composer.phar のダウンロード
     
-    ```
+    ```bash
     curl -O https://getcomposer.org/download/1.10.27/composer.phar
     ```
     
 3. composer にリネーム
     
-    ```
+    ```bash
     mv composer.phar composer
     ```
     
 
 以下のコマンドを実行して、composer のロゴが表示されればインストール成功です。
 
-```
+```text
 php composer list
 
    ______
@@ -299,11 +299,11 @@ Usage:
 
 本記事中の `composer` コマンドは `php composer` として実行してください。
 
-レンタルサーバーなどで comannd not found といったエラーが表示された場合は、通常とは異なる場所に PHP がインストールされている可能性があります。
+レンタルサーバーなどで command not found といったエラーが表示された場合は、通常とは異なる場所に PHP がインストールされている可能性があります。
 
 サーバーのドキュメントを参照し、以下のように PHP のパスを直接指定してみてください
 
-```
+```bash
 # エックスサーバーの例
 /usr/bin/php7.4 composer list
 ```
