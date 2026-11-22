@@ -1,5 +1,6 @@
 ---
 title: 購入フローのカスタマイズ
+description: カートの明細分割・カート振り分けと、PurchaseFlow の Processor によるカスタマイズ方法を説明します。
 keywords: core カスタマイズ PurchaseFlow Cart Shopping
 tags: [core, service, purchaseflow]
 permalink: customize_service
@@ -20,7 +21,7 @@ sequenceDiagram
     CartController->>CartService: addCartItem(新しい明細)
 
     CartService->>カート一覧: カートごとの明細一覧を取得
-    Note right of カート一覧: 販売種別等によって<br/>でカートを分けられるようにする
+    Note right of カート一覧: 販売種別等によって<br/>カートを分けられるようにする
     カート一覧-->>CartService: 明細一覧
 
     CartService->>すべての明細一覧: 
@@ -38,9 +39,9 @@ sequenceDiagram
 
     loop カート商品の数
         CartService->>CartItemAllocator: allocate(明細)
-        CartItemAllocator-->>CartService: カート認別子
+        CartItemAllocator-->>CartService: カート識別子
         Note right of CartItemAllocator: 明細ごとにカート識別子を決定する。<br/>標準の実装では販売種別によって<br/>一意になる識別子が返される。
-        CartService->>カート一覧: 同じカート認別子を持つカートを取得
+        CartService->>カート一覧: 同じカート識別子を持つカートを取得
 
         alt 同一識別子のカートがある場合
             CartService->>カート一覧: 既存のカートに追加(明細)
@@ -64,10 +65,10 @@ sequenceDiagram
 
 ``` php
 <?php
-namespace Eccube\Service\Cart;
-
+namespace Customize\Service\Cart;
 
 use Eccube\Entity\CartItem;
+use Eccube\Service\Cart\CartItemComparator;
 
 /**
  * 商品規格と商品オプションで明細を比較する CartItemComparator
@@ -101,7 +102,7 @@ CartItemComparator を有効にするには、 `app/config/eccube/packages/cart.
 ```yaml
 services:
     Eccube\Service\Cart\CartItemComparator:
-      class: Eccube\Service\Cart\ProductClassAndOptionComparator
+      class: Customize\Service\Cart\ProductClassAndOptionComparator
 
 ```
 
@@ -112,21 +113,22 @@ services:
 
 + 配送方法
     + 配送方法A:  販売種別A/クレジットカード
-    + 配送方法B:  販売種別A/代引き
+    + 配送方法B:  販売種別B/代引き
 + 商品
     + 商品A: 販売種別A
     + 商品B: 販売種別B
 
-EC-CUBE3.0 では、商品Aをカート入れ、次に商品Bをカートに入れようとすると「この商品は同時に購入することはできません。」というエラーになってしまいます。
+EC-CUBE3.0 では、商品Aをカートに入れ、次に商品Bをカートに入れようとすると「この商品は同時に購入することはできません。」というエラーになってしまいます。
 
 `CartItemAllocator` を実装することで、任意の基準で、カートを分けられるようになります。
 例えば、予約商品など、 **同時にカートに投入したいが、別々に決済したい(注文を分けたい)** といったカスタマイズをすることができます。
 
 ``` php
 <?php
-namespace Eccube\Service\Cart;
+namespace Customize\Service\Cart;
 
 use Eccube\Entity\CartItem;
+use Eccube\Service\Cart\CartItemAllocator;
 
 /**
  * 販売種別と予約商品フラグごとにカートを振り分ける CartItemAllocator
@@ -146,6 +148,7 @@ class SaleTypeAndReserveCartAllocator implements CartItemAllocator
 
         if ($ProductClass && $saleType) {
             $salesTypeId = (string) $saleType->getId();
+            // 別途 ProductClass に予約商品フラグ(isReserveItem)を追加しておく
             return $ProductClass->isReserveItem()
                 ? $salesTypeId . ':R'
                 : $salesTypeId;
@@ -162,7 +165,7 @@ CartItemAllocator を有効にするには、 `app/config/eccube/packages/cart.y
 ```yaml
 services:
     Eccube\Service\Cart\CartItemAllocator:
-      class: Eccube\Service\Cart\SaleTypeAndReserveCartAllocator
+      class: Customize\Service\Cart\SaleTypeAndReserveCartAllocator
 
 ```
 
@@ -517,22 +520,22 @@ EC-CUBE 4.3以降では、PurchaseFlowに登録されている各Processorの実
 
 などでは、Processorの実行順序が重要になります。
 
-以下は、商品の配送条件（例：冷凍便）に基づいて手数料を加算する Processor の例です。合計金額の計算後に実行したい場合を想定し、優先度を低めに設定します。
+以下は、商品の配送条件（例：冷凍便）に基づいて手数料を加算する Processor の例です。標準の手数料明細の追加（`PaymentChargePreprocessor`、priority: 600）の後、送料・手数料明細の税額計算（`TaxProcessor`、priority: 500）の前に実行されるよう、優先度を 550 に設定します。
 ```php
 <?php
 
 namespace Customize\Service\PurchaseFlow\Processor;
 
-use EcCube\Service\PurchaseFlow\ItemHolderInterface;
-use EcCube\Service\PurchaseFlow\PurchaseContext;
-use EcCube\Service\PurchaseFlow\Processor\AbstractCommonPostprocessor;
+use Eccube\Entity\ItemHolderInterface;
+use Eccube\Service\PurchaseFlow\ItemHolderPreprocessor;
+use Eccube\Service\PurchaseFlow\PurchaseContext;
 
 /**
  * 冷凍便が含まれる場合に手数料を追加するプロセッサ
  */
-class TemperatureFeeProcessor extends AbstractCommonPostprocessor
+class TemperatureFeeProcessor implements ItemHolderPreprocessor
 {
-    public function execute(ItemHolderInterface $itemHolder, PurchaseContext $context): void
+    public function process(ItemHolderInterface $itemHolder, PurchaseContext $context): void
     {
         // 1. カート内の商品から温度帯（冷凍）が含まれるかチェック
         // 2. 冷凍商品がある場合、手数料アイテムを追加
@@ -547,16 +550,14 @@ class TemperatureFeeProcessor extends AbstractCommonPostprocessor
 services:
     Customize\Service\PurchaseFlow\Processor\TemperatureFeeProcessor:
         tags:
-            # priorityを -100 に設定することで、標準の計算処理(0)よりも後に実行させる
-            - { name: eccube.common.postprocessor, flow_type: cart, priority: -100 }
-            - { name: eccube.common.postprocessor, flow_type: shopping, priority: -100 }
-            - { name: eccube.common.postprocessor, flow_type: order, priority: -100 }
+            # 手数料明細の追加(600)の後、税額計算(500)の前に実行させる
+            - { name: eccube.item.holder.preprocessor, flow_type: shopping, priority: 550 }
 
 ```
 
 | 設定項目   | 概要 |
 |-----------|------|
-| name      | PurchaseFlowPassに設定されているタグ名を指定 |
+| name      | PurchaseFlowPassに定義されているタグ名を指定（`eccube.item.preprocessor`、`eccube.item.validator`、`eccube.item.holder.preprocessor`、`eccube.item.holder.validator`、`eccube.discount.processor`、`eccube.item.holder.post.validator`、`eccube.purchase.processor`） |
 | flow_type | cart、shopping、orderのいずれかを設定（必須） |
 | priority  | 未設定の場合は0が付与。数値が大きいほど、タグ付けされたサービスがコレクション内で先に配置される |
 
@@ -607,16 +608,16 @@ ItemProcessor で発生したエラーは Warning, ItemHolderProcessor で発生
 
 ##### Processor
 
-目的に応じてクラスまたはインタフェースを継承または実装します。
+目的に応じてクラスまたはインターフェイスを継承または実装します。
 
 
-| クラス、インタフェース      | 概要と具体例                                              |
+| クラス、インターフェイス    | 概要と具体例                                              |
 |-------------------------|--------------------------------------------------|
 | ItemValidator           | 明細単位(Item)の妥当性検証のクラス。<br>商品価格の変更チェック、商品の公開ステータスのチェックなど |
 | ItemHolderValidator     | カート/受注(ItemHolder)の妥当性検証を行うクラス。<br>在庫チェック、販売制限数チェックなど |
-| ItemPreprocessor        | 明細単位(Item)の前処理行うインターフェス。 |
-| ItemHolderPreprocessor  | カート/受注(ItemHolder)の前処理行うインターフェス。<br>送料明細の追加、支払い手数料明細の追加など |
-| DiscountProcessor       | 値引き処理を行うインタフェース。<br>ポイント値引き明細の追加など |
+| ItemPreprocessor        | 明細単位(Item)の前処理を行うインターフェイス。 |
+| ItemHolderPreprocessor  | カート/受注(ItemHolder)の前処理を行うインターフェイス。<br>送料明細の追加、支払い手数料明細の追加など |
+| DiscountProcessor       | 値引き処理を行うインターフェイス。<br>ポイント値引き明細の追加など |
 | ItemHolderPostValidator | 各処理後にカート/受注の妥当性検証を行うクラス。<br>合計金額のマイナスチェックなど |
 | PurchaseProcessor       | 受注の仮確定/確定/確定取り消し処理を行うインターフェイス。<br>在庫の更新処理、ポイントの更新処理など |
 
@@ -630,27 +631,24 @@ ItemProcessor で発生したエラーは Warning, ItemHolderProcessor で発生
 namespace Plugin\PurchaseProcessors\Processor;
 
 use Eccube\Entity\ItemInterface;
-use Eccube\Service\PurchaseFlow\ItemPreProcessor;
+use Eccube\Service\PurchaseFlow\ItemPreprocessor;
 use Eccube\Service\PurchaseFlow\PurchaseContext;
-use Eccube\Service\PurchaseFlow\ProcessResult;
 
-class EmptyProcessor implements ItemPreProcessor
+class EmptyProcessor implements ItemPreprocessor
 {
     /**
      * @param ItemInterface $item
      * @param PurchaseContext $context
-     * @return ProcessResult
      */
-    public function process(ItemInterface $item, PurchaseContext $context): ProcessResult
+    public function process(ItemInterface $item, PurchaseContext $context): void
     {
         log_info('empty processor executed', [__METHOD__]);
-        return ProcessResult::success();
     }
 }
 
 ```
 
-`ValidatableEmptyProcessor::validate()` にて `Eccube\Service\PurchaseFlow\InvalidItemException` がスローされると、 `ValidatableEmptyProcessor::handle()` が実行され、 `PurchaseFlowResult::warn()` を返します。
+`ValidatableEmptyProcessor::validate()` にて `Eccube\Service\PurchaseFlow\InvalidItemException` がスローされると、 `ValidatableEmptyProcessor::handle()` が実行され、 `ProcessResult::warn()` を返します。
 
 ``` php
 <?php
@@ -682,23 +680,25 @@ class ValidatableEmptyProcessor extends ItemValidator
 
 ####  Processorの有効化
 
-独自に作成した Processor を有効にするには、 `app/config/eccube/packages/purchaseflow.yaml` に定義を追加するか、アノテーションで追加対象のフローを指定します。
+独自に作成した Processor を有効にするには、サービス定義にタグを追加するか、アノテーションで追加対象のフローを指定します。
 
-##### `purchaseflow.yaml` に定義を追加
+##### サービス定義にタグを追加
+
+`services.yaml` などのサービス定義で、Processor の種類に応じたタグと `flow_type`・`priority` を指定します。標準の Processor の定義と優先度は `app/config/eccube/packages/purchaseflow.yaml` で確認できます。
 
 ```yaml
-    eccube.purchase.flow.cart.item_processors:
-        class: Doctrine\Common\Collections\ArrayCollection
-        arguments:
-            - #
-                - '@Plugin\PurchaseProcessors\Processor\EmptyProcessor' # 追加
-                - '@Eccube\Service\PurchaseFlow\Processor\DisplayStatusValidator'
-                - '@Eccube\Service\PurchaseFlow\Processor\SaleLimitValidator'
-                - '@Eccube\Service\PurchaseFlow\Processor\DeliverySettingValidator'
-                - '@Eccube\Service\PurchaseFlow\Processor\StockValidator'
-                - '@Eccube\Service\PurchaseFlow\Processor\ProductStatusValidator'
-                - '@Plugin\PurchaseProcessors\Processor\ValidatableEmptyProcessor' # 追加
+services:
+    Plugin\PurchaseProcessors\Processor\EmptyProcessor:
+        tags:
+            - { name: eccube.item.preprocessor, flow_type: cart }
+    Plugin\PurchaseProcessors\Processor\ValidatableEmptyProcessor:
+        tags:
+            # 在庫のチェック(700)の後、販売制限数のチェック(600)の前に実行させる
+            - { name: eccube.item.validator, flow_type: cart, priority: 650 }
 ```
+
+{: .notice--info}
+EC-CUBE 4.2 以前では、`purchaseflow.yaml` の `eccube.purchase.flow.cart.item_validators` などの `ArrayCollection` に Processor を追加して有効にします。
 
 ##### アノテーションで追加対象のフローを指定
 
