@@ -96,7 +96,7 @@ EC-CUBEの基本情報やご確認いただきたいことについてまとめ�
 + [受注ステータスのカスタマイズ](/customize_order_state_machine)
 + [テンプレートのカスタマイズ](/customize_template)
 + [スロットリング機能のカスタマイズ](/customize_throttling)
-+ [Twig Sandboxにおける許可リスト制御](/customize_twig_sandbox)
++ [Twig Sandboxによる許可リスト制御](/customize_twig_sandbox)
 + [Symfonyの機能を使った拡張](/customize_symfony)
 + [Symfonyの機能を使った拡張 Commandの開発](/customize_symfony#command)
 
@@ -128,7 +128,7 @@ EC-CUBEの基本情報やご確認いただきたいことについてまとめ�
 + [プラグインを開発する](/plugin_development)
 + [オーナーズストア経由のインストールをテストする](/plugin_mock_package_api)
 + [プラグインで推奨の命名規則](/plugin_naming_conventions)
-+ [管理画面ナビの拡張](plugin_admin_nav)
++ [管理画面ナビの拡張](/plugin_admin_nav)
 
 ## 設定変更
 
