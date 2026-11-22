@@ -1,5 +1,6 @@
 ---
 title: EC-CUBE4 Web API プラグイン
+description: EC-CUBE4 Web API プラグインの updateShipped による出荷ステータスの更新方法を説明します。
 keywords: plugin EC-CUBE4 Web API
 tags: [plugin, eccube, eccube-api]
 permalink: eccube-api4/mutation/update_shipped
@@ -8,7 +9,7 @@ permalink: eccube-api4/mutation/update_shipped
 
 ## 出荷ステータスの更新
 
-UpdateShipped で出荷処理ができます。
+updateShipped で出荷処理ができます。
 出荷処理と同時に、出荷日、出荷業者、お問い合わせ番号、出荷用メモ欄の更新と、出荷完了メールの送信が可能です。
 受注に紐づく全ての出荷情報が出荷済みになると受注ステータスが出荷済みになります。
 
@@ -93,7 +94,7 @@ mutation UpdateShipped(
       "shipping_delivery_name": "テスト配送業者",
       "tracking_number": "tracking_number_0123",
       "note": "Note Update!",
-      "mail_send_date": "2020-08-04T03:24:44+00:00",
+      "mail_send_date": "2020-08-04T03:24:44+00:00"
     }
   }
 }

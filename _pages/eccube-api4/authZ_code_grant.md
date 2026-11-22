@@ -1,5 +1,6 @@
 ---
 title: EC-CUBE4 Web API プラグイン
+description: EC-CUBE4 Web API プラグインで Authorization Code Flow により API クライアントを認可する手順を説明します。
 keywords: plugin EC-CUBE4 Web API
 tags: [plugin, eccube, eccube-api]
 permalink: eccube-api4/authZ_code_grant
@@ -20,7 +21,7 @@ permalink: eccube-api4/authZ_code_grant
 ここでは、参考までに curl コマンドを使用して、アクセストークンを発行します。
 
 1. 以下のURLにブラウザでアクセスします。`client_id` などの各項目は、前項で登録した API クライアントのものを使用してください。
-  - `https://<ec-cubeのホスト名>/<管理画面URL>/authorize?response_type=code&client_id=client_id>&redirect_uri=<リダイレクトURI>&scope=<スコープ>&state=<ランダム文字列>`
+  - `https://<ec-cubeのホスト名>/<管理画面URL>/authorize?response_type=code&client_id=<クライアントID>&redirect_uri=<リダイレクトURI>&scope=<スコープ>&state=<ランダム文字列>`
   - ※スコープは、登録したスコープのうち、要求したいスコープを空白区切りで設定してください
     ```
       readのみを要求：scope=read
