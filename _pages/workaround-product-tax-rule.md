@@ -1,5 +1,6 @@
 ---
 title: 商品別税率設定が適用されない不具合について
+description: 一定条件下で商品別税率設定が適用されない不具合の原因と回避方法を説明します。
 tags: [spec, getting_started]
 permalink: workaround-product-tax-rule
 summary: 一定条件下で商品別税率設定が適用されない不具合の原因と対策。
@@ -96,7 +97,7 @@ MySQLをご使用の場合は、環境に合わせて `time_zone` を設定し�
 
 ```UPDATE dtb_tax_rule SET apply_date = '2019-10-01 00:00:01' WHERE product_class_id IS NOT NULL;```
 
-**※ EC-CUBEのデフォルトの仕様では、商品別率設定で登録されたレコードは、「product_class_id」に商品規格のIDが登録されます。**
+**※ EC-CUBEのデフォルトの仕様では、商品別税率設定で登録されたレコードは、「product_class_id」に商品規格のIDが登録されます。**
 
 ### EC-CUBE 3.0.x系の場合の回避方法
 
@@ -106,6 +107,6 @@ EC-CUBE3系では上記の回避対応に加えて、<u>ソースコードの修
 修正ファイル：  
 src/Eccube/Repository/TaxRuleRepository.php
 差分コード：  
-[https://github.com/EC-CUBE/ec-cube/pull/4310/files#diff-9ebf9d0c89cef624ee2648733e557603](https://github.com/EC-CUBE/ec-cube/pull/4310/files#diff-9ebf9d0c89cef624ee2648733e557603)
+[https://github.com/EC-CUBE/ec-cube/pull/4310/files#diff-9ebf9d0c89cef624ee2648733e557603](https://github.com/EC-CUBE/ec-cube/pull/4310/files#diff-9ebf9d0c89cef624ee2648733e557603){:target="_blank"}
 修正後の動作確認：  
 商品別税率が購入時の価格に反映されていることを確認してください。
