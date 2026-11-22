@@ -5,19 +5,20 @@ tags: [design]
 permalink: design_sass
 
 summary: Sass(scss)の編集方法
+description: EC-CUBEのSass(scss)のディレクトリ構成とビルド方法について説明します。
 ---
 
 EC-CUBEのCSSは、[Sass(scss)](http://sass-lang.com){:target="_blank"} を使用して記述されています。
 
-1. [scssのディレクリ格納場所](#scssのディレクリ格納場所)
+1. [Sass(scss)のディレクトリ格納場所](#scss_dir)
 1. [scssの各ディレクトリとファイルについて](#scssの各ディレクトリとファイルについて)
 1. [Sass(scss)のビルド方法](#sass_build)
 
 
-## Sass(scss)のディレクリ格納場所
+## Sass(scss)のディレクトリ格納場所 {#scss_dir}
 - Sass のソースコードは、以下のディレクトリに格納されています。
 
-```
+```text
 [html]
  └─ [template]
      └─ [default] # 管理画面はadminになります
@@ -32,12 +33,12 @@ scssディレクトリ内はメンテナンスしやすいように構成され�
 コンポーネント設計及びCSSの記述方針についてはFLOCSSルールを採用しております。<br>
 [スタイルガイド](https://github.com/EC-CUBE/Eccube-Styleguide){:target="_blank"} も合わせてご参照ください。
 
-```
+```text
 [assets]
  ├─ [css]
  │    ├─ style.css     # 読み込まれているCSS ←ビルドして書き出される先
  │    └─ style.min.css # 軽量版CSS ←ビルドして書き出される先
- └─ [sass]
+ └─ [scss]
       ├─ [component]   # ベースとなる最小モジュール（部品）が格納
       ├─ [project]     # トップページやヘッダーやフッターなど格納
       ├─ [mixins]      # 再利用スタイルの設定が格納
@@ -58,7 +59,7 @@ scssディレクトリ内はメンテナンスしやすいように構成され�
   componentやprojectのCSSクラスを上書きする際にご利用ください。<br>
   ご利用の際はstyle.scssに以下のコードを追記ください。
 
-```css
+```scss
 @import "sections/components";
 @import "sections/projects";
 ```
@@ -83,20 +84,20 @@ EC-CUBEでは、CSSやHTMLの設計指針やコーディングルールを確認
 
 1. [ビルド環境の準備](#ビルド環境の準備)
 1. [EC-CUBE4.0.3までのビルド方法](#build_eccube403)
-1. [EC-CUBE4.0.4でのビルド方法](#build_eccube404)
+1. [EC-CUBE4.0.4以降でのビルド方法](#build_eccube404)
 
 
 ## ビルド環境の準備
 
 EC-CUBE内に組み込まれている [Gulp](https://gulpjs.com/){:target="_blank"} を使用したビルド方法をご紹介いたします。<br>
-前提として [Node.js公式サイト](https://nodejs.org/ja/){:target="_blank"} より、 Node.js をインストールが必要です。
+前提として [Node.js公式サイト](https://nodejs.org/ja/){:target="_blank"} より、 Node.js のインストールが必要です。
 
 - Node.js<br>
-  GulpはNode.jsをベースに作られているので、Gulp動かす為に必要となります。<br>
-  ※最新のNode.jsでは、[Gulpのタスク実行時にエラーが出る場合](https://qiita.com/KKKarin/items/bbb424fd93ef523a741a)があります。
+  GulpはNode.jsをベースに作られているので、Gulpを動かす為に必要となります。<br>
+  ※最新のNode.jsでは、[Gulpのタスク実行時にエラーが出る場合](https://qiita.com/KKKarin/items/bbb424fd93ef523a741a){:target="_blank"}があります。
 
 - Gulp<br>
-  SassファイルをCSSに変換に利用されます。<br>
+  SassファイルをCSSへの変換に利用されます。<br>
   EC-CUBE4.0.3まではGulp3、4.0.4からはGulp4が導入
 
 
@@ -109,13 +110,13 @@ node -v
 ```
 
 **2.ec-cube_rootディレクトリへ移動**<br>
-package.json、gulpfile.jpファイルが格納されているroot階層へ移動します。
+package.json、gulpfile.jsファイルが格納されているroot階層へ移動します。
 
 ```shell
 cd path/to/eccube_root # path/to/eccube_rootの部分はEC-CUBEのディレクトリパスをご指定ください
 ```
 
-**3.node_modulesディレクトリが生成します。**<br>
+**3.node_modulesディレクトリを生成します。**<br>
 
 下記コマンドを実行して、上記移動したディレクトリにnode_modulesが生成されている事を確認してください。
 
@@ -124,7 +125,7 @@ npm install # node_modulesディレクトリが生成
 ```
 
 
-## EC-CUBE4.0.3でのビルド方法 {#build_eccube403}
+## EC-CUBE4.0.3までのビルド方法 {#build_eccube403}
 
 以下のコマンドでscssをCSSに変換します。
 
@@ -140,7 +141,7 @@ style.cssとstyle.min.css（改行など省略した軽量版）が出力され�
 
 テンプレートをdefault以外に変更されている場合、gulpfile.jsの値を変更する必要があります。<br>
 `eccube_root/gulpfile.js` 内の以下のdefaultの部分を変更してください
-```
+```text
 [ec-cube_root]
  └─ gulpfile.js # srcPatternの設定を変更
 ```
@@ -183,18 +184,18 @@ style.cssとstyle.min.css（改行など省略した軽量版）が出力され�
 
 ### 【注意】Windowsの方は一部コードの修正が必要になります {#win_sass}
 
-4.0.4パッケージ版のWindows環境でSassビルド時にstyle.cssが正しく書き出されない不具合あり、<br>
-Gulpfile.jsの以下の２箇所を変更お願いします。※GitHubの最新コードは修正済み
+4.0.4パッケージ版のWindows環境でSassビルド時にstyle.cssが正しく書き出されない不具合があるため、<br>
+gulpfile.jsの以下の２箇所を変更してください。※GitHubの最新コードは修正済み
 
-```
+```text
 [ec-cube_root]
  └─ gulpfile.js # Sassのビルド設定が書かれているファイルを一部変更してください。
 ```
 gulpfile.jsの90行目と115行目の２箇所のコードを変更してください。
 ```js
-path.dirname = path.dirname.replace('/scss', '/css') # 変更前コード
+path.dirname = path.dirname.replace('/scss', '/css') // 変更前コード
 ```
 
 ```js
-path.dirname = path.dirname.replace(/scss$/, 'css') # 変更後コード
+path.dirname = path.dirname.replace(/scss$/, 'css') // 変更後コード
 ```
