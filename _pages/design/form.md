@@ -4,10 +4,11 @@ keywords: design
 tags: [design]
 permalink: design_form
 summary: フォームレイアウトを変更する方法を説明します。
+description: フォームレイアウトを変更する方法を説明します。
 ---
 
 ## フォーム画面の構成
-フォームを画面を作成する場合、`<input type="text" name="hoge">`とinputタグを直接記述せず、Twig関数を利用してフォーム画面を作成します。  
+フォーム画面を作成する場合、`<input type="text" name="hoge">`とinputタグを直接記述せず、Twig関数を利用してフォーム画面を作成します。  
 
 フォームをより詳しく理解するにはSymfonyのサイトをご確認ください。  
 [https://symfony.com/doc/current/forms.html](https://symfony.com/doc/current/forms.html){:target="_blank"}  
@@ -70,7 +71,7 @@ blockの後に続く `form_errors` や `form_label` がTwig関数と対応して
 {%- block form_label -%}
     {{ parent() }}
     {%- if required -%}
-        <span class="ec-required">{{'common.text.message.required'|trans}}</span>
+        <span class="ec-required">{{ 'common.required'|trans }}</span>
     {%- endif -%}
 {%- endblock form_label -%}
 
@@ -127,7 +128,7 @@ pタグをulタグに変更することでエラーメッセージ出力時の�
 ・
 ・
 ・
-{{ form_widget(form.name.name01, {'attr': {'placeholder': 'signup.label.family_name'}}) }}
+{{ form_widget(form.name.name01, {'attr': {'placeholder': 'common.last_name'}}) }}
 ・
 ・
 ・
@@ -143,7 +144,7 @@ pタグをulタグに変更することでエラーメッセージ出力時の�
 や
 
 ```twig
-{% raw %}{{ form_widget(form.name.name01, {'attr': {'placeholder': 'signup.label.family_name'}}) }}{% endraw %}
+{% raw %}{{ form_widget(form.name.name01, {'attr': {'placeholder': 'common.last_name'}}) }}{% endraw %}
 ```
 
 に出現する `form` はControllerから渡されるパラメータ名です。  
@@ -156,7 +157,7 @@ Controllerから `form1` として渡された場合、
 や
 
 ```twig
-{% raw %}{{ form_widget(form1.name.name01, {'attr': {'placeholder': 'signup.label.family_name'}}) }}{% endraw %}
+{% raw %}{{ form_widget(form1.name.name01, {'attr': {'placeholder': 'common.last_name'}}) }}{% endraw %}
 ```
 
 と記述する必要があります。
