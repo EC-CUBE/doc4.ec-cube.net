@@ -1,5 +1,6 @@
 ---
 title: 環境構築
+description: OWASP ZAP を使用したペネトレーションテストの環境構築について説明します。
 permalink: /penetration-testing/testing/settings
 ---
 ## システム要件
@@ -8,7 +9,7 @@ permalink: /penetration-testing/testing/settings
 - docker compose 1.10.0 or higher
 
 - Chrome(最新版) - OWASP ZAP の管理画面操作に使用します
-- Firefox(最新版) - Local Proxes 経由の手動探索で使用します
+- Firefox(最新版) - Local Proxies 経由の手動探索で使用します
 
 ## インストール
 
@@ -22,20 +23,20 @@ permalink: /penetration-testing/testing/settings
 #### VOLUME マウントディレクトリ
 
 ```shell
-<ec-cubeインストールディレクトリ>/ec-cube/zap:/zap/wrk
+<ec-cubeインストールディレクトリ>/zap:/zap/wrk
 ```
 
 セッションやレポートの保存先など、 `/zap/wrk` に設定すると、ローカル環境にすぐに取り出すことができて便利です。
 
 #### インストールされるアドオン
 
-- [help_ja_JP](https://www.zaproxy.org/addons/#addon-help_ja_JP) - 日本語ヘルプ
-- [wappalyzer](https://www.zaproxy.org/docs/desktop/addons/technology-detection/) - 利用技術検出
-- [sequence](https://www.zaproxy.org/docs/desktop/addons/sequence-scanner/) - 複数画面遷移用アドオン
+- [help_ja_JP](https://www.zaproxy.org/addons/#addon-help_ja_JP){:target="_blank"} - 日本語ヘルプ
+- [wappalyzer](https://www.zaproxy.org/docs/desktop/addons/technology-detection/){:target="_blank"} - 利用技術検出
+- [sequence](https://www.zaproxy.org/docs/desktop/addons/sequence-scanner/){:target="_blank"} - 複数画面遷移用アドオン
 
 #### アンインストールされるアドオン
 
-- [hud](https://www.zaproxy.org/docs/desktop/addons/hud/) - ヘッドアップディスプレイ。 Selenium などのブラウザ操作ツールと干渉するため使用しない
+- [hud](https://www.zaproxy.org/docs/desktop/addons/hud/){:target="_blank"} - ヘッドアップディスプレイ。 Selenium などのブラウザ操作ツールと干渉するため使用しない
 
 #### 自動設定されるオプション
 
@@ -49,6 +50,6 @@ permalink: /penetration-testing/testing/settings
 
 #### その他
 
-- Local Proxes 用 SSL ルート CA 証明書の自動出力
+- Local Proxies 用 SSL ルート CA 証明書の自動出力
   - ローカル環境の `<ec-cubeインストールディレクトリ>/zap/owasp_zap_root_ca.cer` に出力されます
   - Firefox の証明書マネージャーに読み込んで使用します
