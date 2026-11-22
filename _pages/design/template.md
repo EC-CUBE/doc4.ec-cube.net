@@ -3,6 +3,7 @@ title: デザインテンプレートの基礎
 keywords: design template search
 tags: [design]
 permalink: design_template
+description: EC-CUBE 4 のデザインテンプレートの配置場所と、テンプレートファイルの読み出し順序について説明します。
 summary: デザインテンプレートの基本ルールについて説明します。
 ---
 
@@ -42,18 +43,17 @@ EC-CUBEでは、デフォルトのディレクトリとは別に、オリジナ�
 
 - フロント
 
-```
+```text
 1. ECCUBEROOT/app/template/[template_code]
-2. ECCUBEROOT/src/Eccube/Resource/template/[template_code]
+2. ECCUBEROOT/src/Eccube/Resource/template/default
 3. ECCUBEROOT/app/Plugin
 ```
 
-- 管理
+- 管理（`@admin` 名前空間）
 
-```
+```text
 1. ECCUBEROOT/app/template/admin
 2. ECCUBEROOT/src/Eccube/Resource/template/admin
-3. ECCUBEROOT/app/Plugin
 ```
 
 先にオリジナルのテンプレートが存在するのか確認し、存在しなければデフォルトのテンプレートを呼び出します。
@@ -64,20 +64,27 @@ EC-CUBEでは、デフォルトのディレクトリとは別に、オリジナ�
 * フロントの例  
 template_codeが「MyDesign」のデザインテンプレートを利用しており、Controllerで `@Template("TemplateDir/template_name.twig")` とアノテーション定義されている場合
 
-```
+```text
  1. app/template/MyDesign/TemplateDir/template_name.twig
  2. src/Eccube/Resource/template/default/TemplateDir/template_name.twig
- 3. app/Plugin/[plugin_code]/Resource/template/TemplateDir/template_name.twig
+ 3. app/Plugin/TemplateDir/template_name.twig
 ```
 という順番で表示されます。
 
 * 管理画面の例  
 `@Template("@admin/Product/index.twig")` 商品マスターのテンプレートをapp/template/admin配下に配置した場合、以下の順序で呼び出されます。
 
-```
+```text
  1. app/template/admin/Product/index.twig
  2. src/Eccube/Resource/template/admin/Product/index.twig
- 3. app/Plugin/[plugin_code]/Resource/template/admin/Product/index.twig
+```
+
+* プラグインのテンプレートの例  
+有効なプラグインのテンプレートは `@[plugin_code]` 名前空間で参照します。`@Template("@[plugin_code]/admin/config.twig")` の場合、以下の順序で呼び出されます。
+
+```text
+ 1. app/template/plugin/[plugin_code]/admin/config.twig
+ 2. app/Plugin/[plugin_code]/Resource/template/admin/config.twig
 ```
 
 ## 管理画面からデザイン編集した時のテンプレートファイルの挙動(ページ編集、ブロック編集)
