@@ -1,5 +1,6 @@
 ---
 title: EC-CUBE 4 セキュリティガイドライン
+description: EC-CUBE の開発・カスタマイズ時に脆弱性を予防するためのコーディング上の注意事項を説明します。
 keywords: coding
 tags: [security-guideline, coding]
 permalink: security-guideline/coding
@@ -22,7 +23,7 @@ EC-CUBEの設置・保守運用に関する記載は、含まれておりませ�
 
 # 脆弱性予防のための注意事項
 
-[安全なウェブサイトの作り方](https://www.ipa.go.jp/security/vuln/websecurity.html) に記載の、「ウェブアプリケーションのセキュリティ実装」に基づき、各脆弱性を予防するためにEC-CUBEのコーディング時に注意すべき事項を記載します。
+[安全なウェブサイトの作り方](https://www.ipa.go.jp/security/vuln/websecurity.html){:target="_blank"} に記載の、「ウェブアプリケーションのセキュリティ実装」に基づき、各脆弱性を予防するためにEC-CUBEのコーディング時に注意すべき事項を記載します。
 脆弱性の詳細な解説やWebアプリケーション開発での一般的な注意事項については、「安全なウェブサイトの作り方」の原本を参照してください。
 ※原本参照箇所については、引用の形式で記載しております。
 
@@ -33,7 +34,7 @@ EC-CUBEの設置・保守運用に関する記載は、含まれておりませ�
 #### [根本的解決] SQL文の組み立ては全てプレースホルダで実装する
 > SQLには通常、プレースホルダを用いてSQL文を組み立てる仕組みがあります。SQL文の雛形の中に変数の場所を示す記号（プレースホルダ）を置いて、後に、そこに実際の値を機械的な処理で割り当てるものです。ウェブアプリケーションで直接、文字列連結処理によってSQL文を組み立てる方法に比べて、プレースホルダでは、機械的な処理でSQL文が組み立てられるので、SQLインジェクションの脆弱性を解消できます。  
 > プレースホルダに実際の値を割り当てる処理をバインドと呼びます。バインドの方式には、プレースホルダのままSQL文をコンパイルしておき、データベースエンジン側で値を割り当てる方式（静的プレースホルダ）と、アプリケーション側のデータベース接続ライブラリ内で値をエスケープ処理してプレースホルダにはめ込む方式（動的プレースホルダ）があります。静的プレースホルダは、SQLのISO/JIS規格では、準備された文(Prepared Statement)と呼ばれます。  
-> どちらを用いてもSQLインジェクション脆弱性を解消できますが、原理的にSQLインジェクション脆弱性の可能性がなくなるという点で、静的プレースホルダの方が優ります。詳しくは[「安全なSQLの呼び出し方」](https://www.ipa.go.jp/files/000017320.pdf)のプレースホルダの項（3.2節）を参照してください。
+> どちらを用いてもSQLインジェクション脆弱性を解消できますが、原理的にSQLインジェクション脆弱性の可能性がなくなるという点で、静的プレースホルダの方が優ります。詳しくは[「安全なSQLの呼び出し方」](https://www.ipa.go.jp/files/000017320.pdf){:target="_blank"}のプレースホルダの項（3.2節）を参照してください。
 
 EC-CUBEでは、O/R Mapperを利用しておりSQLを直接記述している箇所はないため問題ありません。  
 特別な事情がない限りは、O/RMapperの使用を推奨しております。  
@@ -100,11 +101,11 @@ $stmt = $conn->prepare($sql);
 $resultSet = $stmt->executeQuery(['price' => $price]);
 ```
 
-※O/R Mapperについては、利用方法を誤ると適切な対策が行われれない場合がございます。利用方法について注意してください。
+※O/R Mapperについては、利用方法を誤ると適切な対策が行われない場合がございます。利用方法について注意してください。
 
 #### [根本的解決] SQL文の組み立てを文字列連結により行う場合は、エスケープ処理等を行うデータベースエンジンのAPIを用いて、SQL文のリテラルを正しく構成する
 > SQL文の組み立てを文字列連結により行う場合は、SQL文中で可変となる値をリテラル（定数）の形で埋め込みます。値を文字列型として埋め込む場合は、値をシングルクォートで囲んで記述しますが、その際に文字列リテラル内で特別な意味を持つ記号文字をエスケープ処理します（たとえば、「'」→「''」、「\」→「\\」等）。値を数値型として埋め込む場合は、数値リテラルであることを確実にする処理（数値型へのキャスト等）を行います。  
-> こうした処理で具体的に何をすべきかは、データベースエンジンの種類や設定によって異なるため、それにあわせた実装が必要です。データベースエンジンによっては、リテラルを文字列として生成する専用のAPIを提供しているものがありますので、それを利用することをお勧めします。詳しくは、[「安全なSQLの呼び出し方」](https://www.ipa.go.jp/files/000017320.pdf)の4.1節を参照してください。なお、この処理は、外部からの入力の影響を受ける値のみに限定して行うのではなく、SQL文を構成する全てのリテラル生成に対して行ってください。
+> こうした処理で具体的に何をすべきかは、データベースエンジンの種類や設定によって異なるため、それにあわせた実装が必要です。データベースエンジンによっては、リテラルを文字列として生成する専用のAPIを提供しているものがありますので、それを利用することをお勧めします。詳しくは、[「安全なSQLの呼び出し方」](https://www.ipa.go.jp/files/000017320.pdf){:target="_blank"}の4.1節を参照してください。なお、この処理は、外部からの入力の影響を受ける値のみに限定して行うのではなく、SQL文を構成する全てのリテラル生成に対して行ってください。
 
 EC-CUBEでは、O/R Mapperを利用しておりSQLを直接記述している箇所はないため問題ありません。
 なお、カスタマイズ時以下2点を注意してください。
@@ -113,6 +114,7 @@ EC-CUBEでは、O/R Mapperを利用しておりSQLを直接記述している箇
 
 基本的にSymfonyで実装する場合は、前述の「SQL文の組み立ては全てプレースホルダで実装する」と同じ注意点です。
 加えて、処理をfunctionでラップすることで、型を限定することが出来ます。
+以下は一般的な実装例です。`p.price` や `p.available` などの項目名は、実際のエンティティに合わせて読み替えてください。
 
 ```php
 public function findAllGreaterThanPrice(int $price, bool $includeUnavailableProducts = false): array
@@ -155,7 +157,7 @@ public function findAllGreaterThanPrice(int $price): array
 }
 ```
 
-※O/R Mapperについては、利用方法を誤ると適切な対策が行われれない場合がございます。利用方法について注意してください。
+※O/R Mapperについては、利用方法を誤ると適切な対策が行われない場合がございます。利用方法について注意してください。
 
 #### [根本的解決] ウェブアプリケーションに渡されるパラメータにSQL文を直接指定しない
 > EC-CUBEに関わらず、hiddenパラメータ等にSQL文をそのまま指定するという事例が散見されますので、避けるべき実装として紹介します。ウェブアプリケーションに渡されるパラメータにSQL文を直接指定する実装は、そのパラメータ値の改変により、データベースの不正利用につながる可能性があります。
@@ -182,7 +184,7 @@ EC-CUBEでは、サーバの設定で対応を行ってください。
 > 外部からのパラメータでウェブサーバ内のファイル名を直接指定する実装では、そのパラメータが改変され、任意のファイル名を指定されることにより公開を想定しないファイルが外部から閲覧される可能性があります。たとえば、HTML中のhiddenパラメータでウェブサーバ内のファイル名を指定し、そのファイルをウェブページのテンプレートとして使用する実装では、そのパラメータが改変されることで、任意のファイルをウェブページとして出力してしまう等の可能性があげられます。外部からのパラメータでウェブサーバ内のファイル名を直接指定する実装が本当に必要か、他の処理方法で代替できないか等、仕様や設計から見直すことをお勧めします。
 
 EC-CUBEでは、ファイル管理機能でファイル名の指定を行っており絶対パスではなく`user_data`からの相対パスであるが、従来ディレクトリトラバーサルを受けやすいため、外部からのファイル名直接指定を避ける方法として、以下いずれかの対策を行いカスタマイズを行ってください。
-```
+```text
 ・ファイル名を固定にする
 ・ファイル名をセッション変数に保持する
 ・ファイル名を直接指定するのではなく番号などで間接的に指定する
@@ -194,7 +196,7 @@ EC-CUBEでは、ファイル管理機能でファイル名の指定を行って�
 
 EC-CUBEでは、ファイル管理機能でファイル名の指定を行っており絶対パスではなく`user_data`からの相対パスであるが、従来ディレクトリトラバーサルを受けやすいため、外部からのファイル名直接指定を避ける方法として、以下いずれかの対策を行いカスタマイズを行ってください。
 ※相対パスを使わないといけない状況では、ファイル名のみを抜き出す対策は使えないため代替として、パスの正規化による対策を行ってください。
-```
+```text
 1．phpのrealpath() などを用い、パスを正規化する。
 2．path名先頭一致の検査で、許可されたディレクトリ以下のファイルであることを確認する。
 ```
@@ -202,37 +204,43 @@ EC-CUBEでは、ファイル管理機能でファイル名の指定を行って�
 * 誤った例
 
 ```php
-$fileName = $request->getParameter('file_path');
-$dirName = "/path/to/directory/";
+$fileName = $request->get('file_path');
+$dirName = '/path/to/directory/';
 
-$handle = open($dirName . $fileName, "r");
+// 「../」や絶対パスを含むファイル名で、任意のファイルを開かれるおそれがある
+$handle = fopen($dirName . $fileName, 'r');
 ```
 
-* 推奨例
+* 推奨例（basename() でファイル名のみを取り出す）
 
 ```php
-$fileName = $request->getParameter('file_path');
-$dirName = "/path/to/directory/";
+$fileName = $request->get('file_path');
+$dirName = '/path/to/directory/';
 
-$handle = open($dirName . basename($fileName), "r");
+$handle = fopen($dirName . basename($fileName), 'r');
 ```
 
-もしくは
+* 推奨例（realpath() でパスを正規化し、許可されたディレクトリ以下かを確認する）
 
 ```php
-$fileName = $request->getParameter('file_path');
-$dirName = "/path/to/directory/";
+$fileName = $request->get('file_path');
+$dirName = '/path/to/directory/';
 
-$handle = open($dirName . realpath($fileName), "r");
+$path = realpath($dirName . $fileName);
+if ($path === false || !str_starts_with($path, realpath($dirName) . DIRECTORY_SEPARATOR)) {
+    throw new BadRequestHttpException();
+}
+
+$handle = fopen($path, 'r');
 ```
 
-参考（phpのrealpath関数）：[https://www.php.net/manual/ja/function.realpath.php](https://www.php.net/manual/ja/function.realpath.php)
+参考（phpのrealpath関数）：[https://www.php.net/manual/ja/function.realpath.php](https://www.php.net/manual/ja/function.realpath.php){:target="_blank"}
 
 
 #### [保険的対策] ウェブサーバ内のファイルへのアクセス権限の設定を正しく管理する
 > ウェブサーバ内に保管しているファイルへのアクセス権限が正しく管理されていれば、ウェブアプリケーションが任意ディレクトリのファイルを開く処理を実行しようとしても、ウェブサーバ側の機能でそのアクセスを拒否できる場合があります。
 
-```
+```text
 drwxr-xr-x 1 apache apache 0 Aug 8 13:01 html　←こちらのディレクトリはアクセスできる
 drwxr-x--- 1  admin  admin 0 Aug 8 13:01 others ←こちらのディレクトリはアクセスできない
 ```
@@ -252,14 +260,14 @@ EC-CUBEでは、ファイル名のバリデーションを行っているため�
 EC-CUBEのtwigテンプレートでの出力は、標準ではHTMLエスケープが行われます。
 rawフィルタ等を用い、意図的にエスケープを解除することは可能ですが、その際、外部からの入力値が含まれていると、攻撃手段として利用される可能性があります。
 
-```
+```twig
 {{ "{% raw " }}%}{{"{{ variable|raw " }}}}{{ "{% endraw " }}%}
 ```
 
 rawフィルタ以外でもHTMLエスケープの解除は可能です。
 以下のtwigフィルタやphp関数を利用する場合も注意してください。
 
-```
+```twig
 {{ "{% apply raw " }}%}
 
 {{"{{ variable " }}}}
@@ -267,7 +275,7 @@ rawフィルタ以外でもHTMLエスケープの解除は可能です。
 {{ "{% endapply " }}%}
 ```
 
-```
+```twig
 {{ "{% autoescape false " }}%}
 
 {{"{{ variable " }}}}
@@ -275,7 +283,7 @@ rawフィルタ以外でもHTMLエスケープの解除は可能です。
 {{ "{% endautoescape " }}%}
 ```
 
-```
+```text
 htmlspecialchars_decode
 html_entity_decode
 strip_tags
@@ -311,8 +319,8 @@ class XxxType extends AbstractType
 
 > ウェブページに出力する`<script>...</script>`要素の内容が、外部からの入力に依存する形で動的に生成される場合、任意のスクリプトが埋め込まれてしまう可能性があります。危険なスクリプトだけを排除する方法も考えられますが、危険なスクリプトであることを確実に判断することは難しいため、`<script>...</script>`要素の内容を動的に生成する仕様は、避けることをお勧めします。
 
-記述は避けるべき記述パターン
-```
+避けるべき記述パターン
+```twig
 <script>{{"{{ script_text|raw " }}}}</script>
 ```
 
@@ -396,7 +404,7 @@ $builder->add('sample_form_name', TextType::class, [
 
 なお、当該処理を独自実装するのではなく、html purifier等の広く使われているライブラリを利用することが望ましいです。
 ※html purifierの利用にあたっては以下のような議論があり、今後推奨外となる可能性があります。
-[https://github.com/pkp/pkp-lib/issues/7916](https://github.com/pkp/pkp-lib/issues/7916)
+[https://github.com/pkp/pkp-lib/issues/7916](https://github.com/pkp/pkp-lib/issues/7916){:target="_blank"}
 
 #### [保険的対策] 入力されたHTMLテキストから、スクリプトに該当する文字列を排除する。
 
@@ -406,7 +414,7 @@ $builder->add('sample_form_name', TextType::class, [
 
 * 例
 
-以下のようなHTMLは、ブラウザによっては同じ用に解釈される可能性があります。
+以下のようなHTMLは、ブラウザによっては同じように解釈される可能性があります。
 
 ```html
 <a href="javascript:exec()"></a>
@@ -417,9 +425,9 @@ script:exec()"></a>
 <a href="java&##09;script:exec()"></a>
 ```
 
-ただし、EC-CUBE4.1以降、フロントからの入力値は、htmlテキストはエスケープもしくは無害文字列への置換が行われておりおり、アプリケーション全体に適用される（プラグインやカスタマイズのコードにも適用される）ため問題ありません。
+ただし、EC-CUBE4.1以降、フロントからの入力値は、htmlテキストはエスケープもしくは無害文字列への置換が行われており、アプリケーション全体に適用される（プラグインやカスタマイズのコードにも適用される）ため問題ありません。
 
-*[3.5.3のよくある失敗例2を参照](https://www.ipa.go.jp/files/000017316.pdf)
+*[3.5.3のよくある失敗例2を参照](https://www.ipa.go.jp/files/000017316.pdf){:target="_blank"}
 
 ### 全てのウェブアプリケーションに共通の対策
 
@@ -430,7 +438,7 @@ script:exec()"></a>
 > Content-Typeフィールドで文字コードの指定を省略した場合、攻撃者が、この挙動を悪用して、故意に特定の文字コードをブラウザに選択させるような文字列を埋め込んだ上、その文字コードで解釈した場合にスクリプトのタグとなるような文字列を埋め込む可能性があります。
 > 
 > たとえば、具体的な例として、HTMLテキストに、` 「+ADw-script+AD4-alert(+ACI-test+ACI-)+ADsAPA-/script+AD4-」`という文字列が埋め込まれた場合が考えられます。この場合、一部のブラウザはこれを「UTF-7」の文字コードでエンコードされた文字列として識別します。これがUTF-7として画面に表示されると以下のように扱われるため、スクリプトが実行されてしまいます。
-> ```
+> ```html
 > <script>alert('test');</script>
 > ```
 > 
@@ -453,7 +461,7 @@ EC-CUBE4ではHttpOnly属性は標準で指定済であるため、問題あり�
 
 ※現状ではほとんどのブラウザでHttpOnly属性が活用できます
 
-TRACEメソッドについて：[https://blog.tokumaru.org/2013/01/TRACE-method-is-not-so-dangerous-in-fact.html](https://blog.tokumaru.org/2013/01/TRACE-method-is-not-so-dangerous-in-fact.html)
+TRACEメソッドについて：[https://blog.tokumaru.org/2013/01/TRACE-method-is-not-so-dangerous-in-fact.html](https://blog.tokumaru.org/2013/01/TRACE-method-is-not-so-dangerous-in-fact.html){:target="_blank"}
 
 #### [保険的対策] クロスサイト・スクリプティングの潜在的な脆弱性対策として有効なブラウザの機能を有効にするレスポンスヘッダを返す
 
@@ -462,7 +470,7 @@ TRACEメソッドについて：[https://blog.tokumaru.org/2013/01/TRACE-method-
 > 「X-XSS-Protection」は、ブラウザの「XSSフィルタ」の設定を有効にするパラメータです。ブラウザで明示的に無効になっている場合でも、このパラメータを受信することで有効になります。 HTTP レスポンスヘッダに`「X-XSS-Protection: 1; mode=block」`のように設定することで、クロスサイト・スクリプティング攻撃のブロックを試みる機能が有効になります。
 
 ただし、EC-CUBEでは、.htaccessにて以下を指定することにより対策を行っており問題ありません。
-```
+```text
 x-content-type-options: nosniff
 x-xss-protection: 1; mode=block
 ```
@@ -470,7 +478,7 @@ x-xss-protection: 1; mode=block
 
 なお、将来的には、X-XSS-Protectionの利用が少なくなり、Content-Security-Policyの利用がスタンダードになると想定されます。
 
-[https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/X-XSS-Protection](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/X-XSS-Protection)
+[https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/X-XSS-Protection](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/X-XSS-Protection){:target="_blank"}
 
 #### [保険的対策] innerHTMLやdocument.writeなど、外部からHTMLタグを注入できるような機能の利用は避ける
 DOM XSSについて、EC-CUBEはSPAではないため頻繁にJavaScriptの操作はありませんが、以下のような基本的な対策もカスタマイズ時意識してください。
@@ -499,16 +507,17 @@ $form->isSubmitted() && $form->isValid()
 ```
 
 ##### 2. ajax利用時
-ajax送信時は、常にcsrf トークンが送信される
+ajax送信時は、常にcsrf トークンが送信されるため、以下のチェックを行う
+
 ```php
-$request->isXmlHttpRequest() && $this->isTokenValid()でのチェックを行う
+$request->isXmlHttpRequest() && $this->isTokenValid()
 ```
 
 ##### 3. token-for-anchor
 
 削除ボタンなど、リンク押下での更新処理を行う場合は、token-for-anchorを利用する
 
-```
+```twig
  csrf_token_for_anchor() 
 ```
 
@@ -535,24 +544,27 @@ $request->isXmlHttpRequest() && $this->isTokenValid()でのチェックを行う
 > 
 > ただし、ウェブサイトによっては、攻撃者がそのウェブサイト上に罠を設置することができる場合があり、このようなサイトでは、この対策法が有効に機能しない場合があります。また、この対策法を採用すると、ブラウザやパーソナルファイアウォール等の設定でRefererを送信しないようにしている利用者が、そのサイトを利用できなくなる不都合が生じる可能性があります。本対策の採用には、これらの点にも注意してください。
 
-EC-CUBEではRefrerを確認する処理はしておりません。ただし、tokenを発行することでリクエスト元が正しいかのチェックを行っております。
+EC-CUBEではRefererを確認する処理はしておりません。ただし、tokenを発行することでリクエスト元が正しいかのチェックを行っております。
 
-カスタマイズ時は、tokenチェックの処理を欠かさないようお願いたします。
+カスタマイズ時は、tokenチェックの処理を欠かさないようお願いいたします。
 上述の「処理を実行するページをPOSTメソッドでアクセスするようにし、その「hiddenパラメータ」に秘密情報が挿入されるよう、前のページを自動生成して、実行ページではその値が正しい場合のみ処理を実行する」参照
 
 #### [保険的対策] 重要な操作を行った際に、その旨を登録済みのメールアドレスに自動送信する
 > メールの通知は事後処理であるため、CSRF 攻撃を防ぐことはできません。しかしながら、実際に攻撃があった場合に、利用者が異変に気付くきっかけを作ることができます。なお、メール本文には、プライバシーに関わる重要な情報を入れない等の注意が必要です。
 
 EC-CUBEでは以下のプルリクエストで実装の検討が進んでおります。
-[https://github.com/EC-CUBE/ec-cube/pull/5886](https://github.com/EC-CUBE/ec-cube/pull/5886)
-カスタマイズ時はこちらを参考にメール通知の実装をお願いたします。
+[https://github.com/EC-CUBE/ec-cube/pull/5886](https://github.com/EC-CUBE/ec-cube/pull/5886){:target="_blank"}
+カスタマイズ時はこちらを参考にメール通知の実装をお願いいたします。
 
 #### [保険的対策] Cookie（セッションID）のSameSite属性には、Laxを指定する。
 Cookie（セッションID）のSameSite属性について、ECサイトには決済関連の通信が存在するため、CSRF対策の一つとしてSameSite属性について、決済モジュール等からの指示がない限り、Cookie（セッションID）のSameSite属性にはLaxを指定する。
 
-```
+```text
 Set-Cookie: flavor=choco; SameSite=Lax
 ```
+
+なお、EC-CUBE 4 の標準設定では、セッションハンドラに `Eccube\Session\Storage\Handler\SameSiteNoneCompatSessionHandler` を使用しています。HTTPS で接続しており、ブラウザが SameSite=None に対応している場合は、セッションIDの Cookie に `SameSite=None` が付与されます。それ以外の場合は SameSite 属性は付与されません。
+{: .notice--info}
 
 [](## HTTPヘッダ・インジェクション)
 [](## メールヘッダ・インジェクション)
@@ -569,7 +581,7 @@ Set-Cookie: flavor=choco; SameSite=Lax
 > パスワード等（みだりに第三者に知らせてはならないものとして一般に考えられている情報）の入力を必要とするようにウェブアプリケーションを設計し、実装してください。
 
 ただし、EC-CUBE4系ではSymfonyのsecurity/firewallを利用しており、管理画面およびマイページは標準でID・パスワードでの認証がかかるため問題ありません。
-またカスタマイズ時は、security/firewallの正しい扱い方管理画面の認証制御について注意してください。
+またカスタマイズ時は、security/firewallの正しい扱い方や管理画面の認証制御について注意してください。
 
 ### 認可制御の欠落
 
