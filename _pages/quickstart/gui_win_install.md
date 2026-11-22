@@ -11,7 +11,7 @@ description: EC-CUBE4系をXAMPPを使用してWindowsのローカル環境へ�
 XAMPPを使用してWindowsのローカル環境へインストールする方法を解説します。  
 [システム要件](/quickstart/requirement)からご使用されるEC-CUBEに対応しているphpバージョン等をご確認ください。  
 この記事の構築環境は以下の通りです。  
-```
+```text
 // サンプルの構築環境
 Windows 10
 EC-CUBE 4.0.4
@@ -49,7 +49,7 @@ EC-CUBE4.0.4は、php7.4に対応しています。
 `http://127.0.0.1/{htdocsの中に作成したディレクトリ名}/`  
 
 
-```
+```text
 例:htdocsの中にtest-shopというディレクトリを作成し、そこにeccube-4.0.4を配置した場合
 ■ ディレクトリ構造
 Windows(C:)\xampp\htdocs\test-shop\eccube-4.0.4\
@@ -73,7 +73,7 @@ phpMyAdminが開きます。
 ![phpMyAdmin](/images/install/gui-win/mysql.png)
 
 「新規作成」をクリックしてデータベース名を入力し、データベースを作成します。  
-```
+```text
 例
 データベース名
 `eccube123_`
@@ -103,32 +103,32 @@ ApacheとMySQLのActions項目の「Start」をクリックします。
 「intl拡張モジュールが有効になっていません」というエラーが表示されます。  
 
 以下のディレクトリにあるphp.iniファイルを編集し設定を変更します。  
-`Windows(C:）\xampp\php\php.ini`  
+`Windows(C:)\xampp\php\php.ini`  
 
 php.iniを開いたら、ファイル内を「intl」で検索します。  
 
-```
+```ini
 ;extension=intl
 ```
 上記の記述が見つかるので、;を削除します。  
 以下の状態でphp.iniを保存します。
-```
+```ini
 extension=intl
 ```
 
 次に、php.iniにあるタイムアウトの設定を変更します。  
 XAMPP環境は動作が遅く、インストール時にタイムアウトが発生する場合があります。  
 ファイル内を「max_execution_time」で検索すると以下の記述が見つかります。
-```
+```ini
 max_execution_time=30
 ```
 以下のように変更します。  
-```
+```ini
 max_execution_time=120
 ```
 ※ ご使用のPCのスペックが低い場合は、もう少し大きな数字に変更することを推奨します。  
 
-```
+```text
 // 例
 max_execution_time=300
 ```
