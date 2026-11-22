@@ -1,5 +1,6 @@
 ---
 title: Symfonyの機能を使ったカスタマイズ
+description: イベントリスナーやコマンド、Bundle など Symfony の拡張機構を使ったカスタマイズ方法を説明します。
 keywords: core カスタマイズ Symfony
 tags: [core, symfony]
 permalink: customize_symfony
@@ -20,7 +21,7 @@ Symfonyのイベントシステムを利用することができます。
 
 ### hello worldを表示するイベントリスナーを作成する
 
-`app/Customize/EventListener`配下にに`HelloListener.php`を作成します。
+`app/Customize/EventListener`配下に`HelloListener.php`を作成します。
 
 ```php
 <?php
@@ -72,27 +73,30 @@ class HelloListener implements EventSubscriberInterface
 
 namespace Customize\Command;
 
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
+// コマンド名
+#[AsCommand(name: 'acme:hello')]
 class HelloCommand extends Command
 {
-    // コマンド名
-    protected static $defaultName = 'acme:hello';
-
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $io = new SymfonyStyle($input, $output);
 
         // hello worldを表示
         $io->success('hello world');
+
+        return Command::SUCCESS;
     }
 }
 ```
 
-- `$defaultName`はコマンド名を表します。
+- `#[AsCommand]`属性の`name`はコマンド名を表します。
+- `execute()`は終了コードを返す必要があります。正常終了時は`Command::SUCCESS`を返します。
 - `$io->success('hello world')`で、hello worldを表示します。
 
 作成後、`bin/console`で実行することができます。
@@ -211,7 +215,7 @@ EC-CUBEへSymfony Bundle を直接導入するかどうかは、要件に応じ�
 EC-CUBEのプラグインだけでは実現が難しい場合は、Symfony Bundle での利用を検討してください。
 
 #### プラグインで Symfony Bundle を導入する場合
-[Web API プラグイン](https://github.com/EC-CUBE/eccube-api4)の実装を参考にしてください。
+[Web API プラグイン](https://github.com/EC-CUBE/eccube-api4){:target="_blank"}の実装を参考にしてください。
 - composer.json
 
 `composer.json` に利用するBundleを記載します。
@@ -237,7 +241,7 @@ EC-CUBEのプラグインだけでは実現が難しい場合は、Symfony Bundl
 
 - Bundle/ApiBundle.php
 
-bundles.phpを追加してください。
+Bundleのファイルが必要です。
 ```php
 namespace Plugin\Api42\Bundle;
 
@@ -262,7 +266,16 @@ class ApiBundle extends Bundle
     }
 }
 ```
-Bundleのファイルが必要です。
+
+- Resource/config/bundles.php
+
+bundles.phpを追加し、利用するBundleを登録してください。
+```php
+return [
+    Plugin\Api42\Bundle\ApiBundle::class => ['all' => true],
+    League\Bundle\OAuth2ServerBundle\LeagueOAuth2ServerBundle::class => ['all' => true]
+];
+```
 
 - Controller/Admin/OAuthController.php
 
@@ -275,7 +288,7 @@ use League\Bundle\OAuth2ServerBundle\Manager\ClientManagerInterface;
 ・・・
 ```
 
-#### CustomizeディレクトリからSymfony Bundleをインストール [#6141](https://github.com/EC-CUBE/ec-cube/pull/6141)
+#### CustomizeディレクトリからSymfony Bundleをインストール [#6141](https://github.com/EC-CUBE/ec-cube/pull/6141){:target="_blank"}
 
 EC-CUBE 4.3 から、Customizeディレクトリ配下に Symfony Bundle を配置して利用できるようになりました。
 
