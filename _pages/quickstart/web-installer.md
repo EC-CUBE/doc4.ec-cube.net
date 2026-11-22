@@ -10,7 +10,7 @@ description: EC-CUBE 4系のインストールについての説明です。
 ## インストールの前に
 [システム要件](/quickstart/requirement)を満たしているか確認してください。
 
-このインストール手順では、サーバの設定、FTPソフト等の設定、使いかたについては解説していません。適時お使いのサーバ会社のマニュアル等を参照してください。
+このインストール手順では、サーバの設定、FTPソフト等の設定、使いかたについては解説していません。適宜お使いのサーバ会社のマニュアル等を参照してください。
 - さくらインターネット: [https://help.sakura.ad.jp/206054522/](https://help.sakura.ad.jp/206054522/){:target="_blank"}
 - Xserver: [https://www.xserver.ne.jp/manual/man_ftp_setting.php](https://www.xserver.ne.jp/manual/man_ftp_setting.php){:target="_blank"}
 
@@ -56,7 +56,7 @@ EC-CUBEからはサンキューメールや会員登録メールなど、シス�
 *メールアカウントの情報が外部に漏れると、個人情報の漏洩などの原因になります。管理には注意してください*
 
 **次のステップ**
-- [EC-CUEBのソースコードファイルをサーバにアップロードする](#ec-cubeのソースコードファイルをサーバにアップロードする)
+- [EC-CUBEのソースコードファイルをサーバにアップロードする](#ec-cubeのソースコードファイルをサーバにアップロードする)
 
 ----
 
@@ -73,9 +73,9 @@ FileZilla等のファイル転送ソフトを使っても可能ですが、EC-CU
 
 ### EC-CUBEダウンローダーを使ってファイルを展開する
 サードパーティ製のダウンローダーを使うと簡単にEC-CUBEのソースコードをサーバ上に展開できます。
-![EC-CUBE Donwloader screen shot](https://github.com/tao-s/eccube-downloader/raw/master/EC-CUBE_downloader.gif)
+![EC-CUBE Downloader screen shot](https://github.com/tao-s/eccube-downloader/raw/master/EC-CUBE_downloader.gif)
 
-[ここ](https://github.com/tao-s/eccube-downloader/archive/master.zip)からEC-CUBE Downloaderをダウンロードして、以下の手順を踏んでください。
+[ここ](https://github.com/tao-s/eccube-downloader/archive/master.zip){:target="_blank"}からEC-CUBE Downloaderをダウンロードして、以下の手順を踏んでください。
 
 1. ダウンロードされたmaster.zipを展開する。
 1. 展開されたフォルダの中の**dw.php**をEC-CUBEをインストールしたいサーバのディレクトリにアップロードする。<br>例: public_html/ など
@@ -91,7 +91,7 @@ EC-CUBEのインストール画面が表示されたら[インストールウィ
 ----
 
 ### ダウンロードしたパッケージをアップロードする
-**[EC-CUBE Donloaderを使う](#ec-cubeダウンローダーを使ってファイルを展開する)方は不要のステップです。**
+**[EC-CUBE Downloaderを使う](#ec-cubeダウンローダーを使ってファイルを展開する)方は不要のステップです。**
 
 [EC-CUBE 4のパッケージ](https://www.ec-cube.net/download/){:target='_blank'}をダウンロードし、解凍してください。
 
@@ -114,10 +114,10 @@ EC-CUBEのインストール画面が表示されたら[インストールウィ
 EC-CUBEのソースコードファイルの展開が完了後に、インストールディレクトリにアクセスするとインストーラ画面が表示されます。
 このインストールウィザードの指示にしたがってインストールしてください。
 
-*インストーラ画面のURL例： https://wwww.example.com/{EC-CUBEをアップロードしたディレクトリ/}/index.php/install/step1*
+*インストーラ画面のURL例： https://www.example.com/{EC-CUBEをアップロードしたディレクトリ}/index.php/install/step1*
 
 ![install step1](/images/install/step1.png)
-*次へ*をクリックします。
+*次へ進む*をクリックします。
 
 ### パーミッション（ファイル権限）チェック
 
@@ -230,9 +230,9 @@ EC-CUBEのソースコードファイルの展開が完了後に、インスト�
   - EC-CUBEを動かそうとしているサーバからDBサーバに接続できるか確認してください。
 
 #### パーミッション（ファイル権限）エラー
-[ここ](/quickstart/permission/#パーミッションの設定について（共通事項）)を見てパーミッションを確認してください。
+[ここ](/quickstart/permission/#パーミッションの設定について共通事項)を見てパーミッションを確認してください。
 
 #### その他
 
 - PHPのバージョンが合ってない/PHPのモジュールが足りない
-  - [システム要件](/quickstart/requirement)を確認してください。EC-CUBEを動かすためにはPHP Ver.7.1以上が必要です。
+  - [システム要件](/quickstart/requirement)で、ご利用のEC-CUBEのバージョンに対応したPHPのバージョンと必要なモジュールを確認してください。
