@@ -1,5 +1,6 @@
 ---
 title: ec-cube.co Git管理機能の仕様
+description: ec-cube.coのGit管理機能で反映対象となるリソースなどの仕様を説明します。
 keywords: co ec-cube.co クラウド版 Git管理機能の仕様
 tags: [co, ec-cube.co]
 permalink: co/co_git
@@ -33,8 +34,8 @@ folder: co
 ## 表の見方 
 
 1. Git管理対象：Gitによるソースコードやディレクトリの反映が可能なリソース
-1. Plugin利用による影響：<br>PluginのInstall/UnInstall/enable/disable/実行時の操作、などによりソースコードが書き換えられる可能性のあるリソース
-1. 管理画面からの操作：管理画面でなんからの更新が行われるリソース（ページ/テンプレート管理など）
+1. Plugin利用による影響：<br>PluginのInstall/Uninstall/enable/disable/実行時の操作、などによりソースコードが書き換えられる可能性のあるリソース
+1. 管理画面からの操作：管理画面でなんらかの更新が行われるリソース（ページ/テンプレート管理など）
 
 以下はEC-CUBE本体コードとしてのディレクトリであるため対象外
 

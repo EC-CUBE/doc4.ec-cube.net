@@ -1,5 +1,6 @@
 ---
 title: ec-cube.co カスタマイズディレクトリ利用方法
+description: ec-cube.coのapp/Customizeディレクトリを利用したカスタマイズ手順とローカル環境のセットアップ方法を説明します。
 keywords: co ec-cube.co クラウド版 カスタマイズディレクトリ利用方法
 tags: [co, ec-cube.co]
 permalink: co/co_customize_dir_usage
@@ -9,7 +10,7 @@ folder: co
 
 ---
 
-.coで動作しているEC-CUBE本体のソースコードは、EC-CUBEリポジトリの 4.0の場合 co/master、 4.1の場合 co/4.1 ブランチのソースです。 
+.coで動作しているEC-CUBE本体のソースコードは、EC-CUBEリポジトリの 4.0の場合 co/master、 4.1の場合 co/4.1、 4.2の場合 co/4.2 ブランチのソースです。 
 各ブランチを利用してEC-CUBEを起動し、 app/Customize ディレクトリでのカスタマイズを行います。
 
 ## ローカル環境のセットアップ手順
@@ -33,27 +34,27 @@ folder: co
 
 ### ec-cube.coのレポジトリをclone
 
-```
+```shell
 $ git clone <リポジトリURL> eccube-co-customize
 $ cd eccube-co-customize
 ```
 
 ### 追従用のec-cubeレポジトリを追加
 
-```
+```shell
 $ git remote add ec-cube https://github.com/EC-CUBE/ec-cube.git
 $ git fetch ec-cube
 ```
 
 ### 開発用ローカルブランチ作成
 
-```
+```shell
 $ git checkout -b develop origin/develop
 ```
 
 ### coブランチに追従する
 
-```
+```shell
 $ git merge --allow-unrelated-histories ec-cube/<coブランチ名>
 ```
 
@@ -65,7 +66,7 @@ coブランチは、バージョンによって異なります。
 
 例えば4.2環境をご利用の場合は、以下のようにマージしてください。
 
-```
+```shell
 $ git merge --allow-unrelated-histories ec-cube/co/4.2
 ```
 
@@ -78,13 +79,13 @@ $ git merge --allow-unrelated-histories ec-cube/co/4.2
 
 ### テスト環境に反映
 
-```
+```shell
 $ git push origin develop -u
 ```
 
 ### 本番環境に反映
 
-```
+```shell
 $ git checkout master
 $ git merge develop
 $ git push origin master -u
@@ -94,7 +95,7 @@ $ git push origin master -u
 
 ### ローカル環境の立ち上げ
 
-```
+```shell
 $ docker compose -f docker-compose.yml -f docker-compose.pgsql.yml -f docker-compose.dev.yml up
 $ docker compose exec -u www-data ec-cube bin/console eccube:install --no-interaction
 $ docker compose exec -u www-data ec-cube bin/console eccube:generate:proxies
@@ -104,7 +105,7 @@ $ docker compose exec -u www-data ec-cube bin/console doctrine:migrations:migrat
 
 ### ブラウザで表示
 
-```
+```shell
 $ open http://127.0.0.1:8080/
 ```
 
@@ -114,13 +115,13 @@ $ open http://127.0.0.1:8080/
 
 ### 認証キーの追加
 
-```
+```shell
 $ docker exec <postgres container name> psql -U dbuser eccubedb -c "update dtb_base_info set authentication_key='<認証キー>' "
 ```
 
 ### プラグインのインストール・有効化
 
-```
+```shell
 $ docker compose exec -u www-data ec-cube bin/console eccube:composer:require ec-cube/<プラグインコード>
 $ docker compose exec -u www-data ec-cube bin/console eccube:plugin:enable --code=<プラグインコード>
 ```
