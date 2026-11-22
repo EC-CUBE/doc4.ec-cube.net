@@ -1,5 +1,6 @@
 ---
 title: 動的スキャンの仕方
+description: OWASP ZAP による動的スキャンの実施方法と、特殊な遷移パターンのテスト方法を説明します。
 permalink: /penetration-testing/testing/active_scan
 ---
 ## 動的スキャンの基本
@@ -11,19 +12,20 @@ permalink: /penetration-testing/testing/active_scan
 
 ![動的スキャンの基本操作](/images/penetration-testing/testing_active_scan.png)
 
-**Note:** POSTパラメータに設定された CSRF トークンが、 Local Proxes 経由でアクセスしている Firefox のものと一致していることを確認しましょう。
+**Note:** POSTパラメータに設定された CSRF トークンが、 Local Proxies 経由でアクセスしている Firefox のものと一致していることを確認しましょう。
 ![CSRFトークンの一致を確認](/images/penetration-testing/testing_active_scan_csrftoken.png)
 CSRFトークンが一致してない場合は、動的スキャンがエラーになってしまい、十分にテストができません。
 {: .notice--warning}
 
+<div class="notice--warning" markdown="1">
 **Note:** 管理画面の以下の編集機能は、CSRFトークンのパラメータにIDが含まれており、動的に設定されます。
 OWASP ZAP の ツール→オプション→アンチCSRFトークンより都度登録する必要があります。
 
- - 規格管理
- - 規格分類管理
- - カテゴリ管理
- - タグ管理
-{: .notice--warning}
+- 規格管理
+- 規格分類管理
+- カテゴリ管理
+- タグ管理
+</div>
 
 ## GET でアクセス可能な URL
 
@@ -54,7 +56,7 @@ GET でアクセス可能な URL は、 CSRF トークンによる影響を受�
 (`mode=confirm`, `mode=complete` で画面遷移する場合など)
 イレギュラーな方法ですが、手動送信機能を使って新たにダミーのパラメータを増やしてリクエストすることで動的スキャンが可能です。
 
-*既に `mode=comfirm` のURLが登録されていることを前提とします*
+*既に `mode=confirm` のURLが登録されていることを前提とします*
 
 1. 履歴から該当のリクエスト(`mode=complete`)を探す
 2. 右クリック→再送信で、ダミーのパラメータを増やして再送信する(`mode=complete&mode2=dummy` のように、パラメータを手修正して送信する)
