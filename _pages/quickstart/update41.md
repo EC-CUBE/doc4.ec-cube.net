@@ -5,6 +5,7 @@ keywords: howto update
 tags: [quickstart, getting_started]
 permalink: update41
 summary : EC-CUBE4.0から4.1への本体バージョンアップ手順について記載します。
+description: EC-CUBE4.0から4.1への本体バージョンアップ手順について記載します。
 ---
 
 本番環境でバージョンアップを行う前に、テスト環境で事前検証を必ず行ってください。
@@ -13,7 +14,7 @@ summary : EC-CUBE4.0から4.1への本体バージョンアップ手順につい
 {: .notice--danger}
 この手順では、EC-CUBE4.0.6-p1から4.1.0へのバージョンアップを想定しています。
 {: .notice--danger}
-EC-CUBE本体のコード(app/config/eccube, app/DoctrineMigrations, bin, src, htmlディレクトリ)をカスタマイズしている場合、ファイルが上書きされてしまうため、この手順ではバージョンアップできません。[各バージョンでの変更差分](#各バージョンでの変更差分)を確認して必要な差分を取り込んでください。
+EC-CUBE本体のコード(app/config/eccube, app/DoctrineMigrations, bin, src, htmlディレクトリ)をカスタマイズしている場合、ファイルが上書きされてしまうため、この手順ではバージョンアップできません。[変更差分](#変更差分)を確認して必要な差分を取り込んでください。
 {: .notice--danger}
 
 ## 事前準備
@@ -30,7 +31,7 @@ EC-CUBE本体のコード(app/config/eccube, app/DoctrineMigrations, bin, src, h
 ### 本体に取り込まれたプラグインの無効化
 
 - 4.1.0より、以下のプラグインはEC-CUBE本体へ取り込まれました。
-  - [taba secure 2段階認証 プラグイン for EC-CUBE 4](https://www.ec-cube.net/products/detail.php?product_id=1750)
+  - [taba secure 2段階認証 プラグイン for EC-CUBE 4](https://www.ec-cube.net/products/detail.php?product_id=1750){:target="_blank"}
 - 該当のプラグインを利用している場合は、プラグインを削除してください。
 
 ## アップデートプラグインを利用したバージョンアップ方法
@@ -67,7 +68,7 @@ EC-CUBEの管理画面へアクセスし、「コンテンツ管理」の「メ�
 
 または、EC-CUBEのルートディレクトリに「.maintenance」ファイルを設置することでメンテナンスモードを有効にすることもできます。
 
-```
+```text
 [root]
   │
   ├──.maintenance
@@ -87,7 +88,7 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
 
 （対象ディレクトリの上書きではなくディレクトリの中のすべてのファイルを置き換える必要があります。古いファイルが残ってしまうと、予期せぬ動作となる恐れがありますので、必ず置き換える対象となるディレクトリごとにすべてのファイルを置き換えるようにしてください。）
 
-```
+```text
 [root]
   │
   ├──[app/config/eccube]
@@ -104,7 +105,7 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
 
 （ Web API プラグインなど Symfony bundle を利用の場合に `vendor` ディレクトリを完全に削除してしまうと以降の手順でエラーが発生します。ステップ(5) の `bin/console eccube:composer:require-already-installed` コマンドで `vendor` ディレクトリ内の不要なファイルは削除されます。）
 
-```
+```text
 [root]
   │
   ├──[vendor]
@@ -127,7 +128,7 @@ packagist等の外部ライブラリを独自にインストールしている�
 
 例えば、psr/http-messageをインストールしている場合は、以下のようにインストールしてください。
 
-```
+```bash
 composer require psr/http-message --no-plugins --no-scripts
 ```
 
@@ -135,7 +136,7 @@ Symfony Bundleを使ったプラグインを利用している場合、プラグ
 
 例えば、APIプラグインの場合は、以下のようにcomposer.jsonを確認し、依存ライブラリをインストールしてください。
 
-```
+```text
 $ cat app/Plugin/Api/composer.json
 ...
   "require": {
@@ -151,13 +152,13 @@ $ composer require webonyx/graphql-php:^14.0 --no-plugins --no-scripts
 
 以下のコマンドでキャッシュの削除を行ってください。
 
-```
+```bash
 bin/console cache:clear --no-warmup
 ```
 
 以下のコマンドを実行してください。
 
-```
+```bash
 bin/console eccube:composer:require-already-installed
 ```
 
@@ -169,35 +170,35 @@ bin/console eccube:composer:require-already-installed
 
 スキーマ更新
 
-```
+```bash
 bin/console doctrine:schema:update --force --dump-sql
 ```
 
 マイグレーション
 
-```
+```bash
 bin/console doctrine:migrations:migrate
 ```
 
 ### 7. キャッシュ等の再生成
 
 autoloadファイルの再生成
-```
+```bash
 composer dump-autoload
 ```
 
 プロキシファイルを再生成
-```
+```bash
 bin/console eccube:generate:proxies
 ```
 
 キャッシュファイルの再生成
-```
+```bash
 bin/console cache:warmup --env=prod
 ```
 
 セッションの削除
-```
+```bash
 rm -rf var/sessions
 ```
 
@@ -240,7 +241,7 @@ rm -rf var/sessions
 
 EC-CUBEの管理画面へアクセスし、「コンテンツ管理」の「メンテナンス管理」から、メンテナンスモードを無効にしてください。
 
-または、EC-CUBEのルートディレクトリに「.maintenance」ファイルを削除することでメンテナンスモードを無効にすることもできます。
+または、EC-CUBEのルートディレクトリの「.maintenance」ファイルを削除することでメンテナンスモードを無効にすることもできます。
 
 ## 変更差分
 
