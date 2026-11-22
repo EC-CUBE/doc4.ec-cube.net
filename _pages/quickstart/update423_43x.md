@@ -5,6 +5,7 @@ keywords: howto update
 tags: [quickstart, getting_started]
 permalink: update423_43x
 summary : EC-CUBE4.2から4.3への本体バージョンアップ手順について記載します。
+description: EC-CUBE4.2から4.3への本体バージョンアップ手順について記載します。
 ---
 
 本番環境でバージョンアップを行う前に、テスト環境で事前検証を必ず行ってください。
@@ -54,7 +55,7 @@ EC-CUBEの管理画面へアクセスし、「コンテンツ管理」の「メ�
 
 または、EC-CUBEのルートディレクトリに「.maintenance」ファイルを設置することでメンテナンスモードを有効にすることもできます。
 
-```
+```text
 [root]
   │
   ├──.maintenance
@@ -78,7 +79,7 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
 
 （対象ディレクトリの上書きではなくディレクトリの中のすべてのファイルを置き換える必要があります。古いファイルが残ってしまうと、予期せぬ動作となる恐れがありますので、必ず置き換える対象となるディレクトリごとにすべてのファイルを置き換えるようにしてください。）
 
-```
+```text
 [root]
   │
   ├──[app/config/eccube]
@@ -93,9 +94,9 @@ EC-CUBEのソースファイルについて、ディレクトリごとにそれ�
 
 `vendor` ディレクトリは削除せず、バージョンアップするEC-CUBEのバージョンの `vendor` ディレクトリで上書きしてください。
 
-（ Web API プラグインなど Symfony bundle を利用の場合に `vendor` ディレクトリを完全に削除してしまうと以降の手順でエラーが発生します。ステップ(5) の `bin/console eccube:composer:require-already-installed` コマンドで `vendor` ディレクトリ内の不要なファイルは削除されます。）
+（ Web API プラグインなど Symfony bundle を利用の場合に `vendor` ディレクトリを完全に削除してしまうと以降の手順でエラーが発生します。ステップ(6) の `bin/console eccube:composer:require-already-installed` コマンドで `vendor` ディレクトリ内の不要なファイルは削除されます。）
 
-```
+```text
 [root]
   │
   ├──[vendor]
@@ -118,7 +119,7 @@ packagist等の外部ライブラリを独自にインストールしている�
 
 例えば、psr/http-messageをインストールしている場合は、以下のようにインストールしてください。
 
-```
+```bash
 composer require psr/http-message --no-plugins --no-scripts
 ```
 
@@ -126,7 +127,7 @@ Symfony Bundleを使ったプラグインを利用している場合、プラグ
 
 例えば、APIプラグインの場合は、以下のようにcomposer.jsonを確認し、依存ライブラリをインストールしてください。
 
-```
+```text
 $ cat app/Plugin/Api42/composer.json
 ...
   "require": {
@@ -144,18 +145,18 @@ $ composer require webonyx/graphql-php:^14.0 --no-plugins --no-scripts
 
 以下のコマンドでキャッシュの削除を行ってください。
 
-```
+```bash
 rm -rf var
 bin/console cache:clear --no-warmup
 ```
 
 以下のコマンドを実行してください。
 
-```
+```bash
 bin/console eccube:composer:require-already-installed
 ```
 
-### 6. スキーマ更新/マイグレーション
+### 7. スキーマ更新/マイグレーション
 
 スキーマ更新およびマイグレーション機能を利用して、データベースのバージョンアップを行います。
 
@@ -165,9 +166,11 @@ bin/console eccube:composer:require-already-installed
 ※スキーマ更新のコマンドを実行した際に以下のエラーが発生する場合があります。
 </span>
 
-`In Eccube_KernelProdContainer.php line 1936:
+```text
+In Eccube_KernelProdContainer.php line 1936:
 Attempted to call an undefined method named "registerUniqueLoader" of class
-"Doctrine\Common\Annotations\AnnotationRegistry".`
+"Doctrine\Common\Annotations\AnnotationRegistry".
+```
 
 
 このエラーは、Symfonyのデータの内容が変更されたが、Symfonyのキャッシュ構成が古いままであるために発生します。
@@ -176,46 +179,46 @@ Attempted to call an undefined method named "registerUniqueLoader" of class
 
 varフォルダの削除
 
-```
+```bash
 rm -rf var
 ```
 
 
 スキーマ更新
 
-```
+```bash
 bin/console doctrine:schema:update --force --dump-sql
 ```
 
 マイグレーション
 
-```
+```bash
 bin/console doctrine:migrations:migrate
 ```
 
-### 7. キャッシュ等の再生成
+### 8. キャッシュ等の再生成
 
 autoloadファイルの再生成
-```
+```bash
 composer dump-autoload
 ```
 
 プロキシファイルを再生成
-```
+```bash
 bin/console eccube:generate:proxies
 ```
 
 キャッシュファイルの再生成
-```
+```bash
 bin/console cache:warmup --env=prod
 ```
 
 セッションの削除
-```
+```bash
 rm -rf var/sessions
 ```
 
-### 8. フロントテンプレートファイルの更新
+### 9. フロントテンプレートファイルの更新
 
 対象となるバージョンごとに、フロントテンプレートファイル(twig)の更新が必要です。
 
@@ -251,11 +254,11 @@ rm -rf var/sessions
 - src/Eccube/Resource/template/default/Shopping/shipping.twig
 - src/Eccube/Resource/template/default/default_frame.twig
 
-### 9.メンテナンスモードを無効にする
+### 10.メンテナンスモードを無効にする
 
 EC-CUBEの管理画面へアクセスし、「コンテンツ管理」の「メンテナンス管理」から、メンテナンスモードを無効にしてください。
 
-または、EC-CUBEのルートディレクトリに「.maintenance」ファイルを削除することでメンテナンスモードを無効にすることもできます。
+または、EC-CUBEのルートディレクトリの「.maintenance」ファイルを削除することでメンテナンスモードを無効にすることもできます。
 
 ## 変更差分
 
